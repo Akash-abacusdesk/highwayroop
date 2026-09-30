@@ -63,8 +63,8 @@ export default function GroupSection() {
                     <a key={label} href={href}>{label}</a>
                   ))}
                 </div>
-                <a className="header-cta biz-cta" href="#businesses">
-                  Explore {b.name} <span aria-hidden="true"><ArrowRight size={18} aria-hidden="true" /></span>
+                <a className="biz-cta" href="#businesses">
+                  Explore<span className="biz-cta-name"> {b.name}</span> <span aria-hidden="true"><ArrowRight size={18} aria-hidden="true" /></span>
                 </a>
               </div>
             </article>
