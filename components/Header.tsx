@@ -1,5 +1,6 @@
 'use client'
 
+import { ArrowRight } from 'lucide-react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 
 type Col = { title: string; links: [string, string][] }
@@ -187,7 +188,7 @@ export default function Header() {
           <a href="#careers">Careers</a>
         </nav>
         <a className="header-cta" href="#contact">
-          Contact <span aria-hidden="true">→</span>
+          Contact <span aria-hidden="true"><ArrowRight size={18} aria-hidden="true" /></span>
         </a>
         <button
           className="menu-toggle"
@@ -216,7 +217,7 @@ export default function Header() {
             <h2>{menu.label}</h2>
             <p>{menu.intro}</p>
             <a href={menu.href} onClick={closeMega}>
-              Explore {menu.label} <b>→</b>
+              Explore {menu.label} <b><ArrowRight size={18} aria-hidden="true" /></b>
             </a>
           </div>
           {menu.cols.map(c => (

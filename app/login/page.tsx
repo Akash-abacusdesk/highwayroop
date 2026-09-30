@@ -1,5 +1,6 @@
 'use client'
 
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useState, FormEvent } from 'react'
 
 export default function LoginPage() {
@@ -79,12 +80,12 @@ export default function LoginPage() {
           </div>
 
           <button type="submit" className="login-btn" disabled={loading}>
-            {loading ? 'Signing in…' : 'Sign in →'}
+            {loading ? 'Signing in…' : <>Sign in <ArrowRight size={16} aria-hidden="true" /></>}
           </button>
         </form>
 
         <p className="login-back">
-          <a href="/highwayroop/">← Back to website</a>
+          <a href="/highwayroop/"><ArrowLeft size={14} aria-hidden="true" /> Back to website</a>
         </p>
       </div>
     </div>

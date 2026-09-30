@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 import type { ContactContent } from '@/types/content'
 
 const defaultContent: ContactContent = {
@@ -22,7 +23,7 @@ export default function ContactSection({ content = defaultContent }: { content?:
         </div>
         <div className="contact-actions">
           <a className="button white" href={`mailto:${content.email}`}>
-            {content.buttonText} <span>→</span>
+            {content.buttonText} <span><ArrowRight size={18} aria-hidden="true" /></span>
           </a>
           <a href={`tel:${content.phone.replace(/\s/g, '')}`}>{content.phone}</a>
           <a href={`mailto:${content.email}`}>{content.email}</a>

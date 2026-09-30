@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 import type { IntroContent } from '@/types/content'
 
 const defaultContent: IntroContent = {
@@ -27,7 +28,7 @@ export default function IntroSection({ content = defaultContent }: { content?: I
             <p>{content.para2}</p>
           </div>
           <a className="text-link accent" href={content.ctaHref}>
-            {content.ctaText} <span>→</span>
+            {content.ctaText} <span><ArrowRight size={18} aria-hidden="true" /></span>
           </a>
         </div>
         <figure className="intro-visual reveal">

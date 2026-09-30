@@ -1,5 +1,6 @@
 'use client'
 
+import { ChevronRight } from 'lucide-react'
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -56,7 +57,7 @@ export default function AdminSidebar() {
               </svg>
               Pages
             </span>
-            <span className={`admin-pages-caret${pagesOpen ? ' open' : ''}`}>▶</span>
+            <span className={`admin-pages-caret${pagesOpen ? ' open' : ''}`}><ChevronRight size={14} aria-hidden="true" /></span>
           </button>
 
           {pagesOpen && (

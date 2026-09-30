@@ -1,5 +1,6 @@
 'use client'
 
+import { ArrowRight } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import WebGLGlobeLoader from './globe/WebGLGlobeLoader'
 import type { Country } from './globe/geo'
@@ -146,7 +147,7 @@ export default function GlobalSection() {
             </div>
           </div>
           <a className="text-link accent" href="#contact">
-            Connect with our global team <span>→</span>
+            Connect with our global team <span><ArrowRight size={18} aria-hidden="true" /></span>
           </a>
         </div>
 

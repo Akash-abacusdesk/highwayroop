@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 export default function LeadershipSection() {
   return (
     <section className="section leadership" id="leadership">
@@ -39,7 +40,7 @@ export default function LeadershipSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Leadership profile <span>→</span>
+                Leadership profile <span><ArrowRight size={18} aria-hidden="true" /></span>
               </a>
             </div>
           </article>

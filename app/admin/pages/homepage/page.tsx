@@ -1,5 +1,6 @@
 'use client'
 
+import { Check, ChevronRight, ExternalLink, X } from 'lucide-react'
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import type { HomepageContent, HeroSlide, Stat } from '@/types/content'
@@ -72,7 +73,7 @@ export default function HomepageEditor() {
         <div className="admin-page">
           {loadError ? (
             <div className="admin-notice admin-notice-error" style={{ maxWidth: 560 }}>
-              ✕ {loadError}
+              <X size={14} aria-hidden="true" /> {loadError}
             </div>
           ) : (
             <p style={{ color: '#64748b' }}>Loading content…</p>
@@ -87,21 +88,21 @@ export default function HomepageEditor() {
       <div className="admin-topbar">
         <div className="admin-topbar-breadcrumb">
           <Link href="/admin">Dashboard</Link>
-          <span>›</span>
+          <ChevronRight size={14} aria-hidden="true" />
           <Link href="/admin/pages">Pages</Link>
-          <span>›</span>
+          <ChevronRight size={14} aria-hidden="true" />
           <span>Homepage</span>
         </div>
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
           <Link href="/" target="_blank" className="admin-btn admin-btn-outline" style={{ fontSize: 12 }}>
-            ↗ Preview site
+            <ExternalLink size={14} aria-hidden="true" /> Preview site
           </Link>
           <button
             className="admin-btn admin-btn-primary"
             onClick={save}
             disabled={saving}
           >
-            {saving ? 'Saving…' : '✓ Save changes'}
+            {saving ? 'Saving…' : <><Check size={14} aria-hidden="true" /> Save changes</>}
           </button>
         </div>
       </div>
@@ -109,7 +110,7 @@ export default function HomepageEditor() {
       <div className="admin-page">
         {notice && (
           <div className={`admin-notice admin-notice-${notice.type}`}>
-            {notice.type === 'success' ? '✓' : '✕'} {notice.msg}
+            {notice.type === 'success' ? <Check size={14} aria-hidden="true" /> : <X size={14} aria-hidden="true" />} {notice.msg}
           </div>
         )}
 
@@ -426,7 +427,7 @@ export default function HomepageEditor() {
             onClick={save}
             disabled={saving}
           >
-            {saving ? 'Saving…' : '✓ Save changes'}
+            {saving ? 'Saving…' : <><Check size={14} aria-hidden="true" /> Save changes</>}
           </button>
         </div>
       </div>

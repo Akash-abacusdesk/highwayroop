@@ -471,3 +471,6 @@ section[id],article[id],div[id="media"]{scroll-margin-top:126px}
 .biz-cta{margin:auto 0 0;width:max-content}
 @media(max-width:1050px){.biz-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.biz-grid{grid-template-columns:1fr}}
+
+/* Lucide icons inside text-styled wrappers */
+span:has(>svg.lucide),b:has(>svg.lucide),i:has(>svg.lucide){display:inline-flex;align-items:center;justify-content:center}

@@ -1,3 +1,4 @@
+import { ExternalLink, FileText, Home } from 'lucide-react'
 import Link from 'next/link'
 
 export default function AdminDashboard() {
@@ -6,7 +7,7 @@ export default function AdminDashboard() {
       <div className="admin-topbar">
         <span className="admin-topbar-title">Dashboard</span>
         <Link href="/" target="_blank" className="admin-btn admin-btn-outline" style={{ fontSize: 12 }}>
-          ↗ View live site
+          <ExternalLink size={14} aria-hidden="true" /> View live site
         </Link>
       </div>
 
@@ -42,14 +43,14 @@ export default function AdminDashboard() {
           <div className="admin-card-body">
             <div className="admin-quick-links">
               <Link href="/admin/pages/homepage" className="admin-quick-link">
-                <div className="admin-quick-link-icon">🏠</div>
+                <div className="admin-quick-link-icon"><Home size={20} aria-hidden="true" /></div>
                 <div className="admin-quick-link-text">
                   <strong>Edit Homepage</strong>
                   <span>Hero slides, stats, about &amp; contact</span>
                 </div>
               </Link>
               <Link href="/admin/pages" className="admin-quick-link">
-                <div className="admin-quick-link-icon">📄</div>
+                <div className="admin-quick-link-icon"><FileText size={20} aria-hidden="true" /></div>
                 <div className="admin-quick-link-text">
                   <strong>All Pages</strong>
                   <span>View and manage all site pages</span>

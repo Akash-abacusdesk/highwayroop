@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 const businesses = [
   {
     name: 'Driveline',
@@ -57,7 +58,7 @@ export default function GroupSection() {
                   ))}
                 </div>
                 <a className="header-cta biz-cta" href="#capabilities">
-                  Explore {b.name} <span aria-hidden="true">→</span>
+                  Explore {b.name} <span aria-hidden="true"><ArrowRight size={18} aria-hidden="true" /></span>
                 </a>
               </div>
             </article>

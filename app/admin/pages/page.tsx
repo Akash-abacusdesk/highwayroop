@@ -1,3 +1,4 @@
+import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function PagesIndex() {
@@ -6,7 +7,7 @@ export default function PagesIndex() {
       <div className="admin-topbar">
         <div className="admin-topbar-breadcrumb">
           <Link href="/admin">Dashboard</Link>
-          <span>›</span>
+          <ChevronRight size={14} aria-hidden="true" />
           <span>Pages</span>
         </div>
       </div>

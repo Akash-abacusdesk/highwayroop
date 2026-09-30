@@ -1,5 +1,6 @@
 'use client'
 
+import { ArrowRight } from 'lucide-react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 
 type StepKey = '01' | '02' | '03' | '04' | '05' | '06'
@@ -156,7 +157,7 @@ export default function CapabilitiesSection() {
             <h3 id="process-title">{title}</h3>
             <p id="process-copy">{copy}</p>
             <a className="button secondary" href="#contact">
-              Discuss a manufacturing requirement <span>→</span>
+              Discuss a manufacturing requirement <span><ArrowRight size={18} aria-hidden="true" /></span>
             </a>
           </div>
         </div>

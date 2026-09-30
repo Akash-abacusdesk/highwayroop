@@ -1,5 +1,6 @@
 'use client'
 
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import type { HeroSlide } from '@/types/content'
 
@@ -124,10 +125,10 @@ export default function HeroCarousel({ slides = defaultSlides }: { slides?: Hero
                 <p className="hero-lede">{slide.lede}</p>
                 <div className="hero-actions">
                   <a className="button primary" href={slide.primaryCtaHref}>
-                    {slide.primaryCtaText} <span>→</span>
+                    {slide.primaryCtaText} <span><ArrowRight size={18} aria-hidden="true" /></span>
                   </a>
                   <a className="text-link" href={slide.secondaryCtaHref}>
-                    {slide.secondaryCtaText} <span>→</span>
+                    {slide.secondaryCtaText} <span><ArrowRight size={18} aria-hidden="true" /></span>
                   </a>
                 </div>
               </div>
@@ -151,8 +152,8 @@ export default function HeroCarousel({ slides = defaultSlides }: { slides?: Hero
           ))}
         </div>
         <div className="hero-arrows">
-          <button className="hero-prev" type="button" aria-label="Previous banner" onClick={() => go(current - 1)}>←</button>
-          <button className="hero-next" type="button" aria-label="Next banner" onClick={() => go(current + 1)}>→</button>
+          <button className="hero-prev" type="button" aria-label="Previous banner" onClick={() => go(current - 1)}><ArrowLeft size={20} aria-hidden="true" /></button>
+          <button className="hero-next" type="button" aria-label="Next banner" onClick={() => go(current + 1)}><ArrowRight size={20} aria-hidden="true" /></button>
         </div>
       </div>
     </section>

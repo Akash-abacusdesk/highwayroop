@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 export default function StoriesSection() {
   return (
     <section className="section corporate-stories" id="innovation" aria-label="Innovation, quality, sustainability, careers and media">
@@ -25,7 +26,7 @@ export default function StoriesSection() {
                 manufacturing requirements before production begins.
               </p>
               <a href="#capabilities">
-                Review engineering capabilities <b>→</b>
+                Review engineering capabilities <b><ArrowRight size={18} aria-hidden="true" /></b>
               </a>
             </div>
           </article>
@@ -41,7 +42,7 @@ export default function StoriesSection() {
                 dimension and process.
               </p>
               <a href="#capabilities">
-                Explore quality systems <b>→</b>
+                Explore quality systems <b><ArrowRight size={18} aria-hidden="true" /></b>
               </a>
             </div>
           </article>
@@ -60,7 +61,7 @@ export default function StoriesSection() {
                 to responsible operating performance.
               </p>
               <a href="#contact">
-                Request sustainability information <b>→</b>
+                Request sustainability information <b><ArrowRight size={18} aria-hidden="true" /></b>
               </a>
             </div>
           </article>
@@ -79,7 +80,7 @@ export default function StoriesSection() {
                 mobility business.
               </p>
               <a href="mailto:info@highwayroop.com?subject=Careers%20at%20Highway%20Roop">
-                Explore opportunities <b>→</b>
+                Explore opportunities <b><ArrowRight size={18} aria-hidden="true" /></b>
               </a>
             </div>
           </article>
@@ -95,12 +96,12 @@ export default function StoriesSection() {
             <a href="#contact">
               <span>Corporate updates</span>
               <b>Business and technology developments</b>
-              <i>→</i>
+              <i><ArrowRight size={18} aria-hidden="true" /></i>
             </a>
             <a href="#contact">
               <span>Press releases</span>
               <b>Official company communications</b>
-              <i>→</i>
+              <i><ArrowRight size={18} aria-hidden="true" /></i>
             </a>
             <a
               href="https://highwayroop.com/assets/images/HRPTL%20Corporate%20Presentation.pdf"
@@ -109,7 +110,7 @@ export default function StoriesSection() {
             >
               <span>Download</span>
               <b>Company presentation</b>
-              <i>→</i>
+              <i><ArrowRight size={18} aria-hidden="true" /></i>
             </a>
           </div>
         </div>

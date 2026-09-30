@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 export default function CorporateSection() {
   return (
     <section className="section corporate-overview" id="corporate">
@@ -105,21 +106,21 @@ export default function CorporateSection() {
                 <small>Company overview</small>
                 <b>Corporate presentation</b>
               </span>
-              <i>→</i>
+              <i><ArrowRight size={18} aria-hidden="true" /></i>
             </a>
             <a href="#media">
               <span>
                 <small>Latest information</small>
                 <b>News and updates</b>
               </span>
-              <i>→</i>
+              <i><ArrowRight size={18} aria-hidden="true" /></i>
             </a>
             <a href="mailto:info@highwayroop.com?subject=Corporate%20Information">
               <span>
                 <small>Direct access</small>
                 <b>Corporate enquiries</b>
               </span>
-              <i>→</i>
+              <i><ArrowRight size={18} aria-hidden="true" /></i>
             </a>
           </div>
         </div>

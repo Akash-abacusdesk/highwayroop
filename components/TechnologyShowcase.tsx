@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 export default function TechnologyShowcase() {
   return (
     <section className="technology-showcase" aria-label="Future mobility">
@@ -18,7 +19,7 @@ export default function TechnologyShowcase() {
             while maintaining dimensional control and production repeatability.
           </p>
           <a href="#innovation">
-            Explore lightweighting capability <b>→</b>
+            Explore lightweighting capability <b><ArrowRight size={18} aria-hidden="true" /></b>
           </a>
         </div>
       </article>
