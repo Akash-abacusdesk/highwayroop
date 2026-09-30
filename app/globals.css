@@ -456,3 +456,18 @@ section[id],article[id],div[id="media"]{scroll-margin-top:126px}
 .global .globe-disc{background:#050d12}
 .global .region-list .region-body button:hover,.global .region-list .region-body button.active{color:#fff}
 .global{margin-top:120px}
+
+/* Businesses */
+.biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--grid-gap)}
+.biz-card{background:#fff;display:flex;flex-direction:column;overflow:hidden}
+.biz-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.biz-body{padding:26px 22px 28px;display:flex;flex-direction:column;flex:1}
+.biz-label{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--red)}
+.biz-body h3{font:500 22px/1.2 "Manrope",sans-serif;margin:14px 0 12px}
+.biz-body p{font-size:14px;line-height:1.6;color:var(--muted);margin:0 0 18px}
+.biz-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.biz-tags a{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:#edf5f8;padding:8px 10px;transition:.2s}
+.biz-tags a:hover{background:var(--blue);color:#fff}
+.biz-cta{margin:auto 0 0;width:max-content}
+@media(max-width:1050px){.biz-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.biz-grid{grid-template-columns:1fr}}
