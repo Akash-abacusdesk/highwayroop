@@ -1,3 +1,4 @@
 import type { NextConfig } from 'next'
-const nextConfig: NextConfig = { distDir: 'out', output: 'standalone' }
+// Vercel expects the default .next dir; keep custom 'out' + standalone for self-hosting.
+const nextConfig: NextConfig = process.env.VERCEL ? {} : { distDir: 'out', output: 'standalone' }
 export default nextConfig
