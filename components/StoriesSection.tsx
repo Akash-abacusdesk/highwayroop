@@ -1,7 +1,8 @@
 import { ArrowRight } from 'lucide-react'
+
 export default function StoriesSection() {
   return (
-    <section className="section corporate-stories" id="innovation" aria-label="Innovation, quality, sustainability, careers and media">
+    <section className="section corporate-stories" id="innovation" aria-label="Innovation and quality">
       <div className="shell">
         <div className="stories-intro reveal">
           <h2>
@@ -25,7 +26,7 @@ export default function StoriesSection() {
                 Product development, simulation, prototyping and process design are connected to solve complex
                 manufacturing requirements before production begins.
               </p>
-              <a href="#capabilities">
+              <a href="#businesses">
                 Review engineering capabilities <b><ArrowRight size={18} aria-hidden="true" /></b>
               </a>
             </div>
@@ -41,12 +42,23 @@ export default function StoriesSection() {
                 Structured quality systems, modern laboratories and end-to-end traceability protect every critical
                 dimension and process.
               </p>
-              <a href="#capabilities">
+              <a href="#businesses">
                 Explore quality systems <b><ArrowRight size={18} aria-hidden="true" /></b>
               </a>
             </div>
           </article>
 
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export function SustainabilitySection() {
+  return (
+    <section className="section corporate-stories" aria-label="Sustainability">
+      <div className="shell">
+        <div className="story-grid story-single">
           <article className="story-card story-sustainability reveal" id="sustainability">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -66,26 +78,16 @@ export default function StoriesSection() {
             </div>
           </article>
 
-          <article className="story-card story-careers reveal" id="careers">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/assets/careers-team.png"
-              alt="Highway Roop engineering and manufacturing professionals"
-            />
-            <div className="story-copy">
-              <span>LEARNING · OPPORTUNITY · IMPACT</span>
-              <h2>Careers</h2>
-              <p>
-                Build deep engineering experience, solve real manufacturing problems and grow with an integrated global
-                mobility business.
-              </p>
-              <a href="mailto:info@highwayroop.com?subject=Careers%20at%20Highway%20Roop">
-                Explore opportunities <b><ArrowRight size={18} aria-hidden="true" /></b>
-              </a>
-            </div>
-          </article>
         </div>
+      </div>
+    </section>
+  )
+}
 
+export function NewsSection() {
+  return (
+    <section className="section corporate-stories" aria-label="News and insights">
+      <div className="shell">
         <div className="media-hub reveal" id="media">
           <div>
             <span>NEWS &amp; RESOURCES</span>
@@ -113,6 +115,35 @@ export default function StoriesSection() {
               <i><ArrowRight size={18} aria-hidden="true" /></i>
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export function CareersSection() {
+  return (
+    <section className="section corporate-stories" aria-label="Careers">
+      <div className="shell">
+        <div className="story-grid story-single">
+          <article className="story-card story-careers reveal" id="careers">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/careers-team.png"
+              alt="Highway Roop engineering and manufacturing professionals"
+            />
+            <div className="story-copy">
+              <span>LEARNING · OPPORTUNITY · IMPACT</span>
+              <h2>Careers</h2>
+              <p>
+                Build deep engineering experience, solve real manufacturing problems and grow with an integrated global
+                mobility business.
+              </p>
+              <a href="mailto:info@highwayroop.com?subject=Careers%20at%20Highway%20Roop">
+                Explore opportunities <b><ArrowRight size={18} aria-hidden="true" /></b>
+              </a>
+            </div>
+          </article>
         </div>
       </div>
     </section>

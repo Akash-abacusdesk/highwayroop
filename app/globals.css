@@ -484,3 +484,8 @@ span:has(>svg.lucide),b:has(>svg.lucide),i:has(>svg.lucide){display:inline-flex;
 /* Global section: white text on dark */
 .global .global-copy>p,.global .region-num,.global .region-body button,.global .global-stats strong,.global .global-stats span,.global .text-link.accent{color:#fff}
 .global .region-list li.open .region-num{color:var(--red)}
+
+/* Single-card story sections: full width, no leftover 2-column grid rows */
+.story-grid.story-single{grid-template-columns:1fr;grid-template-rows:auto}
+.story-grid.story-single .story-card{grid-column:1;grid-row:auto;min-height:520px}
+.corporate-stories+.corporate-stories{padding-top:0}

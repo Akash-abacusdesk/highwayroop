@@ -7,29 +7,25 @@ import type { Country } from './globe/geo'
 
 // ISO 3166-1 numeric codes of the countries outlined for each region.
 const EUROPE = ['008','020','040','056','070','100','191','196','203','208','233','246','250','276','300','348','352','372','380','428','438','440','442','807','470','498','492','499','528','578','616','620','642','688','703','705','724','752','756','804','826','112']
-const LATAM = ['484','320','084','340','222','558','188','591','192','214','332','388','630','780','032','068','076','152','170','218','328','600','604','740','858','862']
 const APAC = ['156','158','392','410','408','496','704','764','116','418','104','458','702','360','096','608','626','598','036','554','242','090','548','050','144','524','064','462','004']
 
-// PLACEHOLDER facilities (real cities, generic names) until actual details are provided.
-const site = (id: string, n: number, city: string, latitude: number, longitude: number) =>
-  ({ id: `${id}-${n}`, name: `Facility ${n}`, city, latitude, longitude })
+// Warehouse locations from the Highway Roop warehouse map (14 warehouses, grouped by continent).
+const wh = (id: string, n: number, city: string, latitude: number, longitude: number) =>
+  ({ id: `${id}-${n}`, name: `Warehouse ${n}`, city, latitude, longitude })
 
 const regions: Country[] = [
   { id: 'in', name: 'India', isoNumerics: ['356'], latitude: 22, longitude: 79, zoom: 2.7, stores: [
-    site('in', 1, 'New Delhi', 28.61, 77.21), site('in', 2, 'Pune', 18.52, 73.86),
-    site('in', 3, 'Chennai', 13.08, 80.27), site('in', 4, 'Ahmedabad', 23.02, 72.57) ] },
-  { id: 'na', name: 'North America', isoNumerics: ['840', '124'], latitude: 48, longitude: -100, zoom: 1.6, stores: [
-    site('na', 1, 'Chicago', 41.88, -87.63), site('na', 2, 'Houston', 29.76, -95.37),
-    site('na', 3, 'Toronto', 43.65, -79.38) ] },
+    wh('in', 1, 'Gurugram', 28.46, 77.03), wh('in', 2, 'Gujarat', 23.02, 72.57),
+    wh('in', 3, 'Uttarakhand', 30.32, 78.03), wh('in', 4, 'Ludhiana', 30.9, 75.86),
+    wh('in', 5, 'Pune', 18.52, 73.86) ] },
+  { id: 'na', name: 'North America', isoNumerics: ['840', '124', '484'], latitude: 42, longitude: -100, zoom: 1.6, stores: [
+    wh('na', 1, 'Woodstock, Toronto', 43.13, -80.75), wh('na', 2, 'Edison, New Jersey', 40.52, -74.41),
+    wh('na', 3, 'Detroit, MI', 42.33, -83.05), wh('na', 4, 'Chesterfield, MI', 42.68, -82.83),
+    wh('na', 5, 'Riverview, Pennsylvania', 40.6, -76.9), wh('na', 6, 'Coahuila, Mexico', 25.42, -101.0) ] },
   { id: 'eu', name: 'Europe', isoNumerics: EUROPE, latitude: 52, longitude: 14, zoom: 3, stores: [
-    site('eu', 1, 'Frankfurt', 50.11, 8.68), site('eu', 2, 'Rotterdam', 51.92, 4.48),
-    site('eu', 3, 'Warsaw', 52.23, 21.01) ] },
-  { id: 'latam', name: 'Latin America', isoNumerics: LATAM, latitude: -10, longitude: -65, zoom: 1.6, stores: [
-    site('latam', 1, 'Mexico City', 19.43, -99.13), site('latam', 2, 'Bogotá', 4.71, -74.07),
-    site('latam', 3, 'São Paulo', -23.55, -46.63) ] },
+    wh('eu', 1, 'Opole, Poland', 50.67, 17.93), wh('eu', 2, 'Bratislava, Slovakia', 48.15, 17.11) ] },
   { id: 'apac', name: 'Asia Pacific', isoNumerics: APAC, latitude: 5, longitude: 115, zoom: 1.5, stores: [
-    site('apac', 1, 'Tokyo', 35.68, 139.69), site('apac', 2, 'Singapore', 1.35, 103.82),
-    site('apac', 3, 'Sydney', -33.87, 151.21) ] },
+    wh('apac', 1, 'Bangkok, Thailand', 13.76, 100.5) ] },
 ]
 
 // True while the element is on screen (starting `margin` early when `once`).
@@ -81,8 +77,8 @@ export default function GlobalSection() {
             <em>Responsive customer support.</em>
           </h2>
           <p>
-            Twelve manufacturing facilities in India connect with fourteen international warehouses across seven
-            countries, supporting coordinated delivery across automotive markets.
+            Twelve manufacturing facilities in India connect with fourteen warehouses serving seventeen countries,
+            supporting coordinated delivery across automotive markets.
           </p>
 
           <ol className="region-list">
@@ -139,10 +135,10 @@ export default function GlobalSection() {
             </div>
             <div>
               <strong>14</strong>
-              <span>International warehouses</span>
+              <span>Warehouses</span>
             </div>
             <div>
-              <strong>7</strong>
+              <strong>17</strong>
               <span>Countries served</span>
             </div>
           </div>

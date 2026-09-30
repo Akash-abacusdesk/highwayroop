@@ -18,7 +18,7 @@ export default function TechnologyShowcase() {
             Advanced aluminium die casting, design optimisation and precision manufacturing help reduce component mass
             while maintaining dimensional control and production repeatability.
           </p>
-          <a href="#innovation">
+          <a href="#businesses">
             Explore lightweighting capability <b><ArrowRight size={18} aria-hidden="true" /></b>
           </a>
         </div>

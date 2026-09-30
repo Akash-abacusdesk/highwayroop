@@ -1,7 +1,7 @@
 'use client'
 
 import { ArrowRight } from 'lucide-react'
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { Fragment, useState, useEffect, useRef, useCallback } from 'react'
 
 type Col = { title: string; links: [string, string][] }
 type Menu = { label: string; href: string; intro: string; cols: Col[] }
@@ -22,7 +22,7 @@ const MENUS: Menu[] = [
     intro: 'Three specialist businesses delivering engineered mobility systems.',
     cols: ['Driveline', 'Steering & Suspension', 'Lightweighting'].map(t => ({
       title: t.toUpperCase(),
-      links: [['#capabilities', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions']] as [string, string][],
+      links: [['#businesses', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions']] as [string, string][],
     })),
   },
   {
@@ -41,6 +41,14 @@ const MENUS: Menu[] = [
       { title: 'GOVERNANCE', links: [['#corporate', 'Corporate Governance'], ['#corporate', 'Board & Committees'], ['#corporate', 'Policies'], ['#corporate', 'Disclosures']] },
       { title: 'SHAREHOLDERS', links: [['#corporate', 'Shareholding'], ['#corporate', 'Credit Ratings'], ['#corporate', 'Investor Meetings']] },
       { title: 'SUPPORT', links: [['#corporate', 'Registrar & Transfer Agent'], ['#corporate', 'Investor Grievance']] },
+    ],
+  },
+  {
+    label: 'Contact', href: '#contact',
+    intro: 'Reach our offices, plants and business teams.',
+    cols: [
+      { title: 'OFFICES & PLANTS', links: [['#contact', 'Corporate Office'], ['#global', 'Manufacturing Locations']] },
+      { title: 'GET IN TOUCH', links: [['#contact', 'Business Enquiries'], ['#contact', 'General / Investor Contact']] },
     ],
   },
 ]
@@ -120,7 +128,7 @@ export default function Header() {
   )
 
   const mobileLinks: [string, string][] = [
-    ...MENUS.map(m => [m.href, m.label] as [string, string]),
+    ...MENUS.filter(m => m.label !== 'Contact').map(m => [m.href, m.label] as [string, string]),
     ['#media', 'News & Insights'],
     ['#careers', 'Careers'],
     ['#contact', 'Contact'],
@@ -164,8 +172,14 @@ export default function Header() {
         </a>
         <nav className="main-nav" aria-label="Primary navigation">
           {MENUS.map((m, i) => (
+            <Fragment key={m.label}>
+            {m.label === 'Contact' && (
+              <>
+                <a href="#media">News &amp; Insights</a>
+                <a href="#careers">Careers</a>
+              </>
+            )}
             <div
-              key={m.label}
               className="mega-nav-item"
               onMouseEnter={() => setActive(i)}
               onMouseLeave={e => {
@@ -183,13 +197,9 @@ export default function Header() {
                 {m.label}
               </button>
             </div>
+            </Fragment>
           ))}
-          <a href="#media">News &amp; Insights</a>
-          <a href="#careers">Careers</a>
         </nav>
-        <a className="header-cta" href="#contact">
-          Contact <span aria-hidden="true"><ArrowRight size={18} aria-hidden="true" /></span>
-        </a>
         <button
           className="menu-toggle"
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}

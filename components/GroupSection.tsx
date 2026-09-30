@@ -4,19 +4,19 @@ const businesses = [
     name: 'Driveline',
     image: '/assets/advanced-forging.png',
     desc: 'Precision-forged and machined components engineered for demanding engine, transmission and driveline applications.',
-    tags: [['#capabilities', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],
+    tags: [['#businesses', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],
   },
   {
     name: 'Steering & Suspension',
     image: '/assets/hero-precision.png',
     desc: 'Safety-critical components and assemblies designed for control, durability and consistent vehicle performance.',
-    tags: [['#capabilities', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],
+    tags: [['#businesses', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],
   },
   {
     name: 'Lightweighting',
     image: '/assets/lightweighting-ev.png',
     desc: 'Aluminium die casting, tooling and precision manufacturing for efficient ICE and next-generation EV architectures.',
-    tags: [['#capabilities', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],
+    tags: [['#businesses', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],
   },
 ]
 
@@ -57,7 +57,7 @@ export default function GroupSection() {
                     <a key={label} href={href}>{label}</a>
                   ))}
                 </div>
-                <a className="header-cta biz-cta" href="#capabilities">
+                <a className="header-cta biz-cta" href="#businesses">
                   Explore {b.name} <span aria-hidden="true"><ArrowRight size={18} aria-hidden="true" /></span>
                 </a>
               </div>

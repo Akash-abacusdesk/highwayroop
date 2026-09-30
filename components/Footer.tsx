@@ -13,10 +13,10 @@ export default function Footer() {
         <div className="footer-links">
           <a href="#about">About</a>
           <a href="#businesses">Businesses</a>
-          <a href="#capabilities">Capabilities</a>
+          <a href="#businesses">Capabilities</a>
           <a href="#global">Global Presence</a>
           <a href="#corporate">Corporate Information</a>
-          <a href="#innovation">Innovation &amp; Quality</a>
+          <a href="#businesses">Innovation &amp; Quality</a>
           <a href="#sustainability">Sustainability</a>
           <a href="#careers">Careers</a>
           <a href="#media">Media</a>

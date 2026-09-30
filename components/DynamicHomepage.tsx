@@ -3,15 +3,16 @@
 import { useState, useEffect } from 'react'
 import type { HomepageContent } from '@/types/content'
 import HeroCarousel from './HeroCarousel'
-import ScaleStats from './ScaleStats'
+// import ScaleStats from './ScaleStats'
 import IntroSection from './IntroSection'
 import GroupSection from './GroupSection'
-import CapabilitiesSection from './CapabilitiesSection'
-import TechnologyShowcase from './TechnologyShowcase'
+// import CapabilitiesSection from './CapabilitiesSection'
+// import TechnologyShowcase from './TechnologyShowcase'
 import GlobalSection from './GlobalSection'
 import LeadershipSection from './LeadershipSection'
 import CorporateSection from './CorporateSection'
-import StoriesSection from './StoriesSection'
+import { SustainabilitySection, NewsSection, CareersSection } from './StoriesSection'
+// import StoriesSection from './StoriesSection' // Engineering & Quality: hidden per new homepage order
 import ContactSection from './ContactSection'
 
 export default function DynamicHomepage({ initial }: { initial: HomepageContent }) {
@@ -27,16 +28,23 @@ export default function DynamicHomepage({ initial }: { initial: HomepageContent 
   return (
     <>
       <HeroCarousel slides={content.hero.slides} />
-      <ScaleStats stats={content.stats} />
       <IntroSection content={content.intro} />
       <GroupSection />
-      <CapabilitiesSection />
-      <TechnologyShowcase />
       <GlobalSection />
       <LeadershipSection />
-      <CorporateSection />
-      <StoriesSection />
+      {/* Customers: no section built yet */}
+      <SustainabilitySection />
+      <NewsSection />
+      <CorporateSection /> {/* Investors */}
+      <CareersSection />
       <ContactSection content={content.contact} />
+
+      {/* Hidden per new homepage order (kept for later):
+      <ScaleStats stats={content.stats} />
+      <CapabilitiesSection />
+      <TechnologyShowcase />
+      <StoriesSection />
+      */}
     </>
   )
 }
