@@ -11,7 +11,6 @@ import TechnologyShowcase from './TechnologyShowcase'
 import GlobalSection from './GlobalSection'
 import LeadershipSection from './LeadershipSection'
 import CorporateSection from './CorporateSection'
-import SolutionsSection from './SolutionsSection'
 import StoriesSection from './StoriesSection'
 import ContactSection from './ContactSection'
 
@@ -36,7 +35,6 @@ export default function DynamicHomepage({ initial }: { initial: HomepageContent 
       <GlobalSection />
       <LeadershipSection />
       <CorporateSection />
-      <SolutionsSection />
       <StoriesSection />
       <ContactSection content={content.contact} />
     </>
