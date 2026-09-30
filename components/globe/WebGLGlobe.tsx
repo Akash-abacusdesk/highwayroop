@@ -230,7 +230,7 @@ function Scene({ countries, activeCountryId, activeStoreId, hoveredId, inView, r
   useEffect(() => () => edge.dispose(), [edge]);
 
   const stores = useMemo(
-    () => countries.flatMap((c) => c.stores.map((s) => ({ ...s, countryId: c.id, position: toVec3(s, 1.003) }))),
+    () => countries.flatMap((c) => c.stores.map((s) => ({ ...s, countryId: c.id, position: toVec3(s, 1.014) }))),
     [countries],
   );
 
@@ -337,11 +337,19 @@ function Scene({ countries, activeCountryId, activeStoreId, hoveredId, inView, r
           </lineSegments>
           {stores.map((s, i) => {
             const inCountry = s.countryId === activeCountryId;
-            const color = inCountry ? C.signal : s.countryId === hoveredId ? C.markerHover : C.marker;
+            const selected = s.id === activeStoreId;
+            // Every warehouse is a red dot; the selected one turns white with a red-ringed halo.
+            const color = selected ? "#ffffff" : s.countryId === hoveredId ? C.markerHover : C.signal;
             return (
-              <mesh key={s.id} ref={(m) => void (markerRefs.current[i] = m)} position={s.position}>
-                <sphereGeometry args={[inCountry ? 0.013 : 0.01, 12, 12]} />
+              <mesh key={s.id} ref={(m) => void (markerRefs.current[i] = m)} position={s.position} renderOrder={10}>
+                <sphereGeometry args={[inCountry ? 0.02 : 0.016, 16, 16]} />
                 <meshBasicMaterial color={color} />
+                {selected && (
+                  <mesh renderOrder={9}>
+                    <sphereGeometry args={[0.042, 24, 24]} />
+                    <meshBasicMaterial color={C.signal} transparent opacity={0.45} depthWrite={false} />
+                  </mesh>
+                )}
               </mesh>
             );
           })}
