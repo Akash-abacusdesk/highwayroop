@@ -459,7 +459,7 @@ section[id],article[id],div[id="media"]{scroll-margin-top:126px}
 /* Businesses */
 .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--grid-gap)}
 .biz-card{background:#fff;display:flex;flex-direction:column;overflow:hidden}
-.biz-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.biz-card img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}
 .biz-body{padding:26px 22px 28px;display:flex;flex-direction:column;flex:1}
 .biz-label{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--red)}
 .biz-body h3{font:500 22px/1.2 var(--font-josefin),"Josefin Sans",sans-serif;margin:0 0 12px}
@@ -528,3 +528,4 @@ span:has(>svg.lucide),b:has(>svg.lucide),i:has(>svg.lucide){display:inline-flex;
 
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .brand img,.site-footer img,footer img{height:auto}
+@media(max-width:700px){.hero-bg{object-position:65% center}}
