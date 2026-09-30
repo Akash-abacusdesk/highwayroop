@@ -5,7 +5,7 @@
         "eyebrow": "HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED",
         "headingLine1": "Integrated precision.",
         "headingLine2": "Delivered at global scale.",
-        "lede": "Twelve manufacturing facilities and fourteen international warehouses connect specialist engineering and production capabilities with 50+ OEM and Tier-1 relationships.",
+        "lede": "Fifteen manufacturing plants and fourteen warehouses connect specialist engineering and production capabilities with 50+ OEM and Tier-1 relationships.",
         "primaryCtaText": "Explore the group",
         "primaryCtaHref": "#businesses",
         "secondaryCtaText": "View global footprint",
@@ -35,15 +35,15 @@
   },
   "stats": [
     { "count": 50, "suffix": "+", "label": "Years of\nengineering legacy" },
-    { "count": 12, "suffix": "+", "label": "Manufacturing\nfacilities" },
-    { "count": 14, "suffix": "",  "label": "International\nwarehouses" },
+    { "count": 15, "suffix": "", "label": "Manufacturing\nplants" },
+    { "count": 14, "suffix": "",  "label": "Warehouses" },
     { "count": 7,  "suffix": "",  "label": "Countries in our\nglobal network" },
     { "count": 50, "suffix": "+", "label": "OEM & Tier-1\nrelationships" }
   ],
   "intro": {
     "headingLine1": "Integrated scale.",
     "headingLine2": "Accountable execution.",
-    "para1": "Highway Roop comprises a group holding company and four operating entities, with capabilities spanning forging, machining, aluminium die casting and captive tooling.",
+    "para1": "Highway Roop was formed by Highway Industries, Roop Automotives and Chamundi, with capabilities spanning forging, machining, aluminium die casting and captive tooling.",
     "para2": "More than five decades of combined engineering experience support safety-critical steering, transmission, suspension and powertrain programmes across ICE and EV applications.",
     "ctaText": "Explore the operating platform",
     "ctaHref": "#businesses"

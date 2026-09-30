@@ -28,7 +28,7 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
         justifyContent: 'center',
         height: '100vh',
         background: '#f1f5f9',
-        fontFamily: '"DM Sans", sans-serif',
+        fontFamily: '"Josefin Sans", sans-serif',
         color: '#64748b',
         fontSize: 14,
       }}>

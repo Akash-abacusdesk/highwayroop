@@ -4,7 +4,7 @@ import type { IntroContent } from '@/types/content'
 const defaultContent: IntroContent = {
   headingLine1: 'Integrated scale.',
   headingLine2: 'Accountable execution.',
-  para1: 'Highway Roop comprises a group holding company and four operating entities, with capabilities spanning forging, machining, aluminium die casting and captive tooling.',
+  para1: 'Highway Roop was formed by Highway Industries, Roop Automotives and Chamundi, with capabilities spanning forging, machining, aluminium die casting and captive tooling.',
   para2: 'More than five decades of combined engineering experience support safety-critical steering, transmission, suspension and powertrain programmes across ICE and EV applications.',
   ctaText: 'Explore the operating platform',
   ctaHref: '#businesses',
@@ -33,7 +33,7 @@ export default function IntroSection({ content = defaultContent }: { content?: I
         </div>
         <figure className="intro-visual reveal">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/manufacturing-excellence.png" alt="Highway Roop precision manufacturing operations" />
+          <img loading="lazy" decoding="async" src="/assets/manufacturing-excellence.webp" alt="Highway Roop precision manufacturing operations" />
         </figure>
       </div>
     </section>

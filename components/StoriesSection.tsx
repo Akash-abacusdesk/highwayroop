@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Download } from 'lucide-react'
 
 export default function StoriesSection() {
   return (
@@ -18,7 +18,7 @@ export default function StoriesSection() {
         <div className="story-grid">
           <article className="story-card story-innovation reveal">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/innovation-rd.png" alt="Highway Roop engineers collaborating in an R&D centre" />
+            <img loading="lazy" decoding="async" src="/assets/innovation-rd.webp" alt="Highway Roop engineers collaborating in an R&D centre" />
             <div className="story-copy">
               <span>R&amp;D · ENGINEERING · ICE + EV</span>
               <h2>Engineering &amp; Innovation</h2>
@@ -34,7 +34,7 @@ export default function StoriesSection() {
 
           <article className="story-card story-quality reveal">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/quality-lab.png" alt="Precision component testing in a metrology laboratory" />
+            <img loading="lazy" decoding="async" src="/assets/quality-lab.webp" alt="Precision component testing in a metrology laboratory" />
             <div className="story-copy">
               <span>METROLOGY · TESTING · VALIDATION</span>
               <h2>Quality</h2>
@@ -61,8 +61,8 @@ export function SustainabilitySection() {
         <div className="story-grid story-single">
           <article className="story-card story-sustainability reveal" id="sustainability">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/assets/sustainable-plant.png"
+            <img loading="lazy" decoding="async"
+              src="/assets/sustainable-plant.webp"
               alt="Sustainable automotive plant with solar panels and water management"
             />
             <div className="story-copy">
@@ -84,36 +84,60 @@ export function SustainabilitySection() {
   )
 }
 
+const newsLinks = [
+  { label: 'Corporate updates', title: 'Business and technology developments', image: '/assets/innovation-rd.webp', href: '#contact', Icon: ArrowRight },
+  { label: 'Press releases', title: 'Official company communications', image: '/assets/manufacturing-excellence.webp', href: '#contact', Icon: ArrowRight },
+  {
+    label: 'Download',
+    title: 'Company presentation',
+    image: '/assets/tooling-engineering.webp',
+    href: 'https://highwayroop.com/assets/images/HRPTL%20Corporate%20Presentation.pdf',
+    Icon: Download,
+    external: true,
+  },
+]
+
 export function NewsSection() {
   return (
-    <section className="section corporate-stories" aria-label="News and insights">
+    <section className="section corporate-stories news-section" id="media" aria-label="News and insights">
       <div className="shell">
-        <div className="media-hub reveal" id="media">
+        <div className="section-head reveal">
           <div>
-            <span>NEWS &amp; RESOURCES</span>
-            <h2>Corporate information and updates</h2>
+            <h2>
+              News &amp; insights.<br />
+              <em>Updates and resources.</em>
+            </h2>
             <p>Company announcements, business developments and essential corporate resources.</p>
           </div>
-          <div className="media-links">
-            <a href="#contact">
-              <span>Corporate updates</span>
-              <b>Business and technology developments</b>
-              <i><ArrowRight size={18} aria-hidden="true" /></i>
-            </a>
-            <a href="#contact">
-              <span>Press releases</span>
-              <b>Official company communications</b>
-              <i><ArrowRight size={18} aria-hidden="true" /></i>
-            </a>
-            <a
-              href="https://highwayroop.com/assets/images/HRPTL%20Corporate%20Presentation.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Download</span>
-              <b>Company presentation</b>
-              <i><ArrowRight size={18} aria-hidden="true" /></i>
-            </a>
+        </div>
+        <div className="news-hub reveal">
+          <a className="news-feature" href="#about">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img loading="lazy" decoding="async" src="/assets/hero-mobility-v2.webp" alt="" />
+            <div className="news-feature-copy">
+              <span>FEATURED</span>
+              <h3>Building a scaled, India-based auto-components platform</h3>
+              <p>Carlyle acquired a controlling stake in February 2025 and May 2026.</p>
+              <b>Read the story <ArrowRight size={18} aria-hidden="true" /></b>
+            </div>
+          </a>
+          <div className="news-list">
+            {newsLinks.map(({ label, title, image, href, Icon, external }) => (
+              <a
+                key={label}
+                className="news-item"
+                href={href}
+                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img loading="lazy" decoding="async" src={image} alt="" />
+                <span className="news-item-copy">
+                  <small>{label}</small>
+                  <b>{title}</b>
+                </span>
+                <i><Icon size={18} aria-hidden="true" /></i>
+              </a>
+            ))}
           </div>
         </div>
       </div>
@@ -128,8 +152,8 @@ export function CareersSection() {
         <div className="story-grid story-single">
           <article className="story-card story-careers reveal" id="careers">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/assets/careers-team.png"
+            <img loading="lazy" decoding="async"
+              src="/assets/careers-team.webp"
               alt="Highway Roop engineering and manufacturing professionals"
             />
             <div className="story-copy">

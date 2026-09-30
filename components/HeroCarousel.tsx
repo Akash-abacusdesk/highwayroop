@@ -9,7 +9,7 @@ const defaultSlides: HeroSlide[] = [
     eyebrow: 'HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED',
     headingLine1: 'Integrated precision.',
     headingLine2: 'Delivered at global scale.',
-    lede: 'Twelve manufacturing facilities and fourteen international warehouses connect specialist engineering and production capabilities with 50+ OEM and Tier-1 relationships.',
+    lede: 'Fifteen manufacturing plants and fourteen warehouses connect specialist engineering and production capabilities with 50+ OEM and Tier-1 relationships.',
     primaryCtaText: 'Explore the group',
     primaryCtaHref: '#businesses',
     secondaryCtaText: 'View global footprint',

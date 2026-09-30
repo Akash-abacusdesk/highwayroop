@@ -4,8 +4,8 @@ export default function TechnologyShowcase() {
     <section className="technology-showcase" aria-label="Future mobility">
       <article className="technology-story light-story reveal">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/assets/lightweighting-ev.png"
+        <img loading="lazy" decoding="async"
+          src="/assets/lightweighting-ev.webp"
           alt="Lightweight aluminium components for next-generation electric vehicles"
         />
         <div className="technology-overlay">

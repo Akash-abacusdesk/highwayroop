@@ -38,7 +38,7 @@ export default function LoginPage() {
       <div className="login-card">
         <div className="login-brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/highwayroop/assets/highway-roop-logo.png" alt="Highway Roop" />
+          <img src="/highwayroop/assets/highway-roop-logo.webp" alt="Highway Roop" />
           <span className="login-brand-tag">Admin</span>
         </div>
 

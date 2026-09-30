@@ -25,12 +25,12 @@ export default function CorporateSection() {
             <span>Years of combined<br />engineering legacy</span>
           </article>
           <article>
-            <strong>12+</strong>
-            <span>Manufacturing<br />facilities</span>
+            <strong>15</strong>
+            <span>Manufacturing<br />plants</span>
           </article>
           <article>
             <strong>14</strong>
-            <span>International<br />warehouses</span>
+            <span>Warehouses</span>
           </article>
           <article>
             <strong>50+</strong>

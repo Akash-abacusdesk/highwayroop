@@ -77,7 +77,7 @@ export default function GlobalSection() {
             <em>Responsive customer support.</em>
           </h2>
           <p>
-            Twelve manufacturing facilities in India connect with fourteen warehouses serving seventeen countries,
+            Fifteen manufacturing plants in India connect with fourteen warehouses across seven countries,
             supporting coordinated delivery across automotive markets.
           </p>
 
@@ -130,15 +130,15 @@ export default function GlobalSection() {
 
           <div className="global-stats">
             <div>
-              <strong>12+</strong>
-              <span>Manufacturing facilities</span>
+              <strong>15</strong>
+              <span>Manufacturing plants</span>
             </div>
             <div>
               <strong>14</strong>
               <span>Warehouses</span>
             </div>
             <div>
-              <strong>17</strong>
+              <strong>7</strong>
               <span>Countries served</span>
             </div>
           </div>

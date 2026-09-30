@@ -2,19 +2,19 @@ import { ArrowRight } from 'lucide-react'
 const businesses = [
   {
     name: 'Driveline',
-    image: '/assets/advanced-forging.png',
+    image: '/assets/advanced-forging.webp',
     desc: 'Precision-forged and machined components engineered for demanding engine, transmission and driveline applications.',
     tags: [['#businesses', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],
   },
   {
     name: 'Steering & Suspension',
-    image: '/assets/hero-precision.png',
+    image: '/assets/hero-precision.webp',
     desc: 'Safety-critical components and assemblies designed for control, durability and consistent vehicle performance.',
     tags: [['#businesses', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],
   },
   {
     name: 'Lightweighting',
-    image: '/assets/lightweighting-ev.png',
+    image: '/assets/lightweighting-ev.webp',
     desc: 'Aluminium die casting, tooling and precision manufacturing for efficient ICE and next-generation EV architectures.',
     tags: [['#businesses', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],
   },
@@ -42,14 +42,11 @@ export default function GroupSection() {
         </div>
 
         <div className="biz-grid">
-          {businesses.map((b, i) => (
+          {businesses.map(b => (
             <article key={b.name} className="biz-card reveal">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={b.image} alt={b.name} />
+              <img loading="lazy" decoding="async" src={b.image} alt={b.name} />
               <div className="biz-body">
-                <span className="biz-label">
-                  {String(i + 1).padStart(2, '0')} / {b.name.toUpperCase()}
-                </span>
                 <h3>{b.name}</h3>
                 <p>{b.desc}</p>
                 <div className="biz-tags">

@@ -24,7 +24,7 @@ export default function AdminSidebar() {
       {/* Brand */}
       <div className="admin-brand">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/highway-roop-logo.png" alt="Highway Roop" />
+        <img src="/assets/highway-roop-logo.webp" alt="Highway Roop" />
         <span className="admin-brand-tag">Admin</span>
       </div>
 

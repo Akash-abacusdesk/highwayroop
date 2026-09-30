@@ -9,37 +9,37 @@ const processContent: Record<StepKey, [string, string, string, string]> = {
   '01': [
     'Product Engineering',
     'Design engineering, simulation and value engineering shape robust products before industrialisation begins.',
-    '/assets/innovation-rd.png',
+    '/assets/innovation-rd.webp',
     'Engineers developing a precision automotive component',
   ],
   '02': [
     'Tooling & Prototyping',
     'Integrated tooling and prototype capability accelerate validation, repeatability and production readiness.',
-    '/assets/tooling-engineering.png',
+    '/assets/tooling-engineering.webp',
     'Automotive tool and die engineering',
   ],
   '03': [
     'Forging & Die Casting',
     'Advanced forging and aluminium die casting create high-integrity, lightweight forms for critical applications.',
-    '/assets/advanced-forging.png',
+    '/assets/advanced-forging.webp',
     'Advanced forging of an automotive component',
   ],
   '04': [
     'Precision Machining',
     'High-accuracy machining delivers demanding geometries, tolerances and repeatability at production scale.',
-    '/assets/manufacturing-excellence.png',
+    '/assets/manufacturing-excellence.webp',
     'Automated precision machining facility',
   ],
   '05': [
     'Assembly & Finishing',
     'Controlled heat treatment, surface finishing and assembly complete the production journey.',
-    '/assets/hero-precision.png',
+    '/assets/hero-precision.webp',
     'Finished precision drivetrain and steering components',
   ],
   '06': [
     'Testing & Validation',
     'Metrology, testing, traceability and validation protect quality through every manufacturing stage.',
-    '/assets/quality-lab.png',
+    '/assets/quality-lab.webp',
     'Component inspection in a quality laboratory',
   ],
 }
@@ -151,7 +151,7 @@ export default function CapabilitiesSection() {
 
         <div className={`capability-feature reveal${changing ? ' changing' : ''}`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img id="process-image" src={image} alt={alt} />
+          <img loading="lazy" decoding="async" id="process-image" src={image} alt={alt} />
           <div className="feature-panel" aria-live="polite">
             <span>MANUFACTURING EXCELLENCE</span>
             <h3 id="process-title">{title}</h3>

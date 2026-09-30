@@ -22,7 +22,7 @@ export default function LeadershipSection() {
           <article className="leader-feature reveal">
             <div className="leader-photo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/dharmesh-arora-ceo.png" alt="Dharmesh Arora, CEO" />
+              <img loading="lazy" decoding="async" src="/assets/dharmesh-arora-ceo.webp" alt="Dharmesh Arora, CEO" />
             </div>
             <div className="leader-detail">
               <span>MESSAGE FROM THE CEO</span>
