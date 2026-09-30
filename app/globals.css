@@ -490,3 +490,6 @@ span:has(>svg.lucide),b:has(>svg.lucide),i:has(>svg.lucide){display:inline-flex;
 .story-grid.story-single .story-card{grid-column:1;grid-row:auto;min-height:520px}
 .corporate-stories+.corporate-stories{padding-top:0}
 .media-hub{margin-top:0}
+/* Pillars fill the full height of the thesis panel instead of leaving empty background */
+.corporate-pillars{display:grid;grid-template-rows:repeat(3,1fr)}
+@media(max-width:1050px){.corporate-pillars{display:block}}
