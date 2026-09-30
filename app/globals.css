@@ -526,3 +526,13 @@ span:has(>svg.lucide),b:has(>svg.lucide),i:has(>svg.lucide){display:inline-flex;
 .global .global-copy h2 em{color:#6fc3e0}
 /* Contrast fixes: existing muted grey, AA on white */
 .corporate-proof span,.footer-bottom,.footer-bottom span{color:var(--muted)}
+
+/* Mobile: smaller hero images; slides 2 and 3 load only after the page is ready */
+.hero-slide-two,.hero-slide-three{background-image:none}
+.hero-carousel.is-ready .hero-slide-two{background-image:url('/assets/hero-industrialisation-v3.webp')}
+.hero-carousel.is-ready .hero-slide-three{background-image:url('/assets/hero-future-mobility-v3.webp')}
+@media(max-width:700px){
+  .hero-slide-one{background-image:url('/assets/hero-global-engineering-v3-800.webp')}
+  .hero-carousel.is-ready .hero-slide-two{background-image:url('/assets/hero-industrialisation-v3-800.webp')}
+  .hero-carousel.is-ready .hero-slide-three{background-image:url('/assets/hero-future-mobility-v3-800.webp')}
+}

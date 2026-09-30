@@ -75,6 +75,14 @@ export default function HeroCarousel({ slides = defaultSlides }: { slides?: Hero
   }, [])
 
   useEffect(() => {
+    // Slides 2 and 3 fetch their images only once the page has finished loading.
+    const ready = () => heroRef.current?.classList.add('is-ready')
+    if (document.readyState === 'complete') ready()
+    else window.addEventListener('load', ready, { once: true })
+    return () => window.removeEventListener('load', ready)
+  }, [])
+
+  useEffect(() => {
     startRotation()
     return () => {
       if (timerRef.current) clearInterval(timerRef.current)
