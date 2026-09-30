@@ -1,0 +1,18 @@
+Options -MultiViews -Indexes
+DirectoryIndex index.html index.php
+
+RewriteEngine On
+RewriteBase /highwayroop/
+
+# 1. Serve real files as-is (css, js, images, php)
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# 2. Map any clean URL (with or without trailing slash) to its .html file
+#    e.g. /highwayroop/admin/ or /highwayroop/admin → admin.html
+#    e.g. /highwayroop/admin/pages/ → admin/pages.html
+RewriteCond %{REQUEST_URI} ^/highwayroop/(.+?)/?$
+RewriteCond %{DOCUMENT_ROOT}/highwayroop/%1.html -f
+RewriteRule ^ %1.html [L]
+
+ErrorDocument 404 /highwayroop/404.html

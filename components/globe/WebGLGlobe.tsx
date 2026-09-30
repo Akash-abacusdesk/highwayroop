@@ -1,0 +1,395 @@
+"use client";
+
+import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
+import { geoEquirectangular, geoPath } from "d3-geo";
+import type { Feature, MultiLineString, MultiPolygon, Polygon, Position } from "geojson";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import * as THREE from "three";
+import { focusFor, GLOBE_COLORS as C, MAX_ZOOM, lerpZoom, loadWorld, shortestAngle, TRANSITION_S, type GlobeProps, type World } from "./geo";
+
+type Tier = { dpr: [number, number]; segments: number; hiDay: string | null; clouds: boolean; idle: boolean };
+type View = { yaw: number; pitch: number; k: number };
+type LatLon = { latitude: number; longitude: number };
+
+// Globe fills 90% of the canvas at zoom 1, the same as the SVG globe. Zoom is camera.zoom.
+const FOV = 25;
+const CAMERA_Z = 5.1;
+const REST_PITCH = 20;
+const IDLE_RAD_PER_S = 0.05;
+const CLOUD_DRIFT_RAD_PER_S = 0.006;
+// Fraction of the window radius the farthest point of a region may reach.
+const FIT_FILL = 0.92;
+const MARKER_DELAY_MS = 700;
+const MARKER_IN_MS = 400;
+const DEG = Math.PI / 180;
+// Fixed relative to the camera (upper left), so whatever is in focus is in daylight
+// and the terminator with its city lights sits on the right-hand limb.
+const SUN = new THREE.Vector3(-0.55, 0.35, 0.76).normalize();
+
+// Imagery: NASA Blue Marble, Black Marble and cloud cover (public domain), via three-globe's examples.
+const TEX = "/textures";
+
+// ~easeOutQuint, the same curve as the UI's cubic-bezier(0.22, 1, 0.36, 1).
+const ease = (t: number) => 1 - (1 - t) ** 5;
+
+// ponytail: static heuristic from cores/memory/pointer; swap for a measured FPS probe if it misjudges devices.
+function detectTier(): Tier {
+  const cores = navigator.hardwareConcurrency || 4;
+  const memory = (navigator as { deviceMemory?: number }).deviceMemory ?? 4;
+  if (cores <= 4 || memory <= 2) return { dpr: [1, 1], segments: 48, hiDay: null, clouds: false, idle: false };
+  if (matchMedia("(pointer: coarse)").matches || cores <= 6)
+    return { dpr: [1, 1.25], segments: 64, hiDay: `${TEX}/earth-day-4096.webp`, clouds: true, idle: true };
+  return { dpr: [1, 1.5], segments: 96, hiDay: `${TEX}/earth-day-8192.webp`, clouds: true, idle: true };
+}
+
+// Same position a SphereGeometry vertex gets for this lat/lon on an equirectangular texture.
+function toVec3({ latitude, longitude }: LatLon, r: number) {
+  const phi = (longitude + 180) * DEG;
+  const lat = latitude * DEG;
+  return new THREE.Vector3(-r * Math.cos(phi) * Math.cos(lat), r * Math.sin(lat), r * Math.sin(phi) * Math.cos(lat));
+}
+
+// Yaw/pitch that bring a point to face the camera on +Z.
+function facing(point: LatLon) {
+  const p = toVec3(point, 1);
+  return { yaw: -Math.atan2(p.x, p.z), pitch: point.latitude * DEG };
+}
+
+// Largest zoom at which every point of the outline stays inside the circular window,
+// projecting through the same perspective camera as the scene.
+function fitZoom(rings: Position[][], center: LatLon) {
+  const c = toVec3(center, 1);
+  const tanHalf = Math.tan((FOV / 2) * DEG);
+  let far = 0;
+  for (const ring of rings)
+    for (const [longitude, latitude] of ring) {
+      const cos = c.dot(toVec3({ latitude, longitude }, 1));
+      // Past the limb the point is hidden anyway; treat it as the edge of the planet.
+      const s = cos < 0.2 ? 1 : Math.sqrt(1 - cos * cos) / ((CAMERA_Z - cos) * tanHalf);
+      far = Math.max(far, s);
+    }
+  return far ? Math.min(Math.max(FIT_FILL / far, 1), MAX_ZOOM) : 1;
+}
+
+function lineGeometry(lines: Position[][], r: number) {
+  const points: number[] = [];
+  for (const line of lines) {
+    for (let i = 1; i < line.length; i++) {
+      const a = toVec3({ longitude: line[i - 1][0], latitude: line[i - 1][1] }, r);
+      const b = toVec3({ longitude: line[i][0], latitude: line[i][1] }, r);
+      points.push(a.x, a.y, a.z, b.x, b.y, b.z);
+    }
+  }
+  return new THREE.BufferGeometry().setAttribute("position", new THREE.Float32BufferAttribute(points, 3));
+}
+
+function outline(shape: Feature | undefined): Position[][] {
+  const g = shape?.geometry as Polygon | MultiPolygon | undefined;
+  if (!g) return [];
+  return g.type === "Polygon" ? g.coordinates : g.coordinates.flat();
+}
+
+// Soft wash over the open country. Transparent everywhere else, so repainting it is cheap.
+function paintHighlight(texture: THREE.CanvasTexture, shape: Feature | undefined) {
+  const canvas = texture.image as HTMLCanvasElement;
+  const ctx = canvas.getContext("2d")!;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if (shape) {
+    const w = canvas.width;
+    ctx.beginPath();
+    geoPath(geoEquirectangular().scale(w / (2 * Math.PI)).translate([w / 2, w / 4]), ctx)(shape);
+    ctx.fillStyle = "rgba(255, 255, 255, 0.2)";
+    ctx.fill();
+  }
+  texture.needsUpdate = true;
+}
+
+function prepare(aniso: number, day: THREE.Texture, night: THREE.Texture, water: THREE.Texture, clouds?: THREE.Texture) {
+  for (const t of [day, night]) t.colorSpace = THREE.SRGBColorSpace;
+  for (const t of [day, night, water, clouds]) if (t) t.anisotropy = aniso;
+}
+
+const earthShader = {
+  vertexShader: /* glsl */ `
+    varying vec2 vUv;
+    varying vec3 vNormalW;
+    varying vec3 vPosW;
+    void main() {
+      vUv = uv;
+      vNormalW = normalize(mat3(modelMatrix) * normal);
+      vec4 world = modelMatrix * vec4(position, 1.0);
+      vPosW = world.xyz;
+      gl_Position = projectionMatrix * viewMatrix * world;
+    }
+  `,
+  fragmentShader: /* glsl */ `
+    uniform sampler2D dayMap;
+    uniform sampler2D nightMap;
+    uniform sampler2D waterMap;
+    uniform vec3 sunDir;
+    varying vec2 vUv;
+    varying vec3 vNormalW;
+    varying vec3 vPosW;
+    void main() {
+      vec3 n = normalize(vNormalW);
+      vec3 v = normalize(cameraPosition - vPosW);
+      float ndl = dot(n, sunDir);
+      float daylight = smoothstep(-0.18, 0.28, ndl);
+
+      vec3 day = texture2D(dayMap, vUv).rgb * (0.1 + 1.1 * max(ndl, 0.0));
+      vec3 lights = texture2D(nightMap, vUv).rgb * vec3(1.0, 0.82, 0.58) * 1.8;
+      vec3 color = mix(lights, day, daylight);
+
+      // Sun glint on water only.
+      float water = texture2D(waterMap, vUv).r;
+      vec3 h = normalize(sunDir + v);
+      float nh = max(dot(n, h), 0.0);
+      color += vec3(1.0, 0.94, 0.84) * (pow(nh, 160.0) * 0.14 + pow(nh, 60.0) * 0.015) * water * daylight;
+
+      // Warm scattering band along the terminator (sunrise/sunset).
+      float dusk = smoothstep(-0.1, 0.02, ndl) * smoothstep(0.3, 0.04, ndl);
+      color += vec3(1.0, 0.42, 0.14) * dusk * 0.10 * (1.0 - water * 0.5);
+
+      // Dim overall and fade towards the limb so no bright rim reads as a glow.
+      float facing = pow(max(dot(n, v), 0.0), 0.5);
+      color *= 0.6 * (0.2 + 0.8 * facing);
+
+      gl_FragColor = vec4(color, 1.0);
+      #include <colorspace_fragment>
+    }
+  `,
+};
+
+type SceneProps = GlobeProps & { tier: Tier; world: World; onReady: () => void };
+
+function Scene({ countries, activeCountryId, activeStoreId, hoveredId, inView, reducedMotion, tier, world, onReady }: SceneProps) {
+  const invalidate = useThree((s) => s.invalidate);
+  const aniso = useThree((s) => s.gl.capabilities.getMaxAnisotropy());
+  const yawGroup = useRef<THREE.Group>(null);
+  const pitchGroup = useRef<THREE.Group>(null);
+  const cloudGroup = useRef<THREE.Group>(null);
+  const markerRefs = useRef<(THREE.Mesh | null)[]>([]);
+  const view = useRef<View>({ ...facing({ latitude: REST_PITCH, longitude: -10 }), k: 1 });
+  const tween = useRef<{ from: View; to: View; start: number } | null>(null);
+  const selectedAt = useRef(0);
+
+  // First paint uses the small maps (~0.7MB); the big ones swap in below once the page is idle.
+  const urls = [`${TEX}/earth-day-2048.webp`, `${TEX}/earth-night-2048.webp`, `${TEX}/earth-water-2048.webp`];
+  if (tier.clouds) urls.push(`${TEX}/clouds-2048.webp`);
+  const [day, night, water, clouds] = useLoader(THREE.TextureLoader, urls);
+  useMemo(() => prepare(Math.min(aniso, 16), day, night, water, clouds), [aniso, day, night, water, clouds]);
+  const [hi, setHi] = useState<{ day: THREE.Texture; clouds?: THREE.Texture } | null>(null);
+  const dayTex = hi?.day ?? day;
+  const cloudTex = hi?.clouds ?? clouds;
+
+  const uniforms = useMemo(
+    () => ({ dayMap: { value: dayTex }, nightMap: { value: night }, waterMap: { value: water }, sunDir: { value: SUN } }),
+    [dayTex, night, water],
+  );
+
+  useEffect(() => {
+    if (!tier.hiDay) return;
+    let dead = false;
+    const loader = new THREE.TextureLoader();
+    const load = () =>
+      Promise.all([loader.loadAsync(tier.hiDay!), tier.clouds ? loader.loadAsync(`${TEX}/clouds-4096.webp`) : undefined]).then(
+        ([hiDay, hiClouds]) => {
+          if (dead) return void (hiDay.dispose(), hiClouds?.dispose());
+          prepare(Math.min(aniso, 16), hiDay, night, water, hiClouds);
+          setHi({ day: hiDay, clouds: hiClouds });
+          day.dispose();
+          clouds?.dispose();
+        },
+        () => {},
+      );
+    const idle = (window as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
+    const id = idle ? idle(load, { timeout: 3000 }) : window.setTimeout(load, 800);
+    return () => {
+      dead = true;
+      if (!idle) clearTimeout(id);
+    };
+  }, [tier, aniso, day, night, water, clouds]);
+
+  const highlight = useMemo(() => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 2048;
+    canvas.height = 1024;
+    return new THREE.CanvasTexture(canvas);
+  }, []);
+  useEffect(() => () => highlight.dispose(), [highlight]);
+
+  const activeCountry = countries.find((c) => c.id === activeCountryId);
+  const shape = useMemo(
+    () => (activeCountry?.isoNumerics ? world.region(activeCountry.isoNumerics) : undefined),
+    [activeCountry, world],
+  );
+
+  const borders = useMemo(() => lineGeometry((world.borders as MultiLineString).coordinates, 1.0015), [world]);
+  const edge = useMemo(() => lineGeometry(outline(shape), 1.002), [shape]);
+  useEffect(() => () => borders.dispose(), [borders]);
+  useEffect(() => () => edge.dispose(), [edge]);
+
+  const stores = useMemo(
+    () => countries.flatMap((c) => c.stores.map((s) => ({ ...s, countryId: c.id, position: toVec3(s, 1.003) }))),
+    [countries],
+  );
+
+  useEffect(onReady, [onReady]);
+
+  useEffect(() => {
+    paintHighlight(highlight, shape);
+    invalidate();
+  }, [highlight, shape, invalidate]);
+
+  useEffect(() => {
+    // Frame the whole region: zoom is whatever fits its outline, not a fixed number.
+    const fitted = shape && activeCountry ? fitZoom(outline(shape), activeCountry) : null;
+    const focus = focusFor(
+      countries.map((c) => (c.id === activeCountryId && fitted ? { ...c, zoom: fitted } : c)),
+      activeCountryId,
+      activeStoreId,
+    );
+    const from = { ...view.current };
+    const target = focus ? facing(focus) : { yaw: from.yaw, pitch: REST_PITCH * DEG };
+    const to = { yaw: shortestAngle(from.yaw, target.yaw, Math.PI * 2), pitch: target.pitch, k: focus?.zoom ?? 1 };
+    selectedAt.current = performance.now() - (reducedMotion ? MARKER_DELAY_MS + MARKER_IN_MS : 0);
+    if (reducedMotion) {
+      view.current = to;
+      tween.current = null;
+    } else {
+      tween.current = { from, to, start: performance.now() };
+    }
+    invalidate();
+  }, [activeCountryId, activeStoreId, countries, shape, activeCountry, reducedMotion, invalidate]);
+
+  // Hover colour or coming back on screen needs one fresh frame (which restarts idle spin).
+  useEffect(() => invalidate(), [hoveredId, inView, invalidate]);
+
+  // frameloop="demand": a frame renders only when something below asks for the next one.
+  useFrame(({ camera }, delta) => {
+    const v = view.current;
+    let busy = false;
+    const now = performance.now();
+    const dt = Math.min(delta, 0.05);
+
+    const t = tween.current;
+    if (t) {
+      const p = Math.min((now - t.start) / (TRANSITION_S * 1000), 1);
+      const e = ease(p);
+      v.yaw = t.from.yaw + (t.to.yaw - t.from.yaw) * e;
+      v.pitch = t.from.pitch + (t.to.pitch - t.from.pitch) * e;
+      v.k = lerpZoom(t.from.k, t.to.k, e);
+      if (p < 1) busy = true;
+      else tween.current = null;
+    } else if (!activeCountryId && inView && tier.idle && !reducedMotion) {
+      v.yaw += dt * IDLE_RAD_PER_S;
+      busy = true;
+    }
+
+    yawGroup.current!.rotation.y = v.yaw;
+    pitchGroup.current!.rotation.x = v.pitch;
+    const cam = camera as THREE.PerspectiveCamera;
+    if (cam.zoom !== v.k) {
+      cam.zoom = v.k;
+      cam.updateProjectionMatrix();
+    }
+
+    // Clouds drift a little faster than the ground and clear away on close-ups.
+    if (cloudGroup.current) {
+      if (busy && !reducedMotion) cloudGroup.current.rotation.y += dt * CLOUD_DRIFT_RAD_PER_S;
+      const opacity = Math.min(Math.max((4 - v.k) / 2.2, 0), 1);
+      for (const m of cloudGroup.current.children) ((m as THREE.Mesh).material as THREE.MeshLambertMaterial).opacity = opacity;
+      cloudGroup.current.visible = opacity > 0.01;
+    }
+
+    // Markers keep a constant on-screen size whatever the zoom.
+    const pop = Math.min(Math.max((now - selectedAt.current - MARKER_DELAY_MS) / MARKER_IN_MS, 0), 1);
+    stores.forEach((s, i) => {
+      const m = markerRefs.current[i];
+      if (!m) return;
+      const grow = s.id === activeStoreId ? (pop === 0 ? 0.0001 : 1.6 * (0.5 + 0.5 * ease(pop))) : 1;
+      m.scale.setScalar(grow / v.k);
+    });
+    if (activeStoreId && pop < 1) busy = true;
+
+    if (busy) invalidate();
+  });
+
+  return (
+    <>
+      <directionalLight position={SUN.clone().multiplyScalar(5)} intensity={1.4} />
+      <ambientLight intensity={0.25} />
+      <group ref={pitchGroup}>
+        <group ref={yawGroup}>
+          <mesh>
+            <sphereGeometry args={[1, tier.segments, Math.round(tier.segments * 0.75)]} />
+            <shaderMaterial {...earthShader} uniforms={uniforms} />
+          </mesh>
+          <mesh scale={1.0008}>
+            <sphereGeometry args={[1, tier.segments, Math.round(tier.segments * 0.75)]} />
+            <meshBasicMaterial map={highlight} transparent depthWrite={false} />
+          </mesh>
+          <lineSegments geometry={borders}>
+            <lineBasicMaterial color="#ffffff" transparent opacity={0.1} depthWrite={false} />
+          </lineSegments>
+          <lineSegments geometry={edge}>
+            <lineBasicMaterial color="#ffffff" transparent opacity={0.85} depthWrite={false} />
+          </lineSegments>
+          {stores.map((s, i) => {
+            const inCountry = s.countryId === activeCountryId;
+            const color = inCountry ? C.signal : s.countryId === hoveredId ? C.markerHover : C.marker;
+            return (
+              <mesh key={s.id} ref={(m) => void (markerRefs.current[i] = m)} position={s.position}>
+                <sphereGeometry args={[inCountry ? 0.013 : 0.01, 12, 12]} />
+                <meshBasicMaterial color={color} />
+              </mesh>
+            );
+          })}
+          {cloudTex && (
+            // Two layers of the same map, offset, roughly double the coverage.
+            <group ref={cloudGroup}>
+              <mesh scale={1.008}>
+                <sphereGeometry args={[1, 64, 48]} />
+                <meshLambertMaterial color="#6f7c86" alphaMap={cloudTex} transparent depthWrite={false} />
+              </mesh>
+              <mesh scale={1.011} rotation={[0, 2.4, 0]}>
+                <sphereGeometry args={[1, 64, 48]} />
+                <meshLambertMaterial color="#6f7c86" alphaMap={cloudTex} transparent depthWrite={false} />
+              </mesh>
+            </group>
+          )}
+        </group>
+      </group>
+    </>
+  );
+}
+
+export default function WebGLGlobe({ onReady, ...props }: GlobeProps & { onReady: () => void }) {
+  const [tier] = useState(detectTier);
+  const [world, setWorld] = useState<World | null>(null);
+
+  // Coarse atlas first so the globe paints early; the 50m one replaces it.
+  useEffect(() => {
+    let dead = false;
+    loadWorld("110m").then((w) => dead || setWorld((cur) => cur ?? w));
+    loadWorld("50m").then((w) => dead || setWorld(w));
+    return () => void (dead = true);
+  }, []);
+
+  if (!world) return null;
+  return (
+    <Canvas
+      dpr={tier.dpr}
+      frameloop="demand"
+      flat
+      // Circular window: zooming grows the sphere past it.
+      style={{ clipPath: "circle(50% at 50% 50%)" }}
+      camera={{ fov: FOV, position: [0, 0, CAMERA_Z], near: 0.1, far: 20 }}
+      gl={{ antialias: true, alpha: true, powerPreference: "low-power" }}
+    >
+      <Suspense fallback={null}>
+        <Scene {...props} tier={tier} world={world} onReady={onReady} />
+      </Suspense>
+    </Canvas>
+  );
+}
