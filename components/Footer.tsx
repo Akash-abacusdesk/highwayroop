@@ -3,7 +3,7 @@ export default function Footer() {
     <footer>
       <div className="shell footer-top">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img loading="lazy" decoding="async" src="/assets/highway-roop-logo.webp" alt="Highway Roop" width={559} height={52} />
+        <img loading="lazy" decoding="async" src="/assets/highway-roop-logo.webp" alt="Highway Roop" width={420} height={39} />
         <div>
           <p>
             135-R, Sector 36, Narsinghpur,<br />
