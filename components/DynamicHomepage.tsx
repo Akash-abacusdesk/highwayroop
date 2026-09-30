@@ -19,7 +19,7 @@ export default function DynamicHomepage({ initial }: { initial: HomepageContent 
   const [content, setContent] = useState(initial)
 
   useEffect(() => {
-    fetch('/highwayroop/api/content/homepage')
+    fetch(`${location.pathname.startsWith('/highwayroop') ? '/highwayroop' : ''}/api/content/homepage`)
       .then(r => r.ok ? r.json() : null)
       .then(data => { if (data) setContent(data) })
       .catch(() => {})

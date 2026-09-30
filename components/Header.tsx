@@ -216,6 +216,7 @@ export default function Header() {
         className={`mega-menu${megaOpen ? ' is-open' : ''}`}
         id="mega-menu"
         aria-hidden={!megaOpen}
+        inert={!megaOpen}
         onMouseLeave={closeMega}
       >
         <div
@@ -243,7 +244,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="mobile-nav" aria-hidden={!mobileOpen}>
+      <div className="mobile-nav" aria-hidden={!mobileOpen} inert={!mobileOpen}>
         <form className="site-search mobile-search" role="search" onSubmit={handleSearch}>
           <label className="sr-only" htmlFor="mobile-search-input">
             Search this website

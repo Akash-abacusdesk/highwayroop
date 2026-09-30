@@ -524,3 +524,5 @@ span:has(>svg.lucide),b:has(>svg.lucide),i:has(>svg.lucide){display:inline-flex;
 .news-feature:hover .news-feature-copy b{gap:16px}
 .news-feature:focus-visible{outline:3px solid rgba(215,25,32,.38);outline-offset:4px}
 .global .global-copy h2 em{color:#6fc3e0}
+/* Contrast fixes: existing muted grey, AA on white */
+.corporate-proof span,.footer-bottom,.footer-bottom span{color:var(--muted)}

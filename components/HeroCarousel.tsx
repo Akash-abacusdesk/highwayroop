@@ -106,6 +106,7 @@ export default function HeroCarousel({ slides = defaultSlides }: { slides?: Hero
             key={i}
             className={`hero-slide ${slideClasses[i] ?? 'hero-slide-one'}${current === i ? ' active' : ''}`}
             aria-hidden={current !== i}
+            inert={current !== i}
           >
             <div className="hero-wash" />
             <div className="shell hero-grid">
