@@ -62,7 +62,7 @@ export function SustainabilitySection() {
           <article className="story-card story-sustainability reveal" id="sustainability">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async"
-              src="/assets/sustainable-plant.webp"
+              srcSet="/assets/sustainable-plant-800.webp 800w, /assets/sustainable-plant.webp 1672w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/sustainable-plant.webp"
               alt="Sustainable automotive plant with solar panels and water management"
             />
             <div className="story-copy">
@@ -130,7 +130,14 @@ export function NewsSection() {
                 {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img loading="lazy" decoding="async" src={image} alt="" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={image}
+                  srcSet={`${image.replace(".webp", "-800.webp")} 800w, ${image} 1672w`}
+                  sizes="(max-width:1050px) 100vw, 45vw"
+                  alt=""
+                />
                 <span className="news-item-copy">
                   <small>{label}</small>
                   <b>{title}</b>
@@ -153,7 +160,7 @@ export function CareersSection() {
           <article className="story-card story-careers reveal" id="careers">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async"
-              src="/assets/careers-team.webp"
+              srcSet="/assets/careers-team-800.webp 800w, /assets/careers-team.webp 1672w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/careers-team.webp"
               alt="Highway Roop engineering and manufacturing professionals"
             />
             <div className="story-copy">

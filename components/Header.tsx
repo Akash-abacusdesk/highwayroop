@@ -168,7 +168,7 @@ export default function Header() {
       <div className="header-inner shell">
         <a className="brand" href="#top" aria-label="Highway Roop home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img decoding="async" fetchPriority="high" src="/assets/highway-roop-logo.webp" alt="Highway Roop" />
+          <img decoding="async" src="/assets/highway-roop-logo.webp" alt="Highway Roop" width={559} height={52} />
         </a>
         <nav className="main-nav" aria-label="Primary navigation">
           {MENUS.map((m, i) => (

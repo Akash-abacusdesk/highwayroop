@@ -4,6 +4,8 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import type { HeroSlide } from '@/types/content'
 
+const heroImages = ['hero-global-engineering-v3', 'hero-industrialisation-v3', 'hero-future-mobility-v3']
+
 const defaultSlides: HeroSlide[] = [
   {
     eyebrow: 'HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED',
@@ -75,14 +77,6 @@ export default function HeroCarousel({ slides = defaultSlides }: { slides?: Hero
   }, [])
 
   useEffect(() => {
-    // Slides 2 and 3 fetch their images only once the page has finished loading.
-    const ready = () => heroRef.current?.classList.add('is-ready')
-    if (document.readyState === 'complete') ready()
-    else window.addEventListener('load', ready, { once: true })
-    return () => window.removeEventListener('load', ready)
-  }, [])
-
-  useEffect(() => {
     startRotation()
     return () => {
       if (timerRef.current) clearInterval(timerRef.current)
@@ -116,6 +110,18 @@ export default function HeroCarousel({ slides = defaultSlides }: { slides?: Hero
             aria-hidden={current !== i}
             inert={current !== i}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="hero-bg"
+              src={`/assets/${heroImages[i] ?? heroImages[0]}.webp`}
+              srcSet={`/assets/${heroImages[i] ?? heroImages[0]}-800.webp 800w, /assets/${heroImages[i] ?? heroImages[0]}.webp 1672w`}
+              sizes="100vw"
+              alt=""
+              width={1672}
+              height={941}
+              decoding="async"
+              {...(i === 0 ? { fetchPriority: 'high' as const } : { loading: 'lazy' as const })}
+            />
             <div className="hero-wash" />
             <div className="shell hero-grid">
               <div className="hero-copy">

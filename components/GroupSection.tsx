@@ -45,7 +45,16 @@ export default function GroupSection() {
           {businesses.map(b => (
             <article key={b.name} className="biz-card reveal">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img loading="lazy" decoding="async" src={b.image} alt={b.name} />
+              <img
+                loading="lazy"
+                decoding="async"
+                src={b.image}
+                srcSet={`${b.image.replace(".webp", "-800.webp")} 800w, ${b.image} 1672w`}
+                sizes="(max-width:700px) 100vw, (max-width:1050px) 50vw, 33vw"
+                alt={b.name}
+                width={1672}
+                height={941}
+              />
               <div className="biz-body">
                 <h3>{b.name}</h3>
                 <p>{b.desc}</p>

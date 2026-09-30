@@ -278,7 +278,6 @@ section[id],article[id],div[id="media"]{scroll-margin-top:126px}
 .hero-carousel{isolation:isolate}
 .hero-track{height:100%;display:flex;transition:transform .7s cubic-bezier(.65,0,.25,1);will-change:transform}
 .hero-slide{position:relative;flex:0 0 100%;height:100%;overflow:hidden;background-position:center;background-size:cover}
-.hero-slide-one{background-image:url('/assets/hero-global-engineering-v3.webp')}.hero-slide-two{background-image:url('/assets/hero-industrialisation-v3.webp')}.hero-slide-three{background-image:url('/assets/hero-future-mobility-v3.webp')}
 .hero-slide .hero-wash{inset:0;background:linear-gradient(90deg,rgba(255,255,255,.99) 0%,rgba(255,255,255,.95) 31%,rgba(255,255,255,.4) 56%,rgba(255,255,255,.02) 79%)}
 .hero-slide-two .hero-wash{background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.91) 37%,rgba(255,255,255,.14) 72%)}
 .hero-slide-three .hero-wash{background:linear-gradient(90deg,rgba(255,255,255,.99) 0%,rgba(255,255,255,.94) 33%,rgba(255,255,255,.22) 65%)}
@@ -527,12 +526,4 @@ span:has(>svg.lucide),b:has(>svg.lucide),i:has(>svg.lucide){display:inline-flex;
 /* Contrast fixes: existing muted grey, AA on white */
 .corporate-proof span,.footer-bottom,.footer-bottom span{color:var(--muted)}
 
-/* Mobile: smaller hero images; slides 2 and 3 load only after the page is ready */
-.hero-slide-two,.hero-slide-three{background-image:none}
-.hero-carousel.is-ready .hero-slide-two{background-image:url('/assets/hero-industrialisation-v3.webp')}
-.hero-carousel.is-ready .hero-slide-three{background-image:url('/assets/hero-future-mobility-v3.webp')}
-@media(max-width:700px){
-  .hero-slide-one{background-image:url('/assets/hero-global-engineering-v3-800.webp')}
-  .hero-carousel.is-ready .hero-slide-two{background-image:url('/assets/hero-industrialisation-v3-800.webp')}
-  .hero-carousel.is-ready .hero-slide-three{background-image:url('/assets/hero-future-mobility-v3-800.webp')}
-}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
