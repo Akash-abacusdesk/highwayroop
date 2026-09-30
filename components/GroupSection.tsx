@@ -1,6 +1,6 @@
 const businesses = [
   {
-    name: 'Powertrain',
+    name: 'Driveline',
     image: '/assets/advanced-forging.png',
     desc: 'Precision-forged and machined components engineered for demanding engine, transmission and driveline applications.',
     tags: [['#capabilities', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],

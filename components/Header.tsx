@@ -19,7 +19,7 @@ const MENUS: Menu[] = [
   {
     label: 'Businesses', href: '#businesses',
     intro: 'Three specialist businesses delivering engineered mobility systems.',
-    cols: ['Powertrain', 'Steering & Suspension', 'Lightweighting'].map(t => ({
+    cols: ['Driveline', 'Steering & Suspension', 'Lightweighting'].map(t => ({
       title: t.toUpperCase(),
       links: [['#capabilities', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions']] as [string, string][],
     })),
