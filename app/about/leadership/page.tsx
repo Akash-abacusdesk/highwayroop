@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import PageHero from '@/components/about/PageHero'
 import SubNav from '@/components/about/SubNav'
 import SectionHead from '@/components/about/SectionHead'
-import { LEADERS } from '@/components/about/data'
+import { CEO_LINKEDIN, LEADERS } from '@/components/about/data'
 
 export const metadata: Metadata = { title: 'Leadership | Highway Roop' }
 
@@ -27,7 +27,7 @@ export default function Leadership() {
               <span className="ab-label">CHIEF EXECUTIVE OFFICER</span>
               <h2>Dharmesh Arora</h2>
               <p>CEO, Highway Roop Precision Technologies Ltd.</p>
-              <span className="ab-linkedin" aria-hidden="true">in</span>
+              <a className="ab-linkedin" href={CEO_LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="Dharmesh Arora on LinkedIn">in</a>
             </div>
           </div>
         </div>
@@ -47,7 +47,9 @@ export default function Leadership() {
                   <h3>{l.name}</h3>
                   <p className="ab-role">{l.role}</p>
                   <p className="ab-bio">{l.bio}</p>
-                  <span className="ab-linkedin" aria-hidden="true">in</span>
+                  {l.linkedin && (
+                    <a className="ab-linkedin" href={l.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${l.name} on LinkedIn`}>in</a>
+                  )}
                 </div>
               </article>
             ))}

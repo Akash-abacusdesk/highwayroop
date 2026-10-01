@@ -82,6 +82,7 @@
 .ab-leader h3{font-size:21px;margin:0}
 .ab-role{color:var(--blue);font-size:13px;font-weight:700;margin:4px 0 12px}
 .ab-bio{color:var(--muted);font-size:13px;min-height:42px;margin:0 0 12px}
+.ab-linkedin:hover{background:var(--red)}
 .ab-linkedin{display:inline-grid;place-items:center;width:32px;height:32px;background:var(--blue);color:#fff;font-weight:700;border-radius:2px}
 
 .ab-news-feature{display:grid;grid-template-columns:1fr 1fr;background:var(--navy);color:#fff;min-height:580px}
@@ -121,3 +122,5 @@
   .ab-platform{padding:34px;display:block}
   .ab-news-copy,.ab-ceo-copy,.ab-story-panel{padding:40px 28px}
 }
+
+.ab-ceo-copy .ab-linkedin{margin-top:22px;align-self:flex-start}

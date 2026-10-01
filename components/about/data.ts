@@ -6,16 +6,19 @@ export const ABOUT_LINKS = [
   { href: '/about/global-presence', label: 'Global Presence' },
 ]
 
-export const LEADERS: { name: string; role: string; bio: string }[] = [
+export const CEO_LINKEDIN = 'https://www.linkedin.com/in/dharmesh-arora/'
+
+// linkedin is left off where no profile could be matched to this person with confidence.
+export const LEADERS: { name: string; role: string; bio: string; linkedin?: string }[] = [
   { name: 'Ramanathan Iyer', role: 'BU Head (Steering)', bio: 'Business Unit leadership for Steering.' },
-  { name: 'Sunil Ailavadi', role: 'BU Head (Powertrain)', bio: 'Business Unit leadership for Powertrain.' },
+  { name: 'Sunil Ailavadi', role: 'BU Head (Powertrain)', bio: 'Business Unit leadership for Powertrain.', linkedin: 'https://www.linkedin.com/in/sunil-ailavadi-34b23311/' },
   { name: 'BU Head', role: 'Lightweighting · TBH', bio: 'Business Unit leadership for Lightweighting.' },
   { name: 'Anirban Sanyal', role: 'CFO', bio: 'Finance leadership.' },
-  { name: 'Vinod Kr Singh', role: 'CHRO', bio: 'Human Resources leadership.' },
+  { name: 'Vinod Kr Singh', role: 'CHRO', bio: 'Human Resources leadership.', linkedin: 'https://www.linkedin.com/in/vinod-singh-1a58b922/' },
   { name: 'Ajay Mrig', role: 'CPO', bio: 'Corporate functional leadership.' },
-  { name: 'Sai Iyer', role: 'CMO', bio: 'Corporate functional leadership.' },
-  { name: 'Prajod', role: 'VP Technology', bio: 'Technology leadership.' },
-  { name: 'Piyush Asija', role: 'CS & Chief Compliance Officer', bio: 'Company secretarial and compliance leadership.' },
+  { name: 'Sai Iyer', role: 'CMO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/sai-iyer-1615b65/' },
+  { name: 'Prajod', role: 'VP Technology', bio: 'Technology leadership.', linkedin: 'https://www.linkedin.com/in/prajod-ayyappath-794427b/' },
+  { name: 'Piyush Asija', role: 'CS & Chief Compliance Officer', bio: 'Company secretarial and compliance leadership.', linkedin: 'https://www.linkedin.com/in/piyush-asija-b8884817/' },
   { name: 'Bipin Bahuguna', role: 'Strategy', bio: 'Strategy leadership.' },
   { name: 'Shilpi Shukla', role: 'Communications & Branding', bio: 'Communications and branding leadership.' },
   { name: 'Rammohan', role: 'Manufacturing Excellence', bio: 'Manufacturing excellence leadership.' },
@@ -29,9 +32,9 @@ export const MILESTONES = [
 ]
 
 export const UNITS = [
-  { share: '52% OF SALES', image: 'advanced-forging', title: 'Highway Powertrain', text: 'Powertrain and driveline components.' },
-  { share: '27% OF SALES', image: 'hero-precision', title: 'Roop Steering', text: 'Steering components and assemblies.' },
-  { share: '21% OF SALES', image: 'lightweighting-ev', title: 'Chamundi Die Cast', text: 'Aluminium die casting components.' },
+  { share: '52% OF SALES', image: 'advanced-forging', title: 'Driveline', text: 'Powertrain and driveline components.' },
+  { share: '27% OF SALES', image: 'hero-precision', title: 'Steering & Suspension', text: 'Steering components and assemblies.' },
+  { share: '21% OF SALES', image: 'lightweighting-ev', title: 'Lightweighting', text: 'Aluminium die casting components.' },
 ]
 
 export const CAPABILITIES = [

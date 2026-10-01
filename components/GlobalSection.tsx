@@ -134,7 +134,7 @@ export default function GlobalSection() {
                         aria-pressed={f.id === storeId}
                         onClick={() => setStoreId(f.id === storeId ? null : f.id)}
                       >
-                        {f.office ? `${f.name} · ${f.city}` : f.city}
+                        {f.city}
                       </button>
                       {f.office ? (
                         <a
