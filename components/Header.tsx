@@ -64,7 +64,20 @@ export default function Header() {
   const megaMenuRef = useRef<HTMLDivElement>(null)
   const megaTriggerRef = useRef<HTMLElement>(null)
 
-  const closeMega = useCallback(() => setActive(null), [])
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+  const closeMega = useCallback(() => {
+    clearTimeout(closeTimer.current)
+    setActive(null)
+  }, [])
+  const openMega = (i: number) => {
+    clearTimeout(closeTimer.current)
+    setActive(i)
+  }
+  // Short grace period so the pointer can cross the gap between the nav and the panel.
+  const closeSoon = () => {
+    clearTimeout(closeTimer.current)
+    closeTimer.current = setTimeout(() => setActive(null), 150)
+  }
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -182,10 +195,8 @@ export default function Header() {
             )}
             <div
               className="mega-nav-item"
-              onMouseEnter={() => setActive(i)}
-              onMouseLeave={e => {
-                if (!megaMenuRef.current?.contains(e.relatedTarget as Node)) closeMega()
-              }}
+              onMouseEnter={() => openMega(i)}
+              onMouseLeave={closeSoon}
             >
               <Link
                 ref={i === active ? (megaTriggerRef as React.RefObject<HTMLAnchorElement>) : undefined}
@@ -193,7 +204,7 @@ export default function Header() {
                 href={m.href}
                 aria-expanded={active === i}
                 aria-controls="mega-menu"
-                onFocus={() => setActive(i)}
+                onFocus={() => openMega(i)}
                 onClick={closeMega}
               >
                 {m.label}
@@ -219,7 +230,8 @@ export default function Header() {
         id="mega-menu"
         aria-hidden={!megaOpen}
         inert={!megaOpen}
-        onMouseLeave={closeMega}
+        onMouseEnter={() => clearTimeout(closeTimer.current)}
+        onMouseLeave={closeSoon}
       >
         <div
           className="shell mega-grid"
