@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer>
@@ -11,17 +13,17 @@ export default function Footer() {
           </p>
         </div>
         <div className="footer-links">
-          <a href="#about">About</a>
-          <a href="#businesses">Businesses</a>
-          <a href="#businesses">Capabilities</a>
-          <a href="#global">Global Presence</a>
-          <a href="#corporate">Corporate Information</a>
-          <a href="#businesses">Innovation &amp; Quality</a>
-          <a href="#sustainability">Sustainability</a>
-          <a href="#careers">Careers</a>
-          <a href="#media">Media</a>
-          <a href="#leadership">CEO Message</a>
-          <a href="#contact">Contact</a>
+          <Link href="/about">About</Link>
+          <a href="/#businesses">Businesses</a>
+          <a href="/#businesses">Capabilities</a>
+          <Link href="/about/global-presence">Global Presence</Link>
+          <a href="/#corporate">Corporate Information</a>
+          <a href="/#businesses">Innovation &amp; Quality</a>
+          <a href="/#sustainability">Sustainability</a>
+          <a href="/#careers">Careers</a>
+          <Link href="/news-insights">Media</Link>
+          <Link href="/about/leadership">CEO Message</Link>
+          <a href="/#contact">Contact</a>
         </div>
       </div>
       <div className="shell footer-bottom">

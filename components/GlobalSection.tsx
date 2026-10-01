@@ -14,40 +14,41 @@ const wh = (id: string, n: number, city: string, latitude: number, longitude: nu
   ({ id: `${id}-${n}`, name: `Warehouse ${n}`, city, latitude, longitude })
 
 // Office / plant locations in India (geocoded from address, approximate).
-const off = (n: number, city: string, latitude: number, longitude: number) =>
-  ({ id: `in-office-${n}`, name: `Office ${n}`, city, latitude, longitude, office: true })
+const off = (n: number, name: string, city: string, latitude: number, longitude: number) =>
+  ({ id: `in-office-${n}`, name, city, latitude, longitude, office: true })
 
 const officeAddress = [
-  "135R, Khandsa, Sector 36, Narsinghpur, Gurugram, Haryana 122004",
-  "HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED, Sector 4 Industrial Estate, IMT Manesar, Gurugram, Haryana 122050",
-  "HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED, Roz Ka Meo Industrial Area, Nuh, Haryana 122107",
-  "HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED, Sector 8 IMT Manesar, Gurugram, Haryana 122050",
-  "HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED, Roz Ka Meo Industrial Area, Nuh, Haryana 122107",
-  "Hirehalli Industrial Area, Tumkur, Karnataka 572168",
-  "SIPCOT Industrial Area Phase III, Ranipet, Vellore District, Tamil Nadu 632405",
-  "SIPCOT Industrial Complex Phase III, Ranipet, Vellore District, Tamil Nadu 632405",
-  "Hirehalli Industrial Area, Tumkur, Karnataka 572168",
+  "135R, Khandsha, Sector 36, Narsinghpur, Gurugram, Haryana 122004",
+  "212, Highway Roop Precision Technologies Limited, Sector 4 Industrial Estate, IMT Manesar, Gurugram, Haryana 122050",
+  "19, 20, 30, 31, 209 and 210, Highway Roop Precision Technologies Limited, Roz Ka Meo Industrial Area, Nuh, Haryana 122107",
+  "436, Highway Roop Precision Technologies Limited, Sector 8 IMT Manesar, Gurugram, Haryana 122050",
+  "22 & 28, Highway Roop Precision Technologies Limited, Roz Ka Meo Industrial Area, Nuh, Haryana 122107",
+  "Plot 50, B, C & D, Hirehalli Industrial Area, Tumkur, Karnataka 572168",
+  "Plot S-54, SIPCOT Industrial Area Phase III, Ranipet, Vellore District, Tamil Nadu 632405",
+  "Plot S-47, SIPCOT Industrial Complex Phase III, Ranipet, Vellore District, Tamil Nadu 632405",
+  "Plot 42, Hirehalli Industrial Area, Tumkur, Karnataka 572168",
   "Phase VIII, Focal Point, Mangli Nichhi, Ludhiana, Punjab 141010",
   "Gill Road, Industrial Area-B, Ludhiana, Punjab 141003",
   "Grand Trunk Rd, Nandpur, Sahnewal, Punjab 141120",
-  "MIDC Road, Alandi Fata, Kurli, Maharashtra 410501",
-  "HUDA Industrial Area, Dharuhera, Haryana 123106",
-  "SIPCOT Industrial Park, Vadagal, Sriperumbudur, Vallam, Tamil Nadu 631604"
+  "611/1/1, MIDC Road, Alandi Fata, Kurli, Maharashtra 410501",
+  "Plot 38, HUDA Industrial Area, Dharuhera, Haryana 123106",
+  "Plot G31, H-22, 9th Cross Street, SIPCOT Industrial Park, Vadagal, Sriperumbudur, Vallam, Tamil Nadu 631604"
 ]
 
 const offices = [
-  off(1, 'Narsinghpur, Gurugram', 28.43, 76.98), off(2, 'IMT Manesar, Sector 4', 28.35, 76.94),
-  off(3, 'Roz Ka Meo, Nuh', 28.17, 77.02), off(4, 'IMT Manesar, Sector 8', 28.37, 76.93),
-  off(5, 'Roz Ka Meo, Nuh', 28.18, 77.04), off(6, 'Hirehalli, Tumkur', 13.38, 77.08),
-  off(7, 'SIPCOT Ranipet', 12.93, 79.33), off(8, 'SIPCOT Ranipet', 12.94, 79.35),
-  off(9, 'Hirehalli, Tumkur', 13.39, 77.09), off(10, 'Focal Point, Ludhiana', 30.88, 75.93),
-  off(11, 'Gill Road, Ludhiana', 30.87, 75.88), off(12, 'Nandpur, Sahnewal', 30.85, 76.0),
-  off(13, 'Alandi Fata, Kurli', 18.68, 73.88), off(14, 'Dharuhera', 28.21, 76.8),
-  off(15, 'Sriperumbudur', 12.97, 79.95),
+  off(1, 'Highway & Corporate Office', 'Narsinghpur, Gurugram', 28.43, 76.98), off(2, 'Roop', 'IMT Manesar, Sector 4', 28.35, 76.94),
+  off(3, 'Roop', 'Roz Ka Meo, Nuh', 28.17, 77.02), off(4, 'Roop', 'IMT Manesar, Sector 8', 28.37, 76.93),
+  off(5, 'Roop', 'Roz Ka Meo, Nuh', 28.18, 77.04), off(6, 'CDC', 'Hirehalli, Tumkur', 13.38, 77.08),
+  off(7, 'CDC', 'SIPCOT Ranipet', 12.93, 79.33), off(8, 'CDC', 'SIPCOT Ranipet', 12.94, 79.35),
+  off(9, 'CDC', 'Hirehalli, Tumkur', 13.39, 77.09), off(10, 'Highway', 'Focal Point, Ludhiana', 30.88, 75.93),
+  off(11, 'Highway', 'Gill Road, Ludhiana', 30.87, 75.88), off(12, 'Highway', 'Nandpur, Sahnewal', 30.85, 76.0),
+  off(13, 'Highway', 'Alandi Fata, Kurli', 18.68, 73.88), off(14, 'RAFPL', 'Dharuhera', 28.21, 76.8),
+  off(15, 'Roop', 'Sriperumbudur', 12.97, 79.95),
 ].map((o, i) => ({ ...o, address: officeAddress[i] }))
 
 const regions: Country[] = [
   { id: 'in', name: 'India', isoNumerics: ['356'], latitude: 22, longitude: 79, zoom: 2.7, stores: [
+    ...offices,
     wh('in', 1, 'Gurugram', 28.46, 77.03), wh('in', 2, 'Gujarat', 23.02, 72.57),
     wh('in', 3, 'Uttarakhand', 30.32, 78.03), wh('in', 4, 'Ludhiana', 30.9, 75.86),
     wh('in', 5, 'Pune', 18.52, 73.86) ] },
@@ -60,11 +61,6 @@ const regions: Country[] = [
   { id: 'apac', name: 'Asia Pacific', isoNumerics: APAC, latitude: 5, longitude: 115, zoom: 1.5, stores: [
     wh('apac', 1, 'Bangkok, Thailand', 13.76, 100.5) ] },
 ]
-
-const officeRegions: Country[] = [
-  { id: 'in-offices', name: 'India', isoNumerics: ['356'], latitude: 22, longitude: 79, zoom: 2.7, stores: offices },
-]
-const allRegions = [...regions, ...officeRegions]
 
 // True while the element is on screen (starting `margin` early when `once`).
 function useInView(ref: React.RefObject<Element | null>, once = false) {
@@ -87,7 +83,6 @@ function useInView(ref: React.RefObject<Element | null>, once = false) {
 
 export default function GlobalSection() {
   const [openId, setOpenId] = useState<string | null>(null)
-  const [mode, setMode] = useState<'warehouse' | 'office'>('warehouse')
   const [storeId, setStoreId] = useState<string | null>(null)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [reducedMotion, setReducedMotion] = useState(false)
@@ -182,25 +177,7 @@ export default function GlobalSection() {
             supporting coordinated delivery across automotive markets.
           </p>
 
-          <div className="mode-tabs" role="tablist">
-            {(['warehouse', 'office'] as const).map(m => (
-              <button
-                key={m}
-                type="button"
-                role="tab"
-                aria-selected={mode === m}
-                className={mode === m ? 'active' : undefined}
-                onClick={() => {
-                  setMode(m)
-                  setOpenId(null)
-                  setStoreId(null)
-                }}
-              >
-                {m === 'warehouse' ? 'Warehouses' : 'Offices'}
-              </button>
-            ))}
-          </div>
-          {renderList(mode === 'warehouse' ? regions : officeRegions)}
+          {renderList(regions)}
 
           <div className="global-stats">
             <div>
@@ -226,15 +203,18 @@ export default function GlobalSection() {
           <div className="globe-disc" />
           {near && (
             <WebGLGlobeLoader
-              countries={allRegions}
+              countries={regions}
               activeCountryId={openId}
               activeStoreId={storeId}
               hoveredId={hoveredId}
-              mode={mode}
               inView={inView}
               reducedMotion={reducedMotion}
             />
           )}
+          <p className="globe-legend">
+            <span><i className="dot-wh" />Warehouse</span>
+            <span><i className="dot-office" />Office</span>
+          </p>
         </div>
       </div>
     </section>

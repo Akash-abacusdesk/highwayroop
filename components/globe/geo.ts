@@ -22,8 +22,6 @@ export type GlobeProps = {
   activeCountryId: string | null;
   activeStoreId: string | null;
   hoveredId: string | null;
-  /** Which kind of location is drawn; the other kind is hidden. */
-  mode: "warehouse" | "office";
   inView: boolean;
   reducedMotion: boolean;
 };

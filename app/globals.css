@@ -555,8 +555,8 @@ span:has(>svg.lucide),b:has(>svg.lucide),i:has(>svg.lucide){display:inline-flex;
 .map-link:hover,.map-link:focus-visible{color:#fff;background:var(--red)}
 @media(min-width:1051px){.global .globe-stage{position:sticky;top:96px}.global-grid{align-items:start}}
 .global{overflow:clip}
-.mode-tabs{display:flex;gap:8px;margin:28px 0 10px}
-.mode-tabs button{all:unset;box-sizing:border-box;cursor:pointer;padding:9px 18px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9fb3bc;transition:.3s}
-.mode-tabs button:hover{color:#fff}
-.mode-tabs button.active{background:var(--red);border-color:var(--red);color:#fff}
-.mode-tabs button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.globe-legend{display:flex;justify-content:center;gap:18px;margin:14px 0 0;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9fb3bc}
+.globe-legend span{display:inline-flex;align-items:center;gap:6px}
+.globe-legend i{width:8px;height:8px;border-radius:50%}
+.dot-wh{background:#d6392b}.dot-office{background:#f5b942}
+.globe-stage .globe-legend{position:absolute;left:0;right:0;top:100%}

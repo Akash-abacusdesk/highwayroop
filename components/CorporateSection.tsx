@@ -108,7 +108,7 @@ export default function CorporateSection() {
               </span>
               <i><ArrowRight size={18} aria-hidden="true" /></i>
             </a>
-            <a href="#media">
+            <a href="/news-insights">
               <span>
                 <small>Latest information</small>
                 <b>News and updates</b>

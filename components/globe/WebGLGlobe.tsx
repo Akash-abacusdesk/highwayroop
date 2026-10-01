@@ -162,7 +162,7 @@ const earthShader = {
 
 type SceneProps = GlobeProps & { tier: Tier; world: World; onReady: () => void };
 
-function Scene({ countries, activeCountryId, activeStoreId, hoveredId, mode, inView, reducedMotion, tier, world, onReady }: SceneProps) {
+function Scene({ countries, activeCountryId, activeStoreId, hoveredId, inView, reducedMotion, tier, world, onReady }: SceneProps) {
   const invalidate = useThree((s) => s.invalidate);
   const aniso = useThree((s) => s.gl.capabilities.getMaxAnisotropy());
   const yawGroup = useRef<THREE.Group>(null);
@@ -230,11 +230,8 @@ function Scene({ countries, activeCountryId, activeStoreId, hoveredId, mode, inV
   useEffect(() => () => edge.dispose(), [edge]);
 
   const stores = useMemo(
-    () =>
-      countries.flatMap((c) =>
-        c.stores.filter((s) => !!s.office === (mode === "office")).map((s) => ({ ...s, countryId: c.id, position: toVec3(s, 1.014) })),
-      ),
-    [countries, mode],
+    () => countries.flatMap((c) => c.stores.map((s) => ({ ...s, countryId: c.id, position: toVec3(s, 1.014) }))),
+    [countries],
   );
 
   useEffect(onReady, [onReady]);

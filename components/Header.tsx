@@ -1,54 +1,55 @@
 'use client'
 
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 import { Fragment, useState, useEffect, useRef, useCallback } from 'react'
 
 type Col = { title: string; links: [string, string][] }
 type Menu = { label: string; href: string; intro: string; cols: Col[] }
 
 // Dropdowns for About, Businesses, Sustainability, Investors; News & Careers stay plain links.
-// Sub-pages don't exist yet, so links point at the nearest on-page section.
+// About and News have their own pages; the rest still point at homepage sections.
 const MENUS: Menu[] = [
   {
-    label: 'About', href: '#about',
+    label: 'About', href: '/about',
     intro: 'Scale, legacy and the leadership steering Highway Roop worldwide.',
     cols: [
-      { title: 'ABOUT HIGHWAY ROOP', links: [['#about', 'Overview'], ['#about', 'Our Journey'], ['#about', 'Group Structure']] },
-      { title: 'PEOPLE & REACH', links: [['#leadership', 'Leadership'], ['#global', 'Global Presence']] },
+      { title: 'ABOUT HIGHWAY ROOP', links: [['/about', 'Overview'], ['/about/our-journey', 'Our Journey'], ['/about/group-structure', 'Group Structure']] },
+      { title: 'PEOPLE & REACH', links: [['/about/leadership', 'Leadership'], ['/about/global-presence', 'Global Presence']] },
     ],
   },
   {
-    label: 'Businesses', href: '#businesses',
+    label: 'Businesses', href: '/#businesses',
     intro: 'Three specialist businesses delivering engineered mobility systems.',
     cols: ['Driveline', 'Steering & Suspension', 'Lightweighting'].map(t => ({
       title: t.toUpperCase(),
-      links: [['#businesses', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions']] as [string, string][],
+      links: [['/#businesses', 'Technology & Manufacturing'], ['/#businesses', 'Products & Solutions']] as [string, string][],
     })),
   },
   {
-    label: 'Sustainability', href: '#sustainability',
+    label: 'Sustainability', href: '/#sustainability',
     intro: 'Responsible growth across environment, people and governance.',
     cols: [
-      { title: 'ESG', links: [['#sustainability', 'ESG Overview'], ['#sustainability', 'Environment'], ['#sustainability', 'People']] },
-      { title: 'RESPONSIBILITY', links: [['#sustainability', 'CSR'], ['#sustainability', 'Governance'], ['#sustainability', 'Reports & Policies']] },
+      { title: 'ESG', links: [['/#sustainability', 'ESG Overview'], ['/#sustainability', 'Environment'], ['/#sustainability', 'People']] },
+      { title: 'RESPONSIBILITY', links: [['/#sustainability', 'CSR'], ['/#sustainability', 'Governance'], ['/#sustainability', 'Reports & Policies']] },
     ],
   },
   {
-    label: 'Investors', href: '#corporate',
+    label: 'Investors', href: '/#corporate',
     intro: 'Financials, governance and disclosures for our shareholders.',
     cols: [
-      { title: 'OVERVIEW', links: [['#corporate', 'Investor Overview'], ['#corporate', 'Financial Information'], ['#corporate', 'DRHP / Offer Documents'], ['#corporate', 'Annual Reports']] },
-      { title: 'GOVERNANCE', links: [['#corporate', 'Corporate Governance'], ['#corporate', 'Board & Committees'], ['#corporate', 'Policies'], ['#corporate', 'Disclosures']] },
-      { title: 'SHAREHOLDERS', links: [['#corporate', 'Shareholding'], ['#corporate', 'Credit Ratings'], ['#corporate', 'Investor Meetings']] },
-      { title: 'SUPPORT', links: [['#corporate', 'Registrar & Transfer Agent'], ['#corporate', 'Investor Grievance']] },
+      { title: 'OVERVIEW', links: [['/#corporate', 'Investor Overview'], ['/#corporate', 'Financial Information'], ['/#corporate', 'DRHP / Offer Documents'], ['/#corporate', 'Annual Reports']] },
+      { title: 'GOVERNANCE', links: [['/#corporate', 'Corporate Governance'], ['/#corporate', 'Board & Committees'], ['/#corporate', 'Policies'], ['/#corporate', 'Disclosures']] },
+      { title: 'SHAREHOLDERS', links: [['/#corporate', 'Shareholding'], ['/#corporate', 'Credit Ratings'], ['/#corporate', 'Investor Meetings']] },
+      { title: 'SUPPORT', links: [['/#corporate', 'Registrar & Transfer Agent'], ['/#corporate', 'Investor Grievance']] },
     ],
   },
   {
-    label: 'Contact', href: '#contact',
+    label: 'Contact', href: '/#contact',
     intro: 'Reach our offices, plants and business teams.',
     cols: [
-      { title: 'OFFICES & PLANTS', links: [['#contact', 'Corporate Office'], ['#global', 'Manufacturing Locations']] },
-      { title: 'GET IN TOUCH', links: [['#contact', 'Business Enquiries'], ['#contact', 'General / Investor Contact']] },
+      { title: 'OFFICES & PLANTS', links: [['/#contact', 'Corporate Office'], ['/#global', 'Manufacturing Locations']] },
+      { title: 'GET IN TOUCH', links: [['/#contact', 'Business Enquiries'], ['/#contact', 'General / Investor Contact']] },
     ],
   },
 ]
@@ -129,9 +130,9 @@ export default function Header() {
 
   const mobileLinks: [string, string][] = [
     ...MENUS.filter(m => m.label !== 'Contact').map(m => [m.href, m.label] as [string, string]),
-    ['#media', 'News & Insights'],
-    ['#careers', 'Careers'],
-    ['#contact', 'Contact'],
+    ['/news-insights', 'News & Insights'],
+    ['/#careers', 'Careers'],
+    ['/#contact', 'Contact'],
   ]
 
   return (
@@ -139,9 +140,9 @@ export default function Header() {
       <div className="utility-bar">
         <div className="shell utility-inner">
           <nav aria-label="Corporate links">
-            <a href="#leadership">Leadership</a>
-            <a href="#corporate">Corporate information</a>
-            <a href="#media">Newsroom</a>
+            <Link href="/about/leadership">Leadership</Link>
+            <a href="/#corporate">Corporate information</a>
+            <Link href="/news-insights">Newsroom</Link>
           </nav>
           <form className="site-search" role="search" onSubmit={handleSearch}>
             <label className="sr-only" htmlFor="site-search-input">
@@ -166,7 +167,7 @@ export default function Header() {
       </div>
 
       <div className="header-inner shell">
-        <a className="brand" href="#top" aria-label="Highway Roop home">
+        <a className="brand" href="/" aria-label="Highway Roop home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img decoding="async" src="/assets/highway-roop-logo.webp" alt="Highway Roop" width={420} height={39} />
         </a>
@@ -175,7 +176,7 @@ export default function Header() {
             <Fragment key={m.label}>
             {m.label === 'Contact' && (
               <>
-                <a href="#media">News &amp; Insights</a>
+                <Link href="/news-insights">News &amp; Insights</Link>
                 <a href="#careers">Careers</a>
               </>
             )}
@@ -186,16 +187,17 @@ export default function Header() {
                 if (!megaMenuRef.current?.contains(e.relatedTarget as Node)) closeMega()
               }}
             >
-              <button
-                ref={i === active ? (megaTriggerRef as React.RefObject<HTMLButtonElement>) : undefined}
+              <Link
+                ref={i === active ? (megaTriggerRef as React.RefObject<HTMLAnchorElement>) : undefined}
                 className="mega-trigger"
-                type="button"
+                href={m.href}
                 aria-expanded={active === i}
                 aria-controls="mega-menu"
-                onClick={() => setActive(active === i ? null : i)}
+                onFocus={() => setActive(i)}
+                onClick={closeMega}
               >
                 {m.label}
-              </button>
+              </Link>
             </div>
             </Fragment>
           ))}
@@ -227,17 +229,17 @@ export default function Header() {
             <span>HIGHWAY ROOP</span>
             <h2>{menu.label}</h2>
             <p>{menu.intro}</p>
-            <a href={menu.href} onClick={closeMega}>
+            <Link href={menu.href} onClick={closeMega}>
               Explore {menu.label} <b><ArrowRight size={18} aria-hidden="true" /></b>
-            </a>
+            </Link>
           </div>
           {menu.cols.map(c => (
             <div className="mega-column" key={c.title}>
               <p>{c.title}</p>
               {c.links.map(([href, label]) => (
-                <a key={label} href={href} onClick={closeMega}>
+                <Link key={label} href={href} onClick={closeMega}>
                   <b>{label}</b>
-                </a>
+                </Link>
               ))}
             </div>
           ))}
@@ -265,9 +267,9 @@ export default function Header() {
           </span>
         </form>
         {mobileLinks.map(([href, label]) => (
-          <a key={href} href={href} onClick={() => setMobileOpen(false)}>
+          <Link key={href} href={href} onClick={() => setMobileOpen(false)}>
             {label}
-          </a>
+          </Link>
         ))}
       </div>
     </header>

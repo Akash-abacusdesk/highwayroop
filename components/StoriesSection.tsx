@@ -111,7 +111,7 @@ export function NewsSection() {
           </div>
         </div>
         <div className="news-hub reveal">
-          <a className="news-feature" href="#about">
+          <a className="news-feature" href="/about/our-journey">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async" src="/assets/hero-mobility-v2.webp" alt="" />
             <div className="news-feature-copy">
