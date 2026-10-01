@@ -162,7 +162,7 @@ const earthShader = {
 
 type SceneProps = GlobeProps & { tier: Tier; world: World; onReady: () => void };
 
-function Scene({ countries, activeCountryId, activeStoreId, hoveredId, inView, reducedMotion, tier, world, onReady }: SceneProps) {
+function Scene({ countries, activeCountryId, activeStoreId, hoveredId, mode, inView, reducedMotion, tier, world, onReady }: SceneProps) {
   const invalidate = useThree((s) => s.invalidate);
   const aniso = useThree((s) => s.gl.capabilities.getMaxAnisotropy());
   const yawGroup = useRef<THREE.Group>(null);
@@ -230,8 +230,11 @@ function Scene({ countries, activeCountryId, activeStoreId, hoveredId, inView, r
   useEffect(() => () => edge.dispose(), [edge]);
 
   const stores = useMemo(
-    () => countries.flatMap((c) => c.stores.map((s) => ({ ...s, countryId: c.id, position: toVec3(s, 1.014) }))),
-    [countries],
+    () =>
+      countries.flatMap((c) =>
+        c.stores.filter((s) => !!s.office === (mode === "office")).map((s) => ({ ...s, countryId: c.id, position: toVec3(s, 1.014) })),
+      ),
+    [countries, mode],
   );
 
   useEffect(onReady, [onReady]);
@@ -338,8 +341,8 @@ function Scene({ countries, activeCountryId, activeStoreId, hoveredId, inView, r
           {stores.map((s, i) => {
             const inCountry = s.countryId === activeCountryId;
             const selected = s.id === activeStoreId;
-            // Every warehouse is a red dot; the selected one turns white with a red-ringed halo.
-            const color = selected ? "#ffffff" : s.countryId === hoveredId ? C.markerHover : C.signal;
+            // Warehouses are red dots, offices amber; the selected one turns white with a red-ringed halo.
+            const color = selected ? "#ffffff" : s.countryId === hoveredId ? C.markerHover : s.office ? "#f5b942" : C.signal;
             return (
               <mesh key={s.id} ref={(m) => void (markerRefs.current[i] = m)} position={s.position} renderOrder={10}>
                 <sphereGeometry args={[inCountry ? 0.02 : 0.016, 16, 16]} />

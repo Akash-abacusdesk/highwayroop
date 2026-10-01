@@ -3,7 +3,7 @@ import type { MultiPolygon, Polygon } from "topojson-specification";
 import { feature, merge, mesh } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 
-export type Store = { id: string; name: string; city: string; latitude: number; longitude: number };
+export type Store = { id: string; name: string; city: string; latitude: number; longitude: number; office?: boolean; address?: string };
 
 export type Country = {
   id: string;
@@ -22,6 +22,8 @@ export type GlobeProps = {
   activeCountryId: string | null;
   activeStoreId: string | null;
   hoveredId: string | null;
+  /** Which kind of location is drawn; the other kind is hidden. */
+  mode: "warehouse" | "office";
   inView: boolean;
   reducedMotion: boolean;
 };
@@ -94,7 +96,7 @@ export function focusFor(countries: Country[], countryId: string | null, storeId
   const country = countries.find((c) => c.id === countryId);
   if (!country) return null;
   const store = country.stores.find((s) => s.id === storeId);
-  if (store) return { ...store, zoom: Math.min(country.zoom * STORE_ZOOM_FACTOR, MAX_ZOOM) };
+  if (store) return { ...store, zoom: store.office ? MAX_ZOOM : Math.min(country.zoom * STORE_ZOOM_FACTOR, MAX_ZOOM) };
   return country;
 }
 

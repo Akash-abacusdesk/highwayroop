@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, MapPin } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import WebGLGlobeLoader from './globe/WebGLGlobeLoader'
 import type { Country } from './globe/geo'
@@ -12,6 +12,39 @@ const APAC = ['156','158','392','410','408','496','704','764','116','418','104',
 // Warehouse locations from the Highway Roop warehouse map (14 warehouses, grouped by continent).
 const wh = (id: string, n: number, city: string, latitude: number, longitude: number) =>
   ({ id: `${id}-${n}`, name: `Warehouse ${n}`, city, latitude, longitude })
+
+// Office / plant locations in India (geocoded from address, approximate).
+const off = (n: number, city: string, latitude: number, longitude: number) =>
+  ({ id: `in-office-${n}`, name: `Office ${n}`, city, latitude, longitude, office: true })
+
+const officeAddress = [
+  "135R, Khandsa, Sector 36, Narsinghpur, Gurugram, Haryana 122004",
+  "HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED, Sector 4 Industrial Estate, IMT Manesar, Gurugram, Haryana 122050",
+  "HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED, Roz Ka Meo Industrial Area, Nuh, Haryana 122107",
+  "HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED, Sector 8 IMT Manesar, Gurugram, Haryana 122050",
+  "HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED, Roz Ka Meo Industrial Area, Nuh, Haryana 122107",
+  "Hirehalli Industrial Area, Tumkur, Karnataka 572168",
+  "SIPCOT Industrial Area Phase III, Ranipet, Vellore District, Tamil Nadu 632405",
+  "SIPCOT Industrial Complex Phase III, Ranipet, Vellore District, Tamil Nadu 632405",
+  "Hirehalli Industrial Area, Tumkur, Karnataka 572168",
+  "Phase VIII, Focal Point, Mangli Nichhi, Ludhiana, Punjab 141010",
+  "Gill Road, Industrial Area-B, Ludhiana, Punjab 141003",
+  "Grand Trunk Rd, Nandpur, Sahnewal, Punjab 141120",
+  "MIDC Road, Alandi Fata, Kurli, Maharashtra 410501",
+  "HUDA Industrial Area, Dharuhera, Haryana 123106",
+  "SIPCOT Industrial Park, Vadagal, Sriperumbudur, Vallam, Tamil Nadu 631604"
+]
+
+const offices = [
+  off(1, 'Narsinghpur, Gurugram', 28.43, 76.98), off(2, 'IMT Manesar, Sector 4', 28.35, 76.94),
+  off(3, 'Roz Ka Meo, Nuh', 28.17, 77.02), off(4, 'IMT Manesar, Sector 8', 28.37, 76.93),
+  off(5, 'Roz Ka Meo, Nuh', 28.18, 77.04), off(6, 'Hirehalli, Tumkur', 13.38, 77.08),
+  off(7, 'SIPCOT Ranipet', 12.93, 79.33), off(8, 'SIPCOT Ranipet', 12.94, 79.35),
+  off(9, 'Hirehalli, Tumkur', 13.39, 77.09), off(10, 'Focal Point, Ludhiana', 30.88, 75.93),
+  off(11, 'Gill Road, Ludhiana', 30.87, 75.88), off(12, 'Nandpur, Sahnewal', 30.85, 76.0),
+  off(13, 'Alandi Fata, Kurli', 18.68, 73.88), off(14, 'Dharuhera', 28.21, 76.8),
+  off(15, 'Sriperumbudur', 12.97, 79.95),
+].map((o, i) => ({ ...o, address: officeAddress[i] }))
 
 const regions: Country[] = [
   { id: 'in', name: 'India', isoNumerics: ['356'], latitude: 22, longitude: 79, zoom: 2.7, stores: [
@@ -27,6 +60,11 @@ const regions: Country[] = [
   { id: 'apac', name: 'Asia Pacific', isoNumerics: APAC, latitude: 5, longitude: 115, zoom: 1.5, stores: [
     wh('apac', 1, 'Bangkok, Thailand', 13.76, 100.5) ] },
 ]
+
+const officeRegions: Country[] = [
+  { id: 'in-offices', name: 'India', isoNumerics: ['356'], latitude: 22, longitude: 79, zoom: 2.7, stores: offices },
+]
+const allRegions = [...regions, ...officeRegions]
 
 // True while the element is on screen (starting `margin` early when `once`).
 function useInView(ref: React.RefObject<Element | null>, once = false) {
@@ -49,6 +87,7 @@ function useInView(ref: React.RefObject<Element | null>, once = false) {
 
 export default function GlobalSection() {
   const [openId, setOpenId] = useState<string | null>(null)
+  const [mode, setMode] = useState<'warehouse' | 'office'>('warehouse')
   const [storeId, setStoreId] = useState<string | null>(null)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [reducedMotion, setReducedMotion] = useState(false)
@@ -63,6 +102,66 @@ export default function GlobalSection() {
     mq.addEventListener('change', update)
     return () => mq.removeEventListener('change', update)
   }, [])
+
+  const renderList = (list: Country[]) => (
+      <ol className="region-list">
+        {list.map((r, i) => {
+          const open = r.id === openId
+          return (
+            <li key={r.id} className={open ? 'open' : undefined}>
+              <h3>
+                <button
+                  type="button"
+                  aria-expanded={open}
+                  aria-controls={`region-${r.id}`}
+                  onClick={() => {
+                    setOpenId(open ? null : r.id)
+                    setStoreId(null)
+                  }}
+                  onPointerEnter={() => setHoveredId(r.id)}
+                  onPointerLeave={() => setHoveredId(null)}
+                  onFocus={() => setHoveredId(r.id)}
+                  onBlur={() => setHoveredId(null)}
+                >
+                  <span className="region-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="region-name">{r.name}</span>
+                  <span className="region-toggle" aria-hidden />
+                </button>
+              </h3>
+              <div className="region-body" id={`region-${r.id}`}>
+                <ul>
+                  {r.stores.map(f => (
+                    <li key={f.id}>
+                      <button
+                        type="button"
+                        tabIndex={open ? 0 : -1}
+                        className={f.id === storeId ? 'active' : undefined}
+                        aria-pressed={f.id === storeId}
+                        onClick={() => setStoreId(f.id === storeId ? null : f.id)}
+                      >
+                        <span>{f.name}</span>
+                        <span>{f.city}</span>
+                      </button>
+                      <a
+                        className="map-link"
+                        tabIndex={open ? 0 : -1}
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(f.address ?? `${f.latitude},${f.longitude}`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${f.name} in Google Maps`}
+                        title="Open in Google Maps"
+                      >
+                        <MapPin size={15} aria-hidden="true" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          )
+        })}
+      </ol>
+  )
 
   return (
     <section className="section global" id="global">
@@ -81,52 +180,25 @@ export default function GlobalSection() {
             supporting coordinated delivery across automotive markets.
           </p>
 
-          <ol className="region-list">
-            {regions.map((r, i) => {
-              const open = r.id === openId
-              return (
-                <li key={r.id} className={open ? 'open' : undefined}>
-                  <h3>
-                    <button
-                      type="button"
-                      aria-expanded={open}
-                      aria-controls={`region-${r.id}`}
-                      onClick={() => {
-                        setOpenId(open ? null : r.id)
-                        setStoreId(null)
-                      }}
-                      onPointerEnter={() => setHoveredId(r.id)}
-                      onPointerLeave={() => setHoveredId(null)}
-                      onFocus={() => setHoveredId(r.id)}
-                      onBlur={() => setHoveredId(null)}
-                    >
-                      <span className="region-num">{String(i + 1).padStart(2, '0')}</span>
-                      <span className="region-name">{r.name}</span>
-                      <span className="region-toggle" aria-hidden />
-                    </button>
-                  </h3>
-                  <div className="region-body" id={`region-${r.id}`}>
-                    <ul>
-                      {r.stores.map(f => (
-                        <li key={f.id}>
-                          <button
-                            type="button"
-                            tabIndex={open ? 0 : -1}
-                            className={f.id === storeId ? 'active' : undefined}
-                            aria-pressed={f.id === storeId}
-                            onClick={() => setStoreId(f.id === storeId ? null : f.id)}
-                          >
-                            <span>{f.name}</span>
-                            <span>{f.city}</span>
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </li>
-              )
-            })}
-          </ol>
+          <div className="mode-tabs" role="tablist">
+            {(['warehouse', 'office'] as const).map(m => (
+              <button
+                key={m}
+                type="button"
+                role="tab"
+                aria-selected={mode === m}
+                className={mode === m ? 'active' : undefined}
+                onClick={() => {
+                  setMode(m)
+                  setOpenId(null)
+                  setStoreId(null)
+                }}
+              >
+                {m === 'warehouse' ? 'Warehouses' : 'Offices'}
+              </button>
+            ))}
+          </div>
+          {renderList(mode === 'warehouse' ? regions : officeRegions)}
 
           <div className="global-stats">
             <div>
@@ -152,10 +224,11 @@ export default function GlobalSection() {
           <div className="globe-disc" />
           {near && (
             <WebGLGlobeLoader
-              countries={regions}
+              countries={allRegions}
               activeCountryId={openId}
               activeStoreId={storeId}
               hoveredId={hoveredId}
+              mode={mode}
               inView={inView}
               reducedMotion={reducedMotion}
             />

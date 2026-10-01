@@ -422,6 +422,7 @@ section[id],article[id],div[id="media"]{scroll-margin-top:126px}
 .globe-disc{position:absolute;inset:5%;border-radius:50%;background:#15324b}
 .globe-fade{position:absolute;inset:0;opacity:0;transition:opacity .7s cubic-bezier(.22,1,.36,1)}
 .globe-fade.ready{opacity:1}
+.region-group{margin:18px 0 6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted,#8a8f98)}
 .region-list{list-style:none;margin:0 0 10px;padding:0}
 .region-list li{position:relative;border-bottom:1px solid var(--line)}
 .region-list h3{margin:0}
@@ -545,3 +546,17 @@ span:has(>svg.lucide),b:has(>svg.lucide),i:has(>svg.lucide){display:inline-flex;
 .biz-body .biz-cta:focus-visible{outline:3px solid rgba(215,25,32,.38);outline-offset:4px}
 .biz-tags a{white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
 @media(max-width:1100px) and (min-width:901px){.biz-tags a{letter-spacing:0;padding:8px}}
+
+/* Long location lists scroll inside the panel; globe stays in view on desktop. */
+.region-list .region-body ul{max-height:240px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.region-list .region-body li{display:flex;align-items:center;gap:8px;padding-right:6px}
+.region-list .region-body li button{flex:1;min-width:0}
+.map-link{display:grid;place-items:center;width:30px;height:30px;flex:0 0 30px;border-radius:50%;color:#9fb3bc;transition:color .3s,background .3s}
+.map-link:hover,.map-link:focus-visible{color:#fff;background:var(--red)}
+@media(min-width:1051px){.global .globe-stage{position:sticky;top:96px}.global-grid{align-items:start}}
+.global{overflow:clip}
+.mode-tabs{display:flex;gap:8px;margin:28px 0 10px}
+.mode-tabs button{all:unset;box-sizing:border-box;cursor:pointer;padding:9px 18px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9fb3bc;transition:.3s}
+.mode-tabs button:hover{color:#fff}
+.mode-tabs button.active{background:var(--red);border-color:var(--red);color:#fff}
+.mode-tabs button:focus-visible{outline:2px solid #fff;outline-offset:3px}
