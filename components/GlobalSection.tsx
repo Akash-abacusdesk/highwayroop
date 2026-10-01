@@ -142,17 +142,19 @@ export default function GlobalSection() {
                         <span>{f.name}</span>
                         <span>{f.city}</span>
                       </button>
-                      <a
-                        className="map-link"
-                        tabIndex={open ? 0 : -1}
-                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(f.address ?? `${f.latitude},${f.longitude}`)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Open ${f.name} in Google Maps`}
-                        title="Open in Google Maps"
-                      >
-                        <MapPin size={15} aria-hidden="true" />
-                      </a>
+                      {f.office && (
+                        <a
+                          className="map-link"
+                          tabIndex={open ? 0 : -1}
+                          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(f.address!)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Open ${f.name} in Google Maps`}
+                          title="Open in Google Maps"
+                        >
+                          <MapPin size={15} aria-hidden="true" />
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
