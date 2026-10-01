@@ -40,11 +40,6 @@ export default function Overview() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="ab-section ab-soft">
-        <div className="shell">
           <Stats
             items={[
               ['50+', 'YEARS OF LEGACY'],

@@ -134,21 +134,22 @@ export default function GlobalSection() {
                         aria-pressed={f.id === storeId}
                         onClick={() => setStoreId(f.id === storeId ? null : f.id)}
                       >
-                        <span>{f.name}</span>
-                        <span>{f.city}</span>
+                        {f.office ? `${f.name} · ${f.city}` : f.city}
                       </button>
-                      {f.office && (
+                      {f.office ? (
                         <a
                           className="map-link"
                           tabIndex={open ? 0 : -1}
                           href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(f.address!)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label={`Open ${f.name} in Google Maps`}
+                          aria-label={`Open ${f.name}, ${f.city} in Google Maps`}
                           title="Open in Google Maps"
                         >
                           <MapPin size={15} aria-hidden="true" />
                         </a>
+                      ) : (
+                        <span className="map-link" aria-hidden="true" />
                       )}
                     </li>
                   ))}

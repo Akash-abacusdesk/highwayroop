@@ -560,3 +560,5 @@ span:has(>svg.lucide),b:has(>svg.lucide),i:has(>svg.lucide){display:inline-flex;
 .globe-legend i{width:8px;height:8px;border-radius:50%}
 .dot-wh{background:#d6392b}.dot-office{background:#f5b942}
 .globe-stage .globe-legend{position:absolute;left:0;right:0;top:100%}
+.region-list .region-body button{display:block;text-align:left}
+.region-list .region-body li{padding-right:0}

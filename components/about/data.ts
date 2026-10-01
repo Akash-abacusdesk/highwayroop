@@ -17,7 +17,7 @@ export const LEADERS: { name: string; role: string; bio: string }[] = [
   { name: 'Prajod', role: 'VP Technology', bio: 'Technology leadership.' },
   { name: 'Piyush Asija', role: 'CS & Chief Compliance Officer', bio: 'Company secretarial and compliance leadership.' },
   { name: 'Bipin Bahuguna', role: 'Strategy', bio: 'Strategy leadership.' },
-  { name: 'Com. & Branding', role: 'TBD', bio: 'Communications and branding leadership.' },
+  { name: 'Shilpi Shukla', role: 'Communications & Branding', bio: 'Communications and branding leadership.' },
   { name: 'Rammohan', role: 'Manufacturing Excellence', bio: 'Manufacturing excellence leadership.' },
 ]
 

@@ -91,7 +91,7 @@ const newsLinks = [
     label: 'Download',
     title: 'Company presentation',
     image: '/assets/tooling-engineering.webp',
-    href: 'https://highwayroop.com/assets/images/HRPTL%20Corporate%20Presentation.pdf',
+    href: '/HRPTL-Corporate-Presentation.pdf',
     Icon: Download,
     external: true,
   },

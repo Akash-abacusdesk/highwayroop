@@ -98,7 +98,7 @@ export default function CorporateSection() {
           </div>
           <div className="resource-links">
             <a
-              href="https://highwayroop.com/assets/images/HRPTL%20Corporate%20Presentation.pdf"
+              href="/HRPTL-Corporate-Presentation.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >

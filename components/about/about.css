@@ -30,7 +30,8 @@
 .ab-story-panel p{color:#d5e4ea}
 
 .ab-stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:#fff}
-.ab-stat{min-height:190px;padding:34px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-end}
+.ab-story+.ab-stats{border-top:3px solid var(--red)}
+.ab-stat{min-height:150px;padding:34px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-end}
 .ab-stat:last-child{border:0}
 .ab-stat b{color:var(--blue);font-size:55px;font-weight:500;line-height:1}
 .ab-stat span{margin-top:12px;color:var(--muted);font-size:11px;letter-spacing:.1em}
