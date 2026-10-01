@@ -10,17 +10,17 @@ export const CEO_LINKEDIN = 'https://www.linkedin.com/in/dharmesh-arora/'
 
 // linkedin is left off where no profile could be matched to this person with confidence.
 export const LEADERS: { name: string; role: string; bio: string; linkedin?: string }[] = [
-  { name: 'Ramanathan Iyer', role: 'BU Head (Steering)', bio: 'Business Unit leadership for Steering.' },
+  { name: 'Ramanathan Iyer', role: 'BU Head (Steering)', bio: 'Business Unit leadership for Steering.', linkedin: 'https://www.linkedin.com/in/ramanathan-iyer-a5546616/' },
   { name: 'Sunil Ailavadi', role: 'BU Head (Powertrain)', bio: 'Business Unit leadership for Powertrain.', linkedin: 'https://www.linkedin.com/in/sunil-ailavadi-34b23311/' },
-  { name: 'BU Head', role: 'Lightweighting · TBH', bio: 'Business Unit leadership for Lightweighting.' },
-  { name: 'Anirban Sanyal', role: 'CFO', bio: 'Finance leadership.' },
+  { name: 'BU Head', role: 'Lightweighting', bio: 'Business Unit leadership for Lightweighting.' },
+  { name: 'Anirban Sanyal', role: 'CFO', bio: 'Finance leadership.', linkedin: 'https://www.linkedin.com/in/anirbansanyal1975' },
   { name: 'Vinod Kr Singh', role: 'CHRO', bio: 'Human Resources leadership.', linkedin: 'https://www.linkedin.com/in/vinod-singh-1a58b922/' },
-  { name: 'Ajay Mrig', role: 'CPO', bio: 'Corporate functional leadership.' },
+  { name: 'Ajay Mrig', role: 'CPO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/ajay-m-74445425/' },
   { name: 'Sai Iyer', role: 'CMO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/sai-iyer-1615b65/' },
   { name: 'Prajod', role: 'VP Technology', bio: 'Technology leadership.', linkedin: 'https://www.linkedin.com/in/prajod-ayyappath-794427b/' },
   { name: 'Piyush Asija', role: 'CS & Chief Compliance Officer', bio: 'Company secretarial and compliance leadership.', linkedin: 'https://www.linkedin.com/in/piyush-asija-b8884817/' },
-  { name: 'Bipin Bahuguna', role: 'Strategy', bio: 'Strategy leadership.' },
-  { name: 'Shilpi Shukla', role: 'Communications & Branding', bio: 'Communications and branding leadership.' },
+  { name: 'Bipin Bahuguna', role: 'AVP - Strategy', bio: 'Strategy leadership.', linkedin: 'https://www.linkedin.com/in/bipin-bahuguna-xlri' },
+  { name: 'Shilpi Shukla', role: 'Group Head - Communications & Branding', bio: 'Communications and branding leadership.', linkedin: 'https://www.linkedin.com/in/shilpi-shukla-4aa6a516/' },
   { name: 'Rammohan', role: 'Manufacturing Excellence', bio: 'Manufacturing excellence leadership.' },
 ]
 
