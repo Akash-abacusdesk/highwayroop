@@ -14,16 +14,16 @@ export default function Footer() {
         </div>
         <div className="footer-links">
           <Link href="/about">About</Link>
-          <a href="/#businesses">Businesses</a>
-          <a href="/#businesses">Capabilities</a>
+          <Link href="/#businesses">Businesses</Link>
+          <Link href="/#capabilities">Capabilities</Link>
           <Link href="/about/global-presence">Global Presence</Link>
-          <a href="/#corporate">Corporate Information</a>
-          <a href="/#businesses">Innovation &amp; Quality</a>
-          <a href="/#sustainability">Sustainability</a>
-          <a href="/#careers">Careers</a>
+          <Link href="/#corporate">Corporate Information</Link>
+          <Link href="/#innovation">Innovation &amp; Quality</Link>
+          <Link href="/#sustainability">Sustainability</Link>
+          <Link href="/#careers">Careers</Link>
           <Link href="/news-insights">Media</Link>
           <Link href="/about/leadership">CEO Message</Link>
-          <a href="/#contact">Contact</a>
+          <Link href="/#contact">Contact</Link>
         </div>
       </div>
       <div className="shell footer-bottom">

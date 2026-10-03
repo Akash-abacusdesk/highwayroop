@@ -7,7 +7,7 @@
         "headingLine2": "Delivered at global scale.",
         "lede": "Fifteen manufacturing plants and fourteen warehouses connect specialist engineering and production capabilities with 50+ OEM and Tier-1 relationships.",
         "primaryCtaText": "Explore the group",
-        "primaryCtaHref": "#businesses",
+        "primaryCtaHref": "/about/group-structure",
         "secondaryCtaText": "View global footprint",
         "secondaryCtaHref": "#global"
       },
@@ -17,7 +17,7 @@
         "headingLine2": "To validated production.",
         "lede": "Engineering, tooling, forging, die casting, precision machining, assembly and validation operate as one connected delivery path.",
         "primaryCtaText": "Explore the process",
-        "primaryCtaHref": "#businesses",
+        "primaryCtaHref": "#capabilities",
         "secondaryCtaText": "Discuss a programme",
         "secondaryCtaHref": "#contact"
       },
@@ -46,7 +46,7 @@
     "para1": "Highway Roop was formed by Highway Industries, Roop Automotives and Chamundi, with capabilities spanning forging, machining, aluminium die casting and captive tooling.",
     "para2": "More than five decades of combined engineering experience support safety-critical steering, transmission, suspension and powertrain programmes across ICE and EV applications.",
     "ctaText": "Explore the operating platform",
-    "ctaHref": "#businesses"
+    "ctaHref": "/about/group-structure"
   },
   "contact": {
     "eyebrow": "CONNECT WITH HIGHWAY ROOP",

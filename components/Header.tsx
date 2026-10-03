@@ -154,7 +154,7 @@ export default function Header() {
         <div className="shell utility-inner">
           <nav aria-label="Corporate links">
             <Link href="/about/leadership">Leadership</Link>
-            <a href="/#corporate">Corporate information</a>
+            <Link href="/#corporate">Corporate information</Link>
             <Link href="/news-insights">Newsroom</Link>
           </nav>
           <form className="site-search" role="search" onSubmit={handleSearch}>
@@ -180,17 +180,17 @@ export default function Header() {
       </div>
 
       <div className="header-inner shell">
-        <a className="brand" href="/" aria-label="Highway Roop home">
+        <Link className="brand" href="/" aria-label="Highway Roop home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img decoding="async" src="/assets/highway-roop-logo.webp" alt="Highway Roop" width={420} height={39} />
-        </a>
+        </Link>
         <nav className="main-nav" aria-label="Primary navigation">
           {MENUS.map((m, i) => (
             <Fragment key={m.label}>
             {m.label === 'Contact' && (
               <>
                 <Link href="/news-insights">News &amp; Insights</Link>
-                <a href="#careers">Careers</a>
+                <Link href="/#careers">Careers</Link>
               </>
             )}
             <div
@@ -219,6 +219,7 @@ export default function Header() {
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(v => !v)}
         >
+          <span></span>
           <span></span>
           <span></span>
         </button>

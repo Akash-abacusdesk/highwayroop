@@ -4,19 +4,19 @@ const businesses = [
     name: 'Driveline',
     image: '/assets/advanced-forging.webp',
     desc: 'Precision-forged and machined components engineered for demanding engine, transmission and driveline applications.',
-    tags: [['#businesses', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],
+    tags: [['#capabilities', 'Technology & Manufacturing'], ['/about/group-structure', 'Products & Solutions'], ['/about/global-presence', 'Services & Locations']],
   },
   {
     name: 'Steering & Suspension',
     image: '/assets/hero-precision.webp',
     desc: 'Safety-critical components and assemblies designed for control, durability and consistent vehicle performance.',
-    tags: [['#businesses', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],
+    tags: [['#capabilities', 'Technology & Manufacturing'], ['/about/group-structure', 'Products & Solutions'], ['/about/global-presence', 'Services & Locations']],
   },
   {
     name: 'Lightweighting',
     image: '/assets/lightweighting-ev.webp',
     desc: 'Aluminium die casting, tooling and precision manufacturing for efficient ICE and next-generation EV architectures.',
-    tags: [['#businesses', 'Technology & Manufacturing'], ['#businesses', 'Products & Solutions'], ['#global', 'Services & Locations']],
+    tags: [['#capabilities', 'Technology & Manufacturing'], ['/about/group-structure', 'Products & Solutions'], ['/about/global-presence', 'Services & Locations']],
   },
 ]
 
@@ -63,7 +63,7 @@ export default function GroupSection() {
                     <a key={label} href={href}>{label}</a>
                   ))}
                 </div>
-                <a className="biz-cta" href="#businesses">
+                <a className="biz-cta" href="/about/group-structure">
                   Explore<span className="biz-cta-name"> {b.name}</span> <span aria-hidden="true"><ArrowRight size={18} aria-hidden="true" /></span>
                 </a>
               </div>
