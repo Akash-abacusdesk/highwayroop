@@ -23,15 +23,17 @@ const MENUS: Menu[] = [
     intro: 'Three specialist businesses delivering engineered mobility systems.',
     cols: ['Driveline', 'Steering & Suspension', 'Lightweighting'].map(t => ({
       title: t.toUpperCase(),
-      links: [['/#businesses', 'Technology & Manufacturing'], ['/#businesses', 'Products & Solutions']] as [string, string][],
+      links: (t === 'Driveline'
+        ? [['/technology', 'Technology & Manufacturing'], ['/products-solutions', 'Products & Solutions']]
+        : [['/#businesses', 'Technology & Manufacturing'], ['/#businesses', 'Products & Solutions']]) as [string, string][],
     })),
   },
   {
-    label: 'Sustainability', href: '/#sustainability',
+    label: 'Sustainability', href: '/sustainability/esg-overview',
     intro: 'Responsible growth across environment, people and governance.',
     cols: [
-      { title: 'ESG', links: [['/#sustainability', 'ESG Overview'], ['/#sustainability', 'Environment'], ['/#sustainability', 'People']] },
-      { title: 'RESPONSIBILITY', links: [['/#sustainability', 'CSR'], ['/#sustainability', 'Governance'], ['/#sustainability', 'Reports & Policies']] },
+      { title: 'ESG', links: [['/sustainability/esg-overview', 'ESG Overview'], ['/sustainability/environment', 'Environment'], ['/sustainability/people', 'People']] },
+      { title: 'RESPONSIBILITY', links: [['/sustainability/csr', 'CSR'], ['/sustainability/governance', 'Governance'], ['/sustainability/reports-policies', 'Reports & Policies']] },
     ],
   },
   {
@@ -45,11 +47,11 @@ const MENUS: Menu[] = [
     ],
   },
   {
-    label: 'Contact', href: '/#contact',
+    label: 'Contact', href: '/contact/corporate-office',
     intro: 'Reach our offices, plants and business teams.',
     cols: [
-      { title: 'OFFICES & PLANTS', links: [['/#contact', 'Corporate Office'], ['/#global', 'Manufacturing Locations']] },
-      { title: 'GET IN TOUCH', links: [['/#contact', 'Business Enquiries'], ['/#contact', 'General / Investor Contact']] },
+      { title: 'OFFICES & PLANTS', links: [['/contact/corporate-office', 'Corporate Office'], ['/#global', 'Manufacturing Locations']] },
+      { title: 'GET IN TOUCH', links: [['/contact/business-enquiries', 'Business Enquiries'], ['/contact/general-investor-contact', 'General / Investor Contact']] },
     ],
   },
 ]
@@ -144,8 +146,8 @@ export default function Header() {
   const mobileLinks: [string, string][] = [
     ...MENUS.filter(m => m.label !== 'Contact').map(m => [m.href, m.label] as [string, string]),
     ['/news-insights', 'News & Insights'],
-    ['/#careers', 'Careers'],
-    ['/#contact', 'Contact'],
+    ['/careers', 'Careers'],
+    ['/contact/corporate-office', 'Contact'],
   ]
 
   return (
@@ -190,7 +192,7 @@ export default function Header() {
             {m.label === 'Contact' && (
               <>
                 <Link href="/news-insights">News &amp; Insights</Link>
-                <Link href="/#careers">Careers</Link>
+                <Link href="/careers">Careers</Link>
               </>
             )}
             <div

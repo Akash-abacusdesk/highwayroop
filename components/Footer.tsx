@@ -19,11 +19,11 @@ export default function Footer() {
           <Link href="/about/global-presence">Global Presence</Link>
           <Link href="/#corporate">Corporate Information</Link>
           <Link href="/#innovation">Innovation &amp; Quality</Link>
-          <Link href="/#sustainability">Sustainability</Link>
-          <Link href="/#careers">Careers</Link>
+          <Link href="/sustainability/esg-overview">Sustainability</Link>
+          <Link href="/careers">Careers</Link>
           <Link href="/news-insights">Media</Link>
           <Link href="/about/leadership">CEO Message</Link>
-          <Link href="/#contact">Contact</Link>
+          <Link href="/contact/corporate-office">Contact</Link>
         </div>
       </div>
       <div className="shell footer-bottom">

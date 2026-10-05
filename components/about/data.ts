@@ -51,3 +51,27 @@ export const PRESS: { source: string; title: string; text: string; image?: strin
   { source: 'MONEYCONTROL', title: 'Highway Roop completes acquisition', text: 'A scaled, diversified precision manufacturing platform.', publication: 'Moneycontrol' },
   { source: 'MACHINE MAKER', title: 'Highway Roop acquires Chamundi Die Cast', text: 'Coverage of the completed acquisition.', publication: 'Machine Maker' },
 ]
+
+export const SUSTAINABILITY_LINKS = [
+  { href: '/sustainability/esg-overview', label: 'ESG Overview' },
+  { href: '/sustainability/environment', label: 'Environment' },
+  { href: '/sustainability/people', label: 'People' },
+  { href: '/sustainability/csr', label: 'CSR' },
+  { href: '/sustainability/governance', label: 'Governance' },
+  { href: '/sustainability/reports-policies', label: 'Reports & Policies' },
+]
+
+export const CONTACT_LINKS = [
+  { href: '/contact/corporate-office', label: 'Corporate Office' },
+  { href: '/contact/business-enquiries', label: 'Business Enquiries' },
+  { href: '/contact/general-investor-contact', label: 'General / Investor Contact' },
+]
+
+export const PHONE = { label: '+91 83969 99592', href: 'tel:+918396999592' }
+export const EMAIL = 'info@highwayroop.com'
+
+export const SUBNAVS = [
+  { prefix: '/about', label: 'About', links: ABOUT_LINKS },
+  { prefix: '/sustainability', label: 'Sustainability', links: SUSTAINABILITY_LINKS },
+  { prefix: '/contact', label: 'Contact', links: CONTACT_LINKS },
+]

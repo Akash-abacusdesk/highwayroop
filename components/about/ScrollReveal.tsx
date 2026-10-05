@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 
-const TARGETS = '.ab-head,.ab-story,.ab-stats,.ab-mosaic,.ab-milestone,.ab-platform,.ab-units,.ab-caps,.ab-ceo,.ab-leaders,.ab-news-feature,.ab-news-grid'
+const TARGETS = '.ab-head,.ab-story,.ab-stats,.ab-mosaic,.ab-milestone,.ab-platform,.ab-units,.ab-caps,.ab-ceo,.ab-leaders,.ab-news-feature,.ab-news-grid,.ab-cards,.ab-split,.ab-roadmap,.ab-office,.ab-locations'
 
 // Fades the inner-page blocks in as they scroll into view. Anything already on screen
 // is left alone, and reduced-motion users get no animation.
