@@ -2,58 +2,79 @@
   "hero": {
     "slides": [
       {
-        "eyebrow": "HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED",
-        "headingLine1": "Integrated precision.",
-        "headingLine2": "Delivered at global scale.",
-        "lede": "Fifteen manufacturing plants and fourteen warehouses connect specialist engineering and production capabilities with 50+ OEM and Tier-1 relationships.",
-        "primaryCtaText": "Explore the group",
-        "primaryCtaHref": "/about/group-structure",
-        "secondaryCtaText": "View global footprint",
-        "secondaryCtaHref": "#global"
+        "eyebrow": "",
+        "headingLine1": "Built for the systems that move power.",
+        "headingLine2": "",
+        "lede": "Precision-forged, machined and assembled solutions support power transmission across established and evolving vehicle architectures.",
+        "primaryCtaText": "Explore our capabilities",
+        "primaryCtaHref": "/driveline",
+        "secondaryCtaText": "Explore our businesses",
+        "secondaryCtaHref": "#businesses"
       },
       {
-        "eyebrow": "ENGINEERING TO INDUSTRIALISATION",
-        "headingLine1": "From first drawing.",
-        "headingLine2": "To validated production.",
-        "lede": "Engineering, tooling, forging, die casting, precision machining, assembly and validation operate as one connected delivery path.",
-        "primaryCtaText": "Explore the process",
-        "primaryCtaHref": "#capabilities",
-        "secondaryCtaText": "Discuss a programme",
-        "secondaryCtaHref": "#contact"
+        "eyebrow": "",
+        "headingLine1": "Engineered for control on every road.",
+        "headingLine2": "",
+        "lede": "Safety-critical components and assemblies combine dimensional accuracy, durability and manufacturing consistency for demanding vehicle applications.",
+        "primaryCtaText": "Explore our capabilities",
+        "primaryCtaHref": "/steering-suspension",
+        "secondaryCtaText": "Explore our businesses",
+        "secondaryCtaHref": "#businesses"
       },
       {
-        "eyebrow": "FUTURE-READY MOBILITY",
-        "headingLine1": "Lightweight solutions.",
-        "headingLine2": "Engineered for what comes next.",
-        "lede": "Complex aluminium housings, structural components and precision assemblies support vehicle efficiency across ICE and EV architectures.",
-        "primaryCtaText": "Explore future mobility",
-        "primaryCtaHref": "#businesses",
-        "secondaryCtaText": "Start a technical discussion",
-        "secondaryCtaHref": "#contact"
+        "eyebrow": "",
+        "headingLine1": "Making complex mobility structures lighter.",
+        "headingLine2": "",
+        "lede": "Aluminium die casting, tooling and precision machining enable complex components and assemblies for evolving ICE and EV vehicle architectures.",
+        "primaryCtaText": "Explore lightweighting",
+        "primaryCtaHref": "/lightweighting",
+        "secondaryCtaText": "Explore our businesses",
+        "secondaryCtaHref": "#businesses"
       }
     ]
   },
   "stats": [
-    { "count": 50, "suffix": "+", "label": "Years of\nengineering legacy" },
-    { "count": 15, "suffix": "", "label": "Manufacturing\nplants" },
-    { "count": 14, "suffix": "",  "label": "Warehouses" },
-    { "count": 7,  "suffix": "",  "label": "Countries in our\nglobal network" },
-    { "count": 50, "suffix": "+", "label": "OEM & Tier-1\nrelationships" }
+    {
+      "count": 50,
+      "suffix": "+",
+      "label": "Years of\nengineering legacy"
+    },
+    {
+      "count": 15,
+      "suffix": "",
+      "label": "Manufacturing\nplants"
+    },
+    {
+      "count": 14,
+      "suffix": "",
+      "label": "Warehouses"
+    },
+    {
+      "count": 7,
+      "suffix": "",
+      "label": "Countries in our\nglobal network"
+    },
+    {
+      "count": 50,
+      "suffix": "+",
+      "label": "OEM & Tier-1\nrelationships"
+    }
   ],
   "intro": {
-    "headingLine1": "Integrated scale.",
-    "headingLine2": "Accountable execution.",
-    "para1": "Highway Roop was formed by Highway Industries, Roop Automotives and Chamundi, with capabilities spanning forging, machining, aluminium die casting and captive tooling.",
-    "para2": "More than five decades of combined engineering experience support safety-critical steering, transmission, suspension and powertrain programmes across ICE and EV applications.",
-    "ctaText": "Explore the operating platform",
+    "headingLine1": "One group.",
+    "headingLine2": "Complementary capabilities.",
+    "para1": "Highway Roop brings together established automotive businesses spanning driveline, steering and suspension, and lightweighting, supported by manufacturing, technology, quality and operational capabilities.",
+    "para2": "",
+    "ctaText": "Explore the Highway Roop Group",
     "ctaHref": "/about/group-structure"
   },
   "contact": {
     "eyebrow": "CONNECT WITH HIGHWAY ROOP",
-    "headingLine1": "Bring us your",
-    "headingLine2": "next programme.",
+    "headingLine1": "Let's build the next",
+    "headingLine2": "programme together.",
     "buttonText": "Contact our corporate team",
     "phone": "+91 83969 99592",
-    "email": "info@highwayroop.com"
+    "email": "info@highwayroop.com",
+    "body": "Tell us what you are looking to build, improve or scale, and connect with the Highway Roop team."
   }
 }

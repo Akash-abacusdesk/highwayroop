@@ -2,12 +2,12 @@ import { ArrowRight } from 'lucide-react'
 import type { IntroContent } from '@/types/content'
 
 const defaultContent: IntroContent = {
-  headingLine1: 'Integrated scale.',
-  headingLine2: 'Accountable execution.',
-  para1: 'Highway Roop was formed by Highway Industries, Roop Automotives and Chamundi, with capabilities spanning forging, machining, aluminium die casting and captive tooling.',
-  para2: 'More than five decades of combined engineering experience support safety-critical steering, transmission, suspension and powertrain programmes across ICE and EV applications.',
-  ctaText: 'Explore the operating platform',
-  ctaHref: '#businesses',
+  "headingLine1": "One group.",
+  "headingLine2": "Complementary capabilities.",
+  "para1": "Highway Roop brings together established automotive businesses spanning driveline, steering and suspension, and lightweighting, supported by manufacturing, technology, quality and operational capabilities.",
+  "para2": "",
+  "ctaText": "Explore the Highway Roop Group",
+  "ctaHref": "/about/group-structure"
 }
 
 export default function IntroSection({ content = defaultContent }: { content?: IntroContent }) {
@@ -23,9 +23,9 @@ export default function IntroSection({ content = defaultContent }: { content?: I
             {content.headingLine1}<br />
             <em>{content.headingLine2}</em>
           </h2>
-          <div className="two-col-copy">
+          <div className={content.para2 ? 'two-col-copy' : 'one-col-copy'}>
             <p>{content.para1}</p>
-            <p>{content.para2}</p>
+            {content.para2 && <p>{content.para2}</p>}
           </div>
           <a className="text-link accent" href={content.ctaHref}>
             {content.ctaText} <span><ArrowRight size={18} aria-hidden="true" /></span>

@@ -283,3 +283,11 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
   .ab-products img{height:130px}
   .ab-filters{gap:8px;margin-bottom:22px}.ab-filters button{padding:10px 14px}
 }
+
+/* Business pages: spacing between sub-blocks. */
+.ab-biz{scroll-margin-top:190px}
+.ab-subtitle{font-size:clamp(20px,2vw,26px);font-weight:500;margin:70px 0 22px;scroll-margin-top:200px}
+.ab-biz .ab-gap{margin-top:70px}
+@media(max-width:1050px){.ab-subtitle{scroll-margin-top:140px}}
+@media(max-width:700px){.ab-subtitle{scroll-margin-top:130px}.ab-biz .ab-gap,.ab-subtitle{margin-top:36px}.ab-subtitle{margin-bottom:14px}}
+.ab-head+.ab-subtitle{margin-top:0}

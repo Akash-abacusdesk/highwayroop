@@ -70,15 +70,15 @@ export const CONTACT_LINKS = [
 export const PHONE = { label: '+91 83969 99592', href: 'tel:+918396999592' }
 export const EMAIL = 'info@highwayroop.com'
 
+export type Business = { slug: string; name: string; image: string; heroTitle: string; heroCopy: string; intro: string; desc: string }
+export const BUSINESSES: Business[] = [
+  { slug: 'driveline', name: 'Driveline', image: '/assets/advanced-forging.webp', heroTitle: 'Built for the systems that move power.', heroCopy: 'Precision-forged, machined and assembled solutions support power transmission across established and evolving vehicle architectures.', intro: 'Precision engineered for the systems that move power.', desc: 'Forging, precision machining and assembly capabilities support demanding engine, transmission and driveline applications across automotive and mobility platforms.' },
+  { slug: 'steering-suspension', name: 'Steering & Suspension', image: '/assets/hero-precision.webp', heroTitle: 'Engineered for control on every road.', heroCopy: 'Safety-critical components and assemblies combine dimensional accuracy, durability and manufacturing consistency for demanding vehicle applications.', intro: 'Engineered for control, safety and durability.', desc: 'Safety-critical components and assemblies combine manufacturing depth, dimensional accuracy and durability for demanding vehicle applications.' },
+  { slug: 'lightweighting', name: 'Lightweighting', image: '/assets/lightweighting-ev.webp', heroTitle: 'Making complex mobility structures lighter.', heroCopy: 'Aluminium die casting, tooling and precision machining enable complex components and assemblies for evolving ICE and EV vehicle architectures.', intro: 'Making mobility lighter through precision.', desc: 'Aluminium die-cast and precision-machined solutions enable complex components and assemblies for evolving ICE and EV vehicle architectures.' },
+]
+
 export const SUBNAVS = [
   { prefix: '/about', label: 'About', links: ABOUT_LINKS },
   { prefix: '/sustainability', label: 'Sustainability', links: SUSTAINABILITY_LINKS },
   { prefix: '/contact', label: 'Contact', links: CONTACT_LINKS },
-]
-
-export type Business = { slug: string; name: string; techHero: string; productsHero: string }
-export const BUSINESSES: Business[] = [
-  { slug: 'driveline', name: 'Driveline', techHero: 'hero-technology-v2', productsHero: 'hero-products-v2' },
-  { slug: 'steering-suspension', name: 'Steering & Suspension', techHero: 'hero-precision', productsHero: 'hero-products-v2' },
-  { slug: 'lightweighting', name: 'Lightweighting', techHero: 'lightweighting-ev', productsHero: 'hero-products-v2' },
 ]

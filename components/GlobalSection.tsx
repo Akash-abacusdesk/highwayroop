@@ -166,16 +166,13 @@ export default function GlobalSection() {
       <div className="shell global-grid">
         <div className="global-copy reveal">
           <div className="section-kicker">
-            <span>04</span>
+            <span>03</span>
             <p>Global presence</p>
           </div>
-          <h2>
-            Global reach.<br />
-            <em>Responsive customer support.</em>
-          </h2>
+          <h2>A footprint designed for global customer needs.</h2>
           <p>
-            Fifteen manufacturing plants in India connect with fourteen warehouses across seven countries,
-            supporting coordinated delivery across automotive markets.
+            Fifteen manufacturing plants across five Indian states support forging, machining, die casting, assembly,
+            stampings and surface treatment, complemented by fourteen international warehouses across seven countries.
           </p>
 
           {renderList(regions)}
@@ -194,8 +191,8 @@ export default function GlobalSection() {
               <span>Countries served</span>
             </div>
           </div>
-          <a className="text-link accent" href="#contact">
-            Connect with our global team <span><ArrowRight size={18} aria-hidden="true" /></span>
+          <a className="text-link accent" href="/about/global-presence">
+            Explore our global footprint <span><ArrowRight size={18} aria-hidden="true" /></span>
           </a>
         </div>
 

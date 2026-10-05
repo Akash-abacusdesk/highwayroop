@@ -7,7 +7,7 @@ import { SUBNAVS } from './data'
 // One sub-nav for every section; the section (About, Sustainability, Contact) is picked from the URL.
 export default function SubNav() {
   const path = usePathname()
-  const section = SUBNAVS.find(s => path.startsWith(s.prefix))
+  const section = SUBNAVS.find(s => s.links.some(l => l.href === path) || path.startsWith(s.prefix + '/'))
   if (!section) return null
   return (
     <nav className="ab-sub" aria-label={section.label}>

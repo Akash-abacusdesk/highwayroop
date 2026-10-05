@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { BUSINESSES } from './about/data'
 import { Fragment, useState, useEffect, useRef, useCallback } from 'react'
 
-type Col = { title: string; links: [string, string][] }
+type Col = { title: string; links: [string, string][]; href?: string; blurb?: string }
 type Menu = { label: string; href: string; intro: string; cols: Col[] }
 
 // Dropdowns for About, Businesses, Sustainability, Investors; News & Careers stay plain links.
@@ -24,7 +24,9 @@ const MENUS: Menu[] = [
     intro: 'Three specialist businesses delivering engineered mobility systems.',
     cols: BUSINESSES.map(b => ({
       title: b.name.toUpperCase(),
-      links: [[`/${b.slug}/technology`, 'Technology & Manufacturing'], [`/${b.slug}/products-solutions`, 'Products & Solutions']] as [string, string][],
+      href: `/${b.slug}`,
+      blurb: b.intro,
+      links: [[`/${b.slug}#technology`, 'Technology & Manufacturing'], [`/${b.slug}#products-solutions`, 'Products & Solutions']] as [string, string][],
     })),
   },
   {
@@ -249,7 +251,15 @@ export default function Header() {
           </div>
           {menu.cols.map(c => (
             <div className="mega-column" key={c.title}>
-              <p>{c.title}</p>
+              {c.href ? (
+                <Link className="mega-biz" href={c.href} onClick={closeMega}>
+                  <strong>{c.title}</strong>
+                  <em>{c.blurb}</em>
+                  <span>View business <ArrowRight size={14} aria-hidden="true" /></span>
+                </Link>
+              ) : (
+                <p>{c.title}</p>
+              )}
               {c.links.map(([href, label]) => (
                 <Link key={label} href={href} onClick={closeMega}>
                   <b>{label}</b>

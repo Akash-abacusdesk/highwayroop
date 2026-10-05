@@ -4,7 +4,13 @@ const base: NextConfig = process.env.VERCEL ? {} : { distDir: 'out', output: 'st
 // inlineCss removes the render-blocking stylesheet request
 const nextConfig: NextConfig = { ...base, experimental: { inlineCss: true },
   async redirects() {
-    return ['technology', 'products-solutions'].map(p => ({ source: `/${p}`, destination: `/driveline/${p}`, permanent: true }))
+    const slugs = ['driveline', 'steering-suspension', 'lightweighting']
+    return [
+      { source: '/technology', destination: '/driveline#technology', permanent: true },
+      { source: '/products-solutions', destination: '/driveline#products-solutions', permanent: true },
+      { source: '/businesses', destination: '/#businesses', permanent: true },
+      ...slugs.flatMap(s => ['technology', 'products-solutions'].map(page => ({ source: `/${s}/${page}`, destination: `/${s}#${page}`, permanent: true }))),
+    ]
   },
 }
 export default nextConfig

@@ -4,39 +4,12 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import type { HeroSlide } from '@/types/content'
 
-const heroImages = ['hero-global-engineering-v3', 'hero-industrialisation-v3', 'hero-future-mobility-v3']
+const heroImages = ['hero-driveline', 'hero-precision', 'lightweighting-ev']
 
 const defaultSlides: HeroSlide[] = [
-  {
-    eyebrow: 'HIGHWAY ROOP PRECISION TECHNOLOGIES LIMITED',
-    headingLine1: 'Integrated precision.',
-    headingLine2: 'Delivered at global scale.',
-    lede: 'Fifteen manufacturing plants and fourteen warehouses connect specialist engineering and production capabilities with 50+ OEM and Tier-1 relationships.',
-    primaryCtaText: 'Explore the group',
-    primaryCtaHref: '#businesses',
-    secondaryCtaText: 'View global footprint',
-    secondaryCtaHref: '#global',
-  },
-  {
-    eyebrow: 'ENGINEERING TO INDUSTRIALISATION',
-    headingLine1: 'From first drawing.',
-    headingLine2: 'To validated production.',
-    lede: 'Engineering, tooling, forging, die casting, precision machining, assembly and validation operate as one connected delivery path.',
-    primaryCtaText: 'Explore the process',
-    primaryCtaHref: '#businesses',
-    secondaryCtaText: 'Discuss a programme',
-    secondaryCtaHref: '#contact',
-  },
-  {
-    eyebrow: 'FUTURE-READY MOBILITY',
-    headingLine1: 'Lightweight solutions.',
-    headingLine2: 'Engineered for what comes next.',
-    lede: 'Complex aluminium housings, structural components and precision assemblies support vehicle efficiency across ICE and EV architectures.',
-    primaryCtaText: 'Explore future mobility',
-    primaryCtaHref: '#businesses',
-    secondaryCtaText: 'Start a technical discussion',
-    secondaryCtaHref: '#contact',
-  },
+  {"eyebrow": "", "headingLine1": "Built for the systems that move power.", "headingLine2": "", "lede": "Precision-forged, machined and assembled solutions support power transmission across established and evolving vehicle architectures.", "primaryCtaText": "Explore our capabilities", "primaryCtaHref": "/driveline", "secondaryCtaText": "Explore our businesses", "secondaryCtaHref": "#businesses"},
+  {"eyebrow": "", "headingLine1": "Engineered for control on every road.", "headingLine2": "", "lede": "Safety-critical components and assemblies combine dimensional accuracy, durability and manufacturing consistency for demanding vehicle applications.", "primaryCtaText": "Explore our capabilities", "primaryCtaHref": "/steering-suspension", "secondaryCtaText": "Explore our businesses", "secondaryCtaHref": "#businesses"},
+  {"eyebrow": "", "headingLine1": "Making complex mobility structures lighter.", "headingLine2": "", "lede": "Aluminium die casting, tooling and precision machining enable complex components and assemblies for evolving ICE and EV vehicle architectures.", "primaryCtaText": "Explore lightweighting", "primaryCtaHref": "/lightweighting", "secondaryCtaText": "Explore our businesses", "secondaryCtaHref": "#businesses"},
 ]
 
 const slideClasses = ['hero-slide-one', 'hero-slide-two', 'hero-slide-three']
@@ -125,16 +98,16 @@ export default function HeroCarousel({ slides = defaultSlides }: { slides?: Hero
             <div className="hero-wash" />
             <div className="shell hero-grid">
               <div className="hero-copy">
-                <p className="eyebrow">{slide.eyebrow}</p>
+                {slide.eyebrow && <p className="eyebrow">{slide.eyebrow}</p>}
                 {i === 0 ? (
                   <h1 id="hero-title">
-                    {slide.headingLine1}<br />
-                    <span>{slide.headingLine2}</span>
+                    {slide.headingLine1}
+                    {slide.headingLine2 && <><br /><span>{slide.headingLine2}</span></>}
                   </h1>
                 ) : (
                   <h2>
-                    {slide.headingLine1}<br />
-                    <span>{slide.headingLine2}</span>
+                    {slide.headingLine1}
+                    {slide.headingLine2 && <><br /><span>{slide.headingLine2}</span></>}
                   </h2>
                 )}
                 <p className="hero-lede">{slide.lede}</p>

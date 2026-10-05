@@ -5,16 +5,15 @@ export default function LeadershipSection() {
       <div className="shell">
         <div className="section-head reveal">
           <div className="section-kicker">
-            <span>06</span>
+            <span>04</span>
             <p>Leadership</p>
           </div>
           <div>
-            <h2>
-              Leadership grounded<br />
-              <em>in operational discipline.</em>
-            </h2>
+            <h2>Leadership built around execution.</h2>
             <p>
-              Dharmesh Arora, Chief Executive Officer, on consistency, performance and long-term customer relationships.
+              Highway Roop is led by a multidisciplinary team spanning automotive operations, technology, finance,
+              people, procurement, strategy, compliance and communications, bringing together the expertise required to
+              build and scale an integrated automotive platform.
             </p>
           </div>
         </div>
@@ -35,12 +34,8 @@ export default function LeadershipSection() {
                 Our businesses operate around a common commitment to precision, operational excellence and enduring
                 customer relationships.
               </p>
-              <a
-                href="https://www.linkedin.com/in/dharmesh-arora/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leadership profile <span><ArrowRight size={18} aria-hidden="true" /></span>
+              <a href="/about/leadership">
+                Meet our leadership <span><ArrowRight size={18} aria-hidden="true" /></span>
               </a>
             </div>
           </article>

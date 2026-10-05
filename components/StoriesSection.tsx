@@ -1,4 +1,4 @@
-import { ArrowRight, Download } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export default function StoriesSection() {
   return (
@@ -67,13 +67,14 @@ export function SustainabilitySection() {
             />
             <div className="story-copy">
               <span>ENVIRONMENT · PEOPLE · GOVERNANCE</span>
-              <h2>Responsible Operations</h2>
+              <h2>Responsible operations, across every site.</h2>
               <p>
-                Energy, water, waste, workplace safety and community initiatives form part of the group&rsquo;s approach
-                to responsible operating performance.
+                Our approach to responsible operations spans energy, water, waste, workplace safety, governance and
+                community initiatives, with sustainability integrated into how we operate across our manufacturing
+                footprint.
               </p>
-              <a href="#contact">
-                Request sustainability information <b><ArrowRight size={18} aria-hidden="true" /></b>
+              <a href="/sustainability/esg-overview">
+                Explore sustainability <b><ArrowRight size={18} aria-hidden="true" /></b>
               </a>
             </div>
           </article>
@@ -85,14 +86,19 @@ export function SustainabilitySection() {
 }
 
 const newsLinks = [
-  { label: 'Corporate updates', title: 'Business and technology developments', image: '/assets/innovation-rd.webp', href: '#contact', Icon: ArrowRight },
-  { label: 'Press releases', title: 'Official company communications', image: '/assets/manufacturing-excellence.webp', href: '#contact', Icon: ArrowRight },
   {
-    label: 'Download',
-    title: 'Company presentation',
+    label: 'Engineering insights',
+    title: 'Ideas from the world of precision manufacturing',
+    text: 'Technology, manufacturing, quality and mobility perspectives.',
+    image: '/assets/innovation-rd.webp',
+    href: '/news-insights',
+  },
+  {
+    label: 'Corporate resources',
+    title: 'Information for stakeholders',
+    text: 'Corporate presentations, official communications and other approved resources.',
     image: '/assets/tooling-engineering.webp',
     href: '/HRPTL-Corporate-Presentation.pdf',
-    Icon: Download,
     external: true,
   },
 ]
@@ -103,26 +109,23 @@ export function NewsSection() {
       <div className="shell">
         <div className="section-head reveal">
           <div>
-            <h2>
-              News &amp; insights.<br />
-              <em>Updates and resources.</em>
-            </h2>
-            <p>Company announcements, business developments and essential corporate resources.</p>
+            <h2>What is happening across Highway Roop.</h2>
+            <p>Company news, engineering developments, industry perspectives and corporate resources from across the group.</p>
           </div>
         </div>
         <div className="news-hub reveal">
-          <a className="news-feature" href="/about/our-journey">
+          <a className="news-feature" href="/news-insights">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async" src="/assets/hero-mobility-v2.webp" alt="" />
             <div className="news-feature-copy">
-              <span>FEATURED</span>
-              <h3>Building a scaled, India-based auto-components platform</h3>
-              <p>Carlyle acquired a controlling stake in February 2025 and May 2026.</p>
-              <b>Read the story <ArrowRight size={18} aria-hidden="true" /></b>
+              <span>COMPANY NEWS</span>
+              <h3>Announcements and milestones</h3>
+              <p>Corporate developments, acquisitions, partnerships and important company updates.</p>
+              <b>Read the latest <ArrowRight size={18} aria-hidden="true" /></b>
             </div>
           </a>
           <div className="news-list">
-            {newsLinks.map(({ label, title, image, href, Icon, external }) => (
+            {newsLinks.map(({ label, title, text, image, href, external }) => (
               <a
                 key={label}
                 className="news-item"
@@ -139,14 +142,18 @@ export function NewsSection() {
                   alt=""
                 />
                 <span className="news-item-copy">
-                  <small>{label}</small>
+                  <small>{label.toUpperCase()}</small>
                   <b>{title}</b>
+                  <em>{text}</em>
                 </span>
-                <i><Icon size={18} aria-hidden="true" /></i>
+                <i><ArrowRight size={18} aria-hidden="true" /></i>
               </a>
             ))}
           </div>
         </div>
+        <a className="text-link accent news-cta" href="/news-insights">
+          Visit News &amp; Insights <span><ArrowRight size={18} aria-hidden="true" /></span>
+        </a>
       </div>
     </section>
   )
@@ -165,13 +172,13 @@ export function CareersSection() {
             />
             <div className="story-copy">
               <span>LEARNING · OPPORTUNITY · IMPACT</span>
-              <h2>Careers</h2>
+              <h2>Build your career where engineering meets impact.</h2>
               <p>
-                Build deep engineering experience, solve real manufacturing problems and grow with an integrated global
-                mobility business.
+                Work with teams solving real manufacturing challenges across engineering, operations, technology and
+                corporate functions, while helping build a global automotive platform from India.
               </p>
-              <a href="mailto:info@highwayroop.com?subject=Careers%20at%20Highway%20Roop">
-                Explore opportunities <b><ArrowRight size={18} aria-hidden="true" /></b>
+              <a href="/careers">
+                Explore careers <b><ArrowRight size={18} aria-hidden="true" /></b>
               </a>
             </div>
           </article>

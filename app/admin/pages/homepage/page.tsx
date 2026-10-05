@@ -382,6 +382,15 @@ export default function HomepageEditor() {
                   />
                 </div>
               </div>
+              <div className="admin-form-group">
+                <label className="admin-label">Body text</label>
+                <textarea
+                  className="admin-input"
+                  rows={3}
+                  value={content.contact.body ?? ''}
+                  onChange={e => setContact({ body: e.target.value })}
+                />
+              </div>
               <div className="admin-form-row">
                 <div className="admin-form-group">
                   <label className="admin-label">Button text</label>

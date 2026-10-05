@@ -28,6 +28,7 @@ export interface ContactContent {
   eyebrow: string
   headingLine1: string
   headingLine2: string
+  body?: string
   buttonText: string
   phone: string
   email: string
