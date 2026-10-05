@@ -42,7 +42,14 @@ export default function Leadership() {
           <div className="ab-leaders">
             {LEADERS.map(l => (
               <article className="ab-leader" key={l.name}>
-                <div className="ab-leader-photo"><span aria-hidden="true">{initials(l.name)}</span></div>
+                <div className={`ab-leader-photo ${l.image ? 'has-image' : ''}`}>
+                  {l.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img loading="lazy" decoding="async" src={l.image} alt={l.name} />
+                  ) : (
+                    <span aria-hidden="true">{initials(l.name)}</span>
+                  )}
+                </div>
                 <div className="ab-leader-copy">
                   <h3>{l.name}</h3>
                   <p className="ab-role">{l.role}</p>
