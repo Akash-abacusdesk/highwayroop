@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import PageHero from '@/components/about/PageHero'
-import SubNav from '@/components/about/SubNav'
 import SectionHead from '@/components/about/SectionHead'
 import Stats from '@/components/about/Stats'
 
@@ -20,7 +19,6 @@ export default function Overview() {
         copy="A leading Indian precision auto-components group with end-to-end capabilities and a global support network."
         image="hero-precision"
       />
-      <SubNav />
 
       <section className="ab-section">
         <div className="shell">
