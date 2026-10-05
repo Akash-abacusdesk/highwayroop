@@ -188,10 +188,13 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-card b{display:block;font-size:11px;color:var(--red);letter-spacing:.14em}
 .ab-card h3{font-size:clamp(21px,2.2vw,26px);margin:20px 0 12px;font-weight:500}
 .ab-card p{color:var(--muted);line-height:1.65;margin:0}
-.ab-more{display:block;margin-top:18px;color:var(--blue);font-weight:700;font-size:13px}
+.ab-more{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--blue);font-weight:700;font-size:13px}
 .ab-slot{height:190px;margin:-36px -36px 28px;background:linear-gradient(135deg,#e8f0f4,#f8fafb);border-bottom:1px dashed #9db2bc;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--blue);font-size:12px;letter-spacing:.14em;font-weight:700}
+.ab-card.has-slot{display:grid;grid-template-columns:minmax(150px,42%) 1fr;gap:32px;align-items:stretch}
+.ab-card.has-slot .ab-card-body{align-self:center}
+.ab-card.has-slot .ab-slot{height:auto;min-height:200px;margin:-36px 0 -36px -36px;border-bottom:0;border-right:1px dashed #9db2bc;text-align:center;padding:0 12px}
 .ab-slot small{margin-top:8px;color:var(--muted);letter-spacing:0;font-weight:400}
-.ab-doc-btn{border:1px solid var(--blue);background:#fff;color:var(--blue);padding:11px 15px;font:700 11px inherit;margin-top:16px}
+.ab-doc-btn{border:1px solid var(--blue);background:#fff;color:var(--blue);padding:11px 15px;font-family:inherit;font-weight:700;font-size:11px;margin-top:16px}
 .ab-doc-btn:disabled,.ab-docs button:disabled{opacity:.7;cursor:not-allowed}
 
 .ab-split{display:grid;grid-template-columns:1fr minmax(320px,520px);gap:6vw;align-items:center}
@@ -214,13 +217,13 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-form{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px}
 .ab-form label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .ab-form .wide,.ab-form-status{grid-column:1/-1}
-.ab-form input,.ab-form select,.ab-form textarea{display:block;width:100%;height:auto;border:1px solid #cdd9de;background:#fff;color:var(--ink);padding:16px;margin-top:8px;font:15px inherit;text-transform:none;letter-spacing:0;font-weight:400}
+.ab-form input,.ab-form select,.ab-form textarea{display:block;width:100%;height:auto;border:1px solid #cdd9de;background:#fff;color:var(--ink);padding:16px;margin-top:8px;font-family:inherit;font-size:15px;text-transform:none;letter-spacing:0;font-weight:400}
 .ab-form textarea{min-height:140px;resize:vertical}
 .ab-form .button{justify-self:start}
 .ab-form-status{margin:0;color:var(--blue);font-size:14px}
 
 .ab-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
-.ab-filters button{border:1px solid var(--line);background:#fff;padding:12px 18px;font:600 12px inherit;cursor:pointer}
+.ab-filters button{border:1px solid var(--line);background:#fff;padding:12px 18px;font-family:inherit;font-weight:600;font-size:12px;cursor:pointer}
 .ab-filters button.active{background:var(--blue);color:#fff;border-color:var(--blue)}
 .ab-products{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .ab-products figure{margin:0;background:#fff;padding:18px}
@@ -241,7 +244,7 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-docs>div{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:25px 0;border-bottom:1px solid var(--line)}
 .ab-docs span{color:var(--muted)}
 .ab-docs p{margin:0;display:flex;gap:8px}
-.ab-docs button{border:1px solid var(--blue);background:#fff;color:var(--blue);padding:11px 15px;font:700 11px inherit}
+.ab-docs button{border:1px solid var(--blue);background:#fff;color:var(--blue);padding:11px 15px;font-family:inherit;font-weight:700;font-size:11px}
 .ab-docs button:last-child{background:var(--blue);color:#fff}
 
 .ab-office{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
@@ -269,7 +272,8 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
   .ab-roadmap{grid-template-columns:1fr 1fr;gap:12px}
   .ab-roadmap div{padding:20px 16px}.ab-roadmap strong{font-size:28px}
   .ab-card{padding:22px;min-height:auto}.ab-card h3{margin:12px 0 8px}
-  .ab-slot{margin:-22px -22px 20px;height:150px}
+  .ab-card.has-slot{grid-template-columns:110px 1fr;gap:18px}
+  .ab-card.has-slot .ab-slot{margin:-22px 0 -22px -22px;min-height:140px}
   .ab-split{gap:24px}.ab-split img{height:240px}
   .ab-steps>div{padding:22px}
   .ab-office>div{padding:26px 20px}.ab-office p{font-size:15px}

@@ -75,3 +75,10 @@ export const SUBNAVS = [
   { prefix: '/sustainability', label: 'Sustainability', links: SUSTAINABILITY_LINKS },
   { prefix: '/contact', label: 'Contact', links: CONTACT_LINKS },
 ]
+
+export type Business = { slug: string; name: string; techHero: string; productsHero: string }
+export const BUSINESSES: Business[] = [
+  { slug: 'driveline', name: 'Driveline', techHero: 'hero-technology-v2', productsHero: 'hero-products-v2' },
+  { slug: 'steering-suspension', name: 'Steering & Suspension', techHero: 'hero-precision', productsHero: 'hero-products-v2' },
+  { slug: 'lightweighting', name: 'Lightweighting', techHero: 'lightweighting-ev', productsHero: 'hero-products-v2' },
+]

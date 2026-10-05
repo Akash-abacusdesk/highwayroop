@@ -2,6 +2,7 @@
 
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import { BUSINESSES } from './about/data'
 import { Fragment, useState, useEffect, useRef, useCallback } from 'react'
 
 type Col = { title: string; links: [string, string][] }
@@ -21,11 +22,9 @@ const MENUS: Menu[] = [
   {
     label: 'Businesses', href: '/#businesses',
     intro: 'Three specialist businesses delivering engineered mobility systems.',
-    cols: ['Driveline', 'Steering & Suspension', 'Lightweighting'].map(t => ({
-      title: t.toUpperCase(),
-      links: (t === 'Driveline'
-        ? [['/technology', 'Technology & Manufacturing'], ['/products-solutions', 'Products & Solutions']]
-        : [['/#businesses', 'Technology & Manufacturing'], ['/#businesses', 'Products & Solutions']]) as [string, string][],
+    cols: BUSINESSES.map(b => ({
+      title: b.name.toUpperCase(),
+      links: [[`/${b.slug}/technology`, 'Technology & Manufacturing'], [`/${b.slug}/products-solutions`, 'Products & Solutions']] as [string, string][],
     })),
   },
   {

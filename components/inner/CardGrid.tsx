@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export type Card = { tag?: string; title: string; text: string; href?: string; slot?: string; action?: string }
@@ -16,17 +17,19 @@ export default function CardGrid({ cards, cols = 3 }: { cards: Card[]; cols?: 2 
                 <small>Approved image / PDF preview</small>
               </div>
             )}
-            {c.tag && <b>{c.tag}</b>}
-            <h3>{c.title}</h3>
-            <p>{c.text}</p>
-            {c.href && <span className="ab-more">Explore →</span>}
-            {c.action && <button className="ab-doc-btn" type="button" disabled>{c.action}</button>}
+            <div className="ab-card-body">
+              {c.tag && <b>{c.tag}</b>}
+              <h3>{c.title}</h3>
+              <p>{c.text}</p>
+              {c.href && <span className="ab-more">Explore <ArrowRight size={16} aria-hidden="true" /></span>}
+              {c.action && <button className="ab-doc-btn" type="button" disabled>{c.action}</button>}
+            </div>
           </>
         )
         return c.href ? (
-          <Link key={c.title} href={c.href} className="ab-card">{body}</Link>
+          <Link key={c.title} href={c.href} className={`ab-card${c.slot ? ' has-slot' : ''}`}>{body}</Link>
         ) : (
-          <article key={c.title} className="ab-card">{body}</article>
+          <article key={c.title} className={`ab-card${c.slot ? ' has-slot' : ''}`}>{body}</article>
         )
       })}
     </div>

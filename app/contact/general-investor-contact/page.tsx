@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
 import PageHero from '@/components/about/PageHero'
 import SubNav from '@/components/about/SubNav'
@@ -30,7 +31,7 @@ export default function GeneralInvestorContact() {
             <div>
               <h3>Investor information</h3>
               <p>Request the corporate presentation or send an investor-facing question through the main company contact.</p>
-              <a className="button primary" href={`mailto:${EMAIL}?subject=Investor%20Information`}>Email corporate team <span>→</span></a>
+              <a className="button primary" href={`mailto:${EMAIL}?subject=Investor%20Information`}>Email corporate team <span><ArrowRight size={18} aria-hidden="true" /></span></a>
             </div>
           </div>
         </div>

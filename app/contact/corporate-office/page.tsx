@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import PageHero from '@/components/about/PageHero'
@@ -34,7 +35,7 @@ export default function CorporateOffice() {
             <div>
               <h3>Contact</h3>
               <p><a href={PHONE.href}>{PHONE.label}</a><br /><a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
-              <Link className="button primary" href="/contact/business-enquiries">Business enquiry <span>→</span></Link>
+              <Link className="button primary" href="/contact/business-enquiries">Business enquiry <span><ArrowRight size={18} aria-hidden="true" /></span></Link>
             </div>
           </div>
         </div>
@@ -54,7 +55,7 @@ export default function CorporateOffice() {
                     <b>{l.tag}</b>
                     <h3>{l.name}</h3>
                     <p>{l.lines[0]}<br />{l.lines[1]}</p>
-                    <a className="text-link accent" target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${q}`}>Open in Google Maps <span>→</span></a>
+                    <a className="text-link accent" target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/search/?api=1&query=${q}`}>Open in Google Maps <span><ArrowRight size={18} aria-hidden="true" /></span></a>
                   </div>
                   <iframe title={l.map} loading="lazy" src={`https://www.google.com/maps?q=${q}&output=embed`} />
                 </article>

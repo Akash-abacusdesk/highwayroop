@@ -1,5 +1,6 @@
 'use client'
 
+import { ArrowRight } from 'lucide-react'
 import { useState } from 'react'
 
 export type Field = { label: string; type?: string; required?: boolean; wide?: boolean; options?: string[]; textarea?: boolean }
@@ -22,7 +23,7 @@ export default function LeadForm({ fields, submit }: { fields: Field[]; submit: 
           )}
         </label>
       ))}
-      <button className="button primary" type="submit">{submit} <span>→</span></button>
+      <button className="button primary" type="submit">{submit} <span><ArrowRight size={18} aria-hidden="true" /></span></button>
       <p className="ab-form-status" role="status">{status}</p>
     </form>
   )

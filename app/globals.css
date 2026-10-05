@@ -354,7 +354,6 @@ section[id],article[id],div[id="media"]{scroll-margin-top:126px}
 .stats-grid article{flex-direction:column;align-items:flex-start;justify-content:center;gap:12px}
 .stats-grid strong,.stats-grid span{display:block}
 .button span,.text-link span,.business-card a span,.story-copy a b,.leader-detail a span,.technology-overlay a b,.header-cta span,.mega-intro a b{display:inline-flex;align-items:center;justify-content:center;flex:0 0 28px;width:28px;height:28px;margin-left:12px;border-radius:50%;background:var(--blue);color:#fff!important;font:700 17px/1 var(--font-josefin),"Josefin Sans",sans-serif}
-.button.primary span,.header-cta span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.55)}
 .story-copy a b,.technology-overlay a b{background:var(--blue)}
 .resource-links i,.media-links i{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-style:normal;font-size:17px;line-height:1}
 @media(max-width:1050px){.hero-slide .hero-wash{background:linear-gradient(90deg,rgba(255,255,255,.99) 0%,rgba(255,255,255,.93) 53%,rgba(255,255,255,.28) 82%,rgba(255,255,255,.03) 96%)}}
