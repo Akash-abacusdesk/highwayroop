@@ -285,9 +285,14 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 }
 
 /* Business pages: spacing between sub-blocks. */
-.ab-biz{scroll-margin-top:190px}
-.ab-subtitle{font-size:clamp(20px,2vw,26px);font-weight:500;margin:70px 0 22px;scroll-margin-top:200px}
-.ab-biz .ab-gap{margin-top:70px}
-@media(max-width:1050px){.ab-subtitle{scroll-margin-top:140px}}
-@media(max-width:700px){.ab-subtitle{scroll-margin-top:130px}.ab-biz .ab-gap,.ab-subtitle{margin-top:36px}.ab-subtitle{margin-bottom:14px}}
-.ab-head+.ab-subtitle{margin-top:0}
+.ab-biz-intro{padding:90px 0}
+.ab-biz-intro .ab-label{display:block;color:var(--blue);font-size:13px;margin-bottom:18px}
+.ab-lead{max-width:900px;margin:0;font-size:clamp(20px,2.2vw,30px);line-height:1.4;letter-spacing:-.02em;color:var(--muted)}
+.ab-lead strong{color:var(--ink);font-weight:500}
+.ab-biz{scroll-margin-top:140px}
+.ab-biz .ab-heading{font-size:clamp(30px,4.4vw,56px)}
+.ab-biz .ab-split .ab-heading{font-size:clamp(26px,3.2vw,42px)}
+.ab-biz .ab-gap{margin-top:100px}
+.ab-biz .ab-note{margin-top:40px}
+@media(max-width:1050px){.ab-biz{scroll-margin-top:90px}}
+@media(max-width:700px){.ab-biz-intro{padding:40px 0}.ab-lead{font-size:18px}.ab-biz .ab-gap{margin-top:44px}}

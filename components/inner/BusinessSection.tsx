@@ -37,42 +37,52 @@ const PRODUCTS: Product[] = [
 
 export default function BusinessSection({ biz }: { biz: Business }) {
   return (
-    <section className="ab-section">
-      <div className="shell">
-        <SectionHead title={biz.name}>
-          <strong>{biz.intro}</strong> {biz.desc}
-        </SectionHead>
+    <>
+      <section className="ab-section ab-biz-intro">
+        <div className="shell">
+          <div className="ab-redline" />
+          <span className="ab-label">{biz.name.toUpperCase()}</span>
+          <p className="ab-lead"><strong>{biz.intro}</strong> {biz.desc}</p>
+        </div>
+      </section>
 
-        <h3 id="technology" className="ab-subtitle">Technology &amp; Manufacturing</h3>
-        <CardGrid cards={STEPS} />
+      <section id="technology" className="ab-section ab-biz ab-soft">
+        <div className="shell">
+          <SectionHead title="Technology & Manufacturing" />
+          <CardGrid cards={STEPS} />
 
-        {biz.slug === 'driveline' && (
-          <>
-            <div className="ab-gap">
-              <Split
-                title={<>Forming and machining<br />at industrial scale.</>}
-                image="manufacturing-excellence" alt="Precision machining facility"
-              >
-                Hot and warm presses range from 600T to 2500T; cold forging presses range from 100T to 1000T. The presentation also lists 800+ CNC turning and turn-mill machines, 90+ VMCs, 40+ broaching machines, 25+ honing machines and 20 CNC grinding machines.
-              </Split>
-            </div>
-            <div className="ab-gap">
-              <Split
-                reverse
-                title={<>Quality is part<br />of the process.</>}
-                image="quality-lab" alt="Quality validation laboratory"
-                bullets={['Zeiss CMM and gear testers', 'Form, roundness and roughness inspection', 'In-house calibration', 'Impact, torque and endurance testing']}
-              >
-                Metrology and metallurgy infrastructure supports dimensional, material and functional validation against drawing requirements.
-              </Split>
-            </div>
-          </>
-        )}
+          {biz.slug === 'driveline' && (
+            <>
+              <div className="ab-gap">
+                <Split
+                  title={<>Forming and machining<br />at industrial scale.</>}
+                  image="manufacturing-excellence" alt="Precision machining facility"
+                >
+                  Hot and warm presses range from 600T to 2500T; cold forging presses range from 100T to 1000T. The presentation also lists 800+ CNC turning and turn-mill machines, 90+ VMCs, 40+ broaching machines, 25+ honing machines and 20 CNC grinding machines.
+                </Split>
+              </div>
+              <div className="ab-gap">
+                <Split
+                  reverse
+                  title={<>Quality is part<br />of the process.</>}
+                  image="quality-lab" alt="Quality validation laboratory"
+                  bullets={['Zeiss CMM and gear testers', 'Form, roundness and roughness inspection', 'In-house calibration', 'Impact, torque and endurance testing']}
+                >
+                  Metrology and metallurgy infrastructure supports dimensional, material and functional validation against drawing requirements.
+                </Split>
+              </div>
+            </>
+          )}
+        </div>
+      </section>
 
-        <h3 id="products-solutions" className="ab-subtitle">Products &amp; Solutions</h3>
-        <ProductFilter groups={GROUPS} products={PRODUCTS} />
-        <p className="ab-note">Representative product imagery comes from the HRPTL presentation. Final technical names should be confirmed against the approved catalogue.</p>
-      </div>
-    </section>
+      <section id="products-solutions" className="ab-section ab-biz">
+        <div className="shell">
+          <SectionHead title="Products & Solutions" />
+          <ProductFilter groups={GROUPS} products={PRODUCTS} />
+          <p className="ab-note">Representative product imagery comes from the HRPTL presentation. Final technical names should be confirmed against the approved catalogue.</p>
+        </div>
+      </section>
+    </>
   )
 }

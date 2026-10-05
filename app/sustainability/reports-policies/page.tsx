@@ -25,7 +25,6 @@ export default function ReportsPolicies() {
             {DOCS.map(d => (
               <div key={d}>
                 <strong>{d}</strong>
-                <span>Approved file required</span>
                 <p><button type="button" disabled>View</button><button type="button" disabled>Download</button></p>
               </div>
             ))}
