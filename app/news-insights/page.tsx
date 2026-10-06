@@ -15,7 +15,7 @@ export default function NewsInsights() {
         image="lightweighting-ev"
       />
 
-      <section className="ab-section">
+      <section className="ab-section" id="news">
         <div className="shell">
           <article className="ab-news-feature">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -33,7 +33,7 @@ export default function NewsInsights() {
         </div>
       </section>
 
-      <section className="ab-section ab-soft">
+      <section className="ab-section ab-soft" id="media">
         <div className="shell">
           <SectionHead title="Press coverage.">
             Coverage of the Chamundi Die Cast acquisition across business and auto-industry publications.

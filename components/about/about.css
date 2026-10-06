@@ -9,7 +9,7 @@
 .ab-hero .shell{position:relative;z-index:2;min-height:564px;display:flex;align-items:center}
 .ab-hero-copy{max-width:790px}
 .ab-hero h1,.ab-heading{margin:0;font-weight:500;line-height:1.03;letter-spacing:-.045em}
-.ab-hero h1{font-size:clamp(54px,6vw,92px)}
+.ab-hero h1{font-size:clamp(44px,5vw,72px)}
 .ab-hero p{max-width:630px;margin:32px 0 0;color:#42545e;font-size:18px}
 
 .ab-sub{position:sticky;top:126px;z-index:20;background:#fff;border-bottom:1px solid var(--line)}

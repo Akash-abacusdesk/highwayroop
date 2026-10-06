@@ -8,8 +8,7 @@ import { Fragment, useState, useEffect, useRef, useCallback } from 'react'
 type Col = { title: string; links: [string, string][]; href?: string; blurb?: string }
 type Menu = { label: string; href: string; intro: string; cols: Col[] }
 
-// Dropdowns for About, Businesses, Sustainability, Investors; News & Careers stay plain links.
-// About and News have their own pages; the rest still point at homepage sections.
+// Dropdowns for every top-level item except Careers, which stays a plain link.
 const MENUS: Menu[] = [
   {
     label: 'About', href: '/about',
@@ -45,6 +44,14 @@ const MENUS: Menu[] = [
       { title: 'GOVERNANCE', links: [['/#corporate', 'Corporate Governance'], ['/#corporate', 'Board & Committees'], ['/#corporate', 'Policies'], ['/#corporate', 'Disclosures']] },
       { title: 'SHAREHOLDERS', links: [['/#corporate', 'Shareholding'], ['/#corporate', 'Credit Ratings'], ['/#corporate', 'Investor Meetings']] },
       { title: 'SUPPORT', links: [['/#corporate', 'Registrar & Transfer Agent'], ['/#corporate', 'Investor Grievance']] },
+    ],
+  },
+  {
+    label: 'News & Insights', href: '/news-insights',
+    intro: 'Company news, media coverage, insights and events.',
+    cols: [
+      { title: 'NEWSROOM', links: [['/news-insights#news', 'News'], ['/news-insights#media', 'Media']] },
+      { title: 'PERSPECTIVES', links: [['/news-insights', 'Insights'], ['/news-insights', 'Events']] },
     ],
   },
   {
@@ -146,7 +153,6 @@ export default function Header() {
 
   const mobileLinks: [string, string][] = [
     ...MENUS.filter(m => m.label !== 'Contact').map(m => [m.href, m.label] as [string, string]),
-    ['/news-insights', 'News & Insights'],
     ['/careers', 'Careers'],
     ['/contact/corporate-office', 'Contact'],
   ]
@@ -191,10 +197,7 @@ export default function Header() {
           {MENUS.map((m, i) => (
             <Fragment key={m.label}>
             {m.label === 'Contact' && (
-              <>
-                <Link href="/news-insights">News &amp; Insights</Link>
-                <Link href="/careers">Careers</Link>
-              </>
+              <Link href="/careers">Careers</Link>
             )}
             <div
               className="mega-nav-item"
