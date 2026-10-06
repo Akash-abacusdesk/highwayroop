@@ -3,10 +3,10 @@
 .ab-redline{width:54px;height:4px;background:var(--red);margin:0 0 24px}
 .ab-label{font-size:11px;letter-spacing:.16em;font-weight:700}
 
-.ab-hero{position:relative;min-height:690px;padding-top:126px;overflow:hidden}
+.ab-hero{position:relative;min-height:min(690px,75vh);padding-top:126px;overflow:hidden}
 .ab-hero-media{position:absolute;inset:126px 0 0;background:center/cover}
 .ab-hero-media:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#fff 0,#fffffff4 35%,#ffffff5e 68%,#fff0)}
-.ab-hero .shell{position:relative;z-index:2;min-height:564px;display:flex;align-items:center}
+.ab-hero .shell{position:relative;z-index:2;min-height:calc(min(690px,75vh) - 126px);display:flex;align-items:center}
 .ab-hero-copy{max-width:790px}
 .ab-hero h1,.ab-heading{margin:0;font-weight:500;line-height:1.03;letter-spacing:-.045em}
 .ab-hero h1{font-size:clamp(44px,5vw,72px)}
