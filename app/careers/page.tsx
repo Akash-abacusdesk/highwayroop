@@ -37,7 +37,7 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="ab-section ab-dark">
+      <section className="ab-section ab-dark ab-red">
         <div className="shell ab-split">
           <div>
             <h2 className="ab-heading">Your career.<br /><em>Built through doing.</em></h2>

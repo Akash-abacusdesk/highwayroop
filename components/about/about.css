@@ -212,6 +212,7 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-values{border-top:1px solid #ffffff35}
 .ab-values div{display:grid;grid-template-columns:60px 1fr;padding:24px 0;border-bottom:1px solid #ffffff35}
 .ab-values strong{color:#e45a5f}
+.ab-red{background:var(--red)}.ab-red .ab-heading em{color:#ffd6d7}.ab-red .ab-split p{color:#fff}.ab-red .ab-values,.ab-red .ab-values div{border-color:rgba(255,255,255,.35)}.ab-red .ab-values strong{color:#fff;opacity:.75}
 .ab-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
 .ab-steps>div{background:#fff;padding:36px}
 .ab-steps b{color:var(--red)}.ab-steps h3{font-size:24px;font-weight:500}.ab-steps p{color:var(--muted)}
