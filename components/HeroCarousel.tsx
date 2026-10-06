@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import type { HeroSlide } from '@/types/content'
 
-const heroImages = ['hero-driveline', 'hero-precision', 'lightweighting-ev']
+const heroImages = ['banner-driveline', 'banner-steering', 'banner-lightweighting']
 
 const defaultSlides: HeroSlide[] = [
   {"eyebrow": "", "headingLine1": "Built for the systems that move power.", "headingLine2": "", "lede": "Precision-forged, machined and assembled solutions support power transmission across established and evolving vehicle architectures.", "primaryCtaText": "Explore our capabilities", "primaryCtaHref": "/driveline", "secondaryCtaText": "Explore our businesses", "secondaryCtaHref": "#businesses"},
@@ -87,7 +87,7 @@ export default function HeroCarousel({ slides = defaultSlides }: { slides?: Hero
             <img
               className="hero-bg"
               src={`/assets/${heroImages[i] ?? heroImages[0]}.webp`}
-              srcSet={`/assets/${heroImages[i] ?? heroImages[0]}-800.webp 800w, /assets/${heroImages[i] ?? heroImages[0]}.webp 1672w`}
+              srcSet={`/assets/${heroImages[i] ?? heroImages[0]}-800.webp 800w, /assets/${heroImages[i] ?? heroImages[0]}.webp 2128w`}
               sizes="100vw"
               alt=""
               width={1672}

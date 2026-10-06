@@ -48,7 +48,7 @@ export default function Environment() {
       <section className="ab-section ab-soft">
         <div className="shell">
           <SectionHead title={<>Environmental<br />recognition.</>} />
-          <CardGrid cards={AWARDS} cols={2} />
+          <CardGrid cards={AWARDS} cols={2} gap />
         </div>
       </section>
     </>

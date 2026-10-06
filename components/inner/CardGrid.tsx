@@ -5,9 +5,9 @@ export type Card = { tag?: string; title: string; text: string; href?: string; s
 
 // Bordered grid of cards used for career paths, manufacturing steps, ESG areas, certifications and awards.
 // A card with `href` becomes a link; `slot` adds the dashed placeholder for artwork not yet supplied.
-export default function CardGrid({ cards, cols = 3 }: { cards: Card[]; cols?: 2 | 3 }) {
+export default function CardGrid({ cards, cols = 3, gap }: { cards: Card[]; cols?: 2 | 3; gap?: boolean }) {
   return (
-    <div className={`ab-cards cols-${cols}`}>
+    <div className={`ab-cards cols-${cols}${gap ? ' gapped' : ''}`}>
       {cards.map(c => {
         const body = (
           <>

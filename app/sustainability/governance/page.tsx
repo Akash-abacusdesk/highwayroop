@@ -28,7 +28,7 @@ export default function Governance() {
           <SectionHead title={<>Management systems<br />and certifications.</>}>
             A visual library of the management-system certifications listed in the corporate presentation. Approved certificate scans or PDF previews can be placed directly in each slot.
           </SectionHead>
-          <CardGrid cards={CERTS} cols={2} />
+          <CardGrid cards={CERTS} cols={2} gap />
           <p className="ab-note">Detailed board, ethics and compliance disclosures require approved source material.</p>
         </div>
       </section>

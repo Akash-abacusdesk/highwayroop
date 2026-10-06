@@ -40,10 +40,10 @@ const MENUS: Menu[] = [
     label: 'Investors', href: '/#corporate',
     intro: 'Financials, governance and disclosures for our shareholders.',
     cols: [
-      { title: 'OVERVIEW', links: [['/#corporate', 'Investor Overview'], ['/#corporate', 'Financial Information'], ['/#corporate', 'DRHP / Offer Documents'], ['/#corporate', 'Annual Reports']] },
-      { title: 'GOVERNANCE', links: [['/#corporate', 'Corporate Governance'], ['/#corporate', 'Board & Committees'], ['/#corporate', 'Policies'], ['/#corporate', 'Disclosures']] },
-      { title: 'SHAREHOLDERS', links: [['/#corporate', 'Shareholding'], ['/#corporate', 'Credit Ratings'], ['/#corporate', 'Investor Meetings']] },
-      { title: 'SUPPORT', links: [['/#corporate', 'Registrar & Transfer Agent'], ['/#corporate', 'Investor Grievance']] },
+      { title: 'OVERVIEW', links: [['/#corporate', 'Investor Overview'], ['/#corporate', 'Financial Information'], ['/#corporate', 'DRHP / Offer Documents'], ['/sustainability/reports-policies', 'Annual Reports']] },
+      { title: 'GOVERNANCE', links: [['/sustainability/governance', 'Corporate Governance'], ['/about/leadership', 'Board & Committees'], ['/sustainability/reports-policies', 'Policies'], ['/sustainability/reports-policies', 'Disclosures']] },
+      { title: 'SHAREHOLDERS', links: [['/#corporate', 'Shareholding'], ['/#corporate', 'Credit Ratings'], ['/contact/general-investor-contact', 'Investor Meetings']] },
+      { title: 'SUPPORT', links: [['/contact/general-investor-contact', 'Registrar & Transfer Agent'], ['/contact/general-investor-contact', 'Investor Grievance']] },
     ],
   },
   {
@@ -58,7 +58,7 @@ const MENUS: Menu[] = [
     label: 'Contact', href: '/contact/corporate-office',
     intro: 'Reach our offices, plants and business teams.',
     cols: [
-      { title: 'OFFICES & PLANTS', links: [['/contact/corporate-office', 'Corporate Office'], ['/#global', 'Manufacturing Locations']] },
+      { title: 'OFFICES & PLANTS', links: [['/contact/corporate-office', 'Corporate Office'], ['/about/global-presence', 'Manufacturing Locations']] },
       { title: 'GET IN TOUCH', links: [['/contact/business-enquiries', 'Business Enquiries'], ['/contact/general-investor-contact', 'General / Investor Contact']] },
     ],
   },

@@ -1,8 +1,9 @@
 import { ArrowRight } from 'lucide-react'
+import { Counter } from './about/Stats'
 const CAPABILITY_DETAIL = [
-  ['PRODUCT DEVELOPMENT', 'Product engineering, precision tooling and process expertise support development from concept through industrialisation.'],
-  ['MANUFACTURING CONTROL', 'Integrated forging, machining, casting, heat treatment, coating, assembly and testing support consistent production.'],
-  ['QUALITY BY DESIGN', 'Metrology, metallurgy, functional testing and in-house calibration capabilities reinforce quality across the production cycle.'],
+  ['Product development', 'Product engineering, precision tooling and process expertise support development from concept through industrialisation.', 'tooling-engineering'],
+  ['Manufacturing control', 'Integrated forging, machining, casting, heat treatment, coating, assembly and testing support consistent production.', 'manufacturing-excellence'],
+  ['Quality by design', 'Metrology, metallurgy, functional testing and in-house calibration capabilities reinforce quality across the production cycle.', 'quality-lab'],
 ]
 
 export default function CorporateSection() {
@@ -28,28 +29,35 @@ export default function CorporateSection() {
         <h2 className="corporate-proof-title reveal">From capability to customer value.</h2>
         <div className="corporate-proof reveal" aria-label="Corporate operating highlights">
           <article>
-            <strong>50+</strong>
+            <Counter as="strong" value="50+" />
             <span>Years of combined<br />engineering legacy</span>
           </article>
           <article>
-            <strong>15</strong>
+            <Counter as="strong" value="15" />
             <span>Manufacturing<br />plants</span>
           </article>
           <article>
-            <strong>14</strong>
+            <Counter as="strong" value="14" />
             <span>Warehouses</span>
           </article>
           <article>
-            <strong>50+</strong>
+            <Counter as="strong" value="50+" />
             <span>OEM and Tier-1<br />relationships</span>
           </article>
         </div>
 
-        <div className="corporate-pillars corporate-pillars-row">
-          {CAPABILITY_DETAIL.map(([label, text]) => (
+        <div className="corporate-caps">
+          {CAPABILITY_DETAIL.map(([label, text, image], i) => (
             <article className="reveal" key={label}>
-              <span>{label}</span>
-              <p>{text}</p>
+              <div className="corporate-cap-img">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img loading="lazy" decoding="async" src={`/assets/${image}.webp`} alt="" />
+              </div>
+              <div className="corporate-cap-body">
+                <span>0{i + 1}</span>
+                <h3>{label}</h3>
+                <p>{text}</p>
+              </div>
             </article>
           ))}
         </div>

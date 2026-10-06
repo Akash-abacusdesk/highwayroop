@@ -26,7 +26,7 @@ export default function StoriesSection() {
                 Product development, simulation, prototyping and process design are connected to solve complex
                 manufacturing requirements before production begins.
               </p>
-              <a href="#capabilities">
+              <a href="/driveline#technology">
                 Review engineering capabilities <b><ArrowRight size={18} aria-hidden="true" /></b>
               </a>
             </div>
@@ -42,7 +42,7 @@ export default function StoriesSection() {
                 Structured quality systems, modern laboratories and end-to-end traceability protect every critical
                 dimension and process.
               </p>
-              <a href="#capabilities">
+              <a href="/driveline#technology">
                 Explore quality systems <b><ArrowRight size={18} aria-hidden="true" /></b>
               </a>
             </div>
@@ -114,7 +114,7 @@ export function NewsSection() {
           </div>
         </div>
         <div className="news-hub reveal">
-          <a className="news-feature" href="/news-insights">
+          <a className="news-feature" href="/news-insights#news">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async" src="/assets/hero-mobility-v2.webp" alt="" />
             <div className="news-feature-copy">

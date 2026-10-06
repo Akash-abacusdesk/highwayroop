@@ -3,14 +3,14 @@
 .ab-redline{width:54px;height:4px;background:var(--red);margin:0 0 24px}
 .ab-label{font-size:11px;letter-spacing:.16em;font-weight:700}
 
-.ab-hero{position:relative;min-height:min(690px,75vh);padding-top:126px;overflow:hidden}
+.ab-hero{position:relative;min-height:85vh;padding-top:126px;overflow:hidden}
 .ab-hero-media{position:absolute;inset:126px 0 0;background:center/cover}
-.ab-hero-media:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#fff 0,#fffffff4 35%,#ffffff5e 68%,#fff0)}
-.ab-hero .shell{position:relative;z-index:2;min-height:calc(min(690px,75vh) - 126px);display:flex;align-items:center}
+.ab-hero-media:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.6) 35%,rgba(0,0,0,.3) 45%,rgba(0,0,0,.2) 80%)}
+.ab-hero .shell{position:relative;z-index:2;min-height:calc(85vh - 126px);display:flex;align-items:center}
 .ab-hero-copy{max-width:790px}
 .ab-hero h1,.ab-heading{margin:0;font-weight:500;line-height:1.03;letter-spacing:-.045em}
-.ab-hero h1{font-size:clamp(44px,5vw,72px)}
-.ab-hero p{max-width:630px;margin:32px 0 0;color:#42545e;font-size:18px}
+.ab-hero h1{font-size:clamp(44px,5vw,72px);color:#fff}
+.ab-hero p{max-width:630px;margin:32px 0 0;color:rgba(255,255,255,.86);font-size:18px}
 
 .ab-sub{position:sticky;top:126px;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
 .ab-sub .shell{display:flex;gap:34px;align-items:center;height:66px;overflow:auto}
@@ -118,7 +118,7 @@
   .ab-hero{min-height:auto;padding-top:72px;padding-bottom:28px}
   .ab-hero .shell{min-height:auto;padding-top:24px;padding-bottom:12px}
   .ab-hero-media{inset:72px 0 0;background-position:65% center}
-  .ab-hero-media:after{background:linear-gradient(180deg,rgba(255,255,255,.86) 0%,rgba(255,255,255,.68) 50%,rgba(255,255,255,.2) 85%,rgba(255,255,255,.05) 100%)}
+  .ab-hero-media:after{background:linear-gradient(180deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.74) 55%,rgba(0,0,0,.5) 100%)}
   .ab-hero h1{font-size:clamp(32px,8.5vw,44px);line-height:1.06}
   .ab-hero p{font-size:15px;line-height:1.55;margin-top:12px;max-width:100%}
   .ab-redline{margin:0 0 12px;width:42px;height:3px}
@@ -184,6 +184,7 @@
 /* Shared inner-page blocks: cards, split, form, products, roadmap, documents, office, locations. */
 .ab-cards{display:grid;border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .ab-cards.cols-3{grid-template-columns:repeat(3,1fr)}.ab-cards.cols-2{grid-template-columns:repeat(2,1fr)}
+.ab-cards.gapped{gap:24px;border:0}.ab-cards.gapped .ab-card{border:1px solid var(--line)}
 .ab-card{display:block;background:#fff;padding:36px;min-height:220px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.3s}
 a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:relative}
 .ab-card b{display:block;font-size:11px;color:var(--red);letter-spacing:.14em}

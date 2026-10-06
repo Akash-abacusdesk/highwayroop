@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 
 // Counts up once when scrolled into view; reduced-motion users keep the final number.
-function Counter({ value }: { value: string }) {
+export function Counter({ value, as: Tag = 'b' }: { value: string; as?: 'b' | 'strong' }) {
   const ref = useRef<HTMLElement>(null)
   const end = Number(value.replace(/\D/g, ''))
   const suffix = value.replace(/\d/g, '')
@@ -27,7 +27,7 @@ function Counter({ value }: { value: string }) {
     return () => io.disconnect()
   }, [end, suffix])
 
-  return <b ref={ref}>{value}</b>
+  return <Tag ref={ref}>{value}</Tag>
 }
 
 export default function Stats({ items }: { items: [string, string][] }) {
