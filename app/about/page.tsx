@@ -18,7 +18,7 @@ export default function Overview() {
       <PageHero
         title={<>Integrated scale.<br />Accountable execution.</>}
         copy="A leading Indian precision auto-components group with end-to-end capabilities and a global support network."
-        image="hero-precision"
+        image="about/about-banner"
       />
       <SubNav />
 
@@ -30,7 +30,7 @@ export default function Overview() {
           </SectionHead>
           <div className="ab-story">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img loading="lazy" decoding="async" src="/assets/manufacturing-excellence.webp" alt="Precision manufacturing" />
+            <img loading="lazy" decoding="async" srcSet="/assets/about/integrated-capabilities-800.webp 800w, /assets/about/integrated-capabilities.webp 1672w" sizes="(max-width:1050px) 100vw, 60vw" src="/assets/about/integrated-capabilities.webp" alt="Integrated precision manufacturing capabilities" />
             <div className="ab-story-panel">
               <span className="ab-label">INTEGRATED CAPABILITIES</span>
               <h2>From metal forming to validated production.</h2>

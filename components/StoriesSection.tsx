@@ -62,7 +62,7 @@ export function SustainabilitySection() {
           <article className="story-card story-sustainability reveal" id="sustainability">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async"
-              srcSet="/assets/sustainable-plant-800.webp 800w, /assets/sustainable-plant.webp 1672w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/sustainable-plant.webp"
+              srcSet="/assets/homepage/sustainability-800.webp 800w, /assets/homepage/sustainability.webp 1920w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/homepage/sustainability.webp"
               alt="Sustainable automotive plant with solar panels and water management"
             />
             <div className="story-copy">
