@@ -316,7 +316,7 @@ img {
 .section-head {
   display: grid;
   grid-template-columns: 260px 1fr;
-  margin-bottom: 70px;
+  margin-bottom: 56px;
 }
 .section-head > div:last-child {
   display: flex;
@@ -1928,7 +1928,7 @@ footer {
 :root {
   --content-width: 1320px;
   --page-gutter: clamp(20px, 5.9vw, 96px);
-  --section-space: clamp(80px, 8.6vw, 130px);
+  --section-space: clamp(64px, 7vw, 104px);
   --grid-gap: clamp(18px, 2vw, 28px);
 }
 .shell {
@@ -1943,7 +1943,7 @@ footer {
   grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr) !important;
   column-gap: clamp(50px, 8vw, 120px);
   align-items: end;
-  margin-bottom: clamp(42px, 5vw, 70px);
+  margin-bottom: clamp(36px, 4vw, 56px);
 }
 .section-head > .section-kicker {
   display: none !important;
@@ -2011,7 +2011,7 @@ footer {
 .stories-intro {
   grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
   gap: clamp(50px, 8vw, 120px);
-  margin-bottom: clamp(42px, 5vw, 70px);
+  margin-bottom: clamp(36px, 4vw, 56px);
 }
 .stories-intro p {
   max-width: 420px;

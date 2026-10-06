@@ -25,10 +25,11 @@ export const LEADERS: { name: string; role: string; bio: string; linkedin?: stri
 ]
 
 export const MILESTONES = [
-  { year: '50+ YEARS', image: 'advanced-forging', title: 'Engineering legacy', text: 'More than 50 years of legacy in precision auto-components.' },
-  { year: 'FEB 2025', image: 'manufacturing-excellence', title: 'Building the platform', text: 'Carlyle acquired a controlling stake to build a scaled, India-based auto-components platform.' },
-  { year: 'MAY 2026', image: 'tooling-engineering', title: 'Continued investment', text: 'Carlyle acquired a controlling stake in February 2025 and May 2026.' },
-  { year: 'TODAY', image: 'hero-global-engineering-v3', title: 'Integrated global scale', text: '15 manufacturing plants and 14 international warehouses across 7 countries.' },
+  { year: '01', label: 'THE FOUNDATION', image: 'advanced-forging', title: 'Five decades of engineering heritage', text: 'Highway Industries and Roop Automotives build deep capabilities in precision automotive manufacturing, serving global OEM and Tier-1 customers.', tags: 'Forging · Machining · Powertrain · Steering · Suspension' },
+  { year: '02', label: 'BRINGING STRENGTHS TOGETHER', image: 'manufacturing-excellence', title: 'Building a broader automotive platform', text: 'Complementary capabilities across driveline, powertrain, steering and suspension come together to create a broader engineering and manufacturing platform.', tags: 'Highway Industries + Roop Automotives' },
+  { year: '03', label: 'HIGHWAY ROOP', image: 'hero-global-engineering-v3', title: 'A common platform takes shape', text: "With Carlyle supporting the group's next phase, the businesses begin their transition towards a unified Highway Roop identity, bringing together engineering, manufacturing and customer strengths across the group.", tags: 'One group. Complementary capabilities. A common direction.' },
+  { year: '04', label: 'EXPANDING THE PLATFORM', image: 'tooling-engineering', title: 'Adding new capabilities', text: 'The platform expands its capabilities and footprint, strengthening its position across critical automotive systems and precision manufacturing.' },
+  { year: '05', label: 'TODAY', image: 'lightweighting-ev', title: 'Lightweighting joins the journey', text: 'Chamundi Die-Cast adds aluminium die casting, tooling, precision machining, finishing and assembly, expanding the platform into lightweighting and strengthening its South India footprint.', tags: 'Forging + Machining + Aluminium Die Casting' },
 ]
 
 export const UNITS = [

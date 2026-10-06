@@ -10,8 +10,8 @@ export default function OurJourney() {
   return (
     <>
       <PageHero
-        title={<>More than five decades.<br />Built to move forward.</>}
-        copy="Established engineering businesses brought together to build a scaled, India-based auto-components platform."
+        title={<>Built over decades.<br />Shaped for what’s next.</>}
+        copy="For more than five decades, our story has unfolded through changing technologies, evolving markets and a growing breadth of expertise. Each chapter has shaped the next, bringing us to Highway Roop today and the opportunities that lie ahead."
         image="hero-global-engineering-v3"
       />
       <SubNav />
@@ -26,12 +26,23 @@ export default function OurJourney() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img loading="lazy" decoding="async" src={`/assets/${m.image}.webp`} alt={m.title} />
                 <div>
+                  <span className="ab-label ab-milestone-label">{m.label}</span>
                   <h3>{m.title}</h3>
                   <p>{m.text}</p>
+                  {m.tags && <p className="ab-milestone-tags">{m.tags}</p>}
                 </div>
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="ab-section ab-dark">
+        <div className="shell">
+          <SectionHead title={<>Built on experience.<br /><em>Driven by precision.</em></>}>
+            Highway Roop brings together the knowledge, technology and execution to create precision solutions for a changing world of mobility.
+          </SectionHead>
+          <span className="ab-label ab-signoff">PRECISION IN MOTION.</span>
         </div>
       </section>
     </>

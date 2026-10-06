@@ -19,7 +19,7 @@
 
 .ab-section{padding-block:var(--section-space)}
 .ab-soft{background:var(--soft)}
-.ab-head{max-width:900px;margin-bottom:70px}
+.ab-head{max-width:900px;margin-bottom:56px}
 .ab-heading{font-size:clamp(43px,5.4vw,76px)}
 .ab-head p{max-width:700px;color:var(--muted);font-size:17px}
 
@@ -51,6 +51,10 @@
 .ab-milestone img{width:100%;height:260px;object-fit:cover}
 .ab-milestone h3{font-size:clamp(24px,2.7vw,34px);margin:0 0 14px;font-weight:500}
 .ab-milestone p{color:var(--muted)}
+.ab-milestone-label{display:block;color:var(--red);margin-bottom:12px}
+.ab-milestone .ab-milestone-tags{margin:16px 0 0;padding-top:14px;border-top:1px solid var(--line);color:var(--blue);font-size:13px;font-weight:700;letter-spacing:.02em}
+.ab-dark .ab-head{margin-bottom:32px}.ab-dark .ab-head p{color:#d7e5eb}
+.ab-signoff{display:block;color:#e45a5f;font-size:13px}
 
 .ab-platform{background:var(--navy);color:#fff;padding:55px;display:flex;justify-content:space-between;align-items:center;box-shadow:var(--shadow)}
 .ab-platform h2{font-size:clamp(26px,2.9vw,37px);line-height:1.15;margin:12px 0}
@@ -290,14 +294,14 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 }
 
 /* Business pages: spacing between sub-blocks. */
-.ab-biz-intro{padding:90px 0}
+.ab-biz-intro{padding:72px 0}
 .ab-biz-intro .ab-label{display:block;color:var(--blue);font-size:13px;margin-bottom:18px}
 .ab-lead{max-width:900px;margin:0;font-size:clamp(20px,2.2vw,30px);line-height:1.4;letter-spacing:-.02em;color:var(--muted)}
 .ab-lead strong{color:var(--ink);font-weight:500}
 .ab-biz{scroll-margin-top:140px}
 .ab-biz .ab-heading{font-size:clamp(30px,4.4vw,56px)}
 .ab-biz .ab-split .ab-heading{font-size:clamp(26px,3.2vw,42px)}
-.ab-biz .ab-gap{margin-top:100px}
+.ab-biz .ab-gap{margin-top:80px}
 .ab-biz .ab-note{margin-top:40px}
 @media(max-width:1050px){.ab-biz{scroll-margin-top:90px}}
 @media(max-width:700px){.ab-biz-intro{padding:40px 0}.ab-lead{font-size:18px}.ab-biz .ab-gap{margin-top:44px}.ab-biz .ab-heading{font-size:clamp(28px,7.5vw,36px)}.ab-biz .ab-split .ab-heading{font-size:clamp(24px,6.5vw,32px)}}
