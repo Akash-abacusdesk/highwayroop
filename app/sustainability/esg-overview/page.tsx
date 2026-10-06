@@ -25,7 +25,7 @@ export default function EsgOverview() {
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Explore the<br />ESG areas.</>}>
+          <SectionHead title={<>Explore the ESG areas.</>}>
             The presentation highlights environmental milestones and recognition in workplace equality, safety and sustainability.
           </SectionHead>
           <CardGrid cards={AREAS} />

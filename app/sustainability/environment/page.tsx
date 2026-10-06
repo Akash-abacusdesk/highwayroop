@@ -31,7 +31,7 @@ export default function Environment() {
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Carbon-neutrality<br />roadmap.</>}>
+          <SectionHead title={<>Carbon-neutrality roadmap.</>}>
             A staged reduction pathway from FY 2026-27 to net zero in FY 2039-40. Read each milestone chronologically; the dark endpoint marks the 100% target.
           </SectionHead>
           <div className="ab-roadmap">
@@ -47,7 +47,7 @@ export default function Environment() {
       </section>
       <section className="ab-section ab-soft">
         <div className="shell">
-          <SectionHead title={<>Environmental<br />recognition.</>} />
+          <SectionHead title={<>Environmental recognition.</>} />
           <CardGrid cards={AWARDS} cols={2} gap />
         </div>
       </section>

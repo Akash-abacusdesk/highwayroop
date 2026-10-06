@@ -28,7 +28,7 @@ export default function ContactSection({ content = defaultContent }: { content?:
         <div>
           <p className="eyebrow">{content.eyebrow}</p>
           <h2>
-            {content.headingLine1}<br />
+            {content.headingLine1}{' '}
             <em>{content.headingLine2}</em>
           </h2>
           {content.body && <p className="contact-body">{content.body}</p>}

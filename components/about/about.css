@@ -20,7 +20,7 @@
 .ab-section{padding-block:var(--section-space)}
 .ab-soft{background:var(--soft)}
 .ab-head{max-width:900px;margin-bottom:56px}
-.ab-heading{font-size:clamp(43px,5.4vw,76px)}
+.ab-heading{font-size:clamp(43px,5.4vw,76px);max-width:18ch}
 .ab-head p{max-width:700px;color:var(--muted);font-size:17px}
 
 .ab-story{display:grid;grid-template-columns:1.25fr .75fr;min-height:570px}
@@ -54,7 +54,8 @@
 .ab-milestone-label{display:block;color:var(--red);margin-bottom:12px}
 .ab-milestone .ab-milestone-tags{margin:16px 0 0;padding-top:14px;border-top:1px solid var(--line);color:var(--blue);font-size:13px;font-weight:700;letter-spacing:.02em}
 .ab-dark .ab-head{margin-bottom:32px}.ab-dark .ab-head p{color:#d7e5eb}
-.ab-signoff{display:block;color:#e45a5f;font-size:13px}
+.ab-signoff{display:block;color:var(--red);font-size:13px}
+.ab-closing{text-align:center}.ab-closing .ab-head{margin:0 auto 28px}.ab-closing .ab-redline{margin-inline:auto}.ab-closing .ab-head p,.ab-closing .ab-heading{margin-inline:auto}.ab-closing .ab-heading em{color:var(--blue);font-style:normal}
 
 .ab-platform{background:var(--navy);color:#fff;padding:55px;display:flex;justify-content:space-between;align-items:center;box-shadow:var(--shadow)}
 .ab-platform h2{font-size:clamp(26px,2.9vw,37px);line-height:1.15;margin:12px 0}

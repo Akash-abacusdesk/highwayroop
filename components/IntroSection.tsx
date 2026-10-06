@@ -20,7 +20,7 @@ export default function IntroSection({ content = defaultContent }: { content?: I
         </div>
         <div className="intro-copy reveal">
           <h2>
-            {content.headingLine1}<br />
+            {content.headingLine1}{' '}
             <em>{content.headingLine2}</em>
           </h2>
           <div className={content.para2 ? 'two-col-copy' : 'one-col-copy'}>

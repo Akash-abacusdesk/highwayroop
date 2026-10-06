@@ -18,7 +18,7 @@ export default function GroupStructure() {
 
       <section className="ab-section ab-soft">
         <div className="shell">
-          <SectionHead title={<>Three businesses.<br />One precision platform.</>} />
+          <SectionHead title={<>Three businesses. One precision platform.</>} />
           <div className="ab-platform">
             <div>
               <span className="ab-label">PARENT PLATFORM</span>

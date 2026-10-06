@@ -11,7 +11,7 @@ export default function TechnologyShowcase() {
         <div className="technology-overlay">
           <span>LIGHTWEIGHTING &amp; FUTURE MOBILITY</span>
           <h2>
-            Advancing lightweight<br />
+            Advancing lightweight
             mobility solutions.
           </h2>
           <p>

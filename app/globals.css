@@ -5383,3 +5383,9 @@ footer img {
   display: inline-flex;
   align-items: center;
 }
+
+/* Long section headings wrap to a second line instead of running full width. */
+.section h2,
+.contact h2 {
+  max-width: 18ch;
+}

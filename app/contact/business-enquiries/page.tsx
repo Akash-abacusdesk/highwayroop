@@ -17,7 +17,7 @@ export default function BusinessEnquiries() {
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Share your<br />requirement.</>}>
+          <SectionHead title={<>Share your requirement.</>}>
             This front-end form requires connection to an approved enquiry endpoint before use.
           </SectionHead>
           <LeadForm submit="Submit enquiry" fields={[

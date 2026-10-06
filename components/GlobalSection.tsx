@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, MapPin } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import WebGLGlobeLoader from './globe/WebGLGlobeLoader'
 import type { Country } from './globe/geo'
@@ -191,9 +191,6 @@ export default function GlobalSection() {
               <span>Countries served</span>
             </div>
           </div>
-          <a className="text-link accent" href="/about/global-presence">
-            Explore our global footprint <span><ArrowRight size={18} aria-hidden="true" /></span>
-          </a>
         </div>
 
         {/* Decorative: every region is also in the list. */}

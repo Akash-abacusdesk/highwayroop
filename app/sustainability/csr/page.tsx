@@ -24,7 +24,7 @@ export default function Csr() {
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>CSR programmes<br />and outcomes.</>}>
+          <SectionHead title={<>CSR programmes and outcomes.</>}>
             Roop VK Jain Foundation, established in 2018, structures community action across education, well-being, women empowerment and environmental stewardship.
           </SectionHead>
           <CardGrid cards={PILLARS} cols={2} />

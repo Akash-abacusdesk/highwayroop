@@ -26,7 +26,7 @@ export default function CorporateOffice() {
 
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Corporate office.<br />Gurugram, India.</>}>Contact information reproduced from the presentation.</SectionHead>
+          <SectionHead title={<>Corporate office. Gurugram, India.</>}>Contact information reproduced from the presentation.</SectionHead>
           <div className="ab-office">
             <div>
               <h3>Highway Roop Precision Technologies Limited</h3>
@@ -43,7 +43,7 @@ export default function CorporateOffice() {
 
       <section className="ab-section ab-soft">
         <div className="shell">
-          <SectionHead title={<>Verified locations.<br />Open directions.</>}>
+          <SectionHead title={<>Verified locations. Open directions.</>}>
             Only addresses published in the supplied presentation or official Highway Roop sources are shown.
           </SectionHead>
           <div className="ab-locations">
@@ -67,7 +67,7 @@ export default function CorporateOffice() {
 
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Write to the<br />corporate office.</>}>
+          <SectionHead title={<>Write to the corporate office.</>}>
             Use this form for office visits, vendor communication and company information requests.
           </SectionHead>
           <LeadForm submit="Send request" fields={[

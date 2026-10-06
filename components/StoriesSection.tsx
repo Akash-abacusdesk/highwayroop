@@ -6,7 +6,7 @@ export default function StoriesSection() {
       <div className="shell">
         <div className="stories-intro reveal">
           <h2>
-            Enterprise priorities<br />
+            Enterprise priorities{' '}
             <em>that strengthen performance.</em>
           </h2>
           <p>

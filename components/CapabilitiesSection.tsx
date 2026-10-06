@@ -109,7 +109,7 @@ export default function CapabilitiesSection() {
           </div>
           <div>
             <h2>
-              From first drawing<br />
+              From first drawing{' '}
               <em>to validated production.</em>
             </h2>
             <p>

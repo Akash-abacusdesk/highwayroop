@@ -24,7 +24,7 @@ export default function People() {
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Workplace<br />recognition.</>}>
+          <SectionHead title={<>Workplace recognition.</>}>
             The presentation records these recognitions; no unsupported people metrics are added.
           </SectionHead>
           <CardGrid cards={RECOGNITION} cols={2} />

@@ -25,7 +25,7 @@ export default function Governance() {
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Management systems<br />and certifications.</>}>
+          <SectionHead title={<>Management systems and certifications.</>}>
             A visual library of the management-system certifications listed in the corporate presentation. Approved certificate scans or PDF previews can be placed directly in each slot.
           </SectionHead>
           <CardGrid cards={CERTS} cols={2} gap />

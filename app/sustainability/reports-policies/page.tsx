@@ -18,7 +18,7 @@ export default function ReportsPolicies() {
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Reports and<br />certificates.</>}>
+          <SectionHead title={<>Reports and certificates.</>}>
             Each row is prepared with View and Download actions. The controls become active when approved PDF files are added.
           </SectionHead>
           <div className="ab-docs">

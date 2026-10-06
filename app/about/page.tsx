@@ -24,7 +24,7 @@ export default function Overview() {
 
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Precision engineering.<br />Delivered at global scale.</>}>
+          <SectionHead title={<>Precision engineering. Delivered at global scale.</>}>
             Highway Roop Precision Technologies Ltd. is formed by Highway Industries, Roop Automotives and Chamundi, a recent
             acquisition in lightweighting, with annual revenue of approximately USD 315 Mn.
           </SectionHead>
