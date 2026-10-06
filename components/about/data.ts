@@ -16,12 +16,9 @@ export const LEADERS: { name: string; role: string; bio: string; linkedin?: stri
   { name: 'Anirban Sanyal', role: 'CFO', bio: 'Finance leadership.', linkedin: 'https://www.linkedin.com/in/anirbansanyal1975', image: '/assets/leadership/anirban-cfo.webp' },
   { name: 'Vinod Kr Singh', role: 'CHRO', bio: 'Human Resources leadership.', linkedin: 'https://www.linkedin.com/in/vinod-singh-1a58b922/', image: '/assets/leadership/vinod-chro.webp' },
   { name: 'Ajay Mrig', role: 'CPO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/ajay-m-74445425/', image: '/assets/leadership/ajay-cpo.webp' },
-  { name: 'Sai Iyer', role: 'CMO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/sai-iyer-1615b65/' },
+  { name: 'Sai Iyer', role: 'CMO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/sai-iyer-1615b65/', image: '/assets/leadership/sai-iyer-cmo.webp' },
   { name: 'Prajod', role: 'VP Technology', bio: 'Technology leadership.', linkedin: 'https://www.linkedin.com/in/prajod-ayyappath-794427b/', image: '/assets/leadership/prajod-vp-technology.webp' },
   { name: 'Piyush Asija', role: 'CS & Chief Compliance Officer', bio: 'Company secretarial and compliance leadership.', linkedin: 'https://www.linkedin.com/in/piyush-asija-b8884817/' },
-  { name: 'Bipin Bahuguna', role: 'AVP - Strategy', bio: 'Strategy leadership.', linkedin: 'https://www.linkedin.com/in/bipin-bahuguna-xlri' },
-  { name: 'Shilpi Shukla', role: 'Group Head - Communications & Branding', bio: 'Communications and branding leadership.', linkedin: 'https://www.linkedin.com/in/shilpi-shukla-4aa6a516/' },
-  { name: 'Rammohan', role: 'Manufacturing Excellence', bio: 'Manufacturing excellence leadership.' },
 ]
 
 export const MILESTONES = [
