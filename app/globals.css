@@ -5389,3 +5389,16 @@ footer img {
 .contact h2 {
   max-width: 18ch;
 }
+
+/* Homepage careers card: taller so the team photo isn't cropped at the heads. */
+.story-grid.story-single .story-careers {
+  min-height: clamp(520px, 48vw, 700px);
+}
+.story-careers img {
+  object-position: center 20%;
+}
+@media (max-width: 700px) {
+  .story-grid.story-single .story-careers {
+    min-height: 420px;
+  }
+}
