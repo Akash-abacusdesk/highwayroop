@@ -30,10 +30,6 @@ export default function LeadershipSection() {
                 &ldquo;When an automaker chooses a component from Highway Roop, they are buying certainty. Certainty
                 that it will fit, perform and deliver consistency, shift after shift.&rdquo;
               </blockquote>
-              <p>
-                Our businesses operate around a common commitment to precision, operational excellence and enduring
-                customer relationships.
-              </p>
               <a href="/about/leadership">
                 Meet our leadership <span><ArrowRight size={18} aria-hidden="true" /></span>
               </a>

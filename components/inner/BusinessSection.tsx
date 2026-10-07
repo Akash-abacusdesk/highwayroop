@@ -65,7 +65,7 @@ export default function BusinessSection({ biz }: { biz: Business }) {
                 <Split
                   reverse
                   title={<>Quality is part of the process.</>}
-                  image="quality-lab" alt="Quality validation laboratory"
+                  image="driveline-quality" alt="Engineer running a Zeiss CMM inspection on a machined housing"
                   bullets={['Zeiss CMM and gear testers', 'Form, roundness and roughness inspection', 'In-house calibration', 'Impact, torque and endurance testing']}
                 >
                   Metrology and metallurgy infrastructure supports dimensional, material and functional validation against drawing requirements.
