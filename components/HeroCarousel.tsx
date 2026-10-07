@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import type { HeroSlide } from '@/types/content'
 
-const heroImages = ['banner-driveline', 'banner-steering', 'banner-lightweighting']
+const heroImages = ['hero-home-powertrain', 'hero-home-steering', 'hero-home-lightweighting']
 
 const defaultSlides: HeroSlide[] = [
   {"eyebrow": "", "headingLine1": "Built for the systems that move power.", "headingLine2": "", "lede": "Precision-forged, machined and assembled solutions support power transmission across established and evolving vehicle architectures.", "primaryCtaText": "Explore our capabilities", "primaryCtaHref": "/driveline", "secondaryCtaText": "Explore our businesses", "secondaryCtaHref": "#businesses"},

@@ -27,8 +27,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link
           rel="preload"
           as="image"
-          href="/assets/banner-driveline.webp"
-          imageSrcSet="/assets/banner-driveline-800.webp 800w, /assets/banner-driveline.webp 2128w"
+          href="/assets/hero-home-powertrain.webp"
+          imageSrcSet="/assets/hero-home-powertrain-800.webp 800w, /assets/hero-home-powertrain.webp 2128w"
           imageSizes="100vw"
           type="image/webp"
           fetchPriority="high"

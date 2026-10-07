@@ -32,11 +32,11 @@ export default function GroupSection() {
                 loading="lazy"
                 decoding="async"
                 src={b.image}
-                srcSet={`${b.image.replace(".webp", "-800.webp")} 800w, ${b.image} 1672w`}
-                sizes="(max-width:700px) 100vw, (max-width:1050px) 50vw, 33vw"
+                srcSet={`${b.image.replace(".webp", "-800.webp")} 800w, ${b.image} 2128w`}
+                sizes="(max-width:700px) 180vw, (max-width:1050px) 90vw, 60vw"
                 alt={b.name}
-                width={1672}
-                height={941}
+                width={2128}
+                height={739}
               />
               <div className="biz-body">
                 <h3>{b.name.toUpperCase()}</h3>

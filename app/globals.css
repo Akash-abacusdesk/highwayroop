@@ -1744,6 +1744,15 @@ footer {
 .story-sustainability {
   grid-column: 2;
 }
+/* Bright solar-roof photo: deeper scrim so the white copy stays legible */
+.story-sustainability:after {
+  background:
+    linear-gradient(90deg, rgba(5, 30, 42, 0.85) 0%, rgba(5, 30, 42, 0.45) 55%, transparent 85%),
+    linear-gradient(180deg, transparent 20%, rgba(5, 30, 42, 0.92) 100%);
+}
+.story-sustainability .story-copy {
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
 .story-careers {
   grid-column: span 2;
   min-height: 540px;
@@ -4045,6 +4054,7 @@ div[id="media"] {
   height: auto;
   aspect-ratio: 16/10;
   object-fit: cover;
+  object-position: right center;
   display: block;
 }
 .biz-body {
@@ -5309,6 +5319,11 @@ footer img {
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s;
+}
+/* Product development / Manufacturing control: keep operators' heads in frame */
+.corporate-caps article:nth-child(-n + 2) .corporate-cap-img img {
+  object-position: right top;
+  transform-origin: right top;
 }
 .corporate-caps article:hover .corporate-cap-img img {
   transform: scale(1.05);

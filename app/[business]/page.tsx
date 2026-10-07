@@ -8,7 +8,6 @@ import { BUSINESSES } from '@/components/about/data'
 type Props = { params: Promise<{ business: string }> }
 
 // One page per business unit: /driveline, /steering-suspension, /lightweighting.
-const HERO: Record<string, string> = { driveline: 'hero-driveline', 'steering-suspension': 'hero-precision', lightweighting: 'lightweighting-ev' }
 
 export const dynamicParams = false
 export const generateStaticParams = () => BUSINESSES.map(b => ({ business: b.slug }))
@@ -24,7 +23,7 @@ export default async function BusinessPage({ params }: Props) {
   if (!biz) notFound()
   return (
     <SiteShell>
-      <PageHero title={biz.heroTitle} copy={biz.heroCopy} image={HERO[biz.slug]} />
+      <PageHero title={biz.heroTitle} copy={biz.heroCopy} image={biz.image.slice('/assets/'.length, -'.webp'.length)} />
       <BusinessSection biz={biz} />
     </SiteShell>
   )

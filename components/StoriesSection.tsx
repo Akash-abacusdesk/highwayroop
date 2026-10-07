@@ -62,8 +62,8 @@ export function SustainabilitySection() {
           <article className="story-card story-sustainability reveal" id="sustainability">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async"
-              srcSet="/assets/homepage/sustainability-800.webp 800w, /assets/homepage/sustainability.webp 1920w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/homepage/sustainability.webp"
-              alt="Sustainable automotive plant with solar panels and water management"
+              srcSet="/assets/homepage/sustainability-solar-800.webp 800w, /assets/homepage/sustainability-solar.webp 1920w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/homepage/sustainability-solar.webp"
+              alt="Aerial view of a Highway Roop plant with rooftop solar panels"
             />
             <div className="story-copy">
               <span>ENVIRONMENT · PEOPLE · GOVERNANCE</span>
@@ -167,7 +167,7 @@ export function CareersSection() {
           <article className="story-card story-careers reveal" id="careers">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async"
-              srcSet="/assets/careers-team-800.webp 800w, /assets/careers-team.webp 1672w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/careers-team.webp"
+              srcSet="/assets/careers-people-800.webp 800w, /assets/careers-people.webp 1672w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/careers-people.webp"
               alt="Highway Roop engineering and manufacturing professionals"
             />
             <div className="story-copy">
