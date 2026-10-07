@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { BUSINESSES } from './about/data'
 import { Fragment, useState, useEffect, useRef, useCallback } from 'react'
 
-type Col = { title: string; links: [string, string][]; href?: string; blurb?: string }
+type Col = { title: string; links: [string, string][]; href?: string; blurb?: string; image?: string }
 type Menu = { label: string; href: string; intro: string; cols: Col[] }
 
 // Dropdowns for every top-level item except Investors and Careers, which stay plain links.
@@ -27,7 +27,8 @@ const MENUS: Menu[] = [
       title: b.name.toUpperCase(),
       href: `/${b.slug}`,
       blurb: b.intro,
-      links: [[`/${b.slug}#technology`, 'Technology & Manufacturing'], [`/${b.slug}#products-solutions`, 'Products & Solutions']] as [string, string][],
+      image: b.image,
+      links: [],
     })),
   },
   {
@@ -255,6 +256,8 @@ export default function Header() {
                 <Link className="mega-biz" href={c.href} onClick={closeMega}>
                   <strong>{c.title}</strong>
                   <em>{c.blurb}</em>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  {c.image && <img src={c.image.replace('.webp', '-800.webp')} alt="" loading="lazy" decoding="async" />}
                   <span>View business <ArrowRight size={14} aria-hidden="true" /></span>
                 </Link>
               ) : (

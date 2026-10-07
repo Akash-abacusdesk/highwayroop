@@ -5136,12 +5136,19 @@ footer img {
   }
 }
 
-/* Businesses dropdown: each column heads with a link to the business page. */
+/* Businesses dropdown: each column is one link to the business page, with its hero image (right side). */
 .mega-column > a.mega-biz {
   display: block;
-  padding: 0 0 18px;
-  margin-bottom: 6px;
-  border-bottom: 2px solid var(--red);
+  padding: 0;
+  border-bottom: 0;
+}
+.mega-biz img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: right center;
+  margin: 0 0 14px;
 }
 .mega-biz strong {
   display: block;
@@ -5197,6 +5204,8 @@ footer img {
 }
 .hero-lede {
   color: rgba(255, 255, 255, 0.86);
+  max-width: 40ch;
+  text-wrap: balance;
 }
 @media (max-width: 700px) {
   .hero-wash,
