@@ -12,7 +12,7 @@ export default function GroupStructure() {
       <PageHero
         title={<>Specialist businesses.<br />Connected at scale.</>}
         copy="Highway Industries, Roop Automotives and Chamundi brought together through one precision-manufacturing platform."
-        image="manufacturing-excellence"
+        image="home-about"
       />
       <SubNav />
 
