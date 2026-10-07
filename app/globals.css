@@ -1744,11 +1744,12 @@ footer {
 .story-sustainability {
   grid-column: 2;
 }
-/* Bright solar-roof photo: deeper scrim so the white copy stays legible */
-.story-sustainability:after {
+/* Lighter scrim on the sustainability and careers photos: enough for the white copy, photo stays bright */
+.story-sustainability:after,
+.story-careers:after {
   background:
-    linear-gradient(90deg, rgba(5, 30, 42, 0.85) 0%, rgba(5, 30, 42, 0.45) 55%, transparent 85%),
-    linear-gradient(180deg, transparent 20%, rgba(5, 30, 42, 0.92) 100%);
+    linear-gradient(90deg, rgba(5, 30, 42, 0.55) 0%, rgba(5, 30, 42, 0.2) 45%, transparent 70%),
+    linear-gradient(180deg, transparent 45%, rgba(5, 30, 42, 0.6) 100%);
 }
 .story-sustainability .story-copy {
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
