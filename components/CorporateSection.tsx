@@ -20,7 +20,7 @@ export default function CorporateSection() {
               Highway Roop brings established automotive businesses together through a common operating framework,
               combining specialist manufacturing capabilities with engineering, tooling, quality and customer proximity.
             </p>
-            <a className="text-link accent corporate-cta" href="/about/group-structure">
+            <a className="text-link accent corporate-cta" href="/about">
               Explore corporate information <span><ArrowRight size={18} aria-hidden="true" /></span>
             </a>
           </div>

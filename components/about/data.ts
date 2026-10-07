@@ -1,7 +1,6 @@
 export const ABOUT_LINKS = [
   { href: '/about', label: 'Overview' },
   { href: '/about/our-journey', label: 'Our Journey' },
-  { href: '/about/group-structure', label: 'Group Structure' },
   { href: '/about/leadership', label: 'Leadership' },
   { href: '/about/global-presence', label: 'Global Presence' },
 ]
@@ -12,13 +11,11 @@ export const CEO_LINKEDIN = 'https://www.linkedin.com/in/dharmesh-arora/'
 export const LEADERS: { name: string; role: string; bio: string; linkedin?: string; image?: string }[] = [
   { name: 'Ramanathan Iyer', role: 'BU Head (Steering)', bio: 'Business Unit leadership for Steering.', linkedin: 'https://www.linkedin.com/in/ramanathan-iyer-a5546616/', image: '/assets/leadership/ramanathan.webp' },
   { name: 'Sunil Ailavadi', role: 'BU Head (Powertrain)', bio: 'Business Unit leadership for Powertrain.', linkedin: 'https://www.linkedin.com/in/sunil-ailavadi-34b23311/', image: '/assets/leadership/sunil-ailawadi.webp' },
-  { name: 'BU Head', role: 'Lightweighting', bio: 'Business Unit leadership for Lightweighting.' },
   { name: 'Anirban Sanyal', role: 'CFO', bio: 'Finance leadership.', linkedin: 'https://www.linkedin.com/in/anirbansanyal1975', image: '/assets/leadership/anirban-cfo.webp' },
   { name: 'Vinod Kr Singh', role: 'CHRO', bio: 'Human Resources leadership.', linkedin: 'https://www.linkedin.com/in/vinod-singh-1a58b922/', image: '/assets/leadership/vinod-chro.webp' },
   { name: 'Ajay Mrig', role: 'CPO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/ajay-m-74445425/', image: '/assets/leadership/ajay-cpo.webp' },
   { name: 'Sai Iyer', role: 'CMO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/sai-iyer-1615b65/', image: '/assets/leadership/sai-iyer-cmo.webp' },
   { name: 'Prajod', role: 'VP Technology', bio: 'Technology leadership.', linkedin: 'https://www.linkedin.com/in/prajod-ayyappath-794427b/', image: '/assets/leadership/prajod-vp-technology.webp' },
-  { name: 'Piyush Asija', role: 'CS & Chief Compliance Officer', bio: 'Company secretarial and compliance leadership.', linkedin: 'https://www.linkedin.com/in/piyush-asija-b8884817/' },
 ]
 
 export const MILESTONES = [
@@ -27,18 +24,6 @@ export const MILESTONES = [
   { year: '03', label: 'HIGHWAY ROOP', image: 'hero-global-engineering-v3', title: 'A common platform takes shape', text: "With Carlyle supporting the group's next phase, the businesses begin their transition towards a unified Highway Roop identity, bringing together engineering, manufacturing and customer strengths across the group.", tags: 'One group. Complementary capabilities. A common direction.' },
   { year: '04', label: 'EXPANDING THE PLATFORM', image: 'tooling-engineering', title: 'Adding new capabilities', text: 'The platform expands its capabilities and footprint, strengthening its position across critical automotive systems and precision manufacturing.' },
   { year: '05', label: 'TODAY', image: 'lightweighting-ev', title: 'Lightweighting joins the journey', text: 'Chamundi Die-Cast adds aluminium die casting, tooling, precision machining, finishing and assembly, expanding the platform into lightweighting and strengthening its South India footprint.', tags: 'Forging + Machining + Aluminium Die Casting' },
-]
-
-export const UNITS = [
-  { share: '52% OF SALES', image: 'banner-driveline', title: 'Driveline', text: 'Powertrain and driveline components.' },
-  { share: '27% OF SALES', image: 'banner-steering', title: 'Steering & Suspension', text: 'Steering components and assemblies.' },
-  { share: '21% OF SALES', image: 'banner-lightweighting', title: 'Lightweighting', text: 'Aluminium die casting components.' },
-]
-
-export const CAPABILITIES = [
-  { title: 'Metal forming', text: 'Hot, warm and cold forging, stamping, High Pressure Aluminium Die Casting and Gravity Die Casting.' },
-  { title: 'Precision manufacturing', text: 'Precision machining, heat treatment, coating, surface treatment and assembly.' },
-  { title: 'Validation', text: 'Advanced and automated in-house testing capabilities.' },
 ]
 
 export const PRESS: { source: string; title: string; text: string; image?: string; publication?: string }[] = [

@@ -9,6 +9,7 @@ const nextConfig: NextConfig = { ...base, experimental: { inlineCss: true },
       { source: '/technology', destination: '/driveline#technology', permanent: true },
       { source: '/products-solutions', destination: '/driveline#products-solutions', permanent: true },
       { source: '/businesses', destination: '/#businesses', permanent: true },
+      { source: '/about/group-structure', destination: '/about', permanent: true },
       ...slugs.flatMap(s => ['technology', 'products-solutions'].map(page => ({ source: `/${s}/${page}`, destination: `/${s}#${page}`, permanent: true }))),
     ]
   },

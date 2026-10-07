@@ -3,15 +3,8 @@ import { ABOUT_LINKS, BUSINESSES, SUSTAINABILITY_LINKS } from '@/components/abou
 
 type Col = { title: string; links: [string, string][] }
 
-// Items without a dedicated page point at the closest existing one (capabilities at a business's technology
-// section, unbuilt investor pages at the homepage corporate section).
+// Capabilities without a dedicated page point at the closest business technology section.
 const tech = '/driveline#technology'
-const investor: [string, string][] = [
-  ['/#corporate', 'Investor Information'], ['/#corporate', 'Financial Information'], ['/#corporate', 'DRHP / Offer Documents'],
-  ['/sustainability/governance', 'Corporate Governance'], ['/sustainability/reports-policies', 'Policies'],
-  ['/sustainability/reports-policies', 'Disclosures'], ['/sustainability/reports-policies', 'Annual Reports'],
-  ['/contact/general-investor-contact', 'Investor Grievance'], ['/contact/general-investor-contact', 'RTA'],
-]
 const COLUMNS: Col[] = [
   { title: 'About', links: ABOUT_LINKS.map(l => [l.href, l.label]) },
   { title: 'Businesses', links: BUSINESSES.map(b => [`/${b.slug}`, b.name]) },
@@ -20,7 +13,7 @@ const COLUMNS: Col[] = [
     links: ['Engineering & Tooling', 'Forging & Stamping', 'Machining', 'Die Casting', 'Heat Treatment', 'Quality & Testing'].map(l => [l === 'Die Casting' ? '/lightweighting#technology' : tech, l]),
   },
   { title: 'Sustainability', links: SUSTAINABILITY_LINKS.map(l => [l.href, l.label.replace('ESG ', '').replace('Reports & Policies', 'Policies & Reports')]) },
-  { title: 'Investors', links: investor },
+  { title: 'Investors', links: [['/investors/financial-reports', 'Financial Reports']] },
   { title: 'News & Insights', links: [['/news-insights#news', 'News'], ['/news-insights', 'Insights'], ['/news-insights#media', 'Media'], ['/HRPTL-Corporate-Presentation.pdf', 'Resources']] },
   { title: 'Careers', links: [['/careers', 'Careers']] },
   { title: 'Contact', links: [['/contact/corporate-office', 'Contact']] },
