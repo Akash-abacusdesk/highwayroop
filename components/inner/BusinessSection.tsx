@@ -56,7 +56,7 @@ export default function BusinessSection({ biz }: { biz: Business }) {
               <div className="ab-gap">
                 <Split
                   title={<>Forming and machining at industrial scale.</>}
-                  image="manufacturing-excellence" alt="Precision machining facility"
+                  image="home-about" alt="Engineer inspecting a machined component"
                 >
                   Hot and warm presses range from 600T to 2500T; cold forging presses range from 100T to 1000T. The presentation also lists 800+ CNC turning and turn-mill machines, 90+ VMCs, 40+ broaching machines, 25+ honing machines and 20 CNC grinding machines.
                 </Split>
