@@ -50,7 +50,6 @@ export default function Footer() {
       </div>
       <div className="shell footer-bottom">
         <span>© 2026 Highway Roop Precision Technologies Limited, developed by <a href="https://www.abacusdesk.com/" target="_blank" rel="noopener noreferrer">AbacusDesk</a></span>
-        <span>Precision In Motion</span>
       </div>
     </footer>
   )

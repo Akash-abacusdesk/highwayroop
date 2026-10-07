@@ -5185,6 +5185,8 @@ footer img {
 .hero h1,
 .hero-slide h2 {
   color: #fff;
+  max-width: 14ch;
+  text-wrap: balance;
 }
 .hero h1 span,
 .hero-slide h2 span {
