@@ -37,9 +37,9 @@ export default function ContactSection({ content = defaultContent }: { content?:
           </nav>
         </div>
         <div className="contact-actions">
-          <a className="button white" href={`mailto:${content.email}`}>
+          <Link className="button white" href="/contact/corporate-office#corporate-form">
             {content.buttonText} <span><ArrowRight size={18} aria-hidden="true" /></span>
-          </a>
+          </Link>
           <a href={`tel:${content.phone.replace(/\s/g, '')}`}>{content.phone}</a>
           <a href={`mailto:${content.email}`}>{content.email}</a>
         </div>
