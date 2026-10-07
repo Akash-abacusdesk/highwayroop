@@ -8,7 +8,9 @@ import { Fragment, useState, useEffect, useRef, useCallback } from 'react'
 type Col = { title: string; links: [string, string][]; href?: string; blurb?: string }
 type Menu = { label: string; href: string; intro: string; cols: Col[] }
 
-// Dropdowns for every top-level item except Careers, which stays a plain link.
+// Dropdowns for every top-level item except Investors and Careers, which stay plain links.
+const INVESTORS: [string, string] = ['/investors/financial-reports', 'Investors']
+
 const MENUS: Menu[] = [
   {
     label: 'About', href: '/about',
@@ -34,16 +36,6 @@ const MENUS: Menu[] = [
     cols: [
       { title: 'ESG', links: [['/sustainability/esg-overview', 'ESG Overview'], ['/sustainability/environment', 'Environment'], ['/sustainability/people', 'People']] },
       { title: 'RESPONSIBILITY', links: [['/sustainability/csr', 'CSR'], ['/sustainability/governance', 'Governance'], ['/sustainability/reports-policies', 'Reports & Policies']] },
-    ],
-  },
-  {
-    label: 'Investors', href: '/#corporate',
-    intro: 'Financials, governance and disclosures for our shareholders.',
-    cols: [
-      { title: 'OVERVIEW', links: [['/#corporate', 'Investor Overview'], ['/#corporate', 'Financial Information'], ['/#corporate', 'DRHP / Offer Documents'], ['/sustainability/reports-policies', 'Annual Reports']] },
-      { title: 'GOVERNANCE', links: [['/sustainability/governance', 'Corporate Governance'], ['/about/leadership', 'Board & Committees'], ['/sustainability/reports-policies', 'Policies'], ['/sustainability/reports-policies', 'Disclosures']] },
-      { title: 'SHAREHOLDERS', links: [['/#corporate', 'Shareholding'], ['/#corporate', 'Credit Ratings'], ['/contact/general-investor-contact', 'Investor Meetings']] },
-      { title: 'SUPPORT', links: [['/contact/general-investor-contact', 'Registrar & Transfer Agent'], ['/contact/general-investor-contact', 'Investor Grievance']] },
     ],
   },
   {
@@ -152,7 +144,9 @@ export default function Header() {
   )
 
   const mobileLinks: [string, string][] = [
-    ...MENUS.filter(m => m.label !== 'Contact').map(m => [m.href, m.label] as [string, string]),
+    ...MENUS.filter(m => m.label !== 'Contact').flatMap(m =>
+      m.label === 'News & Insights' ? [INVESTORS, [m.href, m.label] as [string, string]] : [[m.href, m.label] as [string, string]]
+    ),
     ['/careers', 'Careers'],
     ['/contact/corporate-office', 'Contact'],
   ]
@@ -196,6 +190,9 @@ export default function Header() {
         <nav className="main-nav" aria-label="Primary navigation">
           {MENUS.map((m, i) => (
             <Fragment key={m.label}>
+            {m.label === 'News & Insights' && (
+              <Link href={INVESTORS[0]}>{INVESTORS[1]}</Link>
+            )}
             {m.label === 'Contact' && (
               <Link href="/careers">Careers</Link>
             )}

@@ -167,7 +167,7 @@ export function CareersSection() {
           <article className="story-card story-careers reveal" id="careers">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async"
-              srcSet="/assets/careers-people-800.webp 800w, /assets/careers-people.webp 1672w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/careers-people.webp"
+              srcSet="/assets/hero-careers-v3-800.webp 800w, /assets/hero-careers-v3.webp 1672w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/hero-careers-v3.webp"
               alt="Highway Roop engineering and manufacturing professionals"
             />
             <div className="story-copy">

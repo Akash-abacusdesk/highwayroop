@@ -20,7 +20,7 @@ export default function EsgOverview() {
       <PageHero
         title={<>Responsible progress,<br />organised.</>}
         copy="A clear view of environment, people, CSR, governance, and corporate documents."
-        image="hero-esg-v2"
+        image="hero-esg-v3"
       />
       <SubNav />
       <section className="ab-section">

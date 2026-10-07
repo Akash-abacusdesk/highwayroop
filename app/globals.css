@@ -5417,3 +5417,14 @@ footer img {
     min-height: 420px;
   }
 }
+
+/* Blank placeholder page body (Investors > Financial Reports): clears the fixed header */
+.empty-page {
+  min-height: 60vh;
+  margin-top: 126px;
+}
+@media (max-width: 1050px) {
+  .empty-page {
+    margin-top: 72px;
+  }
+}

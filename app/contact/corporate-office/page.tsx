@@ -11,7 +11,6 @@ export const metadata: Metadata = { title: 'Corporate Office | Highway Roop' }
 
 const LOCATIONS = [
   { tag: 'CORPORATE OFFICE', name: 'Gurugram', lines: ['135-R, Sector 36, Narsinghpur,', 'Gurugram, Haryana 122004, India'], q: '135-R, Sector 36, Narsinghpur, Gurugram, Haryana 122004', map: 'Gurugram corporate office map' },
-  { tag: 'SOHNA FACILITY', name: 'Roz Ka Meo', lines: ['19, Roz Ka Meo, Industrial Area,', 'Sohna, Gurugram 122103, Haryana, India'], q: '19, Roz Ka Meo, Industrial Area, Sohna, Gurugram 122103', map: 'Sohna facility map' },
 ]
 
 export default function CorporateOffice() {
@@ -75,7 +74,7 @@ export default function CorporateOffice() {
             { label: 'Company' },
             { label: 'Email', type: 'email', required: true },
             { label: 'Phone', type: 'tel' },
-            { label: 'Location', options: ['Gurugram corporate office', 'Sohna facility', 'Other location enquiry'] },
+            { label: 'Location', options: ['Gurugram corporate office', 'Other location enquiry'] },
             { label: 'Purpose', options: ['Office visit', 'Company information', 'Vendor communication', 'Other'] },
             { label: 'Message', textarea: true, required: true },
           ]} />

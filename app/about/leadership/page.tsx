@@ -14,7 +14,7 @@ export default function Leadership() {
       <PageHero
         title={<>Leadership grounded in<br />operational discipline.</>}
         copy="Business-unit leadership and corporate functions aligned behind one integrated platform."
-        image="hero-precision"
+        image="hero-leadership"
       />
       <SubNav />
 

@@ -26,7 +26,7 @@ export default function Environment() {
       <PageHero
         title={<>A roadmap for<br />carbon reduction.</>}
         copy="Milestones set out in the HRPTL corporate presentation."
-        image="hero-environment-v2"
+        image="hero-environment-v3"
       />
       <SubNav />
       <section className="ab-section">
