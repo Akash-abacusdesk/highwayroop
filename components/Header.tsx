@@ -6,7 +6,8 @@ import { BUSINESSES } from './about/data'
 import { Fragment, useState, useEffect, useRef, useCallback } from 'react'
 
 type Col = { title: string; links: [string, string][]; href?: string; blurb?: string; image?: string }
-type Menu = { label: string; href: string; intro: string; cols: Col[] }
+// dropdownOnly: the nav item opens the dropdown but is not itself a link.
+type Menu = { label: string; href: string; intro: string; cols: Col[]; dropdownOnly?: boolean }
 
 // Dropdowns for every top-level item except Investors and Careers, which stay plain links.
 const INVESTORS: [string, string] = ['/investors/financial-reports', 'Investors']
@@ -21,7 +22,7 @@ const MENUS: Menu[] = [
     ],
   },
   {
-    label: 'Businesses', href: '/#businesses',
+    label: 'Businesses', href: '/#businesses', dropdownOnly: true,
     intro: 'Three specialist businesses delivering engineered mobility systems.',
     cols: BUSINESSES.map(b => ({
       title: b.name.toUpperCase(),
@@ -202,17 +203,31 @@ export default function Header() {
               onMouseEnter={() => openMega(i)}
               onMouseLeave={closeSoon}
             >
-              <Link
-                ref={i === active ? (megaTriggerRef as React.RefObject<HTMLAnchorElement>) : undefined}
-                className="mega-trigger"
-                href={m.href}
-                aria-expanded={active === i}
-                aria-controls="mega-menu"
-                onFocus={() => openMega(i)}
-                onClick={closeMega}
-              >
-                {m.label}
-              </Link>
+              {m.dropdownOnly ? (
+                <button
+                  type="button"
+                  ref={i === active ? (megaTriggerRef as React.RefObject<HTMLButtonElement>) : undefined}
+                  className="mega-trigger"
+                  aria-expanded={active === i}
+                  aria-controls="mega-menu"
+                  onFocus={() => openMega(i)}
+                  onClick={() => openMega(i)}
+                >
+                  {m.label}
+                </button>
+              ) : (
+                <Link
+                  ref={i === active ? (megaTriggerRef as React.RefObject<HTMLAnchorElement>) : undefined}
+                  className="mega-trigger"
+                  href={m.href}
+                  aria-expanded={active === i}
+                  aria-controls="mega-menu"
+                  onFocus={() => openMega(i)}
+                  onClick={closeMega}
+                >
+                  {m.label}
+                </Link>
+              )}
             </div>
             </Fragment>
           ))}
@@ -246,9 +261,11 @@ export default function Header() {
             <span>HIGHWAY ROOP</span>
             <h2>{menu.label}</h2>
             <p>{menu.intro}</p>
-            <Link href={menu.href} onClick={closeMega}>
-              Explore {menu.label} <b><ArrowRight size={18} aria-hidden="true" /></b>
-            </Link>
+            {!menu.dropdownOnly && (
+              <Link href={menu.href} onClick={closeMega}>
+                Explore {menu.label} <b><ArrowRight size={18} aria-hidden="true" /></b>
+              </Link>
+            )}
           </div>
           {menu.cols.map(c => (
             <div className="mega-column" key={c.title}>

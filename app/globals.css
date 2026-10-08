@@ -2802,7 +2802,8 @@ div[id="media"] {
   color: var(--red);
   transition: transform 0.2s;
 }
-.mega-trigger[aria-expanded="true"] {
+.mega-trigger[aria-expanded="true"],
+.mega-trigger:hover {
   color: var(--blue);
 }
 .mega-trigger[aria-expanded="true"] span {
