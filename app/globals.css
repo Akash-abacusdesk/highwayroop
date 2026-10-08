@@ -5323,8 +5323,9 @@ footer img {
 .corporate-caps article:hover:after {
   transform: scaleX(1);
 }
+/* Box matches the 1178x620 card photos so they show uncropped */
 .corporate-cap-img {
-  height: 220px;
+  aspect-ratio: 1178 / 620;
   overflow: hidden;
 }
 .corporate-cap-img img {
@@ -5333,8 +5334,8 @@ footer img {
   object-fit: cover;
   transition: transform 0.6s;
 }
-/* Product development / Manufacturing control: keep operators' heads in frame */
-.corporate-caps article:nth-child(-n + 2) .corporate-cap-img img {
+/* Product development: keep the engineer's face in frame */
+.corporate-caps article:first-child .corporate-cap-img img {
   object-position: right top;
   transform-origin: right top;
 }
@@ -5379,7 +5380,7 @@ footer img {
     display: block;
   }
   .corporate-cap-img {
-    height: 180px;
+    height: auto;
     min-height: 0;
   }
   .corporate-cap-body {
