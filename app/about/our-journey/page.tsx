@@ -12,7 +12,7 @@ export default function OurJourney() {
       <PageHero
         title={<>Built over decades.<br />Shaped for what’s next.</>}
         copy="For more than five decades, our story has unfolded through changing technologies, evolving markets and a growing breadth of expertise. Each chapter has shaped the next, bringing us to Highway Roop today and the opportunities that lie ahead."
-        image="hero-global-engineering-v3"
+        image="about/our-journey-hero"
       />
       <SubNav />
 
