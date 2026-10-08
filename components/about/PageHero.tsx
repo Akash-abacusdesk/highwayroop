@@ -1,6 +1,11 @@
+import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 import './about.css'
 
-export default function PageHero({ title, copy, image }: { title: React.ReactNode; copy: string; image: string }) {
+type Cta = { href: string; label: string }
+
+// `ctas`: the first renders as the primary button, the second as a text link.
+export default function PageHero({ title, copy, image, ctas }: { title: React.ReactNode; copy: string; image: string; ctas?: Cta[] }) {
   return (
     <section className="ab-hero">
       <div className="ab-hero-media" style={{ backgroundImage: `url('/assets/${image}.webp')` }} />
@@ -9,6 +14,15 @@ export default function PageHero({ title, copy, image }: { title: React.ReactNod
           <div className="ab-redline" />
           <h1>{title}</h1>
           <p>{copy}</p>
+          {ctas && (
+            <div className="ab-hero-ctas">
+              {ctas.map((c, i) => (
+                <Link key={c.href} className={i === 0 ? 'button primary' : 'text-link'} href={c.href}>
+                  {c.label} <span><ArrowRight size={18} aria-hidden="true" /></span>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

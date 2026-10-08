@@ -211,8 +211,9 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
 .ab-filters button{border:1px solid var(--line);background:#fff;padding:12px 18px;font-family:inherit;font-weight:600;font-size:12px;cursor:pointer}
 .ab-filters button.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-.ab-products{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.ab-products figure{margin:0;background:#fff;padding:18px}
+/* Lines come from each tile's own right/bottom border, so empty cells in an unfilled last row stay white */
+.ab-products{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.ab-products figure{margin:0;background:#fff;padding:18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
 .ab-products img{width:100%;height:215px;object-fit:contain;background:#fff;mix-blend-mode:multiply}
 .ab-products figcaption{font-size:14px;font-weight:600;margin-top:16px}
 .ab-note{margin-top:24px;color:var(--muted);font-size:13px}
@@ -315,3 +316,16 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 @media(max-width:760px){.ab-report-toolbar{grid-template-columns:1fr 1fr}.ab-report-toolbar p{grid-column:1/-1;justify-self:start}.ab-report{grid-template-columns:92px 1fr;gap:18px 24px}.ab-report-cover{width:92px}.ab-report-cover strong{font-size:14px;margin-top:18px}.ab-report-cta{grid-column:2;width:max-content}}
 @media(max-width:520px){.ab-report-toolbar{grid-template-columns:1fr;gap:10px}.ab-report-toolbar p{grid-column:auto}.ab-report{grid-template-columns:1fr;gap:10px;padding:28px 0}.ab-report:hover,.ab-report:focus-within{padding-left:14px}.ab-report-cta{grid-column:auto;margin-top:10px;width:100%}}
 @media(prefers-reduced-motion:reduce){.ab-report,.ab-report:before,.ab-report-cover,.ab-report-cta:after{transition:none}.ab-report:hover,.ab-report:focus-within,.ab-report:hover .ab-report-cover,.ab-report:focus-within .ab-report-cover{transform:none}}
+
+/* Business pages: hero CTAs, card notes, process chain, locations */
+.ab-hero-ctas{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;margin-top:34px}
+.ab-hero-ctas .text-link{color:#80bad0}
+.ab-card-notes{margin:16px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.ab-card-notes li{padding:10px 0 0;font-size:13px;font-weight:600;color:var(--blue)}
+.ab-gap-sm{margin-bottom:48px}
+.ab-chain{display:flex;flex-wrap:wrap;margin:0;padding:0;list-style:none;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.ab-chain li{flex:1 1 140px;position:relative;padding:28px 24px;background:#fff;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-size:18px;font-weight:500}
+.ab-chain b{display:block;margin-bottom:12px;font-size:11px;letter-spacing:.14em;color:var(--red)}
+.ab-states{margin:0 0 24px;font-size:20px}
+.ab-states b{font-size:11px;letter-spacing:.14em;color:var(--red);margin-right:12px}
+@media(max-width:700px){.ab-hero-ctas{margin-top:20px;gap:14px 20px}.ab-chain li{flex-basis:50%;padding:18px 16px;font-size:15px}.ab-states{font-size:16px}}

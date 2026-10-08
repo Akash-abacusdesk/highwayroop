@@ -23,7 +23,12 @@ export default async function BusinessPage({ params }: Props) {
   if (!biz) notFound()
   return (
     <SiteShell>
-      <PageHero title={biz.heroTitle} copy={biz.heroCopy} image={biz.image.slice('/assets/'.length, -'.webp'.length)} />
+      <PageHero
+        title={biz.heroTitle}
+        copy={biz.heroCopy}
+        image={biz.image.slice('/assets/'.length, -'.webp'.length)}
+        ctas={[{ href: '#technology', label: 'Explore our capabilities' }, { href: '/contact/business-enquiries', label: 'Start a conversation' }]}
+      />
       <BusinessSection biz={biz} />
     </SiteShell>
   )

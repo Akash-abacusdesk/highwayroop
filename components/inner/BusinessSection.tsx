@@ -1,70 +1,102 @@
+import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 import SectionHead from '@/components/about/SectionHead'
-import CardGrid from '@/components/inner/CardGrid'
+import CardGrid, { type Card } from '@/components/inner/CardGrid'
 import Split from '@/components/inner/Split'
 import ProductFilter from '@/components/inner/ProductFilter'
+import { BUSINESS_PAGES, type Block } from '@/components/inner/businessPages'
 import type { Business } from '@/components/about/data'
 
-// One business page body: intro, manufacturing path and product portfolio (products: store/productsSlice.ts).
-// ponytail: Steering & Suspension and Lightweighting reuse the Drivetrain manufacturing steps until their own content is supplied.
+// One business page body, driven by BUSINESS_PAGES (copy) and the Redux products store (product grid).
+const cols = (cards: Card[]) => (cards.length === 4 ? 2 : 3)
 
-const STEPS = [
-  { tag: 'ENGINEERING', title: 'Design and simulate', text: '3D modelling, forging and casting simulation, gear analysis, CAD/CAM and FEA.' },
-  { tag: 'TOOLING', title: 'Prepare production', text: 'In-house die design and manufacturing, die sinking, VMC, CNC lathe, EDM and wire-cut.' },
-  { tag: 'FORMING', title: 'Create the component', text: 'Hot, warm and cold forging, billet preparation, temperature-controlled presses and reduce rolling.' },
-  { tag: 'MACHINING', title: 'Achieve precision', text: 'CNC turning, turn-mill, VMC, honing, grinding, broaching, spline rolling and gear hobbing.' },
-  { tag: 'TREATMENT', title: 'Develop performance', text: 'GCN+O, mesh belt furnaces, normalising, induction hardening, sealed quench and surface coating.' },
-  { tag: 'VALIDATION', title: 'Verify requirements', text: 'CMM, gear, form, roughness, material, torque and endurance testing.' },
-]
-
+function BlockSection({ block, soft }: { block: Block; soft: boolean }) {
+  return (
+    <section className={`ab-section ab-biz${soft ? ' ab-soft' : ''}`}>
+      <div className="shell">
+        {block.kind === 'cards' && (
+          <>
+            <SectionHead title={block.title}>{block.text}</SectionHead>
+            <CardGrid cards={block.cards} cols={cols(block.cards)} />
+          </>
+        )}
+        {block.kind === 'split' && (
+          <Split title={block.title} image={block.image} alt={block.alt} bullets={block.bullets}>{block.text}</Split>
+        )}
+        {block.kind === 'process' && (
+          <>
+            <SectionHead title={block.title}>{block.text}</SectionHead>
+            <ol className="ab-chain">
+              {block.steps.map((s, i) => <li key={s}><b>{String(i + 1).padStart(2, '0')}</b>{s}</li>)}
+            </ol>
+          </>
+        )}
+      </div>
+    </section>
+  )
+}
 
 export default function BusinessSection({ biz }: { biz: Business }) {
+  const page = BUSINESS_PAGES[biz.slug]
   return (
     <>
       <section className="ab-section ab-biz-intro">
         <div className="shell">
-          <div className="ab-redline" />
           <span className="ab-label">{biz.name.toUpperCase()}</span>
-          <p className="ab-lead"><strong>{biz.intro}</strong> {biz.desc}</p>
-        </div>
-      </section>
-
-      <section id="technology" className="ab-section ab-biz ab-soft">
-        <div className="shell">
-          <SectionHead title="Technology & Manufacturing" />
-          <CardGrid cards={STEPS} />
-
-          {biz.slug === 'drivetrain' && (
+          {page.overview ? (
+            <SectionHead title={page.overview.title}>{page.overview.text}</SectionHead>
+          ) : (
             <>
-              <div className="ab-gap">
-                <Split
-                  title={<>Forming and machining at industrial scale.</>}
-                  image="driveline-forming-machining" alt="Engineer inspecting a machined component beside a CNC machine"
-                >
-                  Hot and warm presses range from 600T to 2500T; cold forging presses range from 100T to 1000T. The presentation also lists 800+ CNC turning and turn-mill machines, 90+ VMCs, 40+ broaching machines, 25+ honing machines and 20 CNC grinding machines.
-                </Split>
-              </div>
-              <div className="ab-gap">
-                <Split
-                  reverse
-                  title={<>Quality is part of the process.</>}
-                  image="driveline-quality" alt="Engineer running a Zeiss CMM inspection on a machined housing"
-                  bullets={['Zeiss CMM and gear testers', 'Form, roundness and roughness inspection', 'In-house calibration', 'Impact, torque and endurance testing']}
-                >
-                  Metrology and metallurgy infrastructure supports dimensional, material and functional validation against drawing requirements.
-                </Split>
-              </div>
+              <div className="ab-redline" />
+              <p className="ab-lead"><strong>{biz.intro}</strong> {biz.desc}</p>
             </>
           )}
         </div>
       </section>
 
+      <section id="technology" className="ab-section ab-biz ab-soft">
+        <div className="shell">
+          <SectionHead title="Technology & Capabilities" />
+          <CardGrid cards={page.capabilities} cols={cols(page.capabilities)} />
+          {page.splits?.map((sp, i) => (
+            <div className="ab-gap" key={sp.title}>
+              <Split reverse={i % 2 === 1} title={sp.title} image={sp.image} alt={sp.alt} bullets={sp.bullets}>{sp.text}</Split>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section id="products-solutions" className="ab-section ab-biz">
         <div className="shell">
-          <SectionHead title="Products & Solutions" />
+          <SectionHead title="Products & Solutions">{page.products?.text}</SectionHead>
+          {page.products && <div className="ab-gap-sm"><CardGrid cards={page.products.categories} /></div>}
           <ProductFilter business={biz.slug} />
           <p className="ab-note">Representative product imagery comes from the HRPTL presentation. Final technical names should be confirmed against the approved catalogue.</p>
         </div>
       </section>
+
+      {page.blocks.map((b, i) => <BlockSection key={b.title} block={b} soft={i % 2 === 0} />)}
+
+      <section id="locations" className="ab-section ab-biz ab-soft">
+        <div className="shell">
+          <SectionHead title="Locations">{page.locations.text}</SectionHead>
+          <p className="ab-states"><b>INDIA</b> {page.locations.states.join(' | ')}</p>
+          <Link className="text-link accent" href="/about/global-presence">
+            Explore our locations <span><ArrowRight size={18} aria-hidden="true" /></span>
+          </Link>
+        </div>
+      </section>
+
+      {page.closing && (
+        <section className="ab-section ab-biz">
+          <div className="shell">
+            <SectionHead title={page.closing.title}>{page.closing.text}</SectionHead>
+            <Link className="button primary" href="/contact/business-enquiries">
+              Discuss your programme <span><ArrowRight size={18} aria-hidden="true" /></span>
+            </Link>
+          </div>
+        </section>
+      )}
     </>
   )
 }
