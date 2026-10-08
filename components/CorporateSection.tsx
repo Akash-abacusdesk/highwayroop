@@ -9,23 +9,25 @@ const CAPABILITY_DETAIL = [
 // Full-width stats strip shown directly under the homepage hero.
 export function ProofStats() {
   return (
-    <section className="corporate-proof home-proof" aria-label="Corporate operating highlights">
-      <article>
-        <Counter as="strong" value="5" />
-        <span>Decades of combined<br />engineering legacy</span>
-      </article>
-      <article>
-        <Counter as="strong" value="15" />
-        <span>Manufacturing<br />plants</span>
-      </article>
-      <article>
-        <Counter as="strong" value="14" />
-        <span>Warehouses</span>
-      </article>
-      <article>
-        <Counter as="strong" value="50+" />
-        <span>OEM and Tier-1<br />relationships</span>
-      </article>
+    <section className="scale home-scale" aria-label="Highway Roop at a glance">
+      <div className="shell stats-grid">
+        <article>
+          <Counter as="strong" value="5" />
+          <span>Decades of combined<br />engineering legacy</span>
+        </article>
+        <article>
+          <Counter as="strong" value="15" />
+          <span>Manufacturing<br />plants</span>
+        </article>
+        <article>
+          <Counter as="strong" value="14" />
+          <span>Warehouses</span>
+        </article>
+        <article>
+          <Counter as="strong" value="50+" />
+          <span>OEM and Tier-1<br />relationships</span>
+        </article>
+      </div>
     </section>
   )
 }
