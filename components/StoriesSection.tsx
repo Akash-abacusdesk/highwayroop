@@ -106,7 +106,7 @@ const newsLinks = [
     label: 'Corporate resources',
     title: 'Information for stakeholders',
     text: 'Corporate presentations, official communications and other approved resources.',
-    image: '/assets/tooling-engineering.webp',
+    image: '/assets/homepage/corporate-resources.webp',
     href: '/HRPTL-Corporate-Presentation.pdf',
     external: true,
   },
@@ -125,7 +125,7 @@ export function NewsSection() {
         <div className="news-hub reveal">
           <a className="news-feature" href="/news-insights#news">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img loading="lazy" decoding="async" src="/assets/hero-mobility-v2.webp" alt="" />
+            <img loading="lazy" decoding="async" src="/assets/homepage/announcements.webp" alt="" />
             <div className="news-feature-copy">
               <span>COMPANY NEWS</span>
               <h3>Announcements and milestones</h3>
