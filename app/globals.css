@@ -5431,3 +5431,8 @@ footer img {
   }
 }
 
+
+/* Stats strip under the homepage hero: edge to edge, no card spacing */
+.home-proof {
+  margin: 0;
+}

@@ -6,6 +6,30 @@ const CAPABILITY_DETAIL = [
   ['Quality by design', 'Metrology, metallurgy, functional testing and in-house calibration capabilities reinforce quality across the production cycle.', 'cap-quality'],
 ]
 
+// Full-width stats strip shown directly under the homepage hero.
+export function ProofStats() {
+  return (
+    <section className="corporate-proof home-proof" aria-label="Corporate operating highlights">
+      <article>
+        <Counter as="strong" value="5" />
+        <span>Decades of combined<br />engineering legacy</span>
+      </article>
+      <article>
+        <Counter as="strong" value="15" />
+        <span>Manufacturing<br />plants</span>
+      </article>
+      <article>
+        <Counter as="strong" value="14" />
+        <span>Warehouses</span>
+      </article>
+      <article>
+        <Counter as="strong" value="50+" />
+        <span>OEM and Tier-1<br />relationships</span>
+      </article>
+    </section>
+  )
+}
+
 export default function CorporateSection() {
   return (
     <section className="section corporate-overview" id="corporate">
@@ -27,25 +51,6 @@ export default function CorporateSection() {
         </div>
 
         <h2 className="corporate-proof-title reveal">From capability to customer value.</h2>
-        <div className="corporate-proof reveal" aria-label="Corporate operating highlights">
-          <article>
-            <Counter as="strong" value="50+" />
-            <span>Years of combined<br />engineering legacy</span>
-          </article>
-          <article>
-            <Counter as="strong" value="15" />
-            <span>Manufacturing<br />plants</span>
-          </article>
-          <article>
-            <Counter as="strong" value="14" />
-            <span>Warehouses</span>
-          </article>
-          <article>
-            <Counter as="strong" value="50+" />
-            <span>OEM and Tier-1<br />relationships</span>
-          </article>
-        </div>
-
         <div className="corporate-caps">
           {CAPABILITY_DETAIL.map(([label, text, image], i) => (
             <article className="reveal" key={label}>

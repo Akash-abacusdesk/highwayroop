@@ -5,7 +5,7 @@ import ProductFilter, { type Product } from '@/components/inner/ProductFilter'
 import type { Business } from '@/components/about/data'
 
 // One business page body: intro, manufacturing path and product portfolio.
-// ponytail: Steering & Suspension and Lightweighting reuse the Driveline steps and products until their own content is supplied.
+// ponytail: Steering & Suspension and Lightweighting reuse the Drivetrain steps and products until their own content is supplied.
 
 const STEPS = [
   { tag: 'ENGINEERING', title: 'Design and simulate', text: '3D modelling, forging and casting simulation, gear analysis, CAD/CAM and FEA.' },
@@ -25,12 +25,12 @@ const GROUPS = {
 
 const p = (group: string, n: number, name: string): Product => ({ group, image: `driveline-product-${String(n).padStart(2, '0')}`, name })
 const PRODUCTS: Product[] = [
-  p('shafts', 3, 'Forged driveline shaft'), p('shafts', 4, 'Splined transmission shaft'),
+  p('shafts', 3, 'Forged drivetrain shaft'), p('shafts', 4, 'Splined transmission shaft'),
   p('shafts', 6, 'Precision shaft component'), p('shafts', 14, 'Machined pinion shaft'),
   p('differential', 10, 'Differential assembly'), p('differential', 8, 'Differential gear'),
   p('differential', 9, 'Differential side gear'), p('differential', 11, 'Differential housing'),
   p('joints', 13, 'Precision yokes'), p('joints', 31, 'Machined yoke family'),
-  p('joints', 32, 'Forged yoke'), p('joints', 33, 'Tubular driveline component'),
+  p('joints', 32, 'Forged yoke'), p('joints', 33, 'Tubular drivetrain component'),
   p('housings', 27, 'Machined housing'), p('housings', 35, 'Differential carrier'),
   p('housings', 36, 'Splined flange'), p('housings', 37, 'Machined flange plate'),
 ]
@@ -51,7 +51,7 @@ export default function BusinessSection({ biz }: { biz: Business }) {
           <SectionHead title="Technology & Manufacturing" />
           <CardGrid cards={STEPS} />
 
-          {biz.slug === 'driveline' && (
+          {biz.slug === 'drivetrain' && (
             <>
               <div className="ab-gap">
                 <Split

@@ -4,7 +4,7 @@ import type { IntroContent } from '@/types/content'
 const defaultContent: IntroContent = {
   "headingLine1": "One group.",
   "headingLine2": "Complementary capabilities.",
-  "para1": "Highway Roop brings together established automotive businesses spanning driveline, steering and suspension, and lightweighting, supported by manufacturing, technology, quality and operational capabilities.",
+  "para1": "Highway Roop brings together established automotive businesses spanning drivetrain, steering and suspension, and lightweighting, supported by manufacturing, technology, quality and operational capabilities.",
   "para2": "",
   "ctaText": "Explore the Highway Roop Group",
   "ctaHref": "/about"

@@ -4,7 +4,7 @@ import { ABOUT_LINKS, BUSINESSES, SUSTAINABILITY_LINKS } from '@/components/abou
 type Col = { title: string; links: [string, string][] }
 
 // Capabilities without a dedicated page point at the closest business technology section.
-const tech = '/driveline#technology'
+const tech = '/drivetrain#technology'
 const COLUMNS: Col[] = [
   { title: 'About', links: ABOUT_LINKS.map(l => [l.href, l.label]) },
   { title: 'Businesses', links: BUSINESSES.map(b => [`/${b.slug}`, b.name]) },

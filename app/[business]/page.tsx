@@ -7,7 +7,7 @@ import { BUSINESSES } from '@/components/about/data'
 
 type Props = { params: Promise<{ business: string }> }
 
-// One page per business unit: /driveline, /steering-suspension, /lightweighting.
+// One page per business unit: /drivetrain, /steering-suspension, /lightweighting.
 
 export const dynamicParams = false
 export const generateStaticParams = () => BUSINESSES.map(b => ({ business: b.slug }))

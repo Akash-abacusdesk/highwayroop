@@ -26,7 +26,7 @@ export default function StoriesSection() {
                 Product development, simulation, prototyping and process design are connected to solve complex
                 manufacturing requirements before production begins.
               </p>
-              <a href="/driveline#technology">
+              <a href="/drivetrain#technology">
                 Review engineering capabilities <b><ArrowRight size={18} aria-hidden="true" /></b>
               </a>
             </div>
@@ -42,7 +42,7 @@ export default function StoriesSection() {
                 Structured quality systems, modern laboratories and end-to-end traceability protect every critical
                 dimension and process.
               </p>
-              <a href="/driveline#technology">
+              <a href="/drivetrain#technology">
                 Explore quality systems <b><ArrowRight size={18} aria-hidden="true" /></b>
               </a>
             </div>

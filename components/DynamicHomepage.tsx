@@ -10,7 +10,7 @@ import GroupSection from './GroupSection'
 // import TechnologyShowcase from './TechnologyShowcase'
 import GlobalSection from './GlobalSection'
 import LeadershipSection from './LeadershipSection'
-import CorporateSection from './CorporateSection'
+import CorporateSection, { ProofStats } from './CorporateSection'
 import { SustainabilitySection, NewsSection, CareersSection } from './StoriesSection'
 // import StoriesSection from './StoriesSection' // Engineering & Quality: hidden per new homepage order
 import ContactSection from './ContactSection'
@@ -28,6 +28,7 @@ export default function DynamicHomepage({ initial }: { initial: HomepageContent 
   return (
     <>
       <HeroCarousel slides={content.hero.slides} />
+      <ProofStats />
       <IntroSection content={content.intro} />
       <GroupSection />
       <GlobalSection />
