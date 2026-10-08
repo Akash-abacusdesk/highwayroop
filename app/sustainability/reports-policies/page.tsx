@@ -5,7 +5,14 @@ import SectionHead from '@/components/about/SectionHead'
 
 export const metadata: Metadata = { title: 'Reports & Policies | Highway Roop' }
 
-const DOCS = ['IATF 16949', 'ISO 14001', 'ISO 45001', 'ISO 27001', 'TISAX', 'Sustainability report', 'ESG policies']
+const DOCS = [
+  { name: 'Sustainability Report FY 2025-26', href: '/Sustainability%20Report%20FY%202025-26.pdf', type: 'PDF' },
+  { name: 'BRSR FY 2025-26', href: '/BRSR%20FY%202025-26.docx', type: 'DOCX' },
+  { name: 'IATF 16949', href: '', type: 'Certificate' },
+  { name: 'ISO 14001', href: '', type: 'Certificate' },
+  { name: 'ISO 45001', href: '', type: 'Certificate' },
+  { name: 'ISO 27001 / TISAX', href: '', type: 'Certificate' },
+]
 
 export default function ReportsPolicies() {
   return (
@@ -19,13 +26,13 @@ export default function ReportsPolicies() {
       <section className="ab-section">
         <div className="shell">
           <SectionHead title={<>Reports and certificates.</>}>
-            Each row is prepared with View and Download actions. The controls become active when approved PDF files are added.
+            Download the source disclosures used across the sustainability pages. Certificate links will be activated when approved scans are published.
           </SectionHead>
           <div className="ab-docs">
             {DOCS.map(d => (
-              <div key={d}>
-                <strong>{d}</strong>
-                <p><button type="button" disabled>View</button><button type="button" disabled>Download</button></p>
+              <div key={d.name}>
+                <strong>{d.name}</strong>
+                <p>{d.href ? <><a className="ab-button" href={d.href} target="_blank" rel="noreferrer">View</a><a className="ab-button" href={d.href} download>Download</a></> : <><button type="button" disabled>View</button><button type="button" disabled>Download</button></>}</p>
               </div>
             ))}
           </div>

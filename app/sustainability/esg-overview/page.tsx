@@ -7,11 +7,11 @@ import CardGrid from '@/components/inner/CardGrid'
 export const metadata: Metadata = { title: 'ESG Overview | Highway Roop' }
 
 const AREAS = [
-  { title: 'Environment', text: 'Carbon-neutrality roadmap and environmental recognition.', href: '/sustainability/environment' },
-  { title: 'People', text: 'Workplace equality, diversity and safety recognition.', href: '/sustainability/people' },
+  { title: 'Environment', text: 'Energy, water, emissions, waste and the carbon-reduction roadmap.', href: '/sustainability/environment' },
+  { title: 'People', text: 'Workforce, training, inclusion and occupational safety performance.', href: '/sustainability/people' },
   { title: 'CSR', text: 'Framework for verified community initiatives.', href: '/sustainability/csr' },
-  { title: 'Governance', text: 'Management systems and certifications.', href: '/sustainability/governance' },
-  { title: 'Reports & Policies', text: 'Organised list of documents and certificates.', href: '/sustainability/reports-policies' },
+  { title: 'Governance', text: 'Ethics, oversight, grievance redressal and certifications.', href: '/sustainability/governance' },
+  { title: 'Reports & Policies', text: 'FY 2025-26 Sustainability Report and BRSR source documents.', href: '/sustainability/reports-policies' },
 ]
 
 export default function EsgOverview() {
@@ -19,14 +19,14 @@ export default function EsgOverview() {
     <>
       <PageHero
         title={<>Responsible progress,<br />organised.</>}
-        copy="A clear view of environment, people, CSR, governance, and corporate documents."
+        copy="A clear view of FY 2025-26 environment, people, CSR, governance and reporting disclosures."
         image="hero-esg-v3"
       />
       <SubNav />
       <section className="ab-section">
         <div className="shell">
           <SectionHead title={<>Explore the ESG areas.</>}>
-            The presentation highlights environmental milestones and recognition in workplace equality, safety and sustainability.
+            The FY 2025-26 BRSR and Sustainability Report bring the operating picture together: 3,005 employees and workers, 72,102 GJ of energy consumed, 10,222 tCO₂e of Scope 1 and 2 emissions, and a 100% waste-recovery figure as reported.
           </SectionHead>
           <CardGrid cards={AREAS} />
         </div>

@@ -125,16 +125,27 @@ export function NewsSection() {
         <div className="news-hub reveal">
           <a className="news-feature" href="/news-insights#news">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img loading="lazy" decoding="async" src="/assets/homepage/announcements.webp" alt="" />
+            <img loading="lazy" decoding="async" src="/assets/homepage/engineering-insights.webp" alt="" />
             <div className="news-feature-copy">
-              <span>COMPANY NEWS</span>
-              <h3>Announcements and milestones</h3>
-              <p>Corporate developments, acquisitions, partnerships and important company updates.</p>
-              <b>Read the latest <ArrowRight size={18} aria-hidden="true" /></b>
+              <span>ENGINEERING INSIGHTS</span>
+              <h3>Ideas from the world of precision manufacturing</h3>
+              <p>Technology, manufacturing, quality and mobility perspectives.</p>
+              <b>Explore engineering insights <ArrowRight size={18} aria-hidden="true" /></b>
             </div>
           </a>
           <div className="news-list">
+            <a className="news-item" href="/news-insights#news">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img loading="lazy" decoding="async" src="/assets/homepage/announcements.webp" alt="" />
+              <span className="news-item-copy">
+                <small>COMPANY NEWS</small>
+                <b>Announcements and milestones</b>
+                <em>Corporate developments, acquisitions, partnerships and important company updates.</em>
+              </span>
+              <i><ArrowRight size={18} aria-hidden="true" /></i>
+            </a>
             {newsLinks.map(({ label, title, text, image, href, external }) => (
+              label === 'Engineering insights' ? null :
               <a
                 key={label}
                 className="news-item"
