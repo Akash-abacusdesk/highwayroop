@@ -33,7 +33,7 @@ export default function IntroSection({ content = defaultContent }: { content?: I
         </div>
         <figure className="intro-visual reveal">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img loading="lazy" decoding="async" srcSet="/assets/home-intro-800.webp 800w, /assets/home-intro.webp 1672w" sizes="(max-width:1050px) 100vw, 50vw" src="/assets/home-intro.webp" alt="Operators working on a Highway Roop assembly line" />
+          <img loading="lazy" decoding="async" srcSet="/assets/home-intro-800.webp 800w, /assets/home-intro.webp 1672w" sizes="(max-width:1050px) 100vw, 50vw" src="/assets/home-intro.webp" alt="Operators assembling components on a Highway Roop production line" />
         </figure>
       </div>
     </section>
