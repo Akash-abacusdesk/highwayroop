@@ -7,9 +7,9 @@ import Stats from '@/components/about/Stats'
 export const metadata: Metadata = { title: 'Overview | Highway Roop' }
 
 const MOSAIC = [
-  { image: 'advanced-forging', alt: 'Forging', caption: 'Forging & stamping' },
-  { image: 'lightweighting-ev', alt: 'Aluminium die casting', caption: 'Aluminium die casting' },
-  { image: 'tooling-engineering', alt: 'Precision tooling', caption: 'Advanced product engineering' },
+  { image: 'about/forging-stamping', alt: 'Forging and stamping', caption: 'Forging & stamping' },
+  { image: 'about/aluminium-die-casting', alt: 'Aluminium die casting', caption: 'Aluminium die casting' },
+  { image: 'about/product-engineering', alt: 'Advanced product engineering', caption: 'Advanced product engineering' },
 ]
 
 export default function Overview() {
