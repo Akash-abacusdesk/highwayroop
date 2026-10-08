@@ -3,11 +3,11 @@ import Link from 'next/link'
 import SectionHead from '@/components/about/SectionHead'
 import CardGrid, { type Card } from '@/components/inner/CardGrid'
 import Split from '@/components/inner/Split'
-import ProductFilter from '@/components/inner/ProductFilter'
+import ProductPortfolio from '@/components/inner/ProductPortfolio'
 import { BUSINESS_PAGES, type Block } from '@/components/inner/businessPages'
 import type { Business } from '@/components/about/data'
 
-// One business page body, driven by BUSINESS_PAGES (copy) and the Redux products store (product grid).
+// One business page body, driven by BUSINESS_PAGES (copy) and the Redux products store (everything under Products & Solutions).
 const cols = (cards: Card[]) => (cards.length === 4 ? 2 : 3)
 
 function BlockSection({ block, soft }: { block: Block; soft: boolean }) {
@@ -68,9 +68,7 @@ export default function BusinessSection({ biz }: { biz: Business }) {
 
       <section id="products-solutions" className="ab-section ab-biz">
         <div className="shell">
-          <SectionHead title="Products & Solutions">{page.products?.text}</SectionHead>
-          {page.products && <div className="ab-gap-sm"><CardGrid cards={page.products.categories} /></div>}
-          <ProductFilter business={biz.slug} />
+          <ProductPortfolio business={biz.slug} />
           <p className="ab-note">Representative product imagery comes from the HRPTL presentation. Final technical names should be confirmed against the approved catalogue.</p>
         </div>
       </section>

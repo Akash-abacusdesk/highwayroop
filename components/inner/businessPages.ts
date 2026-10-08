@@ -1,7 +1,7 @@
 import type { Card } from './CardGrid'
 
 // Business page content (Website Content Master, revised agency version). Rendered by BusinessSection in order:
-// overview → Technology & Capabilities (+ splits) → Products & Solutions → blocks → Locations → closing.
+// overview → Technology & Capabilities (+ splits) → Products & Solutions (store/productsSlice.ts) → blocks → Locations → closing.
 // ponytail: Drivetrain's opening sections weren't in the supplied master, so it keeps the earlier copy and steps.
 
 export type Split = { title: string; text: string; image: string; alt: string; bullets?: string[] }
@@ -13,7 +13,6 @@ export type BusinessPage = {
   overview?: { title: string; text: string }
   capabilities: Card[]
   splits?: Split[]
-  products?: { text: string; categories: Card[] }
   blocks: Block[]
   locations: { text: string; states: string[] }
   closing?: { title: string; text: string }
@@ -58,14 +57,6 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
       { title: 'Assembly', text: 'Assembly capabilities bring individual components together into functional systems and assemblies.' },
       { title: 'Testing & Validation', text: 'Application-focused testing supports functional performance, durability and production consistency.' },
     ],
-    products: {
-      text: 'Steering & Suspension serves critical vehicle systems through a portfolio of precision components and assemblies.',
-      categories: [
-        { title: 'Steering Components', text: 'Precision-engineered components designed for demanding steering applications.' },
-        { title: 'Steering System Assemblies', text: 'Components and assemblies manufactured to support consistent system performance.' },
-        { title: 'Suspension Applications', text: 'Precision components supporting vehicle suspension systems and their demanding operating conditions.' },
-      ],
-    },
     blocks: [
       { kind: 'cards', title: 'Engineering for functional performance',
         text: 'The business combines manufacturing expertise with application-focused engineering to address the dimensional, material and functional requirements of safety-critical vehicle systems.',
@@ -104,14 +95,6 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
       { title: 'Surface Finishing', text: 'In-house powder coating and other secondary processes provide additional finishing capabilities within the manufacturing ecosystem.' },
       { title: 'Assembly', text: 'Integrated assembly capabilities enable finished components and assemblies to be delivered through a connected production route.' },
     ],
-    products: {
-      text: 'Lightweighting supports complex aluminium component applications across evolving vehicle architectures.',
-      categories: [
-        { title: 'Aluminium Die-Cast Components', text: 'Complex cast components manufactured for demanding automotive applications.' },
-        { title: 'Machined Components', text: 'Precision-machined aluminium components produced to application-specific dimensional requirements.' },
-        { title: 'Integrated Components & Assemblies', text: 'Cast, machined, finished and assembled solutions delivered through an integrated manufacturing route.' },
-      ],
-    },
     blocks: [
       { kind: 'process', title: 'Engineering the complete casting route',
         steps: ['Design', 'Simulation', 'Tooling', 'Casting', 'Machining', 'Finishing', 'Assembly'],
