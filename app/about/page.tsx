@@ -42,10 +42,10 @@ export default function Overview() {
           </div>
           <Stats
             items={[
-              ['50+', 'YEARS OF LEGACY'],
+              ['5', 'DECADES OF COMBINED ENGINEERING LEGACY'],
               ['15', 'MANUFACTURING PLANTS'],
-              ['14', 'INTERNATIONAL WAREHOUSES'],
-              ['7', 'COUNTRIES'],
+              ['14', 'WAREHOUSES'],
+              ['50+', 'OEM AND TIER-1 RELATIONSHIPS'],
             ]}
           />
         </div>

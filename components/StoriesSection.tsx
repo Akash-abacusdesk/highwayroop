@@ -99,7 +99,7 @@ const newsLinks = [
     label: 'Engineering insights',
     title: 'Ideas from the world of precision manufacturing',
     text: 'Technology, manufacturing, quality and mobility perspectives.',
-    image: '/assets/innovation-rd.webp',
+    image: '/assets/homepage/engineering-insights.webp',
     href: '/news-insights',
   },
   {

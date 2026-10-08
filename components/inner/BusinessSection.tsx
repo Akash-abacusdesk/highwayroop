@@ -1,11 +1,11 @@
 import SectionHead from '@/components/about/SectionHead'
 import CardGrid from '@/components/inner/CardGrid'
 import Split from '@/components/inner/Split'
-import ProductFilter, { type Product } from '@/components/inner/ProductFilter'
+import ProductFilter from '@/components/inner/ProductFilter'
 import type { Business } from '@/components/about/data'
 
-// One business page body: intro, manufacturing path and product portfolio.
-// ponytail: Steering & Suspension and Lightweighting reuse the Drivetrain steps and products until their own content is supplied.
+// One business page body: intro, manufacturing path and product portfolio (products: store/productsSlice.ts).
+// ponytail: Steering & Suspension and Lightweighting reuse the Drivetrain manufacturing steps until their own content is supplied.
 
 const STEPS = [
   { tag: 'ENGINEERING', title: 'Design and simulate', text: '3D modelling, forging and casting simulation, gear analysis, CAD/CAM and FEA.' },
@@ -16,24 +16,6 @@ const STEPS = [
   { tag: 'VALIDATION', title: 'Verify requirements', text: 'CMM, gear, form, roughness, material, torque and endurance testing.' },
 ]
 
-const GROUPS = {
-  shafts: 'Shafts & pinions',
-  differential: 'Differential components',
-  joints: 'Yokes & joints',
-  housings: 'Housings & flanges',
-}
-
-const p = (group: string, n: number, name: string): Product => ({ group, image: `driveline-product-${String(n).padStart(2, '0')}`, name })
-const PRODUCTS: Product[] = [
-  p('shafts', 3, 'Forged drivetrain shaft'), p('shafts', 4, 'Splined transmission shaft'),
-  p('shafts', 6, 'Precision shaft component'), p('shafts', 14, 'Machined pinion shaft'),
-  p('differential', 10, 'Differential assembly'), p('differential', 8, 'Differential gear'),
-  p('differential', 9, 'Differential side gear'), p('differential', 11, 'Differential housing'),
-  p('joints', 13, 'Precision yokes'), p('joints', 31, 'Machined yoke family'),
-  p('joints', 32, 'Forged yoke'), p('joints', 33, 'Tubular drivetrain component'),
-  p('housings', 27, 'Machined housing'), p('housings', 35, 'Differential carrier'),
-  p('housings', 36, 'Splined flange'), p('housings', 37, 'Machined flange plate'),
-]
 
 export default function BusinessSection({ biz }: { biz: Business }) {
   return (
@@ -79,7 +61,7 @@ export default function BusinessSection({ biz }: { biz: Business }) {
       <section id="products-solutions" className="ab-section ab-biz">
         <div className="shell">
           <SectionHead title="Products & Solutions" />
-          <ProductFilter groups={GROUPS} products={PRODUCTS} />
+          <ProductFilter business={biz.slug} />
           <p className="ab-note">Representative product imagery comes from the HRPTL presentation. Final technical names should be confirmed against the approved catalogue.</p>
         </div>
       </section>

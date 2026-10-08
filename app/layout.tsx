@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Josefin_Sans } from 'next/font/google'
 import './globals.css'
+import StoreProvider from '@/store/StoreProvider'
 
 const josefin = Josefin_Sans({
   subsets: ['latin'],
@@ -34,7 +35,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           fetchPriority="high"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <StoreProvider>{children}</StoreProvider>
+      </body>
     </html>
   )
 }

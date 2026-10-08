@@ -1,10 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import { useAppSelector } from '@/store/store'
+import { selectGroups, selectProducts } from '@/store/productsSlice'
 
-export type Product = { group: string; image: string; name: string }
-
-export default function ProductFilter({ groups, products }: { groups: Record<string, string>; products: Product[] }) {
+// Product grid with group tabs; the portfolio comes from the Redux products slice.
+export default function ProductFilter({ business }: { business: string }) {
+  const groups = useAppSelector(s => selectGroups(s, business))
+  const products = useAppSelector(s => selectProducts(s, business))
   const [group, setGroup] = useState('all')
   const tabs = { all: 'All products', ...groups }
   return (

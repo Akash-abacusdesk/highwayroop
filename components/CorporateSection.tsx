@@ -1,4 +1,3 @@
-import { ArrowRight } from 'lucide-react'
 import { Counter } from './about/Stats'
 const CAPABILITY_DETAIL = [
   ['Product development', 'Product engineering, precision tooling and process expertise support development from concept through industrialisation.', 'about/product-engineering'],
@@ -41,18 +40,10 @@ export default function CorporateSection() {
             <p>Corporate overview</p>
           </div>
           <div>
-            <h2>Different strengths. A common direction.</h2>
-            <p>
-              Highway Roop brings established automotive businesses together through a common operating framework,
-              combining specialist manufacturing capabilities with engineering, tooling, quality and customer proximity.
-            </p>
-            <a className="text-link accent corporate-cta" href="/about">
-              Explore corporate information <span><ArrowRight size={18} aria-hidden="true" /></span>
-            </a>
+            <h2>From capability to customer value.</h2>
           </div>
         </div>
 
-        <h2 className="corporate-proof-title reveal">From capability to customer value.</h2>
         <div className="corporate-caps">
           {CAPABILITY_DETAIL.map(([label, text, image], i) => (
             <article className="reveal" key={label}>
