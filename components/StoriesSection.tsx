@@ -54,17 +54,26 @@ export default function StoriesSection() {
   )
 }
 
+const ESG_SLIDES = [
+  [3, 'Aerial view of a Highway Roop plant with rooftop solar panels and green surroundings'],
+  [1, 'Aerial view of a Highway Roop office block and plant among trees'],
+  [2, 'Rooftop solar array across a Highway Roop manufacturing plant'],
+] as const
+
 export function SustainabilitySection() {
   return (
     <section className="section corporate-stories" aria-label="Sustainability">
       <div className="shell">
         <div className="story-grid story-single">
           <article className="story-card story-sustainability reveal" id="sustainability">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img loading="lazy" decoding="async"
-              srcSet="/assets/homepage/sustainability-solar-800.webp 800w, /assets/homepage/sustainability-solar.webp 1920w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/homepage/sustainability-solar.webp"
-              alt="Aerial view of a Highway Roop plant with rooftop solar panels"
-            />
+            {/* Crossfading photos (CSS animation in globals.css, .story-sustainability .esg-slide) */}
+            {ESG_SLIDES.map(([n, alt]) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img key={n} className="esg-slide" loading="lazy" decoding="async"
+                srcSet={`/assets/homepage/sustainability-${n}-800.webp 800w, /assets/homepage/sustainability-${n}.webp 1920w`} sizes="(max-width:1050px) 100vw, 1320px" src={`/assets/homepage/sustainability-${n}.webp`}
+                alt={alt}
+              />
+            ))}
             <div className="story-copy">
               <span>ENVIRONMENT · PEOPLE · GOVERNANCE</span>
               <h2>Responsible operations, across every site.</h2>

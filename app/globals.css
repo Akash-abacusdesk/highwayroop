@@ -5477,3 +5477,30 @@ footer img {
     overflow-wrap: anywhere;
   }
 }
+
+/* Homepage sustainability card: three photos crossfade, 6s each. Later images stack on top, so each one fades
+   in over the previous; the delays offset each image by a third of the 18s cycle. */
+.story-sustainability .esg-slide {
+  animation: esg-fade 18s linear infinite;
+}
+.story-sustainability .esg-slide:nth-of-type(2) {
+  animation-delay: -12s;
+}
+.story-sustainability .esg-slide:nth-of-type(3) {
+  animation-delay: -6s;
+}
+@keyframes esg-fade {
+  0% { opacity: 0; }
+  6% { opacity: 1; }
+  33.3% { opacity: 1; }
+  39% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story-sustainability .esg-slide {
+    animation: none;
+  }
+  .story-sustainability .esg-slide:not(:first-of-type) {
+    opacity: 0;
+  }
+}
