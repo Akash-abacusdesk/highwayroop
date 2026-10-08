@@ -281,10 +281,10 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-biz{scroll-margin-top:140px}
 .ab-biz .ab-heading{font-size:clamp(30px,4.4vw,56px)}
 .ab-biz .ab-split .ab-heading{font-size:clamp(26px,3.2vw,42px)}
-.ab-biz .ab-gap{margin-top:80px}
+.ab-gap{margin-top:80px}
 .ab-biz .ab-note{margin-top:40px}
 @media(max-width:1050px){.ab-biz{scroll-margin-top:90px}}
-@media(max-width:700px){.ab-biz-intro{padding:40px 0}.ab-lead{font-size:18px}.ab-biz .ab-gap{margin-top:44px}.ab-biz .ab-heading{font-size:clamp(28px,7.5vw,36px)}.ab-biz .ab-split .ab-heading{font-size:clamp(24px,6.5vw,32px)}}
+@media(max-width:700px){.ab-biz-intro{padding:40px 0}.ab-lead{font-size:18px}.ab-gap{margin-top:44px}.ab-biz .ab-heading{font-size:clamp(28px,7.5vw,36px)}.ab-biz .ab-split .ab-heading{font-size:clamp(24px,6.5vw,32px)}}
 
 /* Investors > Annual reports */
 .ab-report-toolbar{display:grid;grid-template-columns:auto 260px 1fr;align-items:center;gap:18px;margin-bottom:34px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -329,3 +329,4 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-states{margin:0 0 24px;font-size:20px}
 .ab-states b{font-size:11px;letter-spacing:.14em;color:var(--red);margin-right:12px}
 @media(max-width:700px){.ab-hero-ctas{margin-top:20px;gap:14px 20px}.ab-chain li{flex-basis:50%;padding:18px 16px;font-size:15px}.ab-states{font-size:16px}}
+.ab-area-tag{display:block;color:var(--red);margin-bottom:18px}
