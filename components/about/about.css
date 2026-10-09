@@ -226,8 +226,8 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-docs>div{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:25px 0;border-bottom:1px solid var(--line)}
 .ab-docs span{color:var(--muted)}
 .ab-docs p{margin:0;display:flex;gap:8px}
-.ab-docs button{border:1px solid var(--blue);background:#fff;color:var(--blue);padding:11px 15px;font-family:inherit;font-weight:700;font-size:11px}
-.ab-docs button:last-child{background:var(--blue);color:#fff}
+.ab-docs :is(a,button){display:inline-block;cursor:pointer;border:1px solid var(--blue);background:#fff;color:var(--blue);padding:11px 15px;font-family:inherit;font-weight:700;font-size:11px}
+.ab-docs :is(a,button):last-child{background:var(--blue);color:#fff}
 
 .ab-office{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
 .ab-office>div{background:#fff;padding:50px}
@@ -325,3 +325,4 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-roadmap div{transition:transform .25s,box-shadow .25s}
 .ab-roadmap div:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
 @media(prefers-reduced-motion:reduce){.ab-roadmap div:hover{transform:none}}
+.ab-docs a:hover{background:var(--blue);color:#fff}.ab-docs a:last-child:hover{background:#0d435e;border-color:#0d435e}

@@ -32,7 +32,7 @@ export default function ReportsPolicies() {
             {DOCS.map(d => (
               <div key={d.name}>
                 <strong>{d.name}</strong>
-                <p>{d.href ? <><a className="ab-button" href={d.href} target="_blank" rel="noreferrer">View</a><a className="ab-button" href={d.href} download>Download</a></> : <><button type="button" disabled>View</button><button type="button" disabled>Download</button></>}</p>
+                <p>{d.href ? <><a href={d.href} target="_blank" rel="noreferrer">View</a><a href={d.href} download>Download</a></> : <><button type="button" disabled>View</button><button type="button" disabled>Download</button></>}</p>
               </div>
             ))}
           </div>

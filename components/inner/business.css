@@ -138,3 +138,4 @@
   .bz-loc-panel{grid-template-columns:1fr;padding:28px 20px}
   .bz-map{justify-self:center;max-width:300px;order:-1}
 }
+.bz-caps h3:first-child{margin-top:0}

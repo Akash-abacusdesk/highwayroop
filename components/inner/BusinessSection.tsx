@@ -22,12 +22,12 @@ function Head({ eyebrow, title, children }: { eyebrow?: string; title: string; c
   )
 }
 
-function Caps({ cards }: { cards: Card[] }) {
+function Caps({ cards, numbered = true }: { cards: Card[]; numbered?: boolean }) {
   return (
     <div className={`bz-caps n${cards.length}`}>
       {cards.map((c, i) => (
         <article key={c.title}>
-          <span>{String(i + 1).padStart(2, '0')}{c.tag && ` · ${c.tag}`}</span>
+          {numbered ? <span>{String(i + 1).padStart(2, '0')}{c.tag && ` · ${c.tag}`}</span> : c.tag && <span>{c.tag}</span>}
           <h3>{c.title}</h3>
           <p>{c.text}</p>
           {c.notes && <ul>{c.notes.map(n => <li key={n}>{n}</li>)}</ul>}
@@ -98,7 +98,7 @@ export default function BusinessSection({ biz }: { biz: Business }) {
       <section id="technology" className="bz-section soft">
         <div className="shell">
           <Head eyebrow="CONNECTED CAPABILITIES" title="Technology & Capabilities" />
-          <Caps cards={page.capabilities} />
+          <Caps cards={page.capabilities} numbered={false} />
         </div>
       </section>
 
