@@ -5568,3 +5568,121 @@ footer img {
     background: radial-gradient(ellipse 130% 110% at 0% 100%, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.35) 75%, rgba(0, 0, 0, 0.15) 100%);
   }
 }
+
+/* Homepage "Trusted relationships" customer marquee (logo-slider design): grey logos, colour on hover, pauses on hover/focus. */
+.cust-section {
+  overflow: hidden;
+  padding: 74px 0 78px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+.cust-head {
+  margin-bottom: 42px;
+}
+.cust-eyebrow {
+  margin: 0 0 14px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+.cust-head h2 {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(30px, 3.6vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+.cust-marquee {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 min(10vw, 160px), #000 calc(100% - min(10vw, 160px)), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 min(10vw, 160px), #000 calc(100% - min(10vw, 160px)), transparent);
+}
+.cust-marquee:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+.cust-track {
+  display: flex;
+  width: max-content;
+  animation: cust-marquee var(--cust-duration, 200s) linear infinite;
+}
+.cust-marquee:hover .cust-track,
+.cust-marquee:focus-within .cust-track {
+  animation-play-state: paused;
+}
+.cust-group {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0 20px 0 0;
+  list-style: none;
+}
+.cust-card {
+  display: grid;
+  place-items: center;
+  width: 210px;
+  height: 112px;
+  padding: 22px 28px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+.cust-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.72;
+  transition: filter 0.3s, opacity 0.3s;
+}
+.cust-card:hover img {
+  filter: none;
+  opacity: 1;
+}
+.cust-card span {
+  color: #7b8a91;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.cust-card:hover span {
+  color: var(--blue);
+}
+@keyframes cust-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 700px) {
+  .cust-section {
+    padding-block: 54px;
+  }
+  .cust-head {
+    margin-bottom: 28px;
+  }
+  .cust-card {
+    width: 160px;
+    height: 92px;
+    padding: 18px 20px;
+  }
+  .cust-card span {
+    font-size: 14px;
+  }
+}
+/* Reduced motion: a still row the visitor can scroll sideways. */
+@media (prefers-reduced-motion: reduce) {
+  .cust-marquee {
+    overflow-x: auto;
+  }
+  .cust-track {
+    animation: none;
+  }
+  .cust-group[aria-hidden] {
+    display: none;
+  }
+}

@@ -14,6 +14,7 @@ import CorporateSection, { ProofStats } from './CorporateSection'
 import { SustainabilitySection, NewsSection, CareersSection } from './StoriesSection'
 // import StoriesSection from './StoriesSection' // Engineering & Quality: hidden per new homepage order
 import ContactSection from './ContactSection'
+import CustomerLogos from './CustomerLogos'
 
 export default function DynamicHomepage({ initial }: { initial: HomepageContent }) {
   const [content, setContent] = useState(initial)
@@ -29,6 +30,7 @@ export default function DynamicHomepage({ initial }: { initial: HomepageContent 
     <>
       <HeroCarousel slides={content.hero.slides} />
       <ProofStats />
+      <CustomerLogos />
       <IntroSection content={content.intro} />
       <GroupSection />
       <GlobalSection />
