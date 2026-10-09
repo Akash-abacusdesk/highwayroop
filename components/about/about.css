@@ -317,3 +317,7 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-card:not(.has-slot):hover .ab-card-notes{border-top-color:rgba(255,255,255,.35)}
 .ab-card:not(.has-slot):hover .ab-doc-btn{border-color:#fff}
 @media(prefers-reduced-motion:reduce){.ab-card:not(.has-slot):hover,.ab-steps>div:hover{transform:none}}
+/* Gentle lift for boxed cards that had no hover state */
+.ab-stat,.ab-office>div,.ab-news-card,.ab-card.has-slot{position:relative;background:#fff;transition:transform .25s,box-shadow .25s}
+.ab-stat:hover,.ab-office>div:hover,.ab-news-card:hover,.ab-card.has-slot:hover{transform:translateY(-4px);box-shadow:var(--shadow);z-index:1}
+@media(prefers-reduced-motion:reduce){.ab-stat:hover,.ab-office>div:hover,.ab-news-card:hover,.ab-card.has-slot:hover{transform:none}}
