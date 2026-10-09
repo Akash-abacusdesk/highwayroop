@@ -18,14 +18,14 @@ export default function ReportsPolicies() {
   return (
     <>
       <PageHero
-        title={<>Documents in<br />one place.</>}
+        title={<>Documents in<br />one place</>}
         copy="An organised index for approved reports, policies and certificates."
         image="hero-reports-v2"
       />
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Reports and certificates.</>}>
+          <SectionHead title={<>Reports and certificates</>}>
             Download the source disclosures used across the sustainability pages. Certificate links will be activated when approved scans are published.
           </SectionHead>
           <div className="ab-docs">

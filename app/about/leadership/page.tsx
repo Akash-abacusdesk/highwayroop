@@ -12,7 +12,7 @@ export default function Leadership() {
   return (
     <>
       <PageHero
-        title={<>Leadership grounded in<br />operational discipline.</>}
+        title={<>Leadership grounded in<br />operational discipline</>}
         copy="Business-unit leadership and corporate functions aligned behind one integrated platform."
         image="hero-leadership"
       />
@@ -35,7 +35,7 @@ export default function Leadership() {
 
       <section className="ab-section ab-soft">
         <div className="shell">
-          <SectionHead title="Business leadership.">
+          <SectionHead title="Business leadership">
             Leadership across business units, finance, people, procurement, marketing, technology, compliance, strategy,
             communications and manufacturing excellence.
           </SectionHead>

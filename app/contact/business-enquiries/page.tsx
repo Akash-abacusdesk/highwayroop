@@ -10,14 +10,14 @@ export default function BusinessEnquiries() {
   return (
     <>
       <PageHero
-        title={<>Discuss your<br />next programme.</>}
+        title={<>Discuss your<br />next programme</>}
         copy="A clear route for product, capability and commercial enquiries."
         image="hero-business-enquiry-v2"
       />
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Share your requirement.</>}>
+          <SectionHead title={<>Share your requirement</>}>
             This front-end form requires connection to an approved enquiry endpoint before use.
           </SectionHead>
           <LeadForm submit="Submit enquiry" fields={[

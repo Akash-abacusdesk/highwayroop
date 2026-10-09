@@ -5,7 +5,7 @@ import type { ContactContent } from '@/types/content'
 const defaultContent: ContactContent = {
   eyebrow: 'CONNECT WITH HIGHWAY ROOP',
   headingLine1: 'Let’s build the next',
-  headingLine2: 'programme together.',
+  headingLine2: 'programme together',
   body: 'Tell us what you are looking to build, improve or scale, and connect with the Highway Roop team.',
   buttonText: 'Contact our corporate team',
   phone: '+91 83969 99592',

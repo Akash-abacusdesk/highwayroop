@@ -25,14 +25,14 @@ export default function Governance() {
   return (
     <>
       <PageHero
-        title={<>Systems for<br />consistent execution.</>}
+        title={<>Systems for<br />consistent execution</>}
         copy="Ethics, accountability, policies and management systems reported for FY 2025-26."
         image="hero-governance-v2"
       />
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Management systems and certifications.</>}>
+          <SectionHead title={<>Management systems and certifications</>}>
             The BRSR maps the Company’s responsible-business framework to ISO 14001, ISO 45001, ISO 27001 and IATF 16949. Policies are available publicly where approved, with the remaining policies available through the intranet.
           </SectionHead>
           <CardGrid cards={GOVERNANCE} cols={2} gap />

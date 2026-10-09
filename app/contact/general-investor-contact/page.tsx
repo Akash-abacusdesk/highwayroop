@@ -12,7 +12,7 @@ export default function GeneralInvestorContact() {
   return (
     <>
       <PageHero
-        title={<>Corporate information,<br />directly requested.</>}
+        title={<>Corporate information,<br />directly requested</>}
         copy="General company communication and investor-facing information requests."
         image="hero-investor-v2"
       />
@@ -20,7 +20,7 @@ export default function GeneralInvestorContact() {
 
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Reach the corporate team.</>}>
+          <SectionHead title={<>Reach the corporate team</>}>
             The presentation supplies the main company contact. A dedicated investor-relations address can be added after approval.
           </SectionHead>
           <div className="ab-office">
@@ -39,7 +39,7 @@ export default function GeneralInvestorContact() {
 
       <section className="ab-section ab-soft">
         <div className="shell">
-          <SectionHead title={<>Send your enquiry.</>}>
+          <SectionHead title={<>Send your enquiry</>}>
             Select a request type so the message can be routed to the appropriate corporate team.
           </SectionHead>
           <LeadForm submit="Send enquiry" fields={[

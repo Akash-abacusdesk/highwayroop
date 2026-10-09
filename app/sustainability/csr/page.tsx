@@ -65,7 +65,7 @@ export default function Csr() {
   return (
     <>
       <PageHero
-        title={<>Empowering communities,<br />driving sustainable impact.</>}
+        title={<>Empowering communities,<br />driving sustainable impact</>}
         copy="Our CSR programmes across education, health, skills, environment and community development, from the CSR Annual Report for FY 2025–26."
         image="csr/csr-hero"
       />
@@ -73,7 +73,7 @@ export default function Csr() {
 
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Building value beyond business.</>}>
+          <SectionHead title={<>Building value beyond business</>}>
             FY 2025–26 was our first year as one Highway Roop following the merger of Roop Automotives and Highway Industries.
             Our initiatives reached beneficiaries across Chennai, Gurugram, Sohna, Nuh, Manesar, Dharuhera, Ludhiana and Pune,
             aligned with national development priorities and the UN Sustainable Development Goals.
@@ -91,7 +91,7 @@ export default function Csr() {
 
       <section className="ab-section ab-soft">
         <div className="shell">
-          <SectionHead title={<>Five thematic areas.</>}>
+          <SectionHead title={<>Five thematic areas</>}>
             Our CSR vision: to create lasting social value by enabling individuals and communities to thrive through education,
             healthcare, livelihoods and sustainable development.
           </SectionHead>
@@ -106,7 +106,7 @@ export default function Csr() {
 
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Programmes and partners.</>}>
+          <SectionHead title={<>Programmes and partners</>}>
             We work with credible implementation partners to deliver programmes on the ground and measure their outcomes.
           </SectionHead>
           <CardGrid cards={PROGRAMMES} />
@@ -115,14 +115,14 @@ export default function Csr() {
 
       <section className="ab-section ab-soft">
         <div className="shell">
-          <Split title="A year of volunteering and purpose." image="csr/volunteering" alt="Employees planting saplings on World Environment Day">
+          <Split title="A year of volunteering and purpose" image="csr/volunteering" alt="Employees planting saplings on World Environment Day">
             Employees visited Anganwadi centres in Mewat and Manesar and Rehoboth centres in Tamil Nadu, and took part in
             Environment Day plantation drives, International Yoga Day, blood donation drives and a year-round volunteering calendar.
           </Split>
           <div className="ab-gap">
             <Split
               reverse
-              title="Awards and recognition."
+              title="Awards and recognition"
               image="csr/awards"
               alt="Highway Roop team receiving a CSR award"
               bullets={[
@@ -139,7 +139,7 @@ export default function Csr() {
 
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Our plan for FY 2026–27.</>}>
+          <SectionHead title={<>Our plan for FY 2026–27</>}>
             Deepening impact across our focus areas, expanding volunteer engagement and strengthening partnerships across
             Punjab, Haryana, Maharashtra and Tamil Nadu.
           </SectionHead>
@@ -149,7 +149,7 @@ export default function Csr() {
 
       <section className="ab-section ab-soft">
         <div className="shell">
-          <SectionHead title={<>Responsible process. Measurable impact.</>}>
+          <SectionHead title={<>Responsible process. Measurable impact</>}>
             A structured and transparent process guides every CSR initiative, from need assessment to reporting to the CSR Committee and Board.
           </SectionHead>
           <ol className="ab-chain">

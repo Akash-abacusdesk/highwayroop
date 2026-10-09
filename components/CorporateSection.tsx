@@ -40,7 +40,7 @@ export default function CorporateSection() {
             <p>Corporate overview</p>
           </div>
           <div>
-            <h2>From capability to customer value.</h2>
+            <h2>From capability to customer value</h2>
           </div>
         </div>
 

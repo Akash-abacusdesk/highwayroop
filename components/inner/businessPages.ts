@@ -29,9 +29,9 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
       { tag: 'VALIDATION', title: 'Verify requirements', text: 'CMM, gear, form, roughness, material, torque and endurance testing.' },
     ],
     splits: [
-      { title: 'Forming and machining at industrial scale.', image: 'driveline-forming-machining', alt: 'Operators at CNC turning and milling lines on the plant floor',
+      { title: 'Forming and machining at industrial scale', image: 'driveline-forming-machining', alt: 'Operators at CNC turning and milling lines on the plant floor',
         text: 'Hot and warm presses range from 600T to 2500T; cold forging presses range from 100T to 1000T. The presentation also lists 800+ CNC turning and turn-mill machines, 90+ VMCs, 40+ broaching machines, 25+ honing machines and 20 CNC grinding machines.' },
-      { title: 'Quality is part of the process.', image: 'driveline-quality', alt: 'Engineer measuring a component with a height gauge on a surface plate',
+      { title: 'Quality is part of the process', image: 'driveline-quality', alt: 'Engineer measuring a component with a height gauge on a surface plate',
         text: 'Capabilities include advanced metrology, CMMs, gear testing, roundness and roughness measurement, material testing, functional testing and in-house calibration.' },
     ],
     blocks: [],
@@ -84,7 +84,7 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
 
   lightweighting: {
     overview: {
-      title: 'Complex forms. Efficient structures.',
+      title: 'Complex forms. Efficient structures',
       text: 'Aluminium die casting enables complex geometries and integrated component designs while supporting weight-conscious vehicle architectures. Lightweighting brings together casting, tooling, machining, finishing and assembly capabilities through an integrated manufacturing route.',
     },
     capabilities: [
@@ -105,7 +105,7 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
           { title: 'Surface Finishing', text: 'In-house powder coating capability provides an integrated route for selected component applications.' },
           { title: 'Process Technology', text: 'Vacuum systems, in-mould temperature control and jet cooling support controlled die-casting processes.' },
         ] },
-      { kind: 'split', title: 'Built for evolving vehicle architectures', image: 'lightweighting-ev', alt: 'Aluminium die-cast housings and structural parts for electric vehicles',
+      { kind: 'split', title: 'Built for evolving vehicle architectures', image: 'lightweighting-casting-cell', alt: 'Operator at the control panel of a robotic die-casting cell',
         text: 'Lightweighting capabilities support complex aluminium applications across established ICE platforms and emerging EV architectures, where component integration, geometry and weight efficiency are increasingly important.' },
     ],
     locations: {

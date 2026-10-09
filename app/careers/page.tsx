@@ -24,13 +24,13 @@ export default function Careers() {
   return (
     <SiteShell>
       <PageHero
-        title={<>Build your career in<br />precision engineering.</>}
+        title={<>Build your career in<br />precision engineering</>}
         copy="Explore career paths across engineering, manufacturing, quality, supply chain and corporate functions."
         image="hero-careers-v3"
       />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Build the future of mobility.</>}>
+          <SectionHead title={<>Build the future of mobility</>}>
             Choose a career path that connects your skills with real engineering and manufacturing outcomes.
           </SectionHead>
           <CardGrid cards={PATHS} cols={2} />
@@ -40,7 +40,7 @@ export default function Careers() {
       <section className="ab-section ab-dark ab-red">
         <div className="shell ab-split">
           <div>
-            <h2 className="ab-heading">Your career. <em>Built through doing.</em></h2>
+            <h2 className="ab-heading">Your career. <em>Built through doing</em></h2>
             <p>Work on live automotive programmes, solve cross-functional challenges and build technical depth across a multi-location manufacturing network.</p>
           </div>
           <div className="ab-values">
@@ -51,7 +51,7 @@ export default function Careers() {
 
       <section className="ab-section ab-soft">
         <div className="shell">
-          <SectionHead title={<>How to apply.</>}>A simple three-step route from interest to talent-team review.</SectionHead>
+          <SectionHead title={<>How to apply</>}>A simple three-step route from interest to talent-team review.</SectionHead>
           <div className="ab-steps">
             {STEPS.map(([n, t, p]) => <div key={n}><b>{n}</b><h3>{t}</h3><p>{p}</p></div>)}
           </div>
@@ -60,7 +60,7 @@ export default function Careers() {
 
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Register your interest.</>}>
+          <SectionHead title={<>Register your interest</>}>
             This is a front-end form design. It requires connection to an approved recruitment system before use.
           </SectionHead>
           <LeadForm submit="Register interest" fields={[

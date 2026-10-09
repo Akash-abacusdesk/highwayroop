@@ -10,7 +10,7 @@ export default function GlobalPresence() {
   return (
     <>
       <PageHero
-        title={<>Global reach.<br />Responsive support.</>}
+        title={<>Global reach<br />Responsive support</>}
         copy="Manufacturing in India connected to an international warehouse and customer network."
         image="about/global-presence"
       />

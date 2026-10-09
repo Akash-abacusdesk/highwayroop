@@ -9,7 +9,7 @@ export default function LeadershipSection() {
             <p>Leadership</p>
           </div>
           <div>
-            <h2>Leadership built around execution.</h2>
+            <h2>Leadership built around execution</h2>
             <p>
               Highway Roop is led by a multidisciplinary team spanning automotive operations, technology, finance,
               people, procurement, strategy, compliance and communications, bringing together the expertise required to

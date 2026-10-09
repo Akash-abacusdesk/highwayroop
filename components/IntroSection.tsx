@@ -1,9 +1,10 @@
 import { ArrowRight } from 'lucide-react'
 import type { IntroContent } from '@/types/content'
+import IntroCarousel from '@/components/IntroCarousel'
 
 const defaultContent: IntroContent = {
-  "headingLine1": "One group.",
-  "headingLine2": "Complementary capabilities.",
+  "headingLine1": "One group",
+  "headingLine2": "Complementary capabilities",
   "para1": "Highway Roop brings together established automotive businesses spanning drivetrain, steering and suspension, and lightweighting, supported by manufacturing, technology, quality and operational capabilities.",
   "para2": "",
   "ctaText": "Explore the Highway Roop Group",
@@ -31,10 +32,7 @@ export default function IntroSection({ content = defaultContent }: { content?: I
             {content.ctaText} <span><ArrowRight size={18} aria-hidden="true" /></span>
           </a>
         </div>
-        <figure className="intro-visual reveal">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img loading="lazy" decoding="async" srcSet="/assets/home-intro-800.webp 800w, /assets/home-intro.webp 1672w" sizes="(max-width:1050px) 100vw, 50vw" src="/assets/home-intro.webp" alt="Operators assembling components on a Highway Roop production line" />
-        </figure>
+        <IntroCarousel />
       </div>
     </section>
   )

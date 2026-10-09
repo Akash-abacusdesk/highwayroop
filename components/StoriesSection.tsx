@@ -56,8 +56,9 @@ export default function StoriesSection() {
 
 const ESG_SLIDES = [
   [3, 'Aerial view of a Highway Roop plant with rooftop solar panels and green surroundings'],
-  [1, 'Aerial view of a Highway Roop office block and plant among trees'],
-  [2, 'Rooftop solar array across a Highway Roop manufacturing plant'],
+  [4, 'Aerial view of a Highway Roop plant with landscaped boundary greenery'],
+  [5, 'Aerial view of a Highway Roop manufacturing plant surrounded by trees'],
+  [6, 'Glass-fronted Highway Roop office and plant entrance with landscaped beds'],
 ] as const
 
 export function SustainabilitySection() {
@@ -76,7 +77,7 @@ export function SustainabilitySection() {
             ))}
             <div className="story-copy">
               <span>ENVIRONMENT · PEOPLE · GOVERNANCE</span>
-              <h2>Responsible operations, across every site.</h2>
+              <h2>Responsible operations, across every site</h2>
               <p>
                 Our approach to responsible operations spans energy, water, waste, workplace safety, governance and
                 community initiatives, with sustainability integrated into how we operate across our manufacturing
@@ -118,7 +119,7 @@ export function NewsSection() {
       <div className="shell">
         <div className="section-head reveal">
           <div>
-            <h2>What is happening across Highway Roop.</h2>
+            <h2>What is happening across Highway Roop</h2>
             <p>Company news, engineering developments, industry perspectives and corporate resources from across the group.</p>
           </div>
         </div>
@@ -192,7 +193,7 @@ export function CareersSection() {
             />
             <div className="story-copy">
               <span>LEARNING · OPPORTUNITY · IMPACT</span>
-              <h2>Build your career where engineering meets impact.</h2>
+              <h2>Build your career where engineering meets impact</h2>
               <p>
                 Work with teams solving real manufacturing challenges across engineering, operations, technology and
                 corporate functions, while helping build a global automotive platform from India.

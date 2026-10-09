@@ -22,7 +22,7 @@ export default function FinancialReports() {
       />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Reports by<br />financial year.</>}>
+          <SectionHead title={<>Reports by<br />financial year</>}>
             Browse our latest annual reports. Reports are listed with the most recent financial year first.
           </SectionHead>
           <ReportList reports={REPORTS} />

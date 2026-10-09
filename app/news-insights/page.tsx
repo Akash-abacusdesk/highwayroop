@@ -10,7 +10,7 @@ export default function NewsInsights() {
   return (
     <SiteShell>
       <PageHero
-        title={<>News from<br />Highway Roop.</>}
+        title={<>News from<br />Highway Roop</>}
         copy="Official company communication and coverage of the Chamundi Die Cast acquisition."
         image="lightweighting-ev"
       />
@@ -35,7 +35,7 @@ export default function NewsInsights() {
 
       <section className="ab-section ab-soft" id="media">
         <div className="shell">
-          <SectionHead title="Press coverage.">
+          <SectionHead title="Press coverage">
             Coverage of the Chamundi Die Cast acquisition across business and auto-industry publications.
           </SectionHead>
           <div className="ab-news-grid">

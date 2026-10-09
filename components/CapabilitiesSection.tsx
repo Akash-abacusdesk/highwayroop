@@ -110,7 +110,7 @@ export default function CapabilitiesSection() {
           <div>
             <h2>
               From first drawing{' '}
-              <em>to validated production.</em>
+              <em>to validated production</em>
             </h2>
             <p>
               Six connected capability stages reduce handovers and support control from engineering and tooling through

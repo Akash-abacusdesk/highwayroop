@@ -25,14 +25,14 @@ export default function People() {
   return (
     <>
       <PageHero
-        title={<>People and<br />workplace safety.</>}
+        title={<>People and<br />workplace safety</>}
         copy="Workforce, inclusion and occupational-health disclosures from the FY 2025-26 BRSR."
         image="hero-people-careers-v2"
       />
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>People and workplace safety.</>}>
+          <SectionHead title={<>People and workplace safety</>}>
             HRPTL’s occupational health and safety system is aligned with ISO 45001 and covers hazard identification, risk assessment, incident reporting, emergency preparedness, PPE management and safety training across plant operations.
           </SectionHead>
           <Stats items={[["304", "EMPLOYEES"], ["2,701", "WORKERS"], ["141", "EMPLOYEE PROGRAMMES"], ["107", "WORKER PROGRAMMES"]]} />
@@ -43,7 +43,7 @@ export default function People() {
       </section>
       <section className="ab-section ab-soft">
         <div className="shell">
-          <SectionHead title={<>A safer, more inclusive workplace.</>}>
+          <SectionHead title={<>A safer, more inclusive workplace</>}>
             Employees and workers can report unsafe acts, near misses and conditions through supervisors, safety observations, training sessions and safety committees. The Company reports accessible premises, equal-opportunity provisions, first-aid and emergency medical support, and grievance channels managed by Human Resources.
           </SectionHead>
           <CardGrid cards={RECOGNITION} cols={2} />

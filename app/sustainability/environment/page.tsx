@@ -27,14 +27,14 @@ export default function Environment() {
   return (
     <>
       <PageHero
-        title={<>A roadmap for<br />carbon reduction.</>}
+        title={<>A roadmap for<br />carbon reduction</>}
         copy="FY 2025-26 environmental performance and the long-term carbon-reduction pathway."
         image="hero-environment-v3"
       />
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Carbon-neutrality roadmap.</>}>
+          <SectionHead title={<>Carbon-neutrality roadmap</>}>
             A staged reduction pathway from FY 2026-27 to net zero in FY 2039-40. Read each milestone chronologically; the dark endpoint marks the 100% target.
           </SectionHead>
           <div className="ab-roadmap">
@@ -50,7 +50,7 @@ export default function Environment() {
       </section>
       <section className="ab-section ab-soft">
         <div className="shell">
-          <SectionHead title={<>FY 2025-26 environmental performance.</>}>
+          <SectionHead title={<>FY 2025-26 environmental performance</>}>
             BRSR disclosures cover the Company’s operations, excluding corporate-office data where noted in the report. The figures below are reported values, not estimates.
           </SectionHead>
           <Stats items={[["2.6 MW", "ROOFTOP SOLAR CAPACITY"], ["7 MW DC", "RENEWABLE POWER PPA"], ["0.6 MW", "WIND ENERGY USED"], ["100%", "WASTE RECOVERED"]]} />
@@ -61,7 +61,7 @@ export default function Environment() {
       </section>
       <section className="ab-section ab-soft">
         <div className="shell">
-          <SectionHead title={<>How we reduce impact.</>}>
+          <SectionHead title={<>How we reduce impact</>}>
             HRPTL reports source segregation, authorised recycling, ETP/STP treatment, water reuse, safer chemical handling and energy-efficiency upgrades across its establishments.
           </SectionHead>
           <CardGrid cards={[

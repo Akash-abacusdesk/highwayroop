@@ -10,7 +10,7 @@ export default function OurJourney() {
   return (
     <>
       <PageHero
-        title={<>Built over decades.<br />Shaped for what’s next.</>}
+        title={<>Built over decades<br />Shaped for what’s next</>}
         copy="For more than five decades, our story has unfolded through changing technologies, evolving markets and a growing breadth of expertise. Each chapter has shaped the next, bringing us to Highway Roop today and the opportunities that lie ahead."
         image="about/our-journey-hero"
       />
@@ -18,7 +18,7 @@ export default function OurJourney() {
 
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>A legacy of precision. A platform for growth.</>} />
+          <SectionHead title={<>A legacy of precision. A platform for growth</>} />
           <div className="ab-timeline">
             {MILESTONES.map(m => (
               <article className="ab-milestone" key={m.year}>
@@ -39,7 +39,7 @@ export default function OurJourney() {
 
       <section className="ab-section ab-soft ab-closing">
         <div className="shell">
-          <SectionHead title={<>Built on experience. <em>Driven by precision.</em></>}>
+          <SectionHead title={<>Built on experience. <em>Driven by precision</em></>}>
             Highway Roop brings together the knowledge, technology and execution to create precision solutions for a changing world of mobility.
           </SectionHead>
           <span className="ab-label ab-signoff">PRECISION IN MOTION.</span>

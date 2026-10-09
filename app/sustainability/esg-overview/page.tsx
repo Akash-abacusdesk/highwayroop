@@ -18,14 +18,14 @@ export default function EsgOverview() {
   return (
     <>
       <PageHero
-        title={<>Responsible progress,<br />organised.</>}
+        title={<>Responsible progress,<br />organised</>}
         copy="A clear view of FY 2025-26 environment, people, CSR, governance and reporting disclosures."
         image="hero-esg-v3"
       />
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Explore the ESG areas.</>}>
+          <SectionHead title={<>Explore the ESG areas</>}>
             The FY 2025-26 BRSR and Sustainability Report bring the operating picture together: 3,005 employees and workers, 72,102 GJ of energy consumed, 10,222 tCO₂e of Scope 1 and 2 emissions, and a 100% waste-recovery figure as reported.
           </SectionHead>
           <CardGrid cards={AREAS} />
