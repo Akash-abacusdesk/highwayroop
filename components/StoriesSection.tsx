@@ -170,7 +170,7 @@ export function CareersSection() {
           <article className="story-card story-careers reveal" id="careers">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img loading="lazy" decoding="async"
-              srcSet="/assets/hero-careers-v3-800.webp 800w, /assets/hero-careers-v3.webp 1920w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/hero-careers-v3.webp"
+              srcSet="/assets/homepage/careers-card-800.webp 800w, /assets/homepage/careers-card.webp 1920w" sizes="(max-width:1050px) 100vw, 1320px" src="/assets/homepage/careers-card.webp"
               alt="Highway Roop team members walking outside a plant office block"
             />
             <div className="story-copy">

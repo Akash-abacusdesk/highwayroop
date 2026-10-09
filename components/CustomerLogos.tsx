@@ -62,10 +62,14 @@ const CUSTOMERS: { name: string; logo?: string }[] = [
   { name: 'TMI' },
 ]
 
-function Group({ hidden }: { hidden?: boolean }) {
+// Two rows (first half / second half of the list) scrolling in opposite directions.
+const HALF = Math.ceil(CUSTOMERS.length / 2)
+const ROWS = [CUSTOMERS.slice(0, HALF), CUSTOMERS.slice(HALF)]
+
+function Group({ items, hidden }: { items: typeof CUSTOMERS; hidden?: boolean }) {
   return (
     <ul className="cust-group" aria-hidden={hidden || undefined}>
-      {CUSTOMERS.map(c => (
+      {items.map(c => (
         <li key={c.name} className="cust-card">
           {c.logo ? (
             // eslint-disable-next-line @next/next/no-img-element
@@ -87,10 +91,12 @@ export default function CustomerLogos() {
         <h2 id="cust-title">Chosen by leading automotive partners</h2>
       </div>
       <div className="cust-marquee" tabIndex={0} aria-label="Customer logos">
-        <div className="cust-track" style={{ '--cust-duration': `${CUSTOMERS.length * 3.4}s` } as React.CSSProperties}>
-          <Group />
-          <Group hidden />
-        </div>
+        {ROWS.map((row, i) => (
+          <div key={i} className={`cust-track${i ? ' reverse' : ''}`} style={{ '--cust-duration': `${row.length * 3.4}s` } as React.CSSProperties}>
+            <Group items={row} />
+            <Group items={row} hidden />
+          </div>
+        ))}
       </div>
     </section>
   )

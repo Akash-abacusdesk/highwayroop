@@ -5569,7 +5569,7 @@ footer img {
   }
 }
 
-/* Homepage "Trusted relationships" customer marquee (logo-slider design): grey logos, colour on hover, pauses on hover/focus. */
+/* Homepage "Trusted relationships" customer marquee: two rows scrolling in opposite directions, full-colour logos, pause on hover/focus. */
 .cust-section {
   overflow: hidden;
   padding: 74px 0 78px;
@@ -5632,16 +5632,9 @@ footer img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.72;
-  transition: filter 0.3s, opacity 0.3s;
-}
-.cust-card:hover img {
-  filter: none;
-  opacity: 1;
 }
 .cust-card span {
-  color: #7b8a91;
+  color: var(--ink);
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -5650,13 +5643,16 @@ footer img {
   text-transform: uppercase;
   transition: color 0.3s;
 }
-.cust-card:hover span {
-  color: var(--blue);
-}
 @keyframes cust-marquee {
   to {
     transform: translateX(-50%);
   }
+}
+.cust-track + .cust-track {
+  margin-top: 20px;
+}
+.cust-track.reverse {
+  animation-direction: reverse;
 }
 @media (max-width: 700px) {
   .cust-section {
