@@ -11,7 +11,8 @@ export const metadata: Metadata = { title: 'Overview | Highway Roop' }
 const MOSAIC = [
   { image: 'about/forging-stamping', alt: 'Forging and stamping', caption: 'Forging & stamping' },
   { image: 'about/aluminium-die-casting', alt: 'Aluminium die casting', caption: 'Aluminium die casting' },
-  { image: 'about/product-engineering', alt: 'Advanced product engineering', caption: 'Advanced product engineering' },
+  { image: 'about/ultra-precision-machining', alt: 'Grinding a helical gear on an ultra-precision machine', caption: 'Ultra precision machining' },
+  { image: 'about/cae-simulation', alt: 'Bevel gear forging simulation from CAD model to stress analysis', caption: 'Computer-aided engineering & simulation' },
 ]
 
 export default function Overview() {
