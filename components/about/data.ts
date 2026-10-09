@@ -36,6 +36,18 @@ export const PRESS: { source: string; title: string; text: string; image?: strin
   { source: 'MACHINE MAKER', title: 'Highway Roop acquires Chamundi Die Cast', text: 'Coverage of the completed acquisition.', publication: 'Machine Maker' },
 ]
 
+// Company mission, vision and 3T3P values (supplied by Highway Roop).
+export const MISSION = 'We partner with the mobility industry to deliver superior torque performance and uncompromising safety through precision-engineered solutions, harnessing technology, operational excellence and enduring relationships.'
+export const VISION = 'We envision a world where mobility is synonymous with absolute reliability, powered by our torque and safety solutions.'
+export const CORE_VALUES = [
+  { tag: 'T', title: 'Transparency', text: 'Openness and honesty for shared success.' },
+  { tag: 'T', title: 'Trust', text: 'Empower ownership without micromanagement.' },
+  { tag: 'T', title: 'Teamwork', text: 'Combine diversity to achieve more.' },
+  { tag: 'P', title: 'Passion', text: 'Relentless dedication to achieving our goals.' },
+  { tag: 'P', title: 'Performance', text: 'Focused on results and high-quality outcomes.' },
+  { tag: 'P', title: 'Partnership', text: 'Sustainable, long-term growth.' },
+]
+
 export const SUSTAINABILITY_LINKS = [
   { href: '/sustainability/esg-overview', label: 'ESG Overview' },
   { href: '/sustainability/environment', label: 'Environment' },
