@@ -73,11 +73,15 @@ export default function Csr() {
 
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>Building value beyond business</>}>
-            FY 2025–26 was our first year as one Highway Roop following the merger of Roop Automotives and Highway Industries.
-            Our initiatives reached beneficiaries across Chennai, Gurugram, Sohna, Nuh, Manesar, Dharuhera, Ludhiana and Pune,
-            aligned with national development priorities and the UN Sustainable Development Goals.
-          </SectionHead>
+          <div className="ab-intro-split">
+            <SectionHead title={<>Building value beyond business</>}>
+              FY 2025–26 was our first year as one Highway Roop following the merger of Roop Automotives and Highway Industries.
+              Our initiatives reached beneficiaries across Chennai, Gurugram, Sohna, Nuh, Manesar, Dharuhera, Ludhiana and Pune,
+              aligned with national development priorities and the UN Sustainable Development Goals.
+            </SectionHead>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img loading="lazy" decoding="async" src="/assets/csr/overview.webp" alt="Highway Roop leaders reviewing student work at a CSR-supported school lab" />
+          </div>
           <Stats
             items={[
               ['1000+', 'STUDENTS IMPACTED'],
