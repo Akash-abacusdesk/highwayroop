@@ -208,14 +208,6 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-form .button{justify-self:start}
 .ab-form-status{margin:0;color:var(--blue);font-size:14px}
 
-.ab-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
-.ab-filters button{border:1px solid var(--line);background:#fff;padding:12px 18px;font-family:inherit;font-weight:600;font-size:12px;cursor:pointer}
-.ab-filters button.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-/* Lines come from each tile's own right/bottom border, so empty cells in an unfilled last row stay white */
-.ab-products{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.ab-products figure{margin:0;background:#fff;padding:18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.ab-products img{width:100%;height:215px;object-fit:contain;background:#fff;mix-blend-mode:multiply}
-.ab-products figcaption{font-size:14px;font-weight:600;margin-top:16px}
 .ab-note{margin-top:24px;color:var(--muted);font-size:13px}
 
 .ab-roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -256,7 +248,6 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 }
 @media(max-width:700px){
   .ab-cards.cols-3,.ab-cards.cols-2,.ab-office,.ab-form,.ab-steps{grid-template-columns:1fr}
-  .ab-products{grid-template-columns:1fr 1fr}.ab-products figure{padding:12px}.ab-products figcaption{font-size:12px;margin-top:10px}
   .ab-roadmap{grid-template-columns:1fr 1fr;gap:12px}
   .ab-roadmap div{padding:20px 16px}.ab-roadmap strong{font-size:28px}
   .ab-card{padding:22px;min-height:auto}.ab-card h3{font-size:20px;margin:12px 0 8px}.ab-card p{font-size:13px;line-height:1.5}
@@ -269,22 +260,11 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
   .ab-office>div{padding:26px 20px}.ab-office h3{font-size:20px;margin:0 0 10px}.ab-office p{font-size:14px;line-height:1.65}
   .ab-location>div{padding:26px 20px}.ab-location h3{font-size:clamp(24px,6.5vw,32px);margin:10px 0}.ab-location p{font-size:14px;line-height:1.6}.ab-location iframe{min-height:260px}
   .ab-form .wide{grid-column:auto}.ab-form{gap:16px}.ab-form .button{width:100%}
-  .ab-products img{height:130px}
-  .ab-filters{gap:8px;margin-bottom:22px}.ab-filters button{padding:10px 14px}
 }
 
 /* Business pages: spacing between sub-blocks. */
-.ab-biz-intro{padding:72px 0}
-.ab-biz-intro .ab-label{display:block;color:var(--blue);font-size:13px;margin-bottom:18px}
-.ab-lead{max-width:900px;margin:0;font-size:clamp(20px,2.2vw,30px);line-height:1.4;letter-spacing:-.02em;color:var(--muted)}
-.ab-lead strong{color:var(--ink);font-weight:500}
-.ab-biz{scroll-margin-top:140px}
-.ab-biz .ab-heading{font-size:clamp(30px,4.4vw,56px)}
-.ab-biz .ab-split .ab-heading{font-size:clamp(26px,3.2vw,42px)}
 .ab-gap{margin-top:80px}
-.ab-biz .ab-note{margin-top:40px}
-@media(max-width:1050px){.ab-biz{scroll-margin-top:90px}}
-@media(max-width:700px){.ab-biz-intro{padding:40px 0}.ab-lead{font-size:18px}.ab-gap{margin-top:44px}.ab-biz .ab-heading{font-size:clamp(28px,7.5vw,36px)}.ab-biz .ab-split .ab-heading{font-size:clamp(24px,6.5vw,32px)}}
+@media(max-width:700px){.ab-gap{margin-top:44px}}
 
 /* Investors > Annual reports */
 .ab-report-toolbar{display:grid;grid-template-columns:auto 260px 1fr;align-items:center;gap:18px;margin-bottom:34px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -322,11 +302,8 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-hero-ctas .text-link{color:#80bad0}
 .ab-card-notes{margin:16px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
 .ab-card-notes li{padding:10px 0 0;font-size:13px;font-weight:600;color:var(--blue)}
-.ab-gap-sm{margin-bottom:48px}
 .ab-chain{display:flex;flex-wrap:wrap;margin:0;padding:0;list-style:none;border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .ab-chain li{flex:1 1 140px;position:relative;padding:28px 24px;background:#fff;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-size:18px;font-weight:500}
 .ab-chain b{display:block;margin-bottom:12px;font-size:11px;letter-spacing:.14em;color:var(--red)}
-.ab-states{margin:0 0 24px;font-size:20px}
-.ab-states b{font-size:11px;letter-spacing:.14em;color:var(--red);margin-right:12px}
-@media(max-width:700px){.ab-hero-ctas{margin-top:20px;gap:14px 20px}.ab-chain li{flex-basis:50%;padding:18px 16px;font-size:15px}.ab-states{font-size:16px}}
+@media(max-width:700px){.ab-hero-ctas{margin-top:20px;gap:14px 20px}.ab-chain li{flex-basis:50%;padding:18px 16px;font-size:15px}}
 .ab-area-tag{display:block;color:var(--red);margin-bottom:18px}
