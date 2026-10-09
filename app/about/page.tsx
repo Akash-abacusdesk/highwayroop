@@ -19,7 +19,7 @@ export default function Overview() {
       <PageHero
         title={<>Integrated scale<br />Accountable execution</>}
         copy="A leading Indian precision auto-components group with end-to-end capabilities and a global support network."
-        image="about/about-hero-lines"
+        image="about/about-banner"
       />
       <SubNav />
 
