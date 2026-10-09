@@ -19,7 +19,7 @@ export default function CorporateOffice() {
       <PageHero
         title={<>Connect with<br />Highway Roop</>}
         copy="Corporate office address and primary contact information."
-        image="hero-careers-v3"
+        image="hero-corporate-office"
       />
       <SubNav />
 
