@@ -5572,7 +5572,7 @@ footer img {
 /* Homepage "Trusted relationships" customer marquee: two rows scrolling in opposite directions, full-colour logos, pause on hover/focus. */
 .cust-section {
   overflow: hidden;
-  padding: 48px 0 52px;
+  padding-block: var(--section-space);
   border-bottom: 1px solid var(--line);
   background: #fff;
 }
@@ -5655,9 +5655,6 @@ footer img {
   animation-direction: reverse;
 }
 @media (max-width: 700px) {
-  .cust-section {
-    padding-block: 36px;
-  }
   .cust-head {
     margin-bottom: 18px;
   }
