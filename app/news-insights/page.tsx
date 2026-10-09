@@ -12,7 +12,7 @@ export default function NewsInsights() {
       <PageHero
         title={<>News from<br />Highway Roop</>}
         copy="Official company communication and coverage of the Chamundi Die Cast acquisition."
-        image="lightweighting-ev"
+        image="hero-news"
       />
 
       <section className="ab-section" id="news">

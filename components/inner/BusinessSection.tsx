@@ -154,25 +154,6 @@ export default function BusinessSection({ biz }: { biz: Business }) {
           </div>
         </div>
       </section>
-
-      {page.closing && (
-        <section className="bz-programme">
-          <div className="shell">
-            <div className="bz-mark" aria-hidden="true">HR</div>
-            <div>
-              <p className="bz-eyebrow">WHY HIGHWAY ROOP</p>
-              <h2>{page.closing.title}</h2>
-              <p>{page.closing.text}</p>
-            </div>
-            <div className="bz-action">
-              <span>Have a programme<br />to discuss?</span>
-              <Link className="bz-round" href="/contact/business-enquiries" aria-label="Discuss your programme">
-                <ArrowUpRight size={28} aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
     </div>
   )
 }

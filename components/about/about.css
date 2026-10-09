@@ -184,6 +184,8 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 
 .ab-split{display:grid;grid-template-columns:1fr minmax(320px,520px);gap:6vw;align-items:center}
 .ab-split.reverse{grid-template-columns:minmax(320px,520px) 1fr}.ab-split.reverse>div{order:2}
+/* CSR "Five thematic areas": even 50/50 text and image on desktop */
+@media(min-width:1051px){.ab-areas .ab-split,.ab-areas .ab-split.reverse{grid-template-columns:1fr 1fr;gap:5vw}.ab-areas .ab-split img{height:420px}}
 .ab-split img{width:100%;height:390px;object-fit:cover}
 .ab-split p{margin:24px 0;color:var(--muted)}
 .ab-split ul{padding-left:18px;color:var(--muted);line-height:1.8}
@@ -267,12 +269,6 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 @media(max-width:700px){.ab-gap{margin-top:44px}}
 
 /* Investors > Annual reports */
-.ab-report-toolbar{display:grid;grid-template-columns:auto 260px 1fr;align-items:center;gap:18px;margin-bottom:34px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.ab-report-toolbar label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
-.ab-report-toolbar p{justify-self:end;margin:0;color:var(--muted);font-size:13px}
-.ab-report-select{position:relative}.ab-report-select:after{content:"⌄";position:absolute;right:16px;top:50%;transform:translateY(-58%);color:var(--blue);pointer-events:none;font-size:18px}
-.ab-report-select select{width:100%;height:46px;padding:0 42px 0 15px;border:1px solid #cbd8de;border-radius:0;background:#fff;color:var(--ink);font-family:inherit;font-weight:600;font-size:14px;appearance:none;cursor:pointer}
-.ab-report-select select:hover,.ab-report-select select:focus{border-color:var(--blue)}
 .ab-reports{border-top:1px solid var(--line)}
 .ab-report{position:relative;display:grid;grid-template-columns:118px minmax(0,1fr) auto;gap:clamp(28px,4vw,64px);align-items:center;padding:36px 20px 36px 0;border-bottom:1px solid var(--line);transition:background-color .3s,padding-left .3s,box-shadow .3s,transform .3s}
 .ab-report:before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;background:var(--red);transform:scaleY(0);transition:transform .3s}
@@ -293,8 +289,8 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-report-cta:hover:after,.ab-report-cta:focus-visible:after{transform:translate(3px,-3px)}
 .ab-report-cta[aria-disabled="true"]{color:#607680;border-color:#c9d5da;background:#f7f9fa;cursor:not-allowed}
 .ab-reports-note{margin:28px 0 0;color:var(--muted);font-size:13px;line-height:1.65}
-@media(max-width:760px){.ab-report-toolbar{grid-template-columns:1fr 1fr}.ab-report-toolbar p{grid-column:1/-1;justify-self:start}.ab-report{grid-template-columns:92px 1fr;gap:18px 24px}.ab-report-cover{width:92px}.ab-report-cover strong{font-size:14px;margin-top:18px}.ab-report-cta{grid-column:2;width:max-content}}
-@media(max-width:520px){.ab-report-toolbar{grid-template-columns:1fr;gap:10px}.ab-report-toolbar p{grid-column:auto}.ab-report{grid-template-columns:1fr;gap:10px;padding:28px 0}.ab-report:hover,.ab-report:focus-within{padding-left:14px}.ab-report-cta{grid-column:auto;margin-top:10px;width:100%}}
+@media(max-width:760px){.ab-report{grid-template-columns:92px 1fr;gap:18px 24px}.ab-report-cover{width:92px}.ab-report-cover strong{font-size:14px;margin-top:18px}.ab-report-cta{grid-column:2;width:max-content}}
+@media(max-width:520px){.ab-report{grid-template-columns:1fr;gap:10px;padding:28px 0}.ab-report:hover,.ab-report:focus-within{padding-left:14px}.ab-report-cta{grid-column:auto;margin-top:10px;width:100%}}
 @media(prefers-reduced-motion:reduce){.ab-report,.ab-report:before,.ab-report-cover,.ab-report-cta:after{transition:none}.ab-report:hover,.ab-report:focus-within,.ab-report:hover .ab-report-cover,.ab-report:focus-within .ab-report-cover{transform:none}}
 
 /* Business pages: hero CTAs, card notes, process chain, locations */

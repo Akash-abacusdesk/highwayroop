@@ -42,10 +42,9 @@ const MENUS: Menu[] = [
   },
   {
     label: 'News & Insights', href: '/news-insights',
-    intro: 'Company news, media coverage, insights and events.',
+    intro: 'Company news and media coverage.',
     cols: [
       { title: 'NEWSROOM', links: [['/news-insights#news', 'News'], ['/news-insights#media', 'Media']] },
-      { title: 'PERSPECTIVES', links: [['/news-insights', 'Insights'], ['/news-insights', 'Events']] },
     ],
   },
   {

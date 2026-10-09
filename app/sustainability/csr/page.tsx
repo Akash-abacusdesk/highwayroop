@@ -89,7 +89,7 @@ export default function Csr() {
         </div>
       </section>
 
-      <section className="ab-section ab-soft">
+      <section className="ab-section ab-soft ab-areas">
         <div className="shell">
           <SectionHead title={<>Five thematic areas</>}>
             Our CSR vision: to create lasting social value by enabling individuals and communities to thrive through education,

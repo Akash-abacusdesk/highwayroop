@@ -14,7 +14,7 @@ const COLUMNS: Col[] = [
   },
   { title: 'Sustainability', links: SUSTAINABILITY_LINKS.map(l => [l.href, l.label.replace('ESG ', '').replace('Reports & Policies', 'Policies & Reports')]) },
   { title: 'Investors', links: [['/investors/financial-reports', 'Financial Reports']] },
-  { title: 'News & Insights', links: [['/news-insights#news', 'News'], ['/news-insights', 'Insights'], ['/news-insights#media', 'Media'], ['/HRPTL-Corporate-Presentation.pdf', 'Resources']] },
+  { title: 'News & Insights', links: [['/news-insights#news', 'News'], ['/news-insights#media', 'Media'], ['/HRPTL-Corporate-Presentation.pdf', 'Resources']] },
   { title: 'Careers', links: [['/careers', 'Careers']] },
   { title: 'Contact', links: [['/contact/corporate-office', 'Contact']] },
 ]
@@ -42,7 +42,8 @@ export default function Footer() {
         </nav>
       </div>
       <div className="shell footer-bottom">
-        <span>© 2026 Highway Roop Precision Technologies Limited, developed by <a href="https://www.abacusdesk.com/" target="_blank" rel="noopener noreferrer">AbacusDesk</a></span>
+        <span>© 2026 Highway Roop Precision Technologies Limited</span>
+        <span>Developed by <a className="footer-credit" href="https://www.abacusdesk.com/" target="_blank" rel="noopener noreferrer">AbacusDesk</a></span>
       </div>
     </footer>
   )

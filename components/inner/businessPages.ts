@@ -1,7 +1,7 @@
 import type { Card } from './CardGrid'
 
 // Business page content (Website Content Master, revised agency version). Rendered by BusinessSection in order:
-// overview → Technology & Capabilities (+ splits) → Products & Solutions (store/productsSlice.ts) → blocks → Locations → closing.
+// overview → Technology & Capabilities (+ splits) → Products & Solutions (store/productsSlice.ts) → blocks → Locations.
 // ponytail: Drivetrain's opening sections weren't in the supplied master, so it keeps the earlier copy and steps.
 
 export type Split = { title: string; text: string; image: string; alt: string; bullets?: string[] }
@@ -15,7 +15,6 @@ export type BusinessPage = {
   splits?: Split[]
   blocks: Block[]
   locations: { text: string; states: string[] }
-  closing?: { title: string; text: string }
 }
 
 export const BUSINESS_PAGES: Record<string, BusinessPage> = {
@@ -38,10 +37,6 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
     locations: {
       text: 'Drivetrain’s manufacturing footprint supports customer programmes across key automotive manufacturing regions in India, complemented by international warehousing and customer proximity.',
       states: ['Haryana', 'Punjab', 'Maharashtra'],
-    },
-    closing: {
-      title: 'Built for demanding applications',
-      text: 'Drivetrain combines engineering expertise, manufacturing depth and quality systems to support customers from product development through production.',
     },
   },
 
@@ -75,10 +70,6 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
     locations: {
       text: 'Steering & Suspension serves automotive programmes through its manufacturing footprint in India, supported by international warehousing and customer proximity.',
       states: ['Haryana', 'Tamil Nadu'],
-    },
-    closing: {
-      title: 'Built around vehicle performance',
-      text: 'From precision components to functional assemblies, Steering & Suspension combines manufacturing capability, testing expertise and application understanding for demanding vehicle systems.',
     },
   },
 

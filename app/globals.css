@@ -5527,3 +5527,8 @@ footer img {
     opacity: 0;
   }
 }
+
+/* Footer developer credit */
+.footer-bottom .footer-credit {
+  color: #e89610;
+}
