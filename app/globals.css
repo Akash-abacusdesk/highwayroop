@@ -5625,8 +5625,6 @@ footer img {
   width: 210px;
   height: 112px;
   padding: 22px 28px;
-  border: 1px solid var(--line);
-  background: #fff;
 }
 .cust-card img {
   width: 100%;
@@ -5634,11 +5632,13 @@ footer img {
   object-fit: contain;
 }
 .cust-card span {
+  /* Josefin sits high in its line box; nudge so wordmarks share the logos' centre line */
+  padding-top: 0.9em;
   color: var(--ink);
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.06em;
-  line-height: 1.2;
+  line-height: 1;
   text-align: center;
   text-transform: uppercase;
   transition: color 0.3s;
