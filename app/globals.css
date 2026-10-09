@@ -5439,16 +5439,16 @@ footer img {
   max-width: 18ch;
 }
 
-/* Homepage careers card: taller so the team photo isn't cropped at the heads. */
+/* Homepage careers card: wide banner photo, so a shorter card still shows the team. */
 .story-grid.story-single .story-careers {
-  min-height: clamp(520px, 48vw, 700px);
+  min-height: clamp(400px, 34vw, 500px);
 }
 .story-careers img {
   object-position: center 20%;
 }
 @media (max-width: 700px) {
   .story-grid.story-single .story-careers {
-    min-height: 420px;
+    min-height: 340px;
   }
 }
 
