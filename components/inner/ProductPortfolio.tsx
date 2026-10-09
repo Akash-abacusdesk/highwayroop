@@ -37,6 +37,7 @@ export default function ProductPortfolio({ business }: { business: string }) {
         </div>
         {intro && <p>{intro.text}</p>}
       </div>
+      {intro && <hr className="bz-hr" />}
       {intro && (
         <div className="bz-cats">
           {intro.categories.map(c => <article key={c.title}><h3>{c.title}</h3><p>{c.text}</p></article>)}

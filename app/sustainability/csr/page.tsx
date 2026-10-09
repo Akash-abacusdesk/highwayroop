@@ -98,7 +98,7 @@ export default function Csr() {
           {AREAS.map((a, i) => (
             <div className="ab-gap" key={a.title}>
               <span className="ab-label ab-area-tag">{a.tag}</span>
-              <Split reverse={i % 2 === 1} title={a.title} image={a.image} alt={a.alt} bullets={a.bullets}>{a.text}</Split>
+              <Split level="h3" reverse={i % 2 === 1} title={a.title} image={a.image} alt={a.alt} bullets={a.bullets}>{a.text}</Split>
             </div>
           ))}
         </div>

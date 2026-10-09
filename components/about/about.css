@@ -186,6 +186,7 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-split.reverse{grid-template-columns:minmax(320px,520px) 1fr}.ab-split.reverse>div{order:2}
 /* CSR "Five thematic areas": even 50/50 text and image on desktop */
 @media(min-width:1051px){.ab-areas .ab-split,.ab-areas .ab-split.reverse{grid-template-columns:1fr 1fr;gap:5vw}.ab-areas .ab-split img{height:420px}}
+.ab-split h3.ab-heading{font-size:clamp(28px,2.8vw,40px);line-height:1.1}@media(max-width:700px){.ab-split h3.ab-heading{font-size:clamp(19px,5vw,22px)}}
 .ab-split img{width:100%;height:390px;object-fit:cover}
 .ab-split p{margin:24px 0;color:var(--muted)}
 .ab-split ul{padding-left:18px;color:var(--muted);line-height:1.8}

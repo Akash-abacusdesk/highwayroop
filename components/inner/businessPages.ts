@@ -28,7 +28,7 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
       { tag: 'VALIDATION', title: 'Verify requirements', text: 'CMM, gear, form, roughness, material, torque and endurance testing.' },
     ],
     splits: [
-      { title: 'Forming and machining at industrial scale', image: 'driveline-forming-machining', alt: 'Operators at CNC turning and milling lines on the plant floor',
+      { title: 'Forming and machining at industrial scale', image: 'driveline-forming-machining', alt: 'Operators at the crankshaft machining line on the plant floor',
         text: 'Hot and warm presses range from 600T to 2500T; cold forging presses range from 100T to 1000T. The presentation also lists 800+ CNC turning and turn-mill machines, 90+ VMCs, 40+ broaching machines, 25+ honing machines and 20 CNC grinding machines.' },
       { title: 'Quality is part of the process', image: 'driveline-quality', alt: 'Engineer measuring a component with a height gauge on a surface plate',
         text: 'Capabilities include advanced metrology, CMMs, gear testing, roundness and roughness measurement, material testing, functional testing and in-house calibration.' },
