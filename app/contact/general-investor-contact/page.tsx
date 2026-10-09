@@ -6,6 +6,8 @@ import SectionHead from '@/components/about/SectionHead'
 import LeadForm from '@/components/inner/LeadForm'
 import { EMAIL, PHONE } from '@/components/about/data'
 
+const MEDIA_EMAIL = 'shilpi.shukla@highwayroop.com'
+
 export const metadata: Metadata = { title: 'General / Investor Contact | Highway Roop' }
 
 export default function GeneralInvestorContact() {
@@ -45,13 +47,12 @@ export default function GeneralInvestorContact() {
           <div className="ab-office">
             <div>
               <h3>Media contact</h3>
-              {/* No direct email/phone supplied for Shilpi yet, so this routes through the main company contact. */}
-              <p><strong>Shilpi Shukla</strong><br /><a href={`mailto:${EMAIL}?subject=Media%20Enquiry`}>{EMAIL}</a><br /><a href={PHONE.href}>{PHONE.label}</a></p>
+              <p><strong>Shilpi Shukla</strong><br />Group Head – Communications &amp; Branding<br /><a href={`mailto:${MEDIA_EMAIL}?subject=Media%20Enquiry`}>{MEDIA_EMAIL}</a></p>
             </div>
             <div>
               <h3>Media enquiries</h3>
               <p>Request press material, company information or an interview, or send any other media-related question.</p>
-              <a className="button primary" href={`mailto:${EMAIL}?subject=Media%20Enquiry`}>Email media team <span><ArrowRight size={18} aria-hidden="true" /></span></a>
+              <a className="button primary" href={`mailto:${MEDIA_EMAIL}?subject=Media%20Enquiry`}>Email media team <span><ArrowRight size={18} aria-hidden="true" /></span></a>
             </div>
           </div>
         </div>

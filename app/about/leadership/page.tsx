@@ -15,25 +15,15 @@ export default function Leadership() {
         title={<>Leadership grounded in<br />operational discipline</>}
         copy="Business-unit leadership and corporate functions aligned behind one integrated platform."
         image="hero-leadership"
+        caption={<>
+          <span className="ab-label">CHIEF EXECUTIVE OFFICER</span>
+          <strong>Dharmesh Arora</strong>
+          <a className="ab-linkedin" href={CEO_LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="Dharmesh Arora on LinkedIn">in</a>
+        </>}
       />
       <SubNav />
 
       <section className="ab-section">
-        <div className="shell">
-          <div className="ab-ceo">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img loading="lazy" decoding="async" src="/assets/dharmesh-arora-ceo.webp" alt="Dharmesh Arora" />
-            <div className="ab-ceo-copy">
-              <span className="ab-label">CHIEF EXECUTIVE OFFICER</span>
-              <h2>Dharmesh Arora</h2>
-              <p>CEO, Highway Roop Precision Technologies Ltd.</p>
-              <a className="ab-linkedin" href={CEO_LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="Dharmesh Arora on LinkedIn">in</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="ab-section ab-soft">
         <div className="shell">
           <SectionHead title="Business leadership">
             Leadership across business units, finance, people, procurement, marketing, technology, compliance, strategy,

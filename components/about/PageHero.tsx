@@ -4,8 +4,8 @@ import './about.css'
 
 type Cta = { href: string; label: string }
 
-// `ctas`: the first renders as the primary button, the second as a text link.
-export default function PageHero({ title, copy, image, ctas }: { title: React.ReactNode; copy: string; image: string; ctas?: Cta[] }) {
+// `ctas`: the first renders as the primary button, the second as a text link. `caption`: optional label pinned bottom-right (e.g. who is pictured).
+export default function PageHero({ title, copy, image, ctas, caption }: { title: React.ReactNode; copy: string; image: string; ctas?: Cta[]; caption?: React.ReactNode }) {
   return (
     <section className="ab-hero">
       <div className="ab-hero-media" style={{ backgroundImage: `url('/assets/${image}.webp')` }} />
@@ -24,6 +24,7 @@ export default function PageHero({ title, copy, image, ctas }: { title: React.Re
             </div>
           )}
         </div>
+        {caption && <div className="ab-hero-caption">{caption}</div>}
       </div>
     </section>
   )

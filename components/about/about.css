@@ -62,11 +62,6 @@
 .ab-platform p{max-width:500px;color:#c7d9e1}
 .ab-share{color:var(--red);font-size:12px;font-weight:700}
 
-.ab-ceo{display:grid;grid-template-columns:.8fr 1.2fr;background:var(--navy);color:#fff;min-height:560px}
-.ab-ceo img{width:100%;height:100%;object-fit:cover;object-position:top}
-.ab-ceo-copy{padding:70px;display:flex;flex-direction:column;justify-content:center}
-.ab-ceo-copy h2{font-size:clamp(32px,3.9vw,50px);margin:18px 0 4px}
-.ab-ceo-copy p{color:#cfdee5}
 .ab-leaders{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .ab-leader{background:#fff;border:1px solid var(--line);transition:.3s}
 .ab-leader:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
@@ -142,12 +137,6 @@
   .ab-platform{padding:22px 18px;display:block}
   .ab-platform h2{font-size:clamp(24px,6.5vw,32px);margin:8px 0}
   .ab-platform p{font-size:14px}
-  .ab-ceo{grid-template-columns:1fr;min-height:auto}
-  .ab-ceo img{max-height:320px}
-  .ab-ceo-copy{padding:26px 20px}
-  .ab-ceo-copy h2{font-size:clamp(28px,7.5vw,36px);line-height:1.08;margin:12px 0 4px}
-  .ab-ceo-copy p{font-size:14px}
-  .ab-ceo-copy .ab-linkedin{margin-top:16px;align-self:flex-start}
   .ab-leaders{grid-template-columns:1fr;gap:14px}
   .ab-leader-copy{padding:18px}
   .ab-leader h3{font-size:19px}
@@ -326,3 +315,10 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-roadmap div:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
 @media(prefers-reduced-motion:reduce){.ab-roadmap div:hover{transform:none}}
 .ab-docs a:hover{background:var(--blue);color:#fff}.ab-docs a:last-child:hover{background:#0d435e;border-color:#0d435e}
+/* Hero caption pinned bottom-right (leadership: names the CEO pictured) */
+.ab-hero .shell{position:relative}
+.ab-hero-caption{position:absolute;right:var(--page-gutter,90px);bottom:44px;z-index:3;display:grid;gap:6px;justify-items:end;text-align:right;color:#fff;padding:18px 22px;background:rgba(6,22,30,.55);backdrop-filter:blur(4px);border-right:4px solid var(--red)}
+.ab-hero-caption .ab-label{color:#cfe3ea}
+.ab-hero-caption strong{font-size:24px;font-weight:500;letter-spacing:-.02em}
+.ab-hero-caption .ab-linkedin{margin-top:4px}
+@media(max-width:700px){.ab-hero .shell:has(.ab-hero-caption){flex-direction:column;align-items:flex-start;justify-content:center;gap:18px}.ab-hero-caption{position:static;justify-items:start;text-align:left;border-right:0;border-left:4px solid var(--red);padding:10px 14px}.ab-hero-caption strong{font-size:18px}}
