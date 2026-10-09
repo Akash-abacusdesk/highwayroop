@@ -95,7 +95,7 @@
 .bz-place li:before{content:"";width:9px;height:9px;flex:none;border-radius:50%;background:#ff4d55;box-shadow:0 0 0 4px rgba(255,77,85,.25)}
 .bz-loc-panel small{font-size:13px;color:#c8e1e7;margin-top:24px}
 .bz-map{position:relative;align-self:center;aspect-ratio:612/696;width:100%;max-width:420px;justify-self:end}
-.bz-map img,.bz-map svg{position:absolute;inset:0;width:100%;height:100%}
+.bz-map img,.bz-map svg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .bz-map path{fill:#ff4d55;stroke:#fff;stroke-width:1;animation:bz-blink 1.8s ease-in-out infinite;animation-delay:var(--d)}
 .bz-map circle{fill:#fff;animation:bz-blink 1.8s ease-in-out infinite;animation-delay:var(--d)}
 .bz-map circle.ring{fill:none;stroke:#fff;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:bz-ring 1.8s ease-out infinite;animation-delay:var(--d)}

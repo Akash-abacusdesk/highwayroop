@@ -5,7 +5,7 @@ import type { Stat } from '@/types/content'
 
 const defaultStats: Stat[] = [
   { count: 50, suffix: '+', label: 'Years of\nengineering legacy' },
-  { count: 15, suffix: '', label: 'Manufacturing\nplants' },
+  { count: 14, suffix: '', label: 'Manufacturing\nplants' },
   { count: 14, suffix: '',  label: 'Warehouses' },
   { count: 7,  suffix: '',  label: 'Countries in our\nglobal network' },
   { count: 50, suffix: '+', label: 'OEM & Tier-1\nrelationships' },

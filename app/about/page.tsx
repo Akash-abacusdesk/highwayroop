@@ -3,8 +3,6 @@ import PageHero from '@/components/about/PageHero'
 import SubNav from '@/components/about/SubNav'
 import SectionHead from '@/components/about/SectionHead'
 import Stats from '@/components/about/Stats'
-import CardGrid from '@/components/inner/CardGrid'
-import { CORE_VALUES, MISSION, VISION } from '@/components/about/data'
 
 export const metadata: Metadata = { title: 'Overview | Highway Roop' }
 
@@ -46,29 +44,11 @@ export default function Overview() {
           <Stats
             items={[
               ['5', 'DECADES OF COMBINED ENGINEERING LEGACY'],
-              ['15', 'MANUFACTURING PLANTS'],
+              ['14', 'MANUFACTURING PLANTS'],
               ['14', 'WAREHOUSES'],
               ['50+', 'OEM AND TIER-1 RELATIONSHIPS'],
             ]}
           />
-        </div>
-      </section>
-
-      <section className="ab-section ab-soft" id="purpose">
-        <div className="shell">
-          <SectionHead title="Mission, vision and values" />
-          <div className="ab-purpose">
-            <div>
-              <span className="ab-label">MISSION</span>
-              <p>{MISSION}</p>
-            </div>
-            <div>
-              <span className="ab-label">VISION</span>
-              <p>{VISION}</p>
-            </div>
-          </div>
-          <h3 className="ab-subhead">Our values – 3T3P</h3>
-          <CardGrid cards={CORE_VALUES} />
         </div>
       </section>
 

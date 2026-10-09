@@ -4,8 +4,9 @@
 .ab-label{font-size:11px;letter-spacing:.16em;font-weight:700}
 
 .ab-hero{position:relative;min-height:85vh;padding-top:126px;overflow:hidden}
-.ab-hero-media{position:absolute;inset:126px 0 0;background:center/cover}
-.ab-hero-media:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.6) 35%,rgba(0,0,0,.3) 45%,rgba(0,0,0,.2) 80%)}
+.ab-hero-media{position:absolute;inset:126px 0 0;background-position:center;background-size:cover;background-repeat:no-repeat;overflow:hidden}
+.ab-hero-media-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.ab-hero-media:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.6) 35%,rgba(0,0,0,.3) 45%,rgba(0,0,0,.2) 80%);z-index:1}
 .ab-hero .shell{position:relative;z-index:2;min-height:calc(85vh - 126px);display:flex;align-items:center}
 .ab-hero-copy{max-width:790px}
 .ab-hero h1,.ab-heading{margin:0;font-weight:500;line-height:1.03;letter-spacing:-.045em}
@@ -106,6 +107,7 @@
   .ab-hero{min-height:auto;padding-top:72px;padding-bottom:28px}
   .ab-hero .shell{min-height:auto;padding-top:24px;padding-bottom:12px}
   .ab-hero-media{inset:72px 0 0;background-position:65% center}
+  .ab-hero-media-img{object-position:65% center}
   .ab-hero-media:after{background:linear-gradient(180deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.74) 55%,rgba(0,0,0,.5) 100%)}
   .ab-hero h1{font-size:clamp(32px,8.5vw,44px);line-height:1.06}
   .ab-hero p{font-size:15px;line-height:1.55;margin-top:12px;max-width:100%}
@@ -322,15 +324,6 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-hero-caption strong{font-size:24px;font-weight:500;letter-spacing:-.02em}
 .ab-hero-caption .ab-linkedin{margin-top:4px}
 @media(max-width:700px){.ab-hero .shell:has(.ab-hero-caption){flex-direction:column;align-items:flex-start;justify-content:center;gap:18px}.ab-hero-caption{position:static;justify-items:start;text-align:left;border-right:0;border-left:4px solid var(--red);padding:10px 14px}.ab-hero-caption strong{font-size:18px}}
-/* About: mission / vision panels and 3T3P values */
-.ab-purpose{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:64px}
-.ab-purpose>div{background:var(--blue);color:#fff;padding:clamp(28px,4vw,52px);border-top:4px solid var(--red)}
-.ab-purpose>div+div{background:#0d435e}
-.ab-purpose .ab-label{color:#cfe3ea}
-.ab-purpose p{margin:18px 0 0;font-size:clamp(19px,1.8vw,24px);line-height:1.45;letter-spacing:-.01em}
-.ab-subhead{font-size:clamp(24px,2.4vw,32px);font-weight:500;margin:0 0 28px}
-@media(max-width:1050px){.ab-purpose{grid-template-columns:1fr}}
-@media(max-width:700px){.ab-purpose{margin-bottom:40px}.ab-purpose p{font-size:17px}.ab-subhead{margin-bottom:18px}}
 /* Page hero overlay anchored bottom-left (matches the homepage hero) */
 .ab-hero-media:after{background:radial-gradient(ellipse 75% 140% at 0% 100%,rgba(0,0,0,.88) 0%,rgba(0,0,0,.72) 27%,rgba(0,0,0,.4) 55%,rgba(0,0,0,.12) 80%,rgba(0,0,0,0) 100%)}
 @media(max-width:1050px){.ab-hero-media:after{background:radial-gradient(ellipse 130% 110% at 0% 100%,rgba(0,0,0,.88) 0%,rgba(0,0,0,.7) 40%,rgba(0,0,0,.35) 75%,rgba(0,0,0,.15) 100%)}}

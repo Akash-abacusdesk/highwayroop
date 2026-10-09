@@ -15,7 +15,7 @@ export function ProofStats() {
           <span>Decades of combined<br />engineering legacy</span>
         </article>
         <article>
-          <Counter as="strong" value="15" />
+          <Counter as="strong" value="14" />
           <span>Manufacturing<br />plants</span>
         </article>
         <article>

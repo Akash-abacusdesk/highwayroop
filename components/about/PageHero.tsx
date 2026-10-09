@@ -8,7 +8,15 @@ type Cta = { href: string; label: string }
 export default function PageHero({ title, copy, image, ctas, caption }: { title: React.ReactNode; copy: string; image: string; ctas?: Cta[]; caption?: React.ReactNode }) {
   return (
     <section className="ab-hero">
-      <div className="ab-hero-media" style={{ backgroundImage: `url('/assets/${image}.webp')` }} />
+      <div className="ab-hero-media" style={{ backgroundImage: `url('/assets/${image}.webp')` }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`/assets/${image}.webp`}
+          alt=""
+          aria-hidden="true"
+          className="ab-hero-media-img"
+        />
+      </div>
       <div className="shell">
         <div className="ab-hero-copy">
           <div className="ab-redline" />

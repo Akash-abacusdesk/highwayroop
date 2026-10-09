@@ -171,7 +171,7 @@ export default function GlobalSection() {
           </div>
           <h2>A footprint designed for global customer needs</h2>
           <p>
-            Fifteen manufacturing plants across five Indian states support forging, machining, die casting, assembly,
+            Fourteen manufacturing plants across five Indian states support forging, machining, die casting, assembly,
             stampings and surface treatment, complemented by fourteen international warehouses across seven countries.
           </p>
 
@@ -179,7 +179,7 @@ export default function GlobalSection() {
 
           <div className="global-stats">
             <div>
-              <strong>15</strong>
+              <strong>14</strong>
               <span>Manufacturing plants</span>
             </div>
             <div>
