@@ -97,13 +97,6 @@ export function SustainabilitySection() {
 
 const newsLinks = [
   {
-    label: 'Engineering insights',
-    title: 'Ideas from the world of precision manufacturing',
-    text: 'Technology, manufacturing, quality and mobility perspectives.',
-    image: '/assets/homepage/engineering-insights.webp',
-    href: '/news-insights',
-  },
-  {
     label: 'Corporate resources',
     title: 'Information for stakeholders',
     text: 'Corporate presentations, official communications and other approved resources.',
@@ -123,17 +116,7 @@ export function NewsSection() {
             <p>Company news, engineering developments, industry perspectives and corporate resources from across the group.</p>
           </div>
         </div>
-        <div className="news-hub reveal">
-          <a className="news-feature" href="/news-insights#news">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img loading="lazy" decoding="async" src="/assets/homepage/engineering-insights.webp" alt="" />
-            <div className="news-feature-copy">
-              <span>ENGINEERING INSIGHTS</span>
-              <h3>Ideas from the world of precision manufacturing</h3>
-              <p>Technology, manufacturing, quality and mobility perspectives.</p>
-              <b>Explore engineering insights <ArrowRight size={18} aria-hidden="true" /></b>
-            </div>
-          </a>
+        <div className="news-hub news-hub-pair reveal">
           <div className="news-list">
             <a className="news-item" href="/news-insights#news">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -146,7 +129,6 @@ export function NewsSection() {
               <i><ArrowRight size={18} aria-hidden="true" /></i>
             </a>
             {newsLinks.map(({ label, title, text, image, href, external }) => (
-              label === 'Engineering insights' ? null :
               <a
                 key={label}
                 className="news-item"

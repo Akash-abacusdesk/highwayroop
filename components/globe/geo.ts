@@ -1,4 +1,4 @@
-import type { Feature, FeatureCollection, MultiLineString } from "geojson";
+import type { Feature, FeatureCollection, MultiLineString, MultiPolygon as GeoMultiPolygon } from "geojson";
 import type { MultiPolygon, Polygon } from "topojson-specification";
 import { feature, merge, mesh } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
@@ -56,22 +56,37 @@ export const MAX_ZOOM = 12;
 type Atlas = Topology<{ countries: GeometryCollection; land: GeometryCollection }>;
 const cache = new Map<string, Promise<World>>();
 
-function toWorld(topo: Atlas): World {
+// world-atlas (Natural Earth) draws India's de facto borders. India is replaced with its official outline
+// (india-official.json), and the atlas border lines that run through that outline are left out.
+const INDIA = "356";
+const OFF_INDIA = new Set(["586", "156"]); // Pakistan-China line runs through the official India outline
+const id = (g: { id?: string | number }) => String(g.id);
+
+function toWorld(topo: Atlas, india: Feature): World {
   const countries = new Map<string, Feature>();
   for (const f of (feature(topo, topo.objects.countries) as FeatureCollection).features) {
     // First wins: "036" is both Australia and Ashmore Is. in the atlas.
     if (!countries.has(String(f.id))) countries.set(String(f.id), f);
   }
+  countries.set(INDIA, india);
+  const atlasBorders = mesh(topo, topo.objects.countries, (a, b) =>
+    a !== b && id(a) !== INDIA && id(b) !== INDIA && !(OFF_INDIA.has(id(a)) && OFF_INDIA.has(id(b))),
+  );
+  const indiaRings = (india.geometry as GeoMultiPolygon).coordinates.flat() as unknown as MultiLineString["coordinates"];
   return {
     land: feature(topo, topo.objects.land),
     coast: mesh(topo, topo.objects.land),
-    borders: mesh(topo, topo.objects.countries, (a, b) => a !== b),
+    borders: { type: "MultiLineString", coordinates: [...atlasBorders.coordinates, ...indiaRings] },
     countries,
-    region: (ids) => ({
-      type: "Feature",
-      properties: {},
-      geometry: merge(topo, topo.objects.countries.geometries.filter((g) => ids.includes(String(g.id))) as (Polygon | MultiPolygon)[]),
-    }),
+    region: (ids) => {
+      const rest = ids.filter((i) => i !== INDIA);
+      if (rest.length === ids.length) {
+        return { type: "Feature", properties: {}, geometry: merge(topo, topo.objects.countries.geometries.filter((g) => ids.includes(id(g))) as (Polygon | MultiPolygon)[]) };
+      }
+      if (!rest.length) return india;
+      const others = merge(topo, topo.objects.countries.geometries.filter((g) => rest.includes(id(g))) as (Polygon | MultiPolygon)[]);
+      return { type: "Feature", properties: {}, geometry: { type: "MultiPolygon", coordinates: [...others.coordinates, ...(india.geometry as GeoMultiPolygon).coordinates] } } as Feature;
+    },
   };
 }
 
@@ -81,7 +96,7 @@ export function loadWorld(detail: "110m" | "50m") {
   let world = cache.get(detail);
   if (!world) {
     const json = detail === "50m" ? import("world-atlas/countries-50m.json") : import("world-atlas/countries-110m.json");
-    world = json.then((m) => toWorld(m.default as unknown as Atlas));
+    world = Promise.all([json, import("./india-official.json")]).then(([m, i]) => toWorld(m.default as unknown as Atlas, i.default as unknown as Feature));
     cache.set(detail, world);
   }
   return world;

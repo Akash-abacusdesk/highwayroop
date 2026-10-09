@@ -331,3 +331,6 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-subhead{font-size:clamp(24px,2.4vw,32px);font-weight:500;margin:0 0 28px}
 @media(max-width:1050px){.ab-purpose{grid-template-columns:1fr}}
 @media(max-width:700px){.ab-purpose{margin-bottom:40px}.ab-purpose p{font-size:17px}.ab-subhead{margin-bottom:18px}}
+/* Page hero overlay anchored bottom-left (matches the homepage hero) */
+.ab-hero-media:after{background:radial-gradient(ellipse 75% 140% at 0% 100%,rgba(0,0,0,.88) 0%,rgba(0,0,0,.72) 27%,rgba(0,0,0,.4) 55%,rgba(0,0,0,.12) 80%,rgba(0,0,0,0) 100%)}
+@media(max-width:1050px){.ab-hero-media:after{background:radial-gradient(ellipse 130% 110% at 0% 100%,rgba(0,0,0,.88) 0%,rgba(0,0,0,.7) 40%,rgba(0,0,0,.35) 75%,rgba(0,0,0,.15) 100%)}}

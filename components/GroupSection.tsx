@@ -1,11 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { BUSINESSES } from '@/components/about/data'
 
-const businesses = BUSINESSES.map(b => ({
-  ...b,
-  tags: [[`/${b.slug}#technology`, 'Technology & Manufacturing'], [`/${b.slug}#products-solutions`, 'Products & Solutions']],
-}))
-
 export default function GroupSection() {
   return (
     <section className="section group" id="businesses">
@@ -25,7 +20,7 @@ export default function GroupSection() {
         </div>
 
         <div className="biz-grid">
-          {businesses.map(b => (
+          {BUSINESSES.map(b => (
             <article key={b.name} className="biz-card reveal">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -42,11 +37,6 @@ export default function GroupSection() {
                 <h3>{b.name.toUpperCase()}</h3>
                 <p className="biz-intro">{b.intro}</p>
                 <p>{b.desc}</p>
-                <div className="biz-tags">
-                  {b.tags.map(([href, label]) => (
-                    <a key={label} href={href}>{label}</a>
-                  ))}
-                </div>
                 <a className="biz-cta" href={`/${b.slug}`}>
                   Explore {b.name} <span aria-hidden="true"><ArrowRight size={18} aria-hidden="true" /></span>
                 </a>

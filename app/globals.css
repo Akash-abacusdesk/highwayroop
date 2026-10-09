@@ -5532,3 +5532,39 @@ footer img {
 .footer-bottom .footer-credit {
   color: #e89610;
 }
+
+/* Homepage news: two equal cards (company news + corporate resources) side by side */
+.news-hub.news-hub-pair {
+  display: block;
+}
+.news-hub-pair .news-list {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: none;
+}
+.news-hub-pair .news-item {
+  min-height: 340px;
+}
+@media (max-width: 700px) {
+  .news-hub-pair .news-list {
+    grid-template-columns: 1fr;
+  }
+  .news-hub-pair .news-item {
+    min-height: 220px;
+  }
+}
+
+/* Hero overlay anchored bottom-left: strong for ~20% of the width, then a smooth fade. Overrides the flat left wash above. */
+.hero-wash,
+.hero-slide .hero-wash,
+.hero-slide-two .hero-wash,
+.hero-slide-three .hero-wash {
+  background: radial-gradient(ellipse 75% 140% at 0% 100%,rgba(0,0,0,.88) 0%,rgba(0,0,0,.72) 27%,rgba(0,0,0,.4) 55%,rgba(0,0,0,.12) 80%,rgba(0,0,0,0) 100%);
+}
+@media (max-width: 700px) {
+  .hero-wash,
+  .hero-slide .hero-wash,
+  .hero-slide-two .hero-wash,
+  .hero-slide-three .hero-wash {
+    background: radial-gradient(ellipse 130% 110% at 0% 100%, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.35) 75%, rgba(0, 0, 0, 0.15) 100%);
+  }
+}
