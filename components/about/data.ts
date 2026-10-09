@@ -12,9 +12,10 @@ export const LEADERS: { name: string; role: string; bio: string; linkedin?: stri
   { name: 'Ramanathan Iyer', role: 'BU Head (Steering)', bio: 'Business Unit leadership for Steering.', linkedin: 'https://www.linkedin.com/in/ramanathan-iyer-a5546616/', image: '/assets/leadership/ramanathan.webp' },
   { name: 'Sunil Ailavadi', role: 'BU Head (Powertrain)', bio: 'Business Unit leadership for Powertrain.', linkedin: 'https://www.linkedin.com/in/sunil-ailavadi-34b23311/', image: '/assets/leadership/sunil-ailawadi.webp' },
   { name: 'Anirban Sanyal', role: 'CFO', bio: 'Finance leadership.', linkedin: 'https://www.linkedin.com/in/anirbansanyal1975', image: '/assets/leadership/anirban-cfo.webp' },
+  { name: 'Sai Iyer', role: 'CMO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/sai-iyer-1615b65/', image: '/assets/leadership/sai-iyer-cmo.webp' },
   { name: 'Vinod Kr Singh', role: 'CHRO', bio: 'Human Resources leadership.', linkedin: 'https://www.linkedin.com/in/vinod-singh-1a58b922/', image: '/assets/leadership/vinod-chro.webp' },
   { name: 'Ajay Mrig', role: 'CPO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/ajay-m-74445425/', image: '/assets/leadership/ajay-cpo.webp' },
-  { name: 'Sai Iyer', role: 'CMO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/sai-iyer-1615b65/', image: '/assets/leadership/sai-iyer-cmo.webp' },
+  { name: 'Piyush', role: 'Chief Compliance Officer', bio: 'Compliance leadership.', linkedin: 'https://www.linkedin.com/in/piyush-asija-b8884817', image: '/assets/leadership/piyush-cco.webp' },
   { name: 'Prajod', role: 'VP Technology', bio: 'Technology leadership.', linkedin: 'https://www.linkedin.com/in/prajod-ayyappath-794427b/', image: '/assets/leadership/prajod-vp-technology.webp' },
 ]
 
