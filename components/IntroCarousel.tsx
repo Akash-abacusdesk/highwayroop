@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-// Crossfading image carousel for the homepage "Who we are" intro: autoplays every 5s, dots jump to a slide.
+// Crossfading image carousel for the homepage "Who we are" intro: autoplays every 3.5s, dots jump to a slide.
 const SLIDES = [
   { src: 'home-intro-1', alt: 'Operators assembling machined components on a Highway Roop production line' },
   { src: 'home-intro-2', alt: 'Operator pressing components on an assembly fixture' },
@@ -13,7 +13,7 @@ export default function IntroCarousel() {
   const [i, setI] = useState(0)
   useEffect(() => {
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    const t = setTimeout(() => setI(n => (n + 1) % SLIDES.length), 5000)
+    const t = setTimeout(() => setI(n => (n + 1) % SLIDES.length), 3500)
     return () => clearTimeout(t)
   }, [i])
   return (
