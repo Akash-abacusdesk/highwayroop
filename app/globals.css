@@ -5572,12 +5572,12 @@ footer img {
 /* Homepage "Trusted relationships" customer marquee: two rows scrolling in opposite directions, full-colour logos, pause on hover/focus. */
 .cust-section {
   overflow: hidden;
-  padding: 74px 0 78px;
+  padding: 48px 0 52px;
   border-bottom: 1px solid var(--line);
   background: #fff;
 }
 .cust-head {
-  margin-bottom: 42px;
+  margin-bottom: 26px;
 }
 .cust-eyebrow {
   margin: 0 0 14px;
@@ -5622,9 +5622,9 @@ footer img {
 .cust-card {
   display: grid;
   place-items: center;
-  width: 210px;
-  height: 112px;
-  padding: 22px 28px;
+  width: 160px;
+  height: 72px;
+  padding: 12px 20px;
 }
 .cust-card img {
   width: 100%;
@@ -5635,7 +5635,7 @@ footer img {
   /* Josefin sits high in its line box; nudge so wordmarks share the logos' centre line */
   padding-top: 0.9em;
   color: var(--ink);
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.06em;
   line-height: 1;
@@ -5649,25 +5649,25 @@ footer img {
   }
 }
 .cust-track + .cust-track {
-  margin-top: 20px;
+  margin-top: 8px;
 }
 .cust-track.reverse {
   animation-direction: reverse;
 }
 @media (max-width: 700px) {
   .cust-section {
-    padding-block: 54px;
+    padding-block: 36px;
   }
   .cust-head {
-    margin-bottom: 28px;
+    margin-bottom: 18px;
   }
   .cust-card {
-    width: 160px;
-    height: 92px;
-    padding: 18px 20px;
+    width: 120px;
+    height: 56px;
+    padding: 8px 14px;
   }
   .cust-card span {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 /* Reduced motion: a still row the visitor can scroll sideways. */
