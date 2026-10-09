@@ -26,7 +26,7 @@ export default function Careers() {
       <PageHero
         title={<>Build your career in<br />precision engineering</>}
         copy="Explore career paths across engineering, manufacturing, quality, supply chain and corporate functions."
-        image="hero-careers-v3"
+        image="homepage/careers-card"
       />
       <section className="ab-section">
         <div className="shell">
