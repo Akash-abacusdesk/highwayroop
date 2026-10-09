@@ -310,3 +310,10 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-intro-split img{width:100%;height:420px;object-fit:cover}
 @media(max-width:1050px){.ab-intro-split{grid-template-columns:1fr;gap:28px}.ab-intro-split img{height:320px}}
 @media(max-width:700px){.ab-intro-split{margin-bottom:32px}.ab-intro-split img{height:240px}}
+/* Card hover: same as the business-page capability cards (blue fill, white text, slight lift) */
+.ab-card:not(.has-slot),.ab-steps>div{position:relative;transition:background .25s,color .25s,transform .25s}
+.ab-card:not(.has-slot):hover,.ab-steps>div:hover{background:var(--blue);color:#fff;transform:translateY(-5px);box-shadow:none}
+.ab-card:not(.has-slot):hover :is(b,h3,p,li,.ab-more),.ab-steps>div:hover :is(b,h3,p){color:#fff}
+.ab-card:not(.has-slot):hover .ab-card-notes{border-top-color:rgba(255,255,255,.35)}
+.ab-card:not(.has-slot):hover .ab-doc-btn{border-color:#fff}
+@media(prefers-reduced-motion:reduce){.ab-card:not(.has-slot):hover,.ab-steps>div:hover{transform:none}}

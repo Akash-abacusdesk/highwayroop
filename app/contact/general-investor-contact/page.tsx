@@ -14,7 +14,7 @@ export default function GeneralInvestorContact() {
       <PageHero
         title={<>Corporate information,<br />directly requested</>}
         copy="General company communication and investor-facing information requests."
-        image="hero-investor-v2"
+        image="hero-investor-contact"
       />
       <SubNav />
 
@@ -38,6 +38,26 @@ export default function GeneralInvestorContact() {
       </section>
 
       <section className="ab-section ab-soft">
+        <div className="shell">
+          <SectionHead title={<>Contact the media team</>}>
+            For press releases, interviews and media coverage requests, reach our media contact directly.
+          </SectionHead>
+          <div className="ab-office">
+            <div>
+              <h3>Media contact</h3>
+              {/* No direct email/phone supplied for Shilpi yet, so this routes through the main company contact. */}
+              <p><strong>Shilpi Shukla</strong><br /><a href={`mailto:${EMAIL}?subject=Media%20Enquiry`}>{EMAIL}</a><br /><a href={PHONE.href}>{PHONE.label}</a></p>
+            </div>
+            <div>
+              <h3>Media enquiries</h3>
+              <p>Request press material, company information or an interview, or send any other media-related question.</p>
+              <a className="button primary" href={`mailto:${EMAIL}?subject=Media%20Enquiry`}>Email media team <span><ArrowRight size={18} aria-hidden="true" /></span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="ab-section">
         <div className="shell">
           <SectionHead title={<>Send your enquiry</>}>
             Select a request type so the message can be routed to the appropriate corporate team.
