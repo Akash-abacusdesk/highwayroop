@@ -1,9 +1,6 @@
-import { ArrowUpRight } from 'lucide-react'
-import Link from 'next/link'
 import ProductPortfolio from '@/components/inner/ProductPortfolio'
 import { BUSINESS_PAGES, type Block, type Split } from '@/components/inner/businessPages'
 import type { Card } from '@/components/inner/CardGrid'
-import { INDIA_VIEWBOX, PLANT_STATES } from '@/components/inner/indiaStates'
 import type { Business } from '@/components/about/data'
 import './business.css'
 
@@ -116,44 +113,6 @@ export default function BusinessSection({ biz }: { biz: Business }) {
       </section>
 
       {page.blocks.map((b, i) => <BlockSection key={b.title} block={b} soft={i % 2 === 0} flip={i % 2 === 1} />)}
-
-      <section id="locations" className="bz-section">
-        <div className="shell">
-          <div className="bz-loc">
-            <div className="bz-loc-copy">
-              <p className="bz-eyebrow">MANUFACTURING FOOTPRINT</p>
-              <h2>Locations</h2>
-              <p>{page.locations.text}</p>
-              <Link className="bz-link" href="/about/global-presence">
-                Explore our locations <ArrowUpRight size={18} aria-hidden="true" />
-              </Link>
-            </div>
-            <div className="bz-loc-panel">
-              <div className="bz-loc-text">
-                <span className="bz-loc-index">01 / INDIA</span>
-                <div className="bz-place">
-                  <span>MANUFACTURING REGIONS</span>
-                  <ul>{page.locations.states.map(s => <li key={s}>{s}</li>)}</ul>
-                </div>
-                <small>India operations · Global customer proximity</small>
-              </div>
-              <div className="bz-map">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/india-map.svg" alt="" aria-hidden="true" />
-                <svg viewBox={INDIA_VIEWBOX} role="img" aria-label={`Map of India highlighting ${page.locations.states.join(', ')}`}>
-                  {page.locations.states.map((s, i) => PLANT_STATES[s] && (
-                    <g key={s} style={{ '--d': `${i * 0.6}s` } as React.CSSProperties}>
-                      <path d={PLANT_STATES[s].d} />
-                      <circle className="ring" cx={PLANT_STATES[s].x} cy={PLANT_STATES[s].y} r="7" />
-                      <circle cx={PLANT_STATES[s].x} cy={PLANT_STATES[s].y} r="5" />
-                    </g>
-                  ))}
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

@@ -252,6 +252,7 @@ export default function HomepageEditor() {
                       <input
                         className="admin-input"
                         type="number"
+                        step="any"
                         value={stat.count}
                         onChange={e => setStat(i, { count: +e.target.value })}
                         style={{ marginBottom: 8 }}

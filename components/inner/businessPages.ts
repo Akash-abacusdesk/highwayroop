@@ -1,7 +1,7 @@
 import type { Card } from './CardGrid'
 
 // Business page content (Website Content Master, revised agency version). Rendered by BusinessSection in order:
-// overview → Technology & Capabilities (+ splits) → Products & Solutions (store/productsSlice.ts) → blocks → Locations.
+// overview → Technology & Capabilities (+ splits) → Products & Solutions (store/productsSlice.ts) → blocks.
 // ponytail: Drivetrain's opening sections weren't in the supplied master, so it keeps the earlier copy and steps.
 
 export type Split = { title: string; text: string; image: string; alt: string; bullets?: string[] }
@@ -14,7 +14,6 @@ export type BusinessPage = {
   capabilities: Card[]
   splits?: Split[]
   blocks: Block[]
-  locations: { text: string; states: string[] }
 }
 
 export const BUSINESS_PAGES: Record<string, BusinessPage> = {
@@ -30,14 +29,13 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
     splits: [
       { title: 'Forming and machining at industrial scale', image: 'driveline-forming-machining', alt: 'Operators at the crankshaft machining line on the plant floor',
         text: 'Hot and warm presses range from 600T to 2500T; cold forging presses range from 100T to 1000T. The presentation also lists 800+ CNC turning and turn-mill machines, 90+ VMCs, 40+ broaching machines, 25+ honing machines and 20 CNC grinding machines.' },
-      { title: 'Quality is part of the process', image: 'driveline-quality', alt: 'Engineer measuring a component with a height gauge on a surface plate',
-        text: 'Capabilities include advanced metrology, CMMs, gear testing, roundness and roughness measurement, material testing, functional testing and in-house calibration.' },
     ],
-    blocks: [],
-    locations: {
-      text: 'Drivetrain’s manufacturing footprint supports customer programmes across key automotive manufacturing regions in India, complemented by international warehousing and customer proximity.',
-      states: ['Haryana', 'Punjab', 'Maharashtra'],
-    },
+    blocks: [
+      { kind: 'process', title: 'Manufacturing', steps: ['Forging', 'Machining', 'Heat Treatment', 'Testing', 'Assembly'],
+        text: 'An integrated manufacturing ecosystem brings together forging, machining, heat treatment, tooling, testing and assembly, enabling greater process control across the production cycle.' },
+      { kind: 'split', title: 'Quality & Testing', image: 'driveline-quality', alt: 'Engineer measuring a component with a height gauge on a surface plate',
+        text: 'Quality is embedded across the manufacturing process through dimensional, material and functional validation. Capabilities include advanced metrology, CMMs, gear testing, roundness and roughness measurement, material testing, functional testing and in-house calibration.' },
+    ],
   },
 
   'steering-suspension': {
@@ -53,6 +51,8 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
       { title: 'Testing & Validation', text: 'Application-focused testing supports functional performance, durability and production consistency.' },
     ],
     blocks: [
+      { kind: 'process', title: 'Manufacturing', steps: ['Forging', 'Machining', 'Heat Treatment', 'Assembly', 'Testing'],
+        text: 'Steering & Suspension brings together complementary manufacturing processes across the component lifecycle. Our integrated approach supports control over critical manufacturing parameters while maintaining consistency through production.' },
       { kind: 'cards', title: 'Engineering for functional performance',
         text: 'The business combines manufacturing expertise with application-focused engineering to address the dimensional, material and functional requirements of safety-critical vehicle systems.',
         cards: [
@@ -64,13 +64,7 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
       { kind: 'split', title: 'Testing beyond measurement', image: 'quality-lab', alt: 'Engineer inspecting a machined component on a coordinate measuring machine',
         text: 'Testing capabilities extend beyond dimensional inspection to evaluate functional performance under demanding conditions.',
         bullets: ['Lash testing', 'Flex-torque testing', 'Online steering-link testing', 'Seven-step endurance testing', 'Metrology and dimensional inspection', 'Material testing'] },
-      { kind: 'process', title: 'Manufacturing', steps: ['Forging', 'Machining', 'Heat Treatment', 'Assembly', 'Testing'],
-        text: 'Steering & Suspension brings together complementary manufacturing processes across the component lifecycle. Our integrated approach supports control over critical manufacturing parameters while maintaining consistency through production.' },
     ],
-    locations: {
-      text: 'Steering & Suspension serves automotive programmes through its manufacturing footprint in India, supported by international warehousing and customer proximity.',
-      states: ['Haryana', 'Tamil Nadu'],
-    },
   },
 
   lightweighting: {
@@ -99,9 +93,5 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
       { kind: 'split', title: 'Built for evolving vehicle architectures', image: 'lightweighting-casting-cell', alt: 'Operator at the control panel of a robotic die-casting cell',
         text: 'Lightweighting capabilities support complex aluminium applications across established ICE platforms and emerging EV architectures, where component integration, geometry and weight efficiency are increasingly important.' },
     ],
-    locations: {
-      text: 'Lightweighting capabilities support customers through manufacturing operations in India, complemented by international customer proximity and warehousing.',
-      states: ['Karnataka', 'Tamil Nadu'],
-    },
   },
 }
