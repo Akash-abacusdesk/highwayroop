@@ -27,7 +27,7 @@ export default function People() {
       <PageHero
         title={<>People and<br />workplace safety</>}
         copy="Workforce, inclusion and occupational-health disclosures from the FY 2025-26 BRSR."
-        image="hero-people-careers-v2"
+        image="hero-people"
       />
       <SubNav />
       <section className="ab-section">
