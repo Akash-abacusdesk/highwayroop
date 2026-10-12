@@ -25,7 +25,7 @@ export default function NewsInsights() {
               <h2>Highway Roop completes acquisition of Chamundi Die Cast</h2>
               <p>
                 The acquisition adds aluminium die-casting and precision-machining capabilities to Highway Roop’s platform,
-                complementing its existing strengths in forging and machining across steering, transmission and powertrain
+                complementing its existing strengths in forging and machining across steering & suspension and drivetrain
                 applications.
               </p>
             </div>

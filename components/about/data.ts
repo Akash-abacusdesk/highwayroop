@@ -9,8 +9,8 @@ export const CEO_LINKEDIN = 'https://www.linkedin.com/in/dharmesh-arora/'
 
 // linkedin is left off where no profile could be matched to this person with confidence.
 export const LEADERS: { name: string; role: string; bio: string; linkedin?: string; image?: string }[] = [
-  { name: 'Ramanathan Iyer', role: 'BU Head (Steering)', bio: 'Business Unit leadership for Steering.', linkedin: 'https://www.linkedin.com/in/ramanathan-iyer-a5546616/', image: '/assets/leadership/ramanathan.webp' },
-  { name: 'Sunil Ailavadi', role: 'BU Head (Powertrain)', bio: 'Business Unit leadership for Powertrain.', linkedin: 'https://www.linkedin.com/in/sunil-ailavadi-34b23311/', image: '/assets/leadership/sunil-ailawadi.webp' },
+  { name: 'Ramanathan Iyer', role: 'BU Head (Steering & Suspension)', bio: 'Business Unit leadership for Steering & Suspension.', linkedin: 'https://www.linkedin.com/in/ramanathan-iyer-a5546616/', image: '/assets/leadership/ramanathan.webp' },
+  { name: 'Sunil Ailavadi', role: 'BU Head (Drivetrain)', bio: 'Business Unit leadership for Drivetrain.', linkedin: 'https://www.linkedin.com/in/sunil-ailavadi-34b23311/', image: '/assets/leadership/sunil-ailawadi.webp' },
   { name: 'Anirban Sanyal', role: 'CFO', bio: 'Finance leadership.', linkedin: 'https://www.linkedin.com/in/anirbansanyal1975', image: '/assets/leadership/anirban-cfo.webp' },
   { name: 'Sai Iyer', role: 'CMO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/sai-iyer-1615b65/', image: '/assets/leadership/sai-iyer-cmo.webp' },
   { name: 'Vinod Kr Singh', role: 'CHRO', bio: 'Human Resources leadership.', linkedin: 'https://www.linkedin.com/in/vinod-singh-1a58b922/', image: '/assets/leadership/vinod-chro.webp' },
@@ -20,8 +20,8 @@ export const LEADERS: { name: string; role: string; bio: string; linkedin?: stri
 ]
 
 export const MILESTONES = [
-  { year: '01', label: 'THE FOUNDATION', image: 'advanced-forging', title: 'Five decades of engineering heritage', text: 'Highway Industries and Roop Automotives build deep capabilities in precision automotive manufacturing, serving global OEM and Tier-1 customers.', tags: 'Forging · Machining · Powertrain · Steering · Suspension' },
-  { year: '02', label: 'BRINGING STRENGTHS TOGETHER', image: 'home-about', title: 'Building a broader automotive platform', text: 'Complementary capabilities across drivetrain, powertrain, steering and suspension come together to create a broader engineering and manufacturing platform.', tags: 'Highway Industries + Roop Automotives' },
+  { year: '01', label: 'THE FOUNDATION', image: 'advanced-forging', title: 'Five decades of engineering heritage', text: 'Highway Industries and Roop Automotives build deep capabilities in precision automotive manufacturing, serving global OEM and Tier-1 customers.', tags: 'Forging · Machining · Drivetrain · Steering & Suspension' },
+  { year: '02', label: 'BRINGING STRENGTHS TOGETHER', image: 'home-about', title: 'Building a broader automotive platform', text: 'Complementary capabilities across drivetrain and steering & suspension come together to create a broader engineering and manufacturing platform.', tags: 'Highway Industries + Roop Automotives' },
   { year: '03', label: 'HIGHWAY ROOP', image: 'journey-common-platform', title: 'A common platform takes shape', text: "With Carlyle supporting the group's next phase, the businesses begin their transition towards a unified Highway Roop identity, bringing together engineering, manufacturing and customer strengths across the group.", tags: 'One group. Complementary capabilities. A common direction.' },
   { year: '04', label: 'EXPANDING THE PLATFORM', image: 'journey-new-capabilities', title: 'Adding new capabilities', text: 'The platform expands its capabilities and footprint, strengthening its position across critical automotive systems and precision manufacturing.' },
   { year: '05', label: 'TODAY', image: 'journey-lightweighting', title: 'Lightweighting joins the journey', text: 'Chamundi Die-Cast adds aluminium die casting, tooling, precision machining, finishing and assembly, expanding the platform into lightweighting and strengthening its South India footprint.', tags: 'Forging + Machining + Aluminium Die Casting' },

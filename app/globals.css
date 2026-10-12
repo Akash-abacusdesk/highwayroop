@@ -29,6 +29,13 @@ a {
   color: inherit;
   text-decoration: none;
 }
+/* Form controls default to the system font; keep the site typeface everywhere. */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
 *,
 *::before,
 *::after {
@@ -5431,6 +5438,7 @@ footer img {
   }
   .corporate-cap-img {
     height: 100%;
+    aspect-ratio: auto;
     min-height: 180px;
   }
 }
@@ -5608,25 +5616,35 @@ footer img {
   }
 }
 
-/* Homepage "Trusted relationships" customer marquee: two rows scrolling in opposite directions, full-colour logos, pause on hover/focus. */
+/* Homepage "Trusted relationships" customer marquee (client option D): dark band, centred heading, two rows of logos on white tiles scrolling in opposite directions, pause on hover/focus. */
 .cust-section {
   overflow: hidden;
   padding-block: var(--section-space);
-  border-bottom: 1px solid var(--line);
-  background: #fff;
+  background: linear-gradient(135deg, #0d1b22, var(--ink) 55%, #173846);
+  color: #fff;
 }
 .cust-head {
-  margin-bottom: 26px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.cust-head::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 22px auto 0;
+  background: var(--red);
 }
 .cust-eyebrow {
   margin: 0 0 14px;
-  color: var(--blue);
+  color: #7fc3dc;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.14em;
 }
 .cust-head h2 {
-  margin: 0;
+  max-width: 18ch;
+  margin: 0 auto;
   font-weight: 500;
   font-size: clamp(30px, 3.6vw, 48px);
   line-height: 1.08;
@@ -5635,11 +5653,11 @@ footer img {
 .cust-marquee {
   position: relative;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 min(10vw, 160px), #000 calc(100% - min(10vw, 160px)), transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 min(10vw, 160px), #000 calc(100% - min(10vw, 160px)), transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 min(8vw, 120px), #000 calc(100% - min(8vw, 120px)), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 min(8vw, 120px), #000 calc(100% - min(8vw, 120px)), transparent);
 }
 .cust-marquee:focus-visible {
-  outline: 2px solid var(--blue);
+  outline: 2px solid #7fc3dc;
   outline-offset: 4px;
 }
 .cust-track {
@@ -5661,9 +5679,11 @@ footer img {
 .cust-card {
   display: grid;
   place-items: center;
-  width: 160px;
-  height: 72px;
-  padding: 12px 20px;
+  width: 190px;
+  height: 96px;
+  padding: 18px 24px;
+  border-radius: 10px;
+  background: #fff;
 }
 .cust-card img {
   width: 100%;
@@ -5688,19 +5708,19 @@ footer img {
   }
 }
 .cust-track + .cust-track {
-  margin-top: 8px;
+  margin-top: 16px;
 }
 .cust-track.reverse {
   animation-direction: reverse;
 }
 @media (max-width: 700px) {
   .cust-head {
-    margin-bottom: 18px;
+    margin-bottom: 28px;
   }
   .cust-card {
-    width: 120px;
-    height: 56px;
-    padding: 8px 14px;
+    width: 140px;
+    height: 72px;
+    padding: 12px 16px;
   }
   .cust-card span {
     font-size: 12px;
@@ -5717,4 +5737,9 @@ footer img {
   .cust-group[aria-hidden] {
     display: none;
   }
+}
+
+/* Stat cells: start from the top so numbers line up even when labels wrap to different line counts. */
+.stats-grid article {
+  justify-content: flex-start;
 }

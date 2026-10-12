@@ -34,7 +34,7 @@ const processContent: Record<StepKey, [string, string, string, string]> = {
     'Assembly & Finishing',
     'Controlled heat treatment, surface finishing and assembly complete the production journey.',
     '/assets/hero-precision.webp',
-    'Finished precision drivetrain and steering components',
+    'Finished precision drivetrain and steering & suspension components',
   ],
   '06': [
     'Testing & Validation',

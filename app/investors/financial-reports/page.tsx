@@ -26,7 +26,7 @@ export default function FinancialReports() {
             <article className="ab-report">
               <div className="ab-report-cover" aria-hidden="true"><span>HIGHWAY ROOP</span><strong>Financial<br />Report</strong><b>{REPORT.year}</b></div>
               <div>
-                <h3>Financial Report {REPORT.year}</h3>
+                <h3>Financial Report <span style={{ whiteSpace: 'nowrap' }}>{REPORT.year}</span></h3>
                 <p>Financial Year {REPORT.year}</p>
               </div>
               {REPORT.pdf
