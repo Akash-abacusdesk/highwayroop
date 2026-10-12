@@ -27,8 +27,9 @@ export default function LeadershipSection() {
               <span>MESSAGE FROM THE CEO</span>
               <h3>Dharmesh Arora</h3>
               <blockquote>
-                &ldquo;When an automaker chooses a component from Highway Roop, they are buying certainty. Certainty
-                that it will fit, perform and deliver consistency, shift after shift.&rdquo;
+                &ldquo;When a customer selects a component from Highway Roop, they&rsquo;re not just buying a part; they&rsquo;re buying
+                certainty. Certainty that it will fit right the first time, perform flawlessly, and deliver unshakeable
+                consistency, shift after shift, mile after mile.&rdquo;
               </blockquote>
               <a href="/about/leadership">
                 Meet our leadership <span><ArrowRight size={18} aria-hidden="true" /></span>
