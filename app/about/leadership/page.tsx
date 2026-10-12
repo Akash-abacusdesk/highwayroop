@@ -43,7 +43,6 @@ export default function Leadership() {
                 <div className="ab-leader-copy">
                   <h3>{l.name}</h3>
                   <p className="ab-role">{l.role}</p>
-                  <p className="ab-bio">{l.bio}</p>
                   {l.linkedin && (
                     <a className="ab-linkedin" href={l.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${l.name} on LinkedIn`}>in</a>
                   )}

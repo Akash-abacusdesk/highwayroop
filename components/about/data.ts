@@ -8,15 +8,15 @@ export const ABOUT_LINKS = [
 export const CEO_LINKEDIN = 'https://www.linkedin.com/in/dharmesh-arora/'
 
 // linkedin is left off where no profile could be matched to this person with confidence.
-export const LEADERS: { name: string; role: string; bio: string; linkedin?: string; image?: string }[] = [
-  { name: 'Ramanathan Iyer', role: 'BU Head (Steering & Suspension)', bio: 'Business Unit leadership for Steering & Suspension.', linkedin: 'https://www.linkedin.com/in/ramanathan-iyer-a5546616/', image: '/assets/leadership/ramanathan.webp' },
-  { name: 'Sunil Ailavadi', role: 'BU Head (Drivetrain)', bio: 'Business Unit leadership for Drivetrain.', linkedin: 'https://www.linkedin.com/in/sunil-ailavadi-34b23311/', image: '/assets/leadership/sunil-ailawadi.webp' },
-  { name: 'Anirban Sanyal', role: 'CFO', bio: 'Finance leadership.', linkedin: 'https://www.linkedin.com/in/anirbansanyal1975', image: '/assets/leadership/anirban-cfo.webp' },
-  { name: 'Sai Iyer', role: 'CMO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/sai-iyer-1615b65/', image: '/assets/leadership/sai-iyer-cmo.webp' },
-  { name: 'Vinod Kr Singh', role: 'CHRO', bio: 'Human Resources leadership.', linkedin: 'https://www.linkedin.com/in/vinod-singh-1a58b922/', image: '/assets/leadership/vinod-chro.webp' },
-  { name: 'Ajay Mrig', role: 'CPO', bio: 'Corporate functional leadership.', linkedin: 'https://www.linkedin.com/in/ajay-m-74445425/', image: '/assets/leadership/ajay-cpo.webp' },
-  { name: 'Piyush', role: 'Chief Compliance Officer', bio: 'Compliance leadership.', linkedin: 'https://www.linkedin.com/in/piyush-asija-b8884817', image: '/assets/leadership/piyush-cco.webp' },
-  { name: 'Prajod', role: 'VP Technology', bio: 'Technology leadership.', linkedin: 'https://www.linkedin.com/in/prajod-ayyappath-794427b/', image: '/assets/leadership/prajod-vp-technology.webp' },
+export const LEADERS: { name: string; role: string; linkedin?: string; image?: string }[] = [
+  { name: 'Ramanathan Iyer', role: 'Business Unit Head – Steering & Suspension', linkedin: 'https://www.linkedin.com/in/ramanathan-iyer-a5546616/', image: '/assets/leadership/ramanathan.webp' },
+  { name: 'Sunil Ailavadi', role: 'Business Unit Head – Drivetrain', linkedin: 'https://www.linkedin.com/in/sunil-ailavadi-34b23311/', image: '/assets/leadership/sunil-ailawadi.webp' },
+  { name: 'Anirban Sanyal', role: 'Chief Financial Officer', linkedin: 'https://www.linkedin.com/in/anirbansanyal1975', image: '/assets/leadership/anirban-cfo.webp' },
+  { name: 'Sai Iyer', role: 'Chief Marketing Officer', linkedin: 'https://www.linkedin.com/in/sai-iyer-1615b65/', image: '/assets/leadership/sai-iyer-cmo.webp' },
+  { name: 'Vinod Kr Singh', role: 'Chief Human Resources Officer', linkedin: 'https://www.linkedin.com/in/vinod-singh-1a58b922/', image: '/assets/leadership/vinod-chro.webp' },
+  { name: 'Ajay Mrig', role: 'Chief Procurement Officer', linkedin: 'https://www.linkedin.com/in/ajay-m-74445425/', image: '/assets/leadership/ajay-cpo.webp' },
+  { name: 'Prajod', role: 'Vice President – Technology', linkedin: 'https://www.linkedin.com/in/prajod-ayyappath-794427b/', image: '/assets/leadership/prajod-vp-technology.webp' },
+  { name: 'Piyush', role: 'Chief Compliance Officer', linkedin: 'https://www.linkedin.com/in/piyush-asija-b8884817', image: '/assets/leadership/piyush-cco.webp' },
 ]
 
 export const MILESTONES = [
