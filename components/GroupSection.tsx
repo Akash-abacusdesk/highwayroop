@@ -27,7 +27,7 @@ export default function GroupSection() {
                 loading="lazy"
                 decoding="async"
                 src={b.image}
-                srcSet={`${b.image.replace(".webp", "-800.webp")} 800w, ${b.image} 2128w`}
+                srcSet={`${b.image.replace(".webp", "-800.webp")} 800w, ${b.image.replace(".webp", "-1200.webp")} 1200w, ${b.image} 2128w`}
                 sizes="(max-width:700px) 180vw, (max-width:1050px) 90vw, 60vw"
                 alt={b.name}
                 width={2128}

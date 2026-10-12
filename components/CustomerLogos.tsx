@@ -73,7 +73,7 @@ function Group({ items, hidden }: { items: typeof CUSTOMERS; hidden?: boolean })
         <li key={c.name} className="cust-card">
           {c.logo ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={`/assets/customers/${c.logo}.webp`} alt={hidden ? '' : c.name} loading="lazy" decoding="async" width={600} height={350} />
+            <img src={`/assets/customers/${c.logo}.webp`} alt={hidden ? '' : c.name} loading="lazy" decoding="async" width={300} height={175} />
           ) : (
             <span>{c.name}</span>
           )}
@@ -90,13 +90,15 @@ export default function CustomerLogos() {
         <p className="cust-eyebrow">TRUSTED RELATIONSHIPS</p>
         <h2 id="cust-title">Chosen by leading automotive partners</h2>
       </div>
-      <div className="cust-marquee" tabIndex={0} aria-label="Customer logos">
-        {ROWS.map((row, i) => (
-          <div key={i} className={`cust-track${i ? ' reverse' : ''}`} style={{ '--cust-duration': `${row.length * 3.4}s` } as React.CSSProperties}>
-            <Group items={row} />
-            <Group items={row} hidden />
-          </div>
-        ))}
+      <div className="shell">
+        <div className="cust-marquee" tabIndex={0} aria-label="Customer logos">
+          {ROWS.map((row, i) => (
+            <div key={i} className={`cust-track${i ? ' reverse' : ''}`} style={{ '--cust-duration': `${row.length * 3.4}s` } as React.CSSProperties}>
+              <Group items={row} />
+              <Group items={row} hidden />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
