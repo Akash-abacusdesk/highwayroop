@@ -5,7 +5,7 @@ export default function LeadershipSection() {
       <div className="shell">
         <div className="section-head reveal">
           <div className="section-kicker">
-            <span>04</span>
+            <span>02</span>
             <p>Leadership</p>
           </div>
           <div>
