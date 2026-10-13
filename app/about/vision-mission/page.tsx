@@ -22,7 +22,7 @@ const VALUES = [
 
 export default function VisionMission() {
   return (
-    <>
+    <div className="vm-page">
       <PageHero
         title={<>Vision &amp; Mission</>}
         copy="Driven by precision. United by purpose. Built for absolute reliability."
@@ -41,7 +41,7 @@ export default function VisionMission() {
             </p>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img loading="lazy" decoding="async" srcSet="/assets/about/integrated-capabilities-800.webp 800w, /assets/about/integrated-capabilities.webp 1672w" sizes="(max-width:1050px) 100vw, 520px" src="/assets/about/integrated-capabilities.webp" alt="" />
+          <img loading="lazy" decoding="async" srcSet="/assets/about/mission-assembly-800.webp 800w, /assets/about/mission-assembly.webp 1672w" sizes="(max-width:1050px) 100vw, 640px" src="/assets/about/mission-assembly.webp" alt="Operators working at a component assembly line" />
         </div>
       </section>
 
@@ -66,6 +66,6 @@ export default function VisionMission() {
           <CardGrid cards={VALUES} />
         </div>
       </section>
-    </>
+    </div>
   )
 }
