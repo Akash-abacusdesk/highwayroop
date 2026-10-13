@@ -39,7 +39,7 @@ export default function GeneralInvestorContact() {
         </div>
       </section>
 
-      <section className="ab-section ab-soft">
+      <section className="ab-section ab-soft" id="media">
         <div className="shell">
           <SectionHead title={<>Contact the media team</>}>
             For press releases, interviews and media coverage requests, reach our media contact directly.

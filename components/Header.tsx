@@ -52,7 +52,7 @@ const MENUS: Menu[] = [
     intro: 'Reach our offices, plants and business teams.',
     cols: [
       { title: 'OFFICES & PLANTS', links: [['/contact/corporate-office', 'Corporate Office'], ['/about/global-presence', 'Manufacturing Locations']] },
-      { title: 'GET IN TOUCH', links: [['/contact/business-enquiries', 'Business Enquiries'], ['/contact/general-investor-contact', 'General / Investor Contact']] },
+      { title: 'GET IN TOUCH', links: [['/contact/business-enquiries', 'Business Enquiries'], ['/contact/general-investor-contact', 'General / Investor Contact'], ['/contact/general-investor-contact#media', 'Media Contact']] },
     ],
   },
 ]
