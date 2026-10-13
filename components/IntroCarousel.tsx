@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react'
 
 // Crossfading image carousel for the homepage "Who we are" intro: autoplays every 3.5s, dots jump to a slide.
 const SLIDES = [
+  { src: 'home-intro-die-casting', alt: 'Production cell with machined components lined up beside the machine' },
+  { src: 'home-intro-cold-forging', alt: 'Line of forging presses on the shop floor' },
+  { src: 'home-intro-machining', alt: 'Operator running a robotic machining cell' },
   { src: 'home-intro-1', alt: 'Operators assembling machined components on a Highway Roop production line' },
-  { src: 'home-intro-2', alt: 'Operator pressing components on an assembly fixture' },
   { src: 'home-intro-3', alt: 'Engineer inspecting a shaft on a Zeiss coordinate measuring machine' },
 ]
 
