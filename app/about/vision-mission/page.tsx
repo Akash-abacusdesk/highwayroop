@@ -22,7 +22,7 @@ const VALUES = [
 
 export default function VisionMission() {
   return (
-    <div className="vm-page">
+    <>
       <PageHero
         title={<>Vision &amp; Mission</>}
         copy="Driven by precision. United by purpose. Built for absolute reliability."
@@ -66,6 +66,6 @@ export default function VisionMission() {
           <CardGrid cards={VALUES} />
         </div>
       </section>
-    </div>
+    </>
   )
 }
