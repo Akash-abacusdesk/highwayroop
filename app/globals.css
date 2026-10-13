@@ -870,7 +870,7 @@ footer img,
   color: #d4e2e8;
 }
 .contact {
-  background: #102a38;
+  background: var(--red);
   color: white;
   padding: 95px 0;
 }
