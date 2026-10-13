@@ -166,7 +166,7 @@ export default function GlobalSection() {
       <div className="shell global-grid">
         <div className="global-copy reveal">
           <div className="section-kicker">
-            <span>03</span>
+            <span>02</span>
             <p>Global presence</p>
           </div>
           <h2>A footprint designed for global customer needs</h2>

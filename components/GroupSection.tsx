@@ -7,7 +7,7 @@ export default function GroupSection() {
       <div className="shell">
         <div className="section-head reveal">
           <div className="section-kicker">
-            <span>02</span>
+            <span>03</span>
             <p>Our businesses</p>
           </div>
           <div>

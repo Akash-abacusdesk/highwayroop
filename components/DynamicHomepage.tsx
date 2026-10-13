@@ -32,8 +32,8 @@ export default function DynamicHomepage({ initial }: { initial: HomepageContent 
       <ProofStats />
       <CustomerLogos />
       <IntroSection content={content.intro} />
-      <GroupSection />
       <GlobalSection />
+      <GroupSection />
       <LeadershipSection />
       {/* Customers: no section built yet */}
       <SustainabilitySection />
