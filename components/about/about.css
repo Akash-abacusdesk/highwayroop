@@ -350,3 +350,9 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 @media(max-width:767px){.ab-profile-body{grid-template-columns:1fr}.ab-profile-body>img{width:min(200px,100%);height:auto;aspect-ratio:1}}
 .ab-board-name{display:block;font-size:21px;font-weight:500}
 html:has(.ab-profile[open]){overflow:hidden}
+.ab-split .ab-label{display:block;margin-bottom:18px;color:var(--red)}
+.ab-dark .ab-split .ab-label{color:#9bc9dc}
+.vm-mission{grid-template-columns:.9fr 1.1fr}
+.vm-mission img{height:460px}
+@media(max-width:1050px){.vm-mission{grid-template-columns:1fr}.vm-mission img{height:320px}}
+@media(max-width:700px){.vm-mission img{height:240px}}

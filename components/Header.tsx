@@ -17,7 +17,7 @@ const MENUS: Menu[] = [
     label: 'About', href: '/about',
     intro: 'Scale, legacy and the leadership steering Highway Roop worldwide.',
     cols: [
-      { title: 'ABOUT HIGHWAY ROOP', links: [['/about', 'Overview'], ['/about/our-journey', 'Our Journey']] },
+      { title: 'ABOUT HIGHWAY ROOP', links: [['/about', 'Overview'], ['/about/our-journey', 'Our Journey'], ['/about/vision-mission', 'Vision & Mission']] },
       { title: 'PEOPLE & REACH', links: [['/about/leadership', 'Leadership'], ['/about/global-presence', 'Global Presence']] },
     ],
   },

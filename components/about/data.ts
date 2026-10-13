@@ -1,6 +1,7 @@
 export const ABOUT_LINKS = [
   { href: '/about', label: 'Overview' },
   { href: '/about/our-journey', label: 'Our Journey' },
+  { href: '/about/vision-mission', label: 'Vision & Mission' },
   { href: '/about/leadership', label: 'Leadership' },
   { href: '/about/global-presence', label: 'Global Presence' },
 ]
