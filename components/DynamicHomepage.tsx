@@ -30,7 +30,6 @@ export default function DynamicHomepage({ initial }: { initial: HomepageContent 
     <>
       <HeroCarousel slides={content.hero.slides} />
       <ProofStats />
-      <CustomerLogos />
       <IntroSection content={content.intro} />
       <GlobalSection />
       <GroupSection />
@@ -39,6 +38,7 @@ export default function DynamicHomepage({ initial }: { initial: HomepageContent 
       <SustainabilitySection />
       <NewsSection />
       <CorporateSection /> {/* Investors */}
+      <CustomerLogos />
       <CareersSection />
       <ContactSection content={content.contact} />
 

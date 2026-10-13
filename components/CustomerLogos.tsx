@@ -1,4 +1,4 @@
-// "Trusted relationships" customer strip under the homepage stats band (design: highway-roop-logo-slider-development).
+// Customer logo strip below the homepage corporate overview (design: highway-roop-logo-slider-development).
 // Customers with supplied artwork show their logo (public/assets/customers/<slug>.webp); the rest show a wordmark
 // card until a logo is supplied. Add a logo by dropping the file in and setting `logo` on that entry.
 const CUSTOMERS: { name: string; logo?: string }[] = [
@@ -87,8 +87,7 @@ export default function CustomerLogos() {
   return (
     <section className="cust-section" aria-labelledby="cust-title">
       <div className="shell cust-head">
-        <p className="cust-eyebrow">TRUSTED RELATIONSHIPS</p>
-        <h2 id="cust-title">Chosen by leading automotive partners</h2>
+        <h2 id="cust-title">Chosen by leading industry partners</h2>
       </div>
       <div className="shell">
         <div className="cust-marquee" tabIndex={0} aria-label="Customer logos">
