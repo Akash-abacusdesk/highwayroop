@@ -6,12 +6,14 @@ import CardGrid from '@/components/inner/CardGrid'
 
 export const metadata: Metadata = { title: 'Governance | Highway Roop' }
 
-const slot = { slot: 'CERTIFICATE', action: 'View certificate' }
+const cert = (id: string) => ({ slot: 'CERTIFICATE', action: 'View certificate', image: `/assets/certificates/${id}.webp`, file: `/assets/certificates/${id}.pdf` })
 const CERTS = [
-  { tag: 'QUALITY', title: 'IATF 16949', text: 'Automotive quality management.', ...slot },
-  { tag: 'ENVIRONMENT', title: 'ISO 14001', text: 'Environmental management.', ...slot },
-  { tag: 'HEALTH & SAFETY', title: 'ISO 45001', text: 'Occupational health and safety.', ...slot },
-  { tag: 'INFORMATION SECURITY', title: 'ISO 27001 / TISAX', text: 'Information security standards.', ...slot },
+  { tag: 'AUTOMOTIVE QUALITY', title: 'IATF 16949:2016', text: 'Automotive quality management system, certified by BSI.', ...cert('iatf-16949') },
+  { tag: 'QUALITY', title: 'ISO 9001:2015', text: 'Quality management system, certified by BSI.', ...cert('iso-9001') },
+  { tag: 'ENVIRONMENT', title: 'ISO 14001:2015', text: 'Environmental management system, certified by Intertek.', ...cert('iso-14001') },
+  { tag: 'HEALTH & SAFETY', title: 'ISO 45001:2018', text: 'Occupational health and safety management system, certified by Intertek.', ...cert('iso-45001') },
+  { tag: 'ENERGY', title: 'ISO 50001:2018', text: 'Energy management system, certified by Intertek.', ...cert('iso-50001') },
+  { tag: 'INFORMATION SECURITY', title: 'ISO/IEC 27001:2022', text: 'Information security management system, certified by DNV.', ...cert('iso-27001') },
 ]
 
 const GOVERNANCE = [

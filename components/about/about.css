@@ -357,3 +357,7 @@ html:has(.ab-profile[open]){overflow:hidden}
 @media(max-width:1050px){.vm-mission{grid-template-columns:1fr}.vm-mission img{height:320px}}
 @media(max-width:700px){.vm-mission img{height:240px}}
 .vm-page .shell{max-width:1280px}
+.ab-slot.has-image{padding:16px;background:#fff}
+.ab-slot.has-image img{width:100%;height:100%;max-height:300px;object-fit:contain}
+a.ab-doc-btn{display:inline-block}
+a.ab-doc-btn:hover{background:#102a38;color:#fff}
