@@ -33,7 +33,7 @@ export default function VisionMission() {
       <section className="ab-section">
         <div className="shell ab-split vm-mission">
           <div>
-            <span className="ab-label">MISSION STATEMENT</span>
+            <span className="ab-label">MISSION</span>
             <h2 className="ab-heading">Engineering confidence into every movement</h2>
             <p>
               We partner with the mobility industry to deliver superior torque performance and uncompromising safety through
@@ -48,7 +48,7 @@ export default function VisionMission() {
       <section className="ab-section ab-dark" id="vision">
         <div className="shell ab-split">
           <div>
-            <span className="ab-label">VISION STATEMENT</span>
+            <span className="ab-label">VISION</span>
             <h2 className="ab-heading">Absolute reliability. <em>For every journey</em></h2>
             <p>We envision a world where mobility is synonymous with absolute reliability, powered by our torque and safety solutions.</p>
           </div>
