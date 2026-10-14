@@ -5,13 +5,14 @@ import GlobalSection from '@/components/GlobalSection'
 
 export const metadata: Metadata = { title: 'Manufacturing Locations | Highway Roop' }
 
+// Same globe as About > Global Presence, with its own banner.
 export default function ManufacturingLocations() {
   return (
     <>
       <PageHero
         title={<>Manufacturing locations<br />Across India</>}
         copy="Our plants and international warehouse network, on the globe."
-        image="about/global-presence"
+        image="hero-manufacturing-locations"
       />
       <SubNav />
       <GlobalSection />

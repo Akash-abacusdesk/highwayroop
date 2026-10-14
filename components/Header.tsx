@@ -2,6 +2,7 @@
 
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import { searchSite } from './siteSearch'
 import { BUSINESSES } from './about/data'
 import { Fragment, useState, useEffect, useRef, useCallback } from 'react'
 
@@ -63,7 +64,7 @@ export default function Header() {
   const menu = MENUS[active ?? 0]
   const [mobileOpen, setMobileOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchStatus, setSearchStatus] = useState('')
+  const [searchOpen, setSearchOpen] = useState(false)
   const megaMenuRef = useRef<HTMLDivElement>(null)
   const megaTriggerRef = useRef<HTMLElement>(null)
 
@@ -109,39 +110,22 @@ export default function Header() {
     document.body.classList.toggle('menu-open', mobileOpen)
   }, [mobileOpen])
 
-  const handleSearch = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault()
-      const query = searchQuery.trim().toLowerCase()
-      if (!query) {
-        setSearchStatus('Enter a topic to search.')
-        return
-      }
-      const sections = [...document.querySelectorAll('main > section')]
-      const headingMatch = sections.find(section =>
-        [...section.querySelectorAll('h1,h2,h3')].some(h =>
-          h.textContent?.toLowerCase().includes(query)
-        )
-      )
-      const match = headingMatch || sections.find(s => s.textContent?.toLowerCase().includes(query))
-      if (!match) {
-        setSearchStatus(`No section found for "${searchQuery.trim()}".`)
-        return
-      }
-      const heading = match.querySelector('h1,h2,h3')
-      const sectionName =
-        heading
-          ? heading.textContent?.trim().replace(/\s+/g, ' ').replace(/[.!?]+$/, '')
-          : 'matching section'
-      setSearchStatus(`Showing ${sectionName}.`)
-      setMobileOpen(false)
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      match.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' })
-      match.classList.remove('search-match')
-      requestAnimationFrame(() => match.classList.add('search-match'))
-      setTimeout(() => match.classList.remove('search-match'), 1800)
-    },
-    [searchQuery]
+  // Click anywhere outside the search box to dismiss the results.
+  useEffect(() => {
+    const off = (e: MouseEvent) => { if (!(e.target as Element).closest('.site-search')) setSearchOpen(false) }
+    document.addEventListener('click', off)
+    return () => document.removeEventListener('click', off)
+  }, [])
+  // Results update as you type; nothing navigates until a result is clicked.
+  const searchResults = searchQuery.trim() ? searchSite(searchQuery) : []
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => { e.preventDefault(); setSearchOpen(true) }
+  const closeResults = () => { setSearchOpen(false); setMobileOpen(false) }
+  const searchOut = searchOpen && searchQuery.trim() && (
+    searchResults.length
+      ? searchResults.map(r => (
+          <Link key={r.href} href={r.href} className="search-result" onClick={closeResults}>{r.title}</Link>
+        ))
+      : `No results for "${searchQuery.trim()}".`
   )
 
   const mobileLinks: [string, string][] = [
@@ -171,13 +155,14 @@ export default function Header() {
               placeholder="Search the site"
               autoComplete="off"
               value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
+              onChange={e => { setSearchQuery(e.target.value); setSearchOpen(true) }}
+              onKeyDown={e => e.key === 'Escape' && setSearchOpen(false)}
             />
             <button type="submit" aria-label="Search">
               Search
             </button>
             <span className="search-status" role="status" aria-live="polite">
-              {searchStatus}
+              {searchOut}
             </span>
           </form>
         </div>
@@ -300,13 +285,14 @@ export default function Header() {
             placeholder="Search the site"
             autoComplete="off"
             value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
+            onChange={e => { setSearchQuery(e.target.value); setSearchOpen(true) }}
+            onKeyDown={e => e.key === 'Escape' && setSearchOpen(false)}
           />
           <button type="submit" aria-label="Search">
             Search
           </button>
           <span className="search-status" role="status" aria-live="polite">
-            {searchStatus}
+            {searchOut}
           </span>
         </form>
         {mobileLinks.map(([href, label]) => (

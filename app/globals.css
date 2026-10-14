@@ -5760,6 +5760,6 @@ footer img {
   color: #102a38;
 }
 
-.hero-slide-three .hero-bg {
-  object-position: left center;
-}
+.search-result{display:block;padding:7px 0;border-top:1px solid #e3ecef;color:var(--ink);font-size:12px;font-weight:600}
+.search-result:first-child{border-top:0}
+.search-result:hover{color:#CB100A}
