@@ -320,7 +320,7 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 .ab-tabs button[aria-selected="true"]{background:#102a38;color:#fff}
 .ab-tabs button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
 .ab-leader-photo img[src*="/board/"]{object-fit:cover}
-.ab-board-card{display:block;width:100%;padding:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.ab-board-card{display:flex;flex-direction:column;justify-content:flex-start;width:100%;padding:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
 .ab-board-card .ab-leader-photo{display:grid}
 .ab-board-card .ab-leader-copy,.ab-board-card .ab-role{display:block}
 .ab-board-card:focus-visible{outline:2px solid var(--red);outline-offset:3px}
@@ -390,4 +390,4 @@ a.ab-doc-btn:hover{background:#102a38;color:#fff}
 .vm-values dd{margin:6px 0 0;color:var(--muted);font-size:15px;line-height:1.55}
 .vm{padding-bottom:40px}
 @media(max-width:900px){.vm-row{grid-template-columns:minmax(0,1fr);gap:20px;padding-block:48px}.vm-head{padding-block:112px 40px}}
-@media(max-width:700px){.vm-values{grid-template-columns:1fr}.vm-head p{font-size:16px}}
+@media(max-width:700px){.vm-values{grid-template-columns:1fr}.vm-head p{font-size:16px}}@media(min-width:1051px){.ab-leaders:has(.ab-board-card){grid-template-columns:repeat(4,1fr);gap:18px}.ab-board-card .ab-leader-copy{padding:18px}.ab-board-name{font-size:18px}}
