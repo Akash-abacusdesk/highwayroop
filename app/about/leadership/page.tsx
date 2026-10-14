@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import '@/components/about/about.css'
 import PageHero from '@/components/about/PageHero'
 import SubNav from '@/components/about/SubNav'
 import SectionHead from '@/components/about/SectionHead'
@@ -17,11 +18,6 @@ export default function Leadership() {
         title={<>Leadership grounded in<br />operational discipline</>}
         copy="Board oversight, business-unit leadership and corporate functions aligned behind one integrated platform."
         image="hero-leadership"
-        caption={<>
-          <span className="ab-label">CHIEF EXECUTIVE OFFICER</span>
-          <strong>Dharmesh Arora</strong>
-          <a className="ab-linkedin" href={CEO_LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="Dharmesh Arora on LinkedIn">in</a>
-        </>}
       />
       <SubNav />
 
@@ -39,6 +35,16 @@ export default function Leadership() {
                 Leadership across business units, finance, people, procurement, marketing, technology, compliance, strategy
                 and manufacturing excellence.
               </SectionHead>
+              <div className="ab-ceo">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img loading="lazy" decoding="async" src="/assets/dharmesh-arora-ceo.webp" alt="Dharmesh Arora" />
+                <div className="ab-ceo-copy">
+                  <span className="ab-label">CHIEF EXECUTIVE OFFICER</span>
+                  <h2>Dharmesh Arora</h2>
+                  <p>CEO, Highway Roop Precision Technologies Ltd.</p>
+                  <a className="ab-linkedin" href={CEO_LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="Dharmesh Arora on LinkedIn">in</a>
+                </div>
+              </div>
               <div className="ab-leaders">
                 {LEADERS.map(l => (
                   <article className="ab-leader" key={l.name}>
