@@ -338,10 +338,6 @@ a.ab-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);position:rel
 html:has(.ab-profile[open]){overflow:hidden}
 .ab-split .ab-label{display:block;margin-bottom:18px;color:var(--red)}
 .ab-dark .ab-split .ab-label{color:#9bc9dc}
-.vm-mission{grid-template-columns:.9fr 1.1fr}
-.vm-mission img{height:460px}
-@media(max-width:1050px){.vm-mission{grid-template-columns:1fr}.vm-mission img{height:320px}}
-@media(max-width:700px){.vm-mission img{height:240px}}
 .ab-slot.has-image{padding:16px;background:#fff}
 .ab-slot.has-image img{width:100%;height:100%;max-height:300px;object-fit:contain}
 a.ab-doc-btn{display:inline-block}
@@ -379,3 +375,19 @@ a.ab-doc-btn:hover{background:#102a38;color:#fff}
   .rm-track .net-zero small{grid-column:1/-1}
   .rm-track .net-zero i{left:-14px}
 }
+.vm-head{padding-block:168px 56px}
+.vm-head h1{margin:0;font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1.05;letter-spacing:-.04em}
+.vm-head p{margin:20px 0 0;max-width:46ch;color:var(--muted);font-size:18px;line-height:1.55}
+.vm-row{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;padding-block:72px;border-top:1px solid var(--line)}
+.vm-row h2{margin:0;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.vm-row h2 b{display:block;margin-bottom:10px;font-size:13px;color:var(--red);letter-spacing:.18em}
+.vm-statement{margin:0;max-width:20ch;font-size:clamp(30px,3.6vw,50px);font-weight:500;line-height:1.1;letter-spacing:-.035em}
+.vm-body{margin:24px 0 0;max-width:62ch;color:var(--muted);font-size:17px;line-height:1.7}
+.vm-pillars{display:flex;gap:12px 36px;flex-wrap:wrap;margin:36px 0 0;padding:0;list-style:none;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.vm-values{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;margin:44px 0 0}
+.vm-values div{padding:20px 0;border-top:1px solid var(--line)}
+.vm-values dt{font-size:20px;font-weight:500;letter-spacing:-.02em}
+.vm-values dd{margin:6px 0 0;color:var(--muted);font-size:15px;line-height:1.55}
+.vm{padding-bottom:40px}
+@media(max-width:900px){.vm-row{grid-template-columns:minmax(0,1fr);gap:20px;padding-block:48px}.vm-head{padding-block:112px 40px}}
+@media(max-width:700px){.vm-values{grid-template-columns:1fr}.vm-head p{font-size:16px}}

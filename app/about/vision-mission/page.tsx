@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
-import PageHero from '@/components/about/PageHero'
+import '@/components/about/about.css'
 import SubNav from '@/components/about/SubNav'
-import SectionHead from '@/components/about/SectionHead'
-import CardGrid from '@/components/inner/CardGrid'
 
 export const metadata: Metadata = {
   title: 'Vision & Mission | Highway Roop',
@@ -12,60 +10,58 @@ export const metadata: Metadata = {
 const PILLARS = ['Torque', 'Safety', 'Reliability']
 
 const VALUES = [
-  { title: 'Transparency', text: 'Openness and honesty for shared success' },
-  { title: 'Trust', text: 'Empower ownership without micromanagement' },
-  { title: 'Teamwork', text: 'Combine diversity to achieve more' },
-  { title: 'Passion', text: 'Relentless dedication to achieving our goals' },
-  { title: 'Performance', text: 'Focused on results and high-quality outcomes' },
-  { title: 'Partnership', text: 'Sustainable, long-term growth' },
+  ['Transparency', 'Openness and honesty for shared success'],
+  ['Trust', 'Empower ownership without micromanagement'],
+  ['Teamwork', 'Combine diversity to achieve more'],
+  ['Passion', 'Relentless dedication to achieving our goals'],
+  ['Performance', 'Focused on results and high-quality outcomes'],
+  ['Partnership', 'Sustainable, long-term growth'],
 ]
 
 export default function VisionMission() {
   return (
     <>
-      <PageHero
-        title={<>Vision &amp; Mission</>}
-        copy="Driven by precision. United by purpose. Built for absolute reliability."
-        image="about/about-banner"
-      />
+      <header className="vm-head">
+        <div className="shell">
+          <div className="ab-redline" />
+          <h1>Vision &amp; Mission</h1>
+          <p>Driven by precision. United by purpose. Built for absolute reliability.</p>
+        </div>
+      </header>
       <SubNav />
 
-      <section className="ab-section">
-        <div className="shell ab-split vm-mission">
+      <main className="vm">
+        <section className="shell vm-row">
+          <h2><b>01</b>Mission</h2>
           <div>
-            <span className="ab-label">MISSION</span>
-            <h2 className="ab-heading">Engineering confidence into every movement</h2>
-            <p>
+            <p className="vm-statement">Engineering confidence into every movement.</p>
+            <p className="vm-body">
               We partner with the mobility industry to deliver superior torque performance and uncompromising safety through
               precision-engineered solutions, harnessing technology, operational excellence and enduring relationships.
             </p>
           </div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img loading="lazy" decoding="async" srcSet="/assets/about/mission-assembly-800.webp 800w, /assets/about/mission-assembly.webp 1672w" sizes="(max-width:1050px) 100vw, 640px" src="/assets/about/mission-assembly.webp" alt="Operators working at a component assembly line" />
-        </div>
-      </section>
+        </section>
 
-      <section className="ab-section ab-dark" id="vision">
-        <div className="shell ab-split">
+        <section className="shell vm-row" id="vision">
+          <h2><b>02</b>Vision</h2>
           <div>
-            <span className="ab-label">VISION</span>
-            <h2 className="ab-heading">Absolute reliability. <em>For every journey</em></h2>
-            <p>We envision a world where mobility is synonymous with absolute reliability, powered by our torque and safety solutions.</p>
+            <p className="vm-statement">Absolute reliability, for every journey.</p>
+            <p className="vm-body">We envision a world where mobility is synonymous with absolute reliability, powered by our torque and safety solutions.</p>
+            <ul className="vm-pillars">{PILLARS.map(p => <li key={p}>{p}</li>)}</ul>
           </div>
-          <div className="ab-values">
-            {PILLARS.map((p, i) => <div key={p}><strong>0{i + 1}</strong><span>{p}</span></div>)}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="ab-section">
-        <div className="shell">
-          <SectionHead title={<>The principles that move us</>}>
-            Our 3T 3P values: three Ts and three Ps that shape how we work with each other, our customers and our partners.
-          </SectionHead>
-          <CardGrid cards={VALUES} />
-        </div>
-      </section>
+        <section className="shell vm-row">
+          <h2><b>03</b>Values</h2>
+          <div>
+            <p className="vm-statement">The 3T 3P principles that move us.</p>
+            <p className="vm-body">Three Ts and three Ps that shape how we work with each other, our customers and our partners.</p>
+            <dl className="vm-values">
+              {VALUES.map(([t, d]) => <div key={t}><dt>{t}</dt><dd>{d}</dd></div>)}
+            </dl>
+          </div>
+        </section>
+      </main>
     </>
   )
 }
