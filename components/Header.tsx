@@ -51,8 +51,8 @@ const MENUS: Menu[] = [
     label: 'Contact', href: '/contact/corporate-office',
     intro: 'Reach our offices, plants and business teams.',
     cols: [
-      { title: 'OFFICES & PLANTS', links: [['/contact/corporate-office', 'Corporate Office'], ['/about/global-presence', 'Manufacturing Locations']] },
-      { title: 'GET IN TOUCH', links: [['/contact/business-enquiries', 'Business Enquiries'], ['/contact/general-investor-contact', 'General / Investor Contact'], ['/contact/general-investor-contact#media', 'Media Contact']] },
+      { title: 'OFFICES & PLANTS', links: [['/contact/corporate-office', 'Corporate Office'], ['/contact/manufacturing-locations', 'Manufacturing Locations']] },
+      { title: 'GET IN TOUCH', links: [['/contact/business-enquiries', 'Business Enquiries'], ['/contact/general-investor-contact', 'General / Investor Contact'], ['/contact/media-contact', 'Media Contact']] },
     ],
   },
 ]

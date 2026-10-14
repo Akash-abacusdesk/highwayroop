@@ -16,7 +16,7 @@ const defaultContent: ContactContent = {
 const ROUTES: [string, string][] = [
   ['/contact/business-enquiries', 'Business enquiries'],
   ['/contact/business-enquiries', 'Supplier enquiries'],
-  ['/contact/general-investor-contact', 'Media enquiries'],
+  ['/contact/media-contact', 'Media enquiries'],
   ['/careers', 'Careers'],
   ['/contact/general-investor-contact', 'Investor enquiries'],
 ]

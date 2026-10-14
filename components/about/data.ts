@@ -49,8 +49,10 @@ export const SUSTAINABILITY_LINKS = [
 
 export const CONTACT_LINKS = [
   { href: '/contact/corporate-office', label: 'Corporate Office' },
+  { href: '/contact/manufacturing-locations', label: 'Manufacturing Locations' },
   { href: '/contact/business-enquiries', label: 'Business Enquiries' },
   { href: '/contact/general-investor-contact', label: 'General / Investor Contact' },
+  { href: '/contact/media-contact', label: 'Media Contact' },
 ]
 
 export const PHONE = { label: '+91 83969 99592', href: 'tel:+918396999592' }
