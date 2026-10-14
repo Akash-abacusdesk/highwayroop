@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import PageHero from '@/components/about/PageHero'
 import SubNav from '@/components/about/SubNav'
+import SectionHead from '@/components/about/SectionHead'
 
 export const metadata: Metadata = { title: 'Reports & Policies | Highway Roop' }
 
@@ -13,6 +14,13 @@ export default function ReportsPolicies() {
         image="hero-reports-v2"
       />
       <SubNav />
+      <section className="ab-section">
+        <div className="shell">
+          <SectionHead title={<>No reports available for now</>}>
+            Reports and policies will be published here as soon as they are approved. Please check back soon.
+          </SectionHead>
+        </div>
+      </section>
     </>
   )
 }

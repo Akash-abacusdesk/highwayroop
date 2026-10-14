@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 const PILLARS = ['Torque', 'Safety', 'Reliability']
 
 const VALUES = [
-  { tag: 'T / 01', title: 'Transparency', text: 'Openness and honesty for shared success' },
-  { tag: 'T / 02', title: 'Trust', text: 'Empower ownership without micromanagement' },
-  { tag: 'T / 03', title: 'Teamwork', text: 'Combine diversity to achieve more' },
-  { tag: 'P / 01', title: 'Passion', text: 'Relentless dedication to achieving our goals' },
-  { tag: 'P / 02', title: 'Performance', text: 'Focused on results and high-quality outcomes' },
-  { tag: 'P / 03', title: 'Partnership', text: 'Sustainable, long-term growth' },
+  { title: 'Transparency', text: 'Openness and honesty for shared success' },
+  { title: 'Trust', text: 'Empower ownership without micromanagement' },
+  { title: 'Teamwork', text: 'Combine diversity to achieve more' },
+  { title: 'Passion', text: 'Relentless dedication to achieving our goals' },
+  { title: 'Performance', text: 'Focused on results and high-quality outcomes' },
+  { title: 'Partnership', text: 'Sustainable, long-term growth' },
 ]
 
 export default function VisionMission() {
