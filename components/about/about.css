@@ -41,6 +41,7 @@
 .ab-mosaic figure{margin:0;position:relative;overflow:hidden}
 /* even 2x2 grid of four capability tiles */
 .ab-mosaic img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.ab-mosaic-ph{width:100%;height:100%;background:#102a38}
 .ab-mosaic figure:hover img{transform:scale(1.04)}
 .ab-mosaic figcaption{position:absolute;inset:auto 0 0;padding:60px 25px 25px;color:#fff;background:linear-gradient(#0000,#102a38e6 70%);font-size:21px}
 

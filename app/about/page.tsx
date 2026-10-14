@@ -6,11 +6,14 @@ import Stats from '@/components/about/Stats'
 
 export const metadata: Metadata = { title: 'Overview | Highway Roop' }
 
-const MOSAIC = [
+// `image` is omitted until the photo is supplied; a plain dark tile is shown meanwhile.
+const MOSAIC: { image?: string; alt: string; caption: string }[] = [
   { image: 'about/forging-stamping', alt: 'Forging and stamping', caption: 'Forging & stamping' },
   { image: 'about/aluminium-die-casting', alt: 'Aluminium die casting', caption: 'Aluminium die casting' },
   { image: 'about/ultra-precision-machining', alt: 'Grinding a helical gear on an ultra-precision machine', caption: 'Ultra precision machining' },
   { image: 'about/cae-simulation', alt: 'Bevel gear forging simulation from CAD model to stress analysis', caption: 'Computer-aided engineering & simulation' },
+  { image: 'about/assembly', alt: 'Assembly', caption: 'Assembly' },
+  { image: 'about/surface-cleaning', alt: 'Surface cleaning', caption: 'Surface cleaning' },
 ]
 
 export default function Overview() {
@@ -57,9 +60,11 @@ export default function Overview() {
           <SectionHead title="Capabilities connected by one platform" />
           <div className="ab-mosaic">
             {MOSAIC.map(m => (
-              <figure key={m.image}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img loading="lazy" decoding="async" src={`/assets/${m.image}.webp`} alt={m.alt} />
+              <figure key={m.caption}>
+                {m.image ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img loading="lazy" decoding="async" src={`/assets/${m.image}.webp`} alt={m.alt} />
+                ) : <div className="ab-mosaic-ph" />}
                 <figcaption>{m.caption}</figcaption>
               </figure>
             ))}
