@@ -12,10 +12,8 @@ const defaultContent: ContactContent = {
   email: 'info@highwayroop.com',
 }
 
-// Supplier enquiries share the business-enquiry form until a dedicated route exists.
 const ROUTES: [string, string][] = [
   ['/contact/business-enquiries', 'Business enquiries'],
-  ['/contact/business-enquiries', 'Supplier enquiries'],
   ['/contact/media-contact', 'Media enquiries'],
   ['/careers', 'Careers'],
   ['/contact/general-investor-contact', 'Investor enquiries'],
