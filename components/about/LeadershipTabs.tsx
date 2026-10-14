@@ -2,10 +2,10 @@
 
 import { useState } from 'react'
 
-// Two-way switch on the Leadership page: Board Members / Business leadership. Both panels are server-rendered.
+// Two-way switch on the Leadership page: Board Members / Executive Management Team. Both panels are server-rendered.
 export default function LeadershipTabs({ board, business }: { board: React.ReactNode; business: React.ReactNode }) {
   const [tab, setTab] = useState<'board' | 'business'>('board')
-  const tabs = [['board', 'Board Members'], ['business', 'Business Leadership']] as const
+  const tabs = [['board', 'Board Members'], ['business', 'Executive Management Team']] as const
   return (
     <>
       <div className="ab-tabs" role="tablist" aria-label="Leadership">

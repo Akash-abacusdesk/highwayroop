@@ -35,7 +35,7 @@ export default function Leadership() {
               <BoardGrid />
             </>}
             business={<>
-              <SectionHead title="Business leadership">
+              <SectionHead title="Executive Management Team">
                 Leadership across business units, finance, people, procurement, marketing, technology, compliance, strategy,
                 communications and manufacturing excellence.
               </SectionHead>
