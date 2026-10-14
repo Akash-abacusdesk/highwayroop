@@ -13,7 +13,7 @@ const MOSAIC: { image?: string; alt: string; caption: string }[] = [
   { image: 'about/ultra-precision-machining', alt: 'Grinding a helical gear on an ultra-precision machine', caption: 'Ultra precision machining' },
   { image: 'about/cae-simulation', alt: 'Bevel gear forging simulation from CAD model to stress analysis', caption: 'Computer-aided engineering & simulation' },
   { image: 'about/assembly', alt: 'Assembly', caption: 'Assembly' },
-  { image: 'about/surface-cleaning', alt: 'Surface cleaning', caption: 'Surface cleaning' },
+  { image: 'about/surface-cleaning', alt: 'Surface treatment', caption: 'Surface treatment' },
 ]
 
 export default function Overview() {
