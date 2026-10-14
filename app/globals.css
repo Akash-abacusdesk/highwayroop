@@ -5260,12 +5260,18 @@ footer img {
 .hero h1,
 .hero-slide h2 {
   color: #fff;
-  max-width: 14ch;
-  text-wrap: balance;
+  max-width: none;
+  white-space: nowrap;
 }
 .hero h1 span,
 .hero-slide h2 span {
-  color: #80bad0;
+  color: inherit;
+}
+@media (max-width: 700px) {
+  .hero h1,
+  .hero-slide h2 {
+    font-size: 6.2vw;
+  }
 }
 .hero .eyebrow {
   color: #9bc9dc;
