@@ -34,7 +34,6 @@ export default function PressGrid() {
             <button type="button" className="ab-profile-close" aria-label="Close" onClick={() => dialog.current?.close()}>×</button>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={open.image} alt={`${open.source} press clipping`} />
-            {open.url && <a className="ab-report-cta" href={open.url} target="_blank" rel="noopener noreferrer">Read the article</a>}
           </div>
         )}
       </dialog>
