@@ -16,9 +16,7 @@ export default function ReportsPolicies() {
       <SubNav />
       <section className="ab-section">
         <div className="shell">
-          <SectionHead title={<>No reports available for now</>}>
-            Reports and policies will be published here as soon as they are approved. Please check back soon.
-          </SectionHead>
+          <SectionHead title={<>Coming soon</>} />
         </div>
       </section>
     </>
