@@ -5765,7 +5765,7 @@ footer img {
 .search-result:first-child{border-top:0}
 .search-result:hover{color:#CB100A}
 
-/* Tablet to laptop: keep "Manufacturing excellence" (and its siblings) on one line */
+/* Tablet to laptop (901-1399px): keep capability card titles, e.g. "Manufacturing excellence", on one line */
 @media (min-width: 901px) and (max-width: 1399px) {
   .corporate-cap-body {
     padding: 26px 22px 30px;
