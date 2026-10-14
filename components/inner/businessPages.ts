@@ -41,7 +41,7 @@ export const BUSINESS_PAGES: Record<string, BusinessPage> = {
   'steering-suspension': {
     overview: {
       title: 'Components where performance matters',
-      text: 'Steering and suspension systems demand consistency across dimensions, materials, manufacturing processes and operating conditions. Steering & Suspension combines precision manufacturing and testing capabilities to support applications where control, durability and functional performance are critical.',
+      text: 'Steering and suspension systems demand consistency across dimensions, materials, manufacturing processes and operating conditions. Our business combines precision manufacturing and testing capabilities to support applications where control, durability and functional performance are critical.',
     },
     capabilities: [
       { title: 'Forging', text: 'Precision forging capabilities support the production of high-strength components for demanding steering and suspension applications.' },

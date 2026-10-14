@@ -184,7 +184,7 @@ export default function GlobalSection() {
             </div>
             <div>
               <strong>14</strong>
-              <span>Warehouses</span>
+              <span>International warehouses</span>
             </div>
             <div>
               <strong>7</strong>

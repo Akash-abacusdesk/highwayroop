@@ -36,8 +36,8 @@ export default function Leadership() {
             </>}
             business={<>
               <SectionHead title="Executive Management Team">
-                Leadership across business units, finance, people, procurement, marketing, technology, compliance, strategy,
-                communications and manufacturing excellence.
+                Leadership across business units, finance, people, procurement, marketing, technology, compliance, strategy
+                and manufacturing excellence.
               </SectionHead>
               <div className="ab-leaders">
                 {LEADERS.map(l => (

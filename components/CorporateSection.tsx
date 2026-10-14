@@ -20,7 +20,7 @@ export function ProofStats() {
         </article>
         <article>
           <Counter as="strong" value="14" />
-          <span>Warehouses</span>
+          <span>International warehouses</span>
         </article>
         <article>
           <Counter as="strong" value="50+" />

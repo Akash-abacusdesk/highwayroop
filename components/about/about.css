@@ -385,8 +385,10 @@ a.ab-doc-btn:hover{background:#102a38;color:#fff}
 .vm-body{margin:24px 0 0;max-width:62ch;color:var(--muted);font-size:17px;line-height:1.7}
 .vm-pillars{display:flex;gap:12px 36px;flex-wrap:wrap;margin:36px 0 0;padding:0;list-style:none;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
 .vm-values{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;margin:44px 0 0}
-.vm-values div{padding:20px 0;border-top:1px solid var(--line)}
-.vm-values dt{font-size:20px;font-weight:500;letter-spacing:-.02em}
+.vm-values div{padding:20px 16px;margin-inline:-16px;border-top:1px solid var(--line);transition:background-color .25s,border-color .25s}
+.vm-values div:hover{background:#edf5f8;border-top-color:#CB100A}
+.vm-values dt{font-size:20px;font-weight:500;letter-spacing:-.02em;transition:color .25s}
+.vm-values div:hover dt{color:#CB100A}
 .vm-values dd{margin:6px 0 0;color:var(--muted);font-size:15px;line-height:1.55}
 .vm{padding-bottom:40px}
 @media(max-width:900px){.vm-row{grid-template-columns:minmax(0,1fr);gap:20px;padding-block:48px}.vm-head{padding-block:112px 40px}}

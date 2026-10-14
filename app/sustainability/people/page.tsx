@@ -8,16 +8,13 @@ import Stats from '@/components/about/Stats'
 export const metadata: Metadata = { title: 'People | Highway Roop' }
 
 const RECOGNITION = [
-  { tag: 'WORKPLACE EQUALITY', title: 'India Workplace Equality Index 2023', text: 'Bronze recognition.' },
-  { tag: 'DIVERSITY & INCLUSION', title: 'ASSOCHAM 2023', text: 'Best Employer for Diversity & Inclusion Policies, second runner-up.' },
-  { tag: 'SAFETY', title: 'Exemplary Safety Practices', text: 'CII National EHS Circle Competition 2022 recognition.' },
   { tag: 'MANAGEMENT SYSTEM', title: 'ISO 45001', text: 'Occupational health and safety certification listed in the presentation.' },
 ]
 
 const PEOPLE_DATA = [
   { tag: 'WORKFORCE', title: '3,005 employees and workers', text: '304 employees and 2,701 workers were reported as at 31 March 2026.' },
   { tag: 'INCLUSION', title: '470 women across the workforce', text: '24 female employees and 446 female workers were reported for FY 2025-26.' },
-  { tag: 'TRAINING', title: '100% coverage reported', text: 'Training and career-development reviews covered 304 employees and 2,701 workers.' },
+  { tag: 'TRAINING', title: 'Training coverage', text: 'Health and safety and skill-upgradation training reached 96.71% of employees and 91.12% of workers; POSH training saw 100% participation.' },
   { tag: 'SAFETY', title: 'Zero fatalities', text: 'The BRSR reports no fatalities or high-consequence work-related injuries in FY 2025-26.' },
 ]
 
