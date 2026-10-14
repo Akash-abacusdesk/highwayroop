@@ -51,7 +51,7 @@ export default function NewsInsights() {
                 </div>
                 <div className="ab-news-body">
                   <small>{p.source}</small>
-                  <h3>{p.title}</h3>
+                  <h3>{p.url ? <a href={p.url} target="_blank" rel="noopener noreferrer">{p.title}</a> : p.title}</h3>
                   <p>{p.text}</p>
                 </div>
               </article>

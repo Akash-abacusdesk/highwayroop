@@ -28,13 +28,13 @@ export const MILESTONES = [
   { year: '05', label: 'TODAY', image: 'journey-lightweighting', title: 'Lightweighting joins the journey', text: 'Chamundi Die-Cast adds aluminium die casting, tooling, precision machining, finishing and assembly, expanding the platform into lightweighting and strengthening its South India footprint.', tags: 'Forging + Machining + Aluminium Die Casting' },
 ]
 
-export const PRESS: { source: string; title: string; text: string; image?: string; publication?: string }[] = [
-  { source: 'MINT', title: 'Carlyle-backed Highway Roop acquires Chamundi Die Cast', text: 'The acquisition marks a strategic milestone in Highway Roop’s journey.', image: '/assets/press-mint.webp' },
-  { source: 'THE ECONOMIC TIMES MANUFACTURING', title: 'Highway Roop expands precision manufacturing capabilities', text: 'The acquisition adds aluminium die-casting and precision-machining capabilities.', publication: 'ET Manufacturing' },
-  { source: 'AUTOCAR PROFESSIONAL', title: 'Highway Roop adds aluminium die-casting capabilities', text: 'Chamundi brings a growing EV portfolio and South India manufacturing base.', publication: 'Autocar Professional' },
-  { source: 'VCCIRCLE', title: 'Carlyle expands India auto-parts platform', text: 'Chamundi Die Cast joins the Highway Roop platform.', publication: 'VCCircle' },
-  { source: 'MONEYCONTROL', title: 'Highway Roop completes acquisition', text: 'A scaled, diversified precision manufacturing platform.', publication: 'Moneycontrol' },
-  { source: 'MACHINE MAKER', title: 'Highway Roop acquires Chamundi Die Cast', text: 'Coverage of the completed acquisition.', publication: 'Machine Maker' },
+export const PRESS: { source: string; title: string; text: string; image?: string; publication?: string; url?: string }[] = [
+  { source: 'LIVE MINT', title: 'Carlyle-backed Highway Roop acquires Chamundi Die Cast', text: 'The acquisition marks a strategic milestone in Highway Roop’s journey.', image: '/assets/press-mint.webp', url: 'https://www.livemint.com/companies/news/highway-roop-chamundi-die-cast-acquisition-carlyle-group-11790666681405.html' },
+  { source: 'THE ECONOMIC TIMES', title: 'Highway Roop expands precision manufacturing capabilities', text: 'The acquisition adds aluminium die-casting and precision-machining capabilities.', publication: 'The Economic Times', url: 'https://manufacturing.economictimes.indiatimes.com/news/industry/carlyle-backed-highway-roop-acquires-chamundi-die-cast-to-expand-precision-manufacturing-capabilities/134562447' },
+  { source: 'AUTOCAR PROFESSIONAL', title: 'Highway Roop adds aluminium die-casting capabilities', text: 'Chamundi brings a growing EV portfolio and South India manufacturing base.', publication: 'Autocar Professional', url: 'https://www.autocarpro.in/news/highway-roop-acquires-chamundi-adds-aluminium-die-casting-capabilities-134951' },
+  { source: 'VCCIRCLE', title: 'Carlyle expands India auto-parts platform', text: 'Chamundi Die Cast joins the Highway Roop platform.', publication: 'VCCircle', url: 'https://www.vccircle.com/carlyleexpands-india-auto-parts-platform-with-chamundi-die-cast-s-takeover' },
+  { source: 'MONEYCONTROL', title: 'Highway Roop completes acquisition', text: 'A scaled, diversified precision manufacturing platform.', publication: 'Moneycontrol', url: 'https://www.moneycontrol.com/news/business/companies/carlyle-backed-highway-roop-completes-acquisition-of-chamundi-die-cast-14040846.html' },
+  { source: 'MACHINE MAKER', title: 'Highway Roop acquires Chamundi Die Cast', text: 'Coverage of the completed acquisition.', publication: 'Machine Maker', url: 'https://themachinemaker.com/news/highway-roop-acquires-chamundi-die-cast/' },
 ]
 
 export const SUSTAINABILITY_LINKS = [
