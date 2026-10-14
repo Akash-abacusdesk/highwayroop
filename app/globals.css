@@ -4250,7 +4250,7 @@ i:has(> svg.lucide) {
 }
 .hero h1,
 .hero-slide h2 {
-  font-size: clamp(44px, 5vw, 72px);
+  font-size: clamp(44px, 5vw, 64px);
 }
 .intro-copy h2,
 .section-head h2,
