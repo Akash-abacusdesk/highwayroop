@@ -391,3 +391,6 @@ a.ab-doc-btn:hover{background:#102a38;color:#fff}
 .vm{padding-bottom:40px}
 @media(max-width:900px){.vm-row{grid-template-columns:minmax(0,1fr);gap:20px;padding-block:48px}.vm-head{padding-block:112px 40px}}
 @media(max-width:700px){.vm-values{grid-template-columns:1fr}.vm-head p{font-size:16px}}@media(min-width:1051px){.ab-leaders:has(.ab-board-card){grid-template-columns:repeat(4,1fr);gap:18px}.ab-board-card .ab-leader-copy{padding:18px}.ab-board-name{font-size:18px}}
+
+.ab-cert-group{margin:0 0 20px;font-size:clamp(22px,2.4vw,30px);font-weight:500;letter-spacing:-.03em}
+.ab-cert-group small{display:block;margin-top:6px;color:var(--muted);font-size:14px;font-weight:400;letter-spacing:0}
