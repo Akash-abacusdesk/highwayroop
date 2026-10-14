@@ -5427,6 +5427,7 @@ footer img {
   font: 500 clamp(22px, 2vw, 27px)/1.2 var(--font-josefin), "Josefin Sans", sans-serif;
   color: var(--blue);
   margin: 12px 0 12px;
+  text-wrap: balance;
 }
 .corporate-cap-body p {
   font-size: 15px;
@@ -5763,3 +5764,14 @@ footer img {
 .search-result{display:block;padding:7px 0;border-top:1px solid #e3ecef;color:var(--ink);font-size:12px;font-weight:600}
 .search-result:first-child{border-top:0}
 .search-result:hover{color:#CB100A}
+
+/* Tablet to laptop: keep "Manufacturing excellence" (and its siblings) on one line */
+@media (min-width: 901px) and (max-width: 1399px) {
+  .corporate-cap-body {
+    padding: 26px 22px 30px;
+  }
+  .corporate-cap-body h3 {
+    font-size: clamp(16px, 1.65vw, 22px);
+    white-space: nowrap;
+  }
+}

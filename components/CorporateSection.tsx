@@ -1,7 +1,7 @@
 import { Counter } from './about/Stats'
 const CAPABILITY_DETAIL = [
   ['Product development', 'Product engineering, precision tooling and process expertise support development from concept through industrialisation.', 'about/product-engineering'],
-  ['Manufacturing control', 'Integrated forging, machining, casting, heat treatment, coating, assembly and testing support consistent production.', 'cap-manufacturing-control'],
+  ['Manufacturing excellence', 'Integrated forging, machining, casting, heat treatment, coating, assembly and testing support consistent production.', 'cap-manufacturing-control'],
   ['Quality by design', 'Metrology, metallurgy, functional testing and in-house calibration capabilities reinforce quality across the production cycle.', 'cap-quality'],
 ]
 
