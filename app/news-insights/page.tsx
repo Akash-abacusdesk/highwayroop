@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import SiteShell from '@/components/SiteShell'
 import PageHero from '@/components/about/PageHero'
 import SectionHead from '@/components/about/SectionHead'
-import { PRESS } from '@/components/about/data'
+import PressGrid from '@/components/about/PressGrid'
 
 export const metadata: Metadata = { title: 'News & Insights | Highway Roop' }
 
@@ -38,25 +38,7 @@ export default function NewsInsights() {
           <SectionHead title="Press coverage">
             Coverage of the Chamundi Die Cast acquisition across business and auto-industry publications.
           </SectionHead>
-          <div className="ab-news-grid">
-            {PRESS.map(p => (
-              <article className="ab-news-card" key={p.title}>
-                <div className="ab-thumb">
-                  {p.image ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img loading="lazy" decoding="async" src={p.image} alt={`${p.source} press clipping`} />
-                  ) : (
-                    <div className="ab-publication">{p.publication}</div>
-                  )}
-                </div>
-                <div className="ab-news-body">
-                  <small>{p.source}</small>
-                  <h3>{p.url ? <a href={p.url} target="_blank" rel="noopener noreferrer">{p.title}</a> : p.title}</h3>
-                  <p>{p.text}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <PressGrid />
         </div>
       </section>
     </SiteShell>
