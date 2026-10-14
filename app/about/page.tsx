@@ -44,7 +44,7 @@ export default function Overview() {
           <Stats
             items={[
               ['5', 'DECADES OF COMBINED ENGINEERING LEGACY'],
-              ['14', 'MANUFACTURING PLANTS'],
+              ['16', 'MANUFACTURING PLANTS'],
               ['14', 'WAREHOUSES'],
               ['50+', 'OEM AND TIER-1 RELATIONSHIPS'],
             ]}
