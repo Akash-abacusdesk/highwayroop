@@ -5759,3 +5759,7 @@ footer img {
 .news-section .news-cta:hover span {
   color: #102a38;
 }
+
+.hero-slide-three .hero-bg {
+  object-position: left center;
+}

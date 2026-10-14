@@ -11,7 +11,7 @@ export default function NewsInsights() {
     <SiteShell>
       <PageHero
         title={<>News from<br />Highway Roop</>}
-        copy="Official company communication and coverage of the Chamundi Die Cast acquisition."
+        copy="Official company communication and media coverage."
         image="hero-news"
       />
 
@@ -36,7 +36,7 @@ export default function NewsInsights() {
       <section className="ab-section ab-soft" id="media">
         <div className="shell">
           <SectionHead title="Press coverage">
-            Coverage of the Chamundi Die Cast acquisition across business and auto-industry publications.
+            Coverage of Highway Roop across business and auto-industry publications.
           </SectionHead>
           <PressGrid />
         </div>

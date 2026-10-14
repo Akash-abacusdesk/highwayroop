@@ -24,7 +24,7 @@ export default async function BusinessPage({ params }: Props) {
   return (
     <SiteShell>
       <PageHero
-        title={biz.heroTitle}
+        title={biz.heroTitle.split('\n').flatMap((l, i) => (i ? [<br key={i} />, l] : [l]))}
         copy={biz.heroCopy}
         image={biz.image.slice('/assets/'.length, -'.webp'.length)}
         ctas={[{ href: '#technology', label: 'Explore our capabilities' }, { href: '/contact/business-enquiries', label: 'Start a conversation' }]}

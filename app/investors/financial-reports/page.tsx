@@ -15,7 +15,7 @@ export default function FinancialReports() {
   return (
     <SiteShell>
       <PageHero
-        title="Financial Reports"
+        title={<>Financial<br />Reports</>}
         copy="Access Highway Roop’s financial information for the latest financial year."
         image="hero-investor-v2"
       />
