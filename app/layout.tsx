@@ -11,6 +11,7 @@ const josefin = Josefin_Sans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://highwayroop.com'),
   title: 'Highway Roop | Integrated Precision Manufacturing',
   description:
     'Highway Roop Precision Technologies Limited integrates engineering, forging, machining, aluminium die casting, tooling and validation for global automotive programmes.',
