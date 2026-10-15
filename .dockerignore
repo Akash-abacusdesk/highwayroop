@@ -1,0 +1,13 @@
+node_modules
+out
+.next
+.git
+.github
+.env*
+php-api
+*.md
+.playwright-cli
+dev.log
+Dockerfile
+docker-compose.yml
+.dockerignore

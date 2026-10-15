@@ -1,0 +1,16 @@
+name: Deploy
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Same hop as the rest of the fleet: GitHub cloud runners cannot SSH to
+      # the VPS directly, so Jenkins (static IP, whitelisted) does the
+      # git reset --hard + docker compose up in /srv/sites/highwayroop.com.
+      - name: Trigger Jenkins deploy
+        run: |
+          curl -fsS -X POST "https://website-jenkins.abacusdesk.co.in/generic-webhook-trigger/invoke?token=${{ secrets.JENKINS_WEBHOOK_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"domain": "highwayroop.com"}'
