@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   title: 'Highway Roop | Integrated Precision Manufacturing',
   description:
     'Highway Roop Precision Technologies Limited integrates engineering, forging, machining, aluminium die casting, tooling and validation for global automotive programmes.',
+  openGraph: { images: [{ url: '/og-image.png', width: 1200, height: 630 }] },
+  twitter: { card: 'summary_large_image', images: ['/og-image.png'] },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
