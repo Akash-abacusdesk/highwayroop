@@ -51,8 +51,6 @@ img {
 
 /* Logos, technical drawings, maps, and UI marks must not be cropped by object-fit: cover */
 .brand img,
-.login-brand img,
-.admin-brand img,
 .footer-top img,
 .footer-brand img,
 .site-footer img,
@@ -3802,135 +3800,6 @@ div[id="media"] {
   max-width: 100%;
 }
 
-/* ── Login page ──────────────────────────────────────────────────────────── */
-.login-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #f0f7fa 0%, #e8f4f8 100%);
-  padding: 24px;
-  font-family: var(--font-josefin), "Josefin Sans", sans-serif;
-}
-.login-card {
-  background: #fff;
-  border: 1px solid #dbe4e8;
-  box-shadow: 0 20px 60px rgba(18, 35, 44, 0.12);
-  padding: 44px 48px;
-  width: 100%;
-  max-width: 420px;
-}
-.login-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 32px;
-}
-.login-brand img {
-  width: 140px;
-  height: auto;
-  object-fit: contain;
-}
-.login-brand-tag {
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  font-weight: 700;
-  color: #fff;
-  text-transform: uppercase;
-  background: #d71920;
-  padding: 3px 8px;
-  border-radius: 2px;
-  line-height: 1.6;
-}
-.login-title {
-  font-family: var(--font-josefin), "Josefin Sans", sans-serif;
-  font-size: 22px;
-  font-weight: 500;
-  margin: 0 0 28px;
-  color: #12232c;
-  letter-spacing: -0.03em;
-}
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-.login-error {
-  background: #fef2f2;
-  border: 1px solid #fca5a5;
-  color: #991b1b;
-  padding: 11px 14px;
-  font-size: 13px;
-  border-radius: 2px;
-}
-.login-field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.login-field label {
-  font-size: 12px;
-  font-weight: 600;
-  color: #42545e;
-  letter-spacing: 0.04em;
-}
-.login-field input {
-  border: 1px solid #cbd5db;
-  padding: 11px 14px;
-  font-family: inherit;
-  font-size: 14px;
-  color: #12232c;
-  outline: none;
-  transition:
-    border-color 0.2s,
-    box-shadow 0.2s;
-  border-radius: 2px;
-  background: #fff;
-}
-.login-field input:focus {
-  border-color: #156082;
-  box-shadow: 0 0 0 3px rgba(21, 96, 130, 0.12);
-}
-.login-field input:disabled {
-  background: #f8fafc;
-  color: #94a3b8;
-}
-.login-btn {
-  background: #156082;
-  color: #fff;
-  border: none;
-  padding: 13px 20px;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s;
-  border-radius: 2px;
-  margin-top: 4px;
-}
-.login-btn:hover:not(:disabled) {
-  background: #0f4c68;
-}
-.login-btn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-.login-back {
-  text-align: center;
-  margin: 22px 0 0;
-  font-size: 12px;
-  color: #64748b;
-}
-.login-back a {
-  color: #156082;
-  font-weight: 600;
-}
-@media (max-width: 480px) {
-  .login-card {
-    padding: 32px 24px;
-  }
-}
-
 /* Global section: WebGL globe + region accordion */
 .globe-stage {
   position: relative;
@@ -4240,7 +4109,6 @@ i:has(> svg.lucide) {
 .resource-intro > span,
 .resource-links small,
 .entity-type,
-.login-brand-tag,
 .biz-label,
 .biz-tags a {
   font-size: 12px;
