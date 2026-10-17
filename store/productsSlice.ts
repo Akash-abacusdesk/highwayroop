@@ -49,6 +49,7 @@ const initialState: ProductsState = {
       yokes: 'Steering yokes',
       joints: 'Universal joints',
       shafts: 'Steering shafts',
+      column: 'Steering column assemblies',
     },
     lightweighting: {
       cooling: 'Cooling & fan drive',
@@ -81,6 +82,12 @@ const initialState: ProductsState = {
     steering('shafts', 8, 'Steering pinion shaft'), steering('shafts', 13, 'Splined pinion shaft'),
     steering('shafts', 9, 'Intermediate shaft with joint'), steering('shafts', 10, 'Articulated intermediate shaft'),
     steering('shafts', 14, 'Splined steering shafts'), steering('shafts', 11, 'Steering column flange assembly'),
+    steering('joints', 16, 'Universal joint with tube yoke'), steering('joints', 18, 'Universal joint with double splined shaft'),
+    steering('joints', 20, 'Steering universal joints and yokes'), steering('joints', 21, 'Double tube-yoke universal joint'),
+    steering('joints', 22, 'Universal joint with stepped shaft'),
+    steering('shafts', 17, 'Intermediate shaft with twin joints'), steering('shafts', 19, 'Steering shaft with double joint'),
+    steering('shafts', 23, 'Intermediate shaft with sleeve joint'), steering('shafts', 24, 'Steering shaft with universal joint'),
+    steering('column', 25, 'Steering column bracket assembly'), steering('column', 26, 'Tilt steering column assembly'),
 
     lightweighting('cooling', 1, 'Die-cast viscous fan clutch housings'), lightweighting('cooling', 10, 'Cooling fan with viscous clutch'),
     lightweighting('cooling', 2, 'Fan drive pulley assembly'), lightweighting('cooling', 9, 'Water pump housing and impeller'),
